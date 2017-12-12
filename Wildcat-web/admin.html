@@ -22,18 +22,18 @@
 
 
         <!--To occupy the entire left side-->
-        <sidebar>
+        <sidebar id="nav">
             <!--Head Infos-->
-            <div>
-                <div id="navEx">
-                    <div class="navLine"></div>
-                    <div class="navLine"></div>
-                    <div class="navLine"></div>
-                </div>
+            <div id="navEx">
                 <figure id="navHeader">
                     <img src="#" alt="Wilson">
                     <figcaption>The Wildcat App</figcaption>
                 </figure>
+                <div id="navExButton">
+                    <div class="navLine"></div>
+                    <div class="navLine"></div>
+                    <div class="navLine"></div>
+                </div>
             </div>
 
 
@@ -41,22 +41,23 @@
             <!--Announcements, Staff directory, Map-->
             <div id="navMods">
                 <ul>
-                    <li class="navModule"><a>Announcements</a></li>
-                    <li class="navModule"><a>Staff Directory</a></li>
-                    <li class="navModule"><a>Map</a></li>
+                    <li class="navModule">Announcements</li>
+                    <li class="navModule">Staff Directory</li>
+                    <li class="navModule">Map</li>
                 </ul>
             </div>
 
 
             <!--Settings area-->
             <div id="navSets">
+                <h5>Settings</h5><!--NOTE: Settings is technically a module-->
                 <button id="logout">Logout</button>
             </div>
         </sidebar>
 
 
-        <!--To occupy majority of screen-->
-        <section>
+        <!--To occupy majority of screen, modules area-->
+        <section id="mod">
 
         </section>
     </body>
