@@ -140,6 +140,26 @@ a{
     background-color: #fbffbc;
     z-index: 0;
 }
+.module{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#modHead{
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 1% 0;
+    color: #d56767;
+}
+/*announcements module*/
+#announce{
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+    margin: auto;
+    background-color: #e1e593;
+    
+}
+
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
