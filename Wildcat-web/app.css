@@ -143,6 +143,11 @@ a{
 .module{
     overflow-x: hidden;
     overflow-y: auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+    margin: auto;
+    background-color: #e1e593;
 }
 #modHead{
     font-size: 1.5vw;
@@ -152,11 +157,7 @@ a{
 }
 /*announcements module*/
 #announce{
-    width: 90%;
-    height: 90%;
-    border-radius: 30px;
-    margin: auto;
-    background-color: #e1e593;
+   
     
 }
 
