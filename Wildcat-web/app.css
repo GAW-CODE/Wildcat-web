@@ -1,15 +1,21 @@
-/*Defaults*/
+/*---------------DEFAULTS---------------*/
 *{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     font-size: 100%;
+    cursor: default;
+    z-index: 0;
 }
-
+.hov{
+    cursor: pointer;
+}
 a{
     text-decoration: none;
     font-style: none;
 }
+
+/*---------------SIDEBAR STYLES---------------*/
 
 #nav{
     width: 20vw;
@@ -17,26 +23,19 @@ a{
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #9a4747;
+    background-color: #6a1d1d;
+    transition-duration: 0.3s;
+    z-index: 0;
 }
-
-#mod{
-    width: 80vw;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #fbffbc;
-}
-
-/*NAVIGATION STYLES*/
-
 #navEx{
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    width: 100%;
     height: 15%;
 }
+
+/*Title styles*/
 #navHeader{
     padding: 2% 4.5%;
 }
@@ -45,8 +44,13 @@ a{
     height: 70px;
 }
 #navHeader figcaption{
-    font-size: 1.5vw;
+    font-size: 1.7vw;
+    color: #ffbe00;
+    font-weight: 600;
 }
+
+/*Hamburger menu styles*/
+/*ex=expand, col=collapse*/
 #navExButton{
     width: 50px;
     height: 50px;
@@ -55,18 +59,88 @@ a{
     padding: 2% 4.5%;
 }
 .navLine{
-    background-color: #f9fda8;
     margin: 5px 0;
     -webkit-margin-collapse: collapse;
     width: 50px;
     height: 10px;
     border-radius: 7px;
+    transition-duration: 0.3s;
+}
+.ex .navLine{
+    background-color: #f9fda8;
+}
+.col .navLine{
+    background-color: #aa5151;
 }
 
-/*GENERAL MODULE STYLES*/
+/*Module list styles*/
+#navMods{
+    height: 70%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#navMods h2{
+    font-size: 2.3vw;
+    text-align: center;
+    font-weight: 600;
+    color: #f6f6a5;
+}
+#navMods ul{
+    list-style-type: none;
+    font-size: 2vw;
+    text-align: left;
+}
+.navModule{
+    padding: 2% 3%;
+    color: #979775;
+    transition-duration: 0.3s;
+}
+.navModule:hover{
+    text-indent: 5px;
+    color: #e9e9a6;
+    background-color: #7a2929;
+}
 
-/*ANNOUNCEMENTS STYLES*/
+/*Setting area styles*/
+#navSets{
+    height: 15%;
+    width: 100%;
+}
+#set{
+    font-weight: normal;
+    font-size: 1.3vw;
+    height: fit-content;
+}
+#logout{
+    margin: auto;
+    margin-top: 2%;
+    display: block;
+    outline: none;
+    border: none;
+    background-color: #ff9c3b;
+    color: white;
+    font-size: 1.5vw;
+    border-radius: 7px;
+    padding: 1.5%;
+}
+#logout:active{
+    background-color: #ff8e2c;
+}
 
-/*STAFF DIRECTORY STYLES*/
+/*---------------GENERAL MODULE STYLES---------------*/
 
-/*MAP STYLES*/
+#mod{
+    width: 80vw;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fbffbc;
+    z-index: 0;
+}
+/*---------------ANNOUNCEMENTS STYLES---------------*/
+
+/*---------------STAFF DIRECTORY STYLES---------------*/
+
+/*---------------MAP STYLES---------------*/
