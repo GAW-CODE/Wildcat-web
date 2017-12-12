@@ -6,6 +6,7 @@
     font-size: 100%;
     cursor: default;
     z-index: 0;
+    user-select: none;
 }
 .hov{
     cursor: pointer;
