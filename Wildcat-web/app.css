@@ -139,7 +139,42 @@ a{
     top: 0;
     background-color: #fbffbc;
     z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+.module{
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+    margin: auto;
+    background-color: #e1e593;
+}
+#modHead{
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 1% 0;
+    color: #d56767;
+}
+
+/*announcements module*/
+
+#reqList{
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    transform: translateY(2%);
+}
+.req{
+    width: 98%;
+    height: 10%;
+    margin: auto;
+    background-color: #fdffe2;
+    border: 2px solid #f3f5d8;
+}
+
+
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
