@@ -178,5 +178,30 @@ a{
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
+.dirp{
+    width:95%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.dir{
+    text-align: left;
+    background-color: #fdffe2;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.ddir{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.edit{
+    text-align: right;
+    margin-right: 10px;
+}
 
 /*---------------MAP STYLES---------------*/
