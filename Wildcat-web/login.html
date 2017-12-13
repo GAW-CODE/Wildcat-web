@@ -1,72 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAOCBR_8j5Uf59kPrJeNKmyhm5kkdVUJWo",
-    authDomain: "gaw-wildcat-app.firebaseapp.com",
-    databaseURL: "https://gaw-wildcat-app.firebaseio.com",
-    projectId: "gaw-wildcat-app",
-    storageBucket: "gaw-wildcat-app.appspot.com",
-    messagingSenderId: "467203906935"
-  };
-  firebase.initializeApp(config);
-
-  const auth = firebase.auth();
-
-  const Email = document.getElementById('username');
-  const Pass = document.getElementById('password');
-  const btnLogin = document.getElementById('btnLogin');
-  const btnSignUp = document.getElementById('btnSignUp');
-
-  btnLogin.addEventListener('click', e => {
-  	const email = Email.value;
-  	const pass = Pass.value;
-  	const auth = firebase.auth();
-  	const promise = auth.signInWithEmailAndPassword(email, pass);
-  	promise.catch(e => console.log(e.message));
-
-  });
-
-</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<meta name="language" content="English">
 	<meta name="description" content="Wildcat Webpage">
 	<link rel="icon" href="#">
 	<title>Login</title>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="WildCatSignUpWeb.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
+<center>
 <body>
-	<header>
+	<header id = "header">
 	<h1> The Wildcat </h1>
 	<img src = "data:image/jpeg;base64,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">
 	</header>
 	<section>
-	<form>
-		Email:<br>
-		<input type = "text" id = "username"><br>
-		Password:<br>
-		<input type = "password" id = "password">
-	</form>
+		<div>
+			<input type = "email" id = "txtEmail" placeholder="Email">
+		</div>
+		<div>
+			<input type = "password" id = "txtPassword" placeholder="Password">
+		</div>
 	</section>
-	<button id = "btnLogin">
+	<br>
+	<button id = "btnLogin" class = "btn btn-action">
 		Log In
 	</button>
-	<button id = "btnSignUp">
-		Sign Up
+	<button id = "btnSignUp" class = "btn btn-action"> 
+		Sign Up 
 	</button>
+	<script src ="Login.js"></script>
+
 	<footer>
 		
 	</footer>
 
-
-
 </body>
+</center>
 </html>
