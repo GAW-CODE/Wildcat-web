@@ -139,6 +139,8 @@ a{
     top: 0;
     background-color: #fbffbc;
     z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .module{
     overflow-x: hidden;
@@ -156,10 +158,8 @@ a{
     color: #d56767;
 }
 /*announcements module*/
-#announce{
-   
-    
-}
+
+
 
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
