@@ -158,7 +158,7 @@ a{
     color: #d56767;
 }
 
-/*announcements module*/
+/*---------------ANNOUNCEMENTS STYLES---------------*/
 
 #reqList{
     width: 95%;
@@ -168,14 +168,23 @@ a{
 }
 .req{
     width: 98%;
-    height: 10%;
     margin: auto;
-    background-color: #fdffe2;
-    border: 2px solid #f3f5d8;
+    border: 2px solid #fdffe2;
 }
-
-
-/*---------------ANNOUNCEMENTS STYLES---------------*/
+.reqMeta{
+    background-color: #fdffe2;
+    font-size: 1.3vw;
+    text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.reqDesision{
+    height: 90%;
+}
+.reqDesc{
+    background-color: #d1d588;
+}
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
 
