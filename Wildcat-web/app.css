@@ -157,8 +157,22 @@ a{
     padding: 1% 0;
     color: #d56767;
 }
+
 /*announcements module*/
 
+#reqList{
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    transform: translateY(2%);
+}
+.req{
+    width: 98%;
+    height: 10%;
+    margin: auto;
+    background-color: #fdffe2;
+    border: 2px solid #f3f5d8;
+}
 
 
 /*---------------ANNOUNCEMENTS STYLES---------------*/
