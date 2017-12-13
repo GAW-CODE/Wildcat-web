@@ -15,6 +15,9 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignUp = document.getElementById('btnSignUp');
+  btnSignUp.addEventListener('click', e => {
+    window.location.href = "SignUp.html";
+  });
 
   btnLogin.addEventListener('click', e => {
   	const email = txtEmail.value;
