@@ -4,7 +4,11 @@
 }
 
 #loginLink{
+<<<<<<< HEAD
+	font-family:'Barlow', sans-serif;
+=======
 	font-family:sans-serif;
+>>>>>>> fb1a44fffb9086b0e0f0f42574e1dc27c93b2081
 }
 
 body{
