@@ -1,11 +1,11 @@
 *{
 	padding:0;
 	margin:0;
+	font-family:'Barlow', sans-serif;
 }
 
 #loginLink{
 <<<<<<< HEAD
-	font-family:'Barlow', sans-serif;
 }
 
 body{
@@ -16,19 +16,15 @@ body{
 #topBar{
 	text-align: right;
 	background-color:#c41e3a;
-	font-family:'Barlow', sans-serif;
 }
 
 #header1{
 	background-color:#ffcc66;
 	text-align:center;
-	font-family:'Barlow', sans-serif;
 }
 
 #appName{
-	font-family:sans-serif;
 	font-size:100px;
-	font-family:'Barlow', sans-serif;
 }
 
 #logoPhrase{
@@ -38,7 +34,6 @@ body{
 #advertising{
 	background-color: #c41e3a;
 	text-align: center;
-	font-family:'Barlow', sans-serif;
 }
 
 footer{
