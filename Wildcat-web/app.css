@@ -63,7 +63,7 @@ a{
     margin: 5px 0;
     -webkit-margin-collapse: collapse;
     width: 50px;
-    height: 10px;
+    height: 7px;
     border-radius: 7px;
     transition-duration: 0.3s;
 }
@@ -80,12 +80,6 @@ a{
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-}
-#navMods h2{
-    font-size: 2.3vw;
-    text-align: center;
-    font-weight: 600;
-    color: #f6f6a5;
 }
 #navMods ul{
     list-style-type: none;
