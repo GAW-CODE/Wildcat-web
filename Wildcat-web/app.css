@@ -1,3 +1,5 @@
+/*Styles for admin.html*/
+
 /*---------------DEFAULTS---------------*/
 *{
     margin: 0;
@@ -160,10 +162,12 @@ a{
     margin: auto;
     transform: translateY(2%);
 }
+/*Sample Reqs*/
 .req{
     width: 98%;
     margin: auto;
     border: 2px solid #fdffe2;
+    transition-duration: 0.3s;
 }
 .reqMeta{
     background-color: #fdffe2;
@@ -173,11 +177,17 @@ a{
     flex-wrap: nowrap;
     justify-content: space-between;
 }
+.reqMeta:hover{
+    background-color: #f5f7d9;
+}
 .reqDesision{
     height: 90%;
 }
 .reqDesc{
     background-color: #d1d588;
+}
+.descHide{
+    display: hidden;
 }
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
