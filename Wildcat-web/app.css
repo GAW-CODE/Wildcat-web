@@ -157,6 +157,7 @@ a{
     display: none;
 }
 .messageOn{
+    display: block;
     text-align: center;
     color: rgb(88, 100, 61);
     font-size: 2vw;
@@ -189,19 +190,18 @@ a{
     background-color: #f5f7d9;
 }
 .reqMeta div{
-    width: 10%;
+    width: 8%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
 }
 .reqDecision{
-    width: 45px;
-    height: 45px;
+    width: 3.5vh;
+    height: 3.5vh;
     transition-duration: 0.3s;
 }
 .reqDecision:hover{
-    width: 55px;
-    height: 55px;
+    transform: translateY(-5px);
 }
 .reqDesc{
     background-color: #d1d588;
@@ -238,3 +238,29 @@ a{
 }
 
 /*---------------MAP STYLES---------------*/
+
+#mapBar{
+    width: 100%;
+    background-color: #fdffe2;
+}
+#mapBar h2{
+    text-align: center;
+    color: rgb(88, 100, 61);
+    font-size: 2vw;
+}
+/*ADD      update map button style*/
+
+#map{
+    width: 90%;
+    padding: 1%;
+    margin: auto;
+}
+#map img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+#map figcaption{
+    font-size: 1vw;
+    color: black;
+}
