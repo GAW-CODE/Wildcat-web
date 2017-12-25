@@ -153,6 +153,14 @@ a{
     padding: 1% 0;
     color: #d56767;
 }
+.messageOff{
+    display: none;
+}
+.messageOn{
+    text-align: center;
+    color: rgb(88, 100, 61);
+    font-size: 2vw;
+}
 
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
@@ -180,8 +188,20 @@ a{
 .reqMeta:hover{
     background-color: #f5f7d9;
 }
-.reqDesision{
-    height: 90%;
+.reqMeta div{
+    width: 10%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.reqDecision{
+    width: 45px;
+    height: 45px;
+    transition-duration: 0.3s;
+}
+.reqDecision:hover{
+    width: 55px;
+    height: 55px;
 }
 .reqDesc{
     background-color: #d1d588;
