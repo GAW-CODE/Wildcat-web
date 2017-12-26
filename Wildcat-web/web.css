@@ -26,12 +26,12 @@ body{
 	background-color:#ffcc66;
 	text-align:center;
 }
-
-#appName{
-	font-size:100px;
-    padding-top:55px;
+@media screen and (min-width: 480px) {
+    #appName {
+        font-size: 100px;
+        padding-top: 55px;
+    }
 }
-
 #logoPhrase{
 	text-align: center;
 }
