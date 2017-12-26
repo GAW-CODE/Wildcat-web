@@ -10,10 +10,9 @@
 }
 
 body{
-	background-color:gold;
 	overflow-x:hidden;
 }
-@media screen and (min-width: 180px) {
+@media screen and (min-width: 80px) {
     #topBar {
         text-align: right;
         background-color: #c41e3a;
@@ -28,7 +27,7 @@ body{
 }
 @media screen and (min-width: 180px) {
     #appName {
-        font-size: 100px;
+        font-size: 10vw;
         padding-top: 55px;
         width:100%;
     }
