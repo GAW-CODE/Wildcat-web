@@ -16,6 +16,7 @@ body{
 #topBar{
 	text-align: right;
 	background-color:#c41e3a;
+    position: fixed;
 }
 
 #header1{
