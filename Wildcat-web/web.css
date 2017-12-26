@@ -18,6 +18,7 @@ body{
 	text-align: right;
 	background-color:#c41e3a;
     position: fixed;
+    width: 100%;
 }
 
 #header1{
