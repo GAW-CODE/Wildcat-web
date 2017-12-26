@@ -18,4 +18,7 @@ var config = {
   	const auth = firebase.auth();
   	const promise = auth.createUserWithEmailAndPassword(email, pass);
   	promise.catch(e => console.log(e.message));
+  	promise.then(function(v){
+      window.location.href = "login.html";
+    });
   });
