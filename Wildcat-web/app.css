@@ -207,7 +207,8 @@ a{
     background-color: #d1d588;
 }
 .descHide{
-    display: hidden;
+    transition-duration: 0.3s;
+    display: none;
 }
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
