@@ -10,7 +10,6 @@
 }
 
 body{
-	background-color:gold;
 	overflow-x:hidden;
 }
 @media screen and (min-width: 80px) {
