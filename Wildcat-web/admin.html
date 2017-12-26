@@ -11,6 +11,7 @@
         <!--links-->
         <link rel="stylesheet" type="text/css" href="app.css">
         <link rel="icon" href="#">
+        <script src="app.js"></script>
 
         <!--browser-->
         <title>Admin</title>
@@ -40,7 +41,7 @@
             <!--List of modules-->
             <!--Announcements, Staff directory, Map-->
             <div id="navMods">
-                <h2>Modules</h2>
+
                 <ul>
                     <li class="navModule hov">Announcements</li>
                     <li class="navModule hov">Staff Directory</li>
@@ -57,6 +58,8 @@
         </sidebar>
 
 
+
+
         <!--To occupy majority of screen, modules area-->
         <section id="mod">
 
@@ -69,19 +72,21 @@
             <!--Anouncements-->
             <div class="module">
                 <div id="reqList">
+                    <h2 class="messageOff">No Announcement Requests</h2>
                         <!--Sample-->
                     <div class="req">
                         <div class="reqMeta">
                             <h3 style="padding: 2%;">Sample Announcement</h3>
                             <div style="padding: 2%;">
-                                <img src="" title="Approve" class="reqYes reqDecision hov">
-                                <img src="" title="Reject" class="reqNo reqDecision hov">
+                                <img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov">
+                                <img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov">
                             </div>
                         </div>
                         <div class="reqDesc">
                             <p style="padding: 2%;">This is a sample description</p>
                         </div>
                     </div>
+                        <!--Sample-->
 
                 </div>
                 
@@ -102,6 +107,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!--School Map-->
+            <div class="module">
+                <div id="mapBar">
+                    <h2>School Map</h2>
+                    <!--ADD       Update map button-->
+                </div>
+                <figure id="map">
+                    <img src="#" title="School Map" alt="School Map">
+                    <figcaption>*The map above will be displayed on the announcements page and app</figcaption>
+                </figure>
             </div>
 
         </section>

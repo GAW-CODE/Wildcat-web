@@ -1,3 +1,5 @@
+/*Styles for admin.html*/
+
 /*---------------DEFAULTS---------------*/
 *{
     margin: 0;
@@ -63,7 +65,7 @@ a{
     margin: 5px 0;
     -webkit-margin-collapse: collapse;
     width: 50px;
-    height: 10px;
+    height: 7px;
     border-radius: 7px;
     transition-duration: 0.3s;
 }
@@ -80,12 +82,6 @@ a{
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-}
-#navMods h2{
-    font-size: 2.3vw;
-    text-align: center;
-    font-weight: 600;
-    color: #f6f6a5;
 }
 #navMods ul{
     list-style-type: none;
@@ -157,6 +153,15 @@ a{
     padding: 1% 0;
     color: #d56767;
 }
+.messageOff{
+    display: none;
+}
+.messageOn{
+    display: block;
+    text-align: center;
+    color: rgb(88, 100, 61);
+    font-size: 2vw;
+}
 
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
@@ -166,10 +171,12 @@ a{
     margin: auto;
     transform: translateY(2%);
 }
+/*Sample Reqs*/
 .req{
     width: 98%;
     margin: auto;
     border: 2px solid #fdffe2;
+    transition-duration: 0.3s;
 }
 .reqMeta{
     background-color: #fdffe2;
@@ -179,11 +186,28 @@ a{
     flex-wrap: nowrap;
     justify-content: space-between;
 }
-.reqDesision{
-    height: 90%;
+.reqMeta:hover{
+    background-color: #f5f7d9;
+}
+.reqMeta div{
+    width: 8%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.reqDecision{
+    width: 3.5vh;
+    height: 3.5vh;
+    transition-duration: 0.3s;
+}
+.reqDecision:hover{
+    transform: translateY(-5px);
 }
 .reqDesc{
     background-color: #d1d588;
+}
+.descHide{
+    display: hidden;
 }
 
 /*---------------STAFF DIRECTORY STYLES---------------*/
@@ -214,3 +238,29 @@ a{
 }
 
 /*---------------MAP STYLES---------------*/
+
+#mapBar{
+    width: 100%;
+    background-color: #fdffe2;
+}
+#mapBar h2{
+    text-align: center;
+    color: rgb(88, 100, 61);
+    font-size: 2vw;
+}
+/*ADD      update map button style*/
+
+#map{
+    width: 90%;
+    padding: 1%;
+    margin: auto;
+}
+#map img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+#map figcaption{
+    font-size: 1vw;
+    color: black;
+}
