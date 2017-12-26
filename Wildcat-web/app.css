@@ -139,9 +139,78 @@ a{
     top: 0;
     background-color: #fbffbc;
     z-index: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+.module{
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 90%;
+    height: 90%;
+    border-radius: 30px;
+    margin: auto;
+    background-color: #e1e593;
+}
+#modHead{
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 1% 0;
+    color: #d56767;
+}
+
 /*---------------ANNOUNCEMENTS STYLES---------------*/
 
+#reqList{
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    transform: translateY(2%);
+}
+.req{
+    width: 98%;
+    margin: auto;
+    border: 2px solid #fdffe2;
+}
+.reqMeta{
+    background-color: #fdffe2;
+    font-size: 1.3vw;
+    text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.reqDesision{
+    height: 90%;
+}
+.reqDesc{
+    background-color: #d1d588;
+}
+
 /*---------------STAFF DIRECTORY STYLES---------------*/
+.dirp{
+    width:95%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.dir{
+    text-align: left;
+    background-color: #fdffe2;
+    margin: 10px 0px;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.ddir{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.edit{
+    text-align: right;
+    margin-right: 10px;
+}
 
 /*---------------MAP STYLES---------------*/
