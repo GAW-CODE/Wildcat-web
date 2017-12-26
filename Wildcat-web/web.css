@@ -19,6 +19,9 @@ body{
         position: fixed;
         width: 100%;
     }
+    #input {
+        font-size: 5vw;
+    }
 }
 
 #header1{
@@ -28,7 +31,7 @@ body{
 @media screen and (min-width: 180px) {
     #appName {
         font-size: 10vw;
-        padding-top: 55px;
+        padding-top: 5vw;
         width:100%;
     }
 }
