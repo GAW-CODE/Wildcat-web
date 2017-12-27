@@ -16,13 +16,22 @@ var config = {
   const txtReenterPassword = document.getElementById("txtReenterPassword");
   const btnSignUp = document.getElementById("SignUp");
 
+  const organization = txtOrganization.value;
+  const name = txtName.value;
+  const reenterpass = txtReenterPassword.value;
+
   btnSignUp.addEventListener('click', e => {
   	const email = txtEmail.value;
   	const pass = txtPassword.value;
+  	if(reenterpass == pass){
   	const auth = firebase.auth();
   	const promise = auth.createUserWithEmailAndPassword(email, pass);
   	promise.catch(e => console.log(e.message));
   	promise.then(function(v){
       window.location.href = "login.html";
     });
+  }
+  else{
+  	alert("Passwords don't match");
+  }
   });
