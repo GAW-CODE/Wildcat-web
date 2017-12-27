@@ -8,7 +8,7 @@
 }
 
 body{
-	background-image: url("https://www.xmple.com/wallpaper/gradient-yellow-orange-linear-5120x2880-c2-ffff00-ff4500-a-120-f-14.svg");
+	background-color:gold;
 	overflow-x:hidden;
 }
 @media screen and (min-width: 480px) {
