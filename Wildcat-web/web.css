@@ -1,17 +1,18 @@
 *{
-	padding:0;
-	margin:0;
-	font-family:'Barlow', sans-serif;
+  padding:0;
+  margin:0;
+  font-family:'Barlow', sans-serif;
 }
 
 #loginLink{
+
+  
 }
 
 body{
-	background-color:gold;
-	overflow-x:hidden;
+  overflow-x:hidden;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 80px) {
     #topBar {
         text-align: right;
         background-color: #c41e3a;
@@ -21,22 +22,19 @@ body{
 }
 @media screen and (min-width: 600px) {
     #input {
+        font-size: 5vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    #input {
         font-size: 10vw;
     }
 }
 
 #header1{
-	background-color:#ffcc66;
-	text-align:center;
+  background-color:#ffcc66;
+  text-align:center;
 }
-<<<<<<< HEAD
-
-#appName{
-	font-size:100px;
-    padding-top:55px;
-}
-
-=======
 @media screen and (min-width: 600px) {
     #appName {
         font-size: 9vw;
@@ -51,21 +49,20 @@ body{
         width: 100%;
     }
 }
->>>>>>> 84314aac7a2b8788f2e7b300f4f3f7881eab7e2e
 #logoPhrase{
-	text-align: center;
+  text-align: center;
 }
 
 #advertising{
-	background-color: #c41e3a;
-	text-align: center;
+  background-color: #c41e3a;
+  text-align: center;
 }
 
 footer{
-	bottom: 0px;
-	width:100%;
-	font-family:sans-serif;
-	background-color:#0f0e0e;
-	color:white;
-	padding:0.9%;
+  bottom: 0px;
+  width:100%;
+  font-family:sans-serif;
+  background-color:#0f0e0e;
+  color:white;
+  padding:0.9%;
 }
