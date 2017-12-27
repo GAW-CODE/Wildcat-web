@@ -1,17 +1,18 @@
 *{
-	padding:0;
-	margin:0;
-	font-family:'Barlow', sans-serif;
+  padding:0;
+  margin:0;
+  font-family:'Barlow', sans-serif;
 }
 
 #loginLink{
 
-	
 }
 
 body{
-	overflow-x:hidden;
+  overflow-x:hidden;
+
 }
+
 @media screen and (min-width: 80px) {
     #topBar {
         text-align: right;
@@ -35,6 +36,7 @@ a, a:visited {
         color: #fbae1d;
     }
 }
+
 #input:hover {
     color: #e79b09;
 }
@@ -42,6 +44,7 @@ a, a:visited {
     background-color: #fbae1d;
     text-align: center;
 }
+
 @media screen and (min-width: 600px) {
     #appName {
         font-size: 7vw;
@@ -69,18 +72,22 @@ a, a:visited {
     #logoPhrase {
         text-align: center;
     }
+}
+#logoPhrase{
+  text-align: center;
+}
 
-    #advertising {
-        background-color: #c41e3a;
-        text-align: center;
-    }
+#advertising{
+  background-color: #c41e3a;
+  text-align: center;
+ 
 }
 
 footer{
-	bottom: 0px;
-	width:100%;
-	font-family:sans-serif;
-	background-color:#0f0e0e;
-	color:white;
-	padding:0.9%;
+  bottom: 0px;
+  width:100%;
+  font-family:sans-serif;
+  background-color:#0f0e0e;
+  color:white;
+  padding:0.9%;
 }
