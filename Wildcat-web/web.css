@@ -6,12 +6,13 @@
 
 #loginLink{
 
-  
 }
 
 body{
   overflow-x:hidden;
+
 }
+
 @media screen and (min-width: 80px) {
     #topBar {
         text-align: right;
@@ -20,33 +21,57 @@ body{
         width: 100%;
     }
 }
+a, a:visited {
+    color: inherit;
+}
 @media screen and (min-width: 600px) {
     #input {
         font-size: 5vw;
+        color: #fbae1d;
     }
 }
 @media screen and (max-width: 600px) {
     #input {
         font-size: 10vw;
+        color: #fbae1d;
     }
 }
 
-#header1{
-  background-color:#ffcc66;
-  text-align:center;
+#input:hover {
+    color: #e79b09;
 }
+#header1 {
+    background-color: #fbae1d;
+    text-align: center;
+}
+
 @media screen and (min-width: 600px) {
     #appName {
-        font-size: 9vw;
+        font-size: 7vw;
         padding-top: 5vw;
-        width:100%;
+        width: 100%;
+        font-family: Arial;
+    }
+
+    #logoPhrase {
+        text-align: center;
+        width: 70%
+    }
+
+    #advertising {
+        background-color: #c41e3a;
+        text-align: center;
     }
 }
 @media screen and (max-width: 600px) {
     #appName {
         font-size: 9vw;
-        padding-top: 10vw;
+        padding-top: 12vw;
         width: 100%;
+        font-family: Arial;
+    }
+    #logoPhrase {
+        text-align: center;
     }
 }
 #logoPhrase{
@@ -56,6 +81,7 @@ body{
 #advertising{
   background-color: #c41e3a;
   text-align: center;
+ 
 }
 
 footer{
