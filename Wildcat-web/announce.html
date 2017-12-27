@@ -21,15 +21,20 @@
 
     <body>
         <div id="topBar">
-            <center><p id="demo"></p></center>
-
+            <center><b><p id="demo"></p></b></center> 
+            <!--adds the date to the center of the page-->
+            
         </div>
         <div id="botBar"></div>
 
     <p id="demo"></p>
 
 <script>
-document.getElementById("demo").innerHTML = Date();
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("demo").innerHTML = m + "/" + d + "/" + y;
 </script>
 
 
