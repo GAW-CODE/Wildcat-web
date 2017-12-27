@@ -19,17 +19,39 @@ body{
         width: 100%;
     }
 }
+@media screen and (min-width: 600px) {
+    #input {
+        font-size: 10vw;
+    }
+}
 
 #header1{
 	background-color:#ffcc66;
 	text-align:center;
 }
+<<<<<<< HEAD
 
 #appName{
 	font-size:100px;
     padding-top:55px;
 }
 
+=======
+@media screen and (min-width: 600px) {
+    #appName {
+        font-size: 9vw;
+        padding-top: 5vw;
+        width:100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #appName {
+        font-size: 9vw;
+        padding-top: 10vw;
+        width: 100%;
+    }
+}
+>>>>>>> 84314aac7a2b8788f2e7b300f4f3f7881eab7e2e
 #logoPhrase{
 	text-align: center;
 }
