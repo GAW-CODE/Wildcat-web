@@ -11,6 +11,9 @@ var config = {
 
   const txtEmail = document.getElementById("txtEmail");
   const txtPassword = document.getElementById("txtPassword");
+  const txtOrganization = document.getElementById("txtOrganization");
+  const txtName = document.getElementById("txtName");
+  const txtReenterPassword = document.getElementById("txtReenterPassword");
   const btnSignUp = document.getElementById("SignUp");
 
   btnSignUp.addEventListener('click', e => {
