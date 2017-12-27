@@ -19,8 +19,15 @@ body{
         position: fixed;
         width: 100%;
     }
+}
+@media screen and (min-width: 600px) {
     #input {
         font-size: 5vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    #input {
+        font-size: 10vw;
     }
 }
 
@@ -28,11 +35,18 @@ body{
 	background-color:#ffcc66;
 	text-align:center;
 }
-@media screen and (min-width: 180px) {
+@media screen and (min-width: 600px) {
     #appName {
-        font-size: 10vw;
+        font-size: 9vw;
         padding-top: 5vw;
         width:100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    #appName {
+        font-size: 9vw;
+        padding-top: 10vw;
+        width: 100%;
     }
 }
 #logoPhrase{
