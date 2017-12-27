@@ -7,6 +7,7 @@ var config = {
     messagingSenderId: "467203906935"
   };
   firebase.initializeApp(config);
+  var database = firebase.database();
 
   const txtEmail = document.getElementById("txtEmail");
   const txtPassword = document.getElementById("txtPassword");
