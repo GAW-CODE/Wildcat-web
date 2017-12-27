@@ -5,22 +5,23 @@
 }
 
 #loginLink{
-
-	
 }
 
 body{
+	background-color:gold;
 	overflow-x:hidden;
 }
-@media screen and (min-width: 80px) {
+@media screen and (min-width: 480px) {
     #topBar {
         text-align: right;
         background-color: #c41e3a;
         position: fixed;
         width: 100%;
     }
+}
+@media screen and (min-width: 600px) {
     #input {
-        font-size: 5vw;
+        font-size: 10vw;
     }
 }
 
@@ -28,13 +29,29 @@ body{
 	background-color:#ffcc66;
 	text-align:center;
 }
-@media screen and (min-width: 180px) {
+<<<<<<< HEAD
+
+#appName{
+	font-size:100px;
+    padding-top:55px;
+}
+
+=======
+@media screen and (min-width: 600px) {
     #appName {
-        font-size: 10vw;
+        font-size: 9vw;
         padding-top: 5vw;
         width:100%;
     }
 }
+@media screen and (max-width: 600px) {
+    #appName {
+        font-size: 9vw;
+        padding-top: 10vw;
+        width: 100%;
+    }
+}
+>>>>>>> 84314aac7a2b8788f2e7b300f4f3f7881eab7e2e
 #logoPhrase{
 	text-align: center;
 }
