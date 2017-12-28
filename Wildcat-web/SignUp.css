@@ -1,20 +1,20 @@
 
-body{
-	text-align: center;
-	padding: 40px 40px;
-    margin: 8px 0;
+body {
+    text-align: center;
+    padding: 40px 40px;
+    margin-top: 21vh;
+    margin-bottom: 21vh;
     display: block;
     border: 1px solid #ccc;
-    box-sizing: border-box;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 25%;
-    background-image:url("http://www.freebiesgallery.com/wp-content/uploads/2013/09/red-background-3.png");
+    background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2013/09/red-background-3.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center; 
+    background-position: center;
     background-size: cover;
-	}
+}
 
 #Loginspace {
-	vertical-align: center;
 }
