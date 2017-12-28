@@ -175,6 +175,7 @@ a{
 .req{
     width: 98%;
     margin: auto;
+    margin-bottom: 10px;
     border: 2px solid #fdffe2;
     transition-duration: 0.3s;
 }

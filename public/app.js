@@ -5,6 +5,8 @@
 //Sidebar Logic
 
 //Announcements Logic
+
+//Making the erquest descrptions expand and condense
 var desc = document.getElementsByClassName('reqDesc');
 var req = document.getElementsByClassName('req');
 
