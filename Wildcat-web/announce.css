@@ -9,7 +9,7 @@ body {
 
 #topBar {
     width: 100%;
-    height: 100px;
+    height: 12vh;
     font-family: 'Montserrat', sans-serif;
     background-color: #c62828;
     top: 0;
@@ -19,7 +19,7 @@ body {
 
 #navbar {
     width: 100%;
-    height: 100px;
+    height: 12vh;
     background-color: #c62828;
     bottom: 0;
     left: 0;
@@ -27,64 +27,67 @@ body {
     display: inline-block;
     display: inline;
     text-align: center;
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top:1vh;
+    padding-bottom:1vh;
 
 }
 #news {
     height: 300%;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
     padding-left: 40px;
     padding-right: 20px;
 }
 #news {
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
-    height: 100%;
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    height: 70vh;
+    padding-top: 16vh;
+    padding-bottom: 16vh;
     padding-left: 5vw;
     padding-right: 5px;
+    background-attachment: fixed;
 }
 #news img {
-        width: 50px;
-        height: 50px;
+        width: 15vw;
+        height: 15vw;
         border-radius:50%;
         display: inline-block;
     }
 .announcement {
-        font-size: 2vw;
+        font-family:Arial;
+        font-size: 6vw;
         background-color: white;
-        border-radius: 5px;
-        border: 5px solid white;
+        border-radius: 1vw;
+        border: 1vw solid white;
         display: inline-block;
         width: 70vw;
+        margin-bottom: 5vh;
     }
 
 
 
 #demo {
-    font-size: 36px;
+    font-size: 10vw;
     color: white;
-    padding-top: 20px;
+    padding-top: 5vw;
 }
 
 #profileIcon{
     bottom: 0;
     left:0;
     width:auto;
-    height:100px;
+    height:10vh;
 }
 
 #calendar{
     bottom: 0;
-    height:100px;
+    height:10vh;
     width:auto;
     text-align:center;
 }
 
 #chat{
     bottom: 0;
-    height:100px;
+    height:10vh;
     width:auto;
 }
