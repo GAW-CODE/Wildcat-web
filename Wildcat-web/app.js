@@ -9,9 +9,16 @@ var desc = document.getElementsByClassName('reqDesc');
 var req = document.getElementsByClassName('req');
 
 for(var i = 0; i < req.length; i++){
-    req[i].addEventListener('click', hideReq(i));
-}
+    //req[i].addEventListener("click" , description(req[i]));
+    req[i].addEventListener("click" , function(e){
+        //console.log(e.path[2].childNodes[3].className);
 
-function hideReq(i){
-    desc[i].classList.toggle("descHide");
- }
+        if(e.path[2].childNodes[3].className==="descHide"){
+            e.path[2].childNodes[3].className = "descShow";
+        }
+
+        else{
+            e.path[2].childNodes[3].className = "descHide";
+        }
+    });
+}
