@@ -7,14 +7,30 @@
 	<meta name="description" content="Wildcat Webpage">
 	<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="SignUp.css">
 	<title>Sign Up!</title>
 </head>
 <body>
-	<h1>Sign up for Epic announcements of epic proportions!</h1>
+	<h1>Sign up</h1>
+	<h6>*Fill in the Required Fields*</h6>
 	<div>
-		<input type="email" id="txtEmail" placeholder = "Email">
-		<input type="password" id="txtPassword" placeholder="Password">
-		<button id = "SignUp" class = "btn btn-action">Sign In</button>
+		<input type="text" id="txtName" placeholder="Name"><br>
+		<input type="email" id="txtEmail" placeholder = "Email"> <br>
+		<input type="password" id="txtPassword" placeholder="Password"><br>
+		<input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
+		<input type="text" id="txtOrganization" placeholder = "Organization"> <br>
+		<p>
+             <label>Organization Types</label><br>
+             <select id = "Organization Type:">
+               <option value = "Admin">Admin</option>
+               <option value = "Guidance">Guidance</option>
+               <option value = "ASB">ASB</option>
+               <option value = "Campus Org">Campus Org.</option>
+               <option value = "Athletics">Athletics</option>
+              <option value = "Fundraiser">Fundraiser</option>
+             </select>
+          </p>
+          <button id = "SignUp" class = "btn btn-action">Sign Up</button>
 	</div>
 	<script src = "SignUp.js"> </script>
 </body>

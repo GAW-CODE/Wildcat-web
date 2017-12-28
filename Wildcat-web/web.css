@@ -1,17 +1,18 @@
 *{
-	padding:0;
-	margin:0;
-	font-family:'Barlow', sans-serif;
+  padding:0;
+  margin:0;
+  font-family:'Barlow', sans-serif;
 }
 
 #loginLink{
 
-	
 }
 
 body{
-	overflow-x:hidden;
+  overflow-x:hidden;
+
 }
+
 @media screen and (min-width: 80px) {
     #topBar {
         text-align: right;
@@ -20,32 +21,73 @@ body{
         width: 100%;
     }
 }
-
-#header1{
-	background-color:#ffcc66;
-	text-align:center;
+a, a:visited {
+    color: inherit;
 }
-@media screen and (min-width: 180px) {
-    #appName {
+@media screen and (min-width: 600px) {
+    #input {
+        font-size: 5vw;
+        color: #fbae1d;
+    }
+}
+@media screen and (max-width: 600px) {
+    #input {
         font-size: 10vw;
-        padding-top: 55px;
-        width:100%;
+        color: #fbae1d;
+    }
+}
+
+#input:hover {
+    color: #e79b09;
+}
+#header1 {
+    background-color: #fbae1d;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    #appName {
+        font-size: 7vw;
+        padding-top: 5vw;
+        width: 100%;
+        font-family: Arial;
+    }
+
+    #logoPhrase {
+        text-align: center;
+    }
+
+    #advertising {
+        background-color: #c41e3a;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 600px) {
+    #appName {
+        font-size: 9vw;
+        padding-top: 12vw;
+        width: 100%;
+        font-family: Arial;
+    }
+    #logoPhrase {
+        text-align: center;
     }
 }
 #logoPhrase{
-	text-align: center;
+  text-align: center;
 }
 
 #advertising{
-	background-color: #c41e3a;
-	text-align: center;
+  background-color: #c41e3a;
+  text-align: center;
+ 
 }
 
 footer{
-	bottom: 0px;
-	width:100%;
-	font-family:sans-serif;
-	background-color:#0f0e0e;
-	color:white;
-	padding:0.9%;
+  bottom: 0px;
+  width:100%;
+  font-family:sans-serif;
+  background-color:#0f0e0e;
+  color:white;
+  padding:0.9%;
 }

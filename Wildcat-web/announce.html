@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <!--meta tags-->
@@ -9,14 +9,61 @@
         <!--<meta name = "keywords" content = "Wilson, Announcements, WildCatApp, Viewers">-->
         
         <!--links-->
-        <link rel="stylesheet" type="text/css" href="#">
+        <link rel="stylesheet" type="text/css" href="announce.css">
         <link rel="icon" href="#">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
         <!--browser-->
         <title>Wilson Announcements</title>
 
     </head>
+
     <body>
-    
+        <div id="topBar">
+            <center><b><p id="demo"></p></b></center>
+        </div>
+        <div id="news">
+            <span class="logo"><img src="http://cdn.newsapi.com.au/image/v1/9fdbf585d17c95f7a31ccacdb6466af9" /></span>
+            <span class="announcement">
+                This is the first announcement. It is just for testing. Today is 12/27/2017, 11:22AM.
+            </span>
+        </div>
+        <div id="news">
+            <span class="logo"><img src="http://cdn.newsapi.com.au/image/v1/9fdbf585d17c95f7a31ccacdb6466af9" /></span>
+            <span class="announcement">
+                This is the first announcement. It is just for testing. Today is 12/27/2017, 11:22AM.
+            </span>
+            <span class="logo"><img src="http://cdn.newsapi.com.au/image/v1/9fdbf585d17c95f7a31ccacdb6466af9" /></span>
+            <span class="announcement">
+                This is the first announcement. It is just for testing. Today is 12/27/2017, 11:22AM.
+            </span>
+        </div>
+
+
+        <div id="navbar">
+            <span>
+                <img id="chat" src="webAssets/chat.png">
+            </span>
+
+            <span>
+                <img id="calendar" src="webAssets/Calendar.png">
+            </span>
+
+            <span>
+                <img id="profileIcon" src="webAssets/User.png">
+            </span>
+        </div>
+
+
+        <script>
+            n = new Date();
+            y = n.getFullYear();
+            m = n.getMonth() + 1;
+            d = n.getDate();
+            document.getElementById("demo").innerHTML = m + "/" + d + "/" + y;
+        </script>
+
+
     </body>
+    
 </html>
