@@ -35,9 +35,9 @@ var config = {
             }).catch(function(error) {
                 console.log(error);
             });
-            
+
   	});
-  	promise.catch(e => console.log(e.message));
+  	promise.catch(e => alert(e.message));
   	promise.then(function(v){
       window.location.href = "login.html";
     });
