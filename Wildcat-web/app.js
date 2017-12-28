@@ -8,26 +8,17 @@
 var desc = document.getElementsByClassName('reqDesc');
 var req = document.getElementsByClassName('req');
 
-var temp = 0;
 for(var i = 0; i < req.length; i++){
     //req[i].addEventListener("click" , description(req[i]));
-    temp = req[i];
-    req[i].addEventListener("click" , function(temp){
-        console.log(temp);
-    });
-}
+    req[i].addEventListener("click" , function(e){
+        //console.log(e.path[2].childNodes[3].className);
 
-function description(selection){
-    var check = true;
-    console.log(selection);
-    if(check){
-        console.log("true");
-        selection.childNodes[1].class = "descHide";
-        check = false;
-    }
-    else{
-        console.log("false");
-        selection.childNodes[1].class = "reqDesc";
-        check = true;
-    }
+        if(e.path[2].childNodes[3].className==="descHide"){
+            e.path[2].childNodes[3].className = "descShow";
+        }
+
+        else{
+            e.path[2].childNodes[3].className = "descHide";
+        }
+    });
 }

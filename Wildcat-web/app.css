@@ -203,11 +203,10 @@ a{
 .reqDecision:hover{
     transform: translateY(-5px);
 }
-.reqDesc{
+.descShow{
     background-color: #d1d588;
 }
 .descHide{
-    transition-duration: 0.3s;
     display: none;
 }
 
