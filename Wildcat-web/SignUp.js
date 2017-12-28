@@ -15,17 +15,28 @@ var config = {
   const txtName = document.getElementById("txtName");
   const txtReenterPassword = document.getElementById("txtReenterPassword");
   const btnSignUp = document.getElementById("SignUp");
-
-  const organization = txtOrganization.value;
-  const name = txtName.value;
-  const reenterpass = txtReenterPassword.value;
+  const txtType = document.getElementById("Organization Type:");
 
   btnSignUp.addEventListener('click', e => {
+    const reenterpass = txtReenterPassword.value;	
   	const email = txtEmail.value;
   	const pass = txtPassword.value;
+  	const userObj = {
+  		name: txtName.value,
+  		type: txtType.value,
+  		organization: txtOrganization.value
+  	};
   	if(reenterpass == pass){
   	const auth = firebase.auth();
-  	const promise = auth.createUserWithEmailAndPassword(email, pass);
+  	const promise = auth.createUserWithEmailAndPassword(email, pass).then(function(user){
+  		database.ref('users/' + user.uid).set(userObj).then(
+            function() {
+                console.log('User data successfully stored')
+            }).catch(function(error) {
+                console.log(error);
+            });
+            
+  	});
   	promise.catch(e => console.log(e.message));
   	promise.then(function(v){
       window.location.href = "login.html";
