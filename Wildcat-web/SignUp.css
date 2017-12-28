@@ -1,7 +1,6 @@
 
 body{
 	text-align: center;
-	padding-top: 60px;
 	padding: 40px 40px;
     margin: 8px 0;
     display: block;
@@ -15,3 +14,7 @@ body{
     background-position: center; 
     background-size: cover;
 	}
+
+#Loginspace {
+	vertical-align: center;
+}
