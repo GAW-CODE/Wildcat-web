@@ -1,12 +1,12 @@
 
 body{
 	text-align: center;
+	padding-top: 60px;
 	padding: 40px 40px;
     margin: 8px 0;
     display: block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    box-shadow: 10px 10px;
     margin: auto;
     width: 25%;
     background-image:url("http://www.freebiesgallery.com/wp-content/uploads/2013/09/red-background-3.png");
