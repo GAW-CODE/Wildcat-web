@@ -1,11 +1,17 @@
-body {
-    
+*{
+    margin:0;
 }
+
+
+body {
+    height:100%;
+}
+
 #topBar {
     width: 100%;
     height: 100px;
     font-family: 'Montserrat', sans-serif;
-    background-color: #c62828; /* Your Color */
+    background-color: #c62828;
     top: 0;
     left: 0;
     position: fixed;
@@ -14,15 +20,20 @@ body {
 #navbar {
     width: 100%;
     height: 100px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #c62828; /* Your Color */
+    background-color: #c62828;
     bottom: 0;
     left: 0;
-    position: fixed
+    position: fixed;
+    display: inline-block;
+    display: inline;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+
 }
 #news {
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
-    height: 100%;
+    height: 300%;
     padding-top: 110px;
     padding-bottom: 110px;
     padding-left: 40px;
@@ -38,6 +49,7 @@ body {
 #demo {
     font-size: 36px;
     color: white;
+    padding-top: 20px;
 }
 
 #profileIcon{
@@ -47,4 +59,17 @@ body {
     height:100px;
 }
 
+#calendar{
+    bottom: 0;
+    height:100px;
+    width:auto;
+    text-align:center;
+    padding-left:30px;
+    padding-right:30px;
+}
 
+#chat{
+    bottom: 0;
+    height:100px;
+    width:auto;
+}
