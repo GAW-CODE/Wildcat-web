@@ -22,18 +22,24 @@ body {
 }
 #news {
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
-    height: 100%;
-    padding-top: 110px;
-    padding-bottom: 110px;
-    padding-left: 40px;
-    padding-right: 20px;
 }
+.img {
+        width: 30px;
+        height: 30px;
+    }
 .announcement {
-    font-size: 18px;
-    background-color: white;
-    border-radius: 5px;
-    border: 5px solid white;
-}
+        height: 100%;
+        padding-top: 110px;
+        padding-bottom: 110px;
+        padding-left: 40px;
+        padding-right: 20px;
+        font-size: 18px;
+        background-color: white;
+        border-radius: 5px;
+        border: 5px solid white;
+    }
+
+
 
 #demo {
     font-size: 36px;
