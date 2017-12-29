@@ -10,6 +10,9 @@
     z-index: 0;
     user-select: none;
 }
+body{
+    overflow: hidden;
+}
 .hov{
     cursor: pointer;
 }
@@ -30,55 +33,28 @@ a{
     transition-duration: 0.3s;
     z-index: 0;
 }
-#navEx{
+#navHead{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: nowrap;
     width: 100%;
-    height: 15%;
+    height: 9%;
 }
 
 /*Title styles*/
 #navHeader{
-    padding: 2% 4.5%;
-}
-#navHeader img{
-    width: 70px;
-    height: 54.654px;
-}
-#navHeader figcaption{
+    padding-top: 2.3%;
+    overflow: hidden;
+    text-overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
     font-size: 1.7vw;
     color: #ffbe00;
-    font-weight: 600;
-}
-
-/*Hamburger menu styles*/
-/*ex=expand, col=collapse*/
-#navExButton{
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    padding: 2% 4.5%;
-}
-.navLine{
-    margin: 5px 0;
-    -webkit-margin-collapse: collapse;
-    width: 50px;
-    height: 7px;
-    border-radius: 7px;
-    transition-duration: 0.3s;
-}
-.ex .navLine{
-    background-color: #f9fda8;
-}
-.col .navLine{
-    background-color: #aa5151;
 }
 
 /*Module list styles*/
 #navMods{
-    height: 70%;
+    height: 76%;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -108,6 +84,7 @@ a{
     font-weight: normal;
     font-size: 1.3vw;
     height: fit-content;
+    visibility: hidden;
 }
 #logout{
     margin: auto;
@@ -138,6 +115,9 @@ a{
     overflow-x: hidden;
     overflow-y: auto;
 }
+#modSpacer{
+    height: 5%;
+}
 .module{
     overflow-x: hidden;
     overflow-y: auto;
@@ -146,12 +126,33 @@ a{
     border-radius: 30px;
     margin: auto;
     background-color: #e1e593;
+    animation-name: moduleIn;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+}
+.off{
+    visibility: hidden;
+    display: none;
+}
+@keyframes moduleIn{
+    from{
+        transform: translateY(20px);
+        visibility: hidden;
+    }
+    to{
+        transform: none;
+        visibility: visible;
+    }
 }
 #modHead{
     font-size: 1.5vw;
     text-align: center;
     padding: 1% 0;
     color: #d56767;
+    width: 100%;
+    animation-name: moduleIn;
+    animation-duration: 0.7s;
+    animation-iteration-count: 1;
 }
 .messageOff{
     display: none;
@@ -164,12 +165,13 @@ a{
 }
 
 /*---------------ANNOUNCEMENTS STYLES---------------*/
-
 #reqList{
     width: 95%;
-    height: 95%;
+    height: 88%;
     margin: auto;
-    transform: translateY(2%);
+    animation-name: moduleIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 /*Sample Reqs*/
 .req{
@@ -186,6 +188,9 @@ a{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+}
+.reqMeta h3{
+    width: 80%;
 }
 .reqMeta:hover{
     background-color: #f5f7d9;
@@ -216,6 +221,9 @@ a{
     width:95%;
     margin: auto;
     margin-top: 10px;
+    animation-name: moduleIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 
 .dir{
@@ -245,17 +253,15 @@ a{
     width: 100%;
     background-color: #fdffe2;
 }
-#mapBar h2{
-    text-align: center;
-    color: rgb(88, 100, 61);
-    font-size: 2vw;
-}
 /*ADD      update map button style*/
 
 #map{
     width: 90%;
     padding: 1%;
     margin: auto;
+    animation-name: moduleIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
 }
 #map img{
     display: block;

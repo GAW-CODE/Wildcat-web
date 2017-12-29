@@ -6,7 +6,6 @@
         <meta lang="eng-US">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Updates made here">
-        <!--<meta name = "keywords" content = "Wilson, Announcements, WildCatApp, Admin">-->
         
         <!--links-->
         <link rel="icon" href="sharedAssets/appLogo.png">
@@ -20,20 +19,11 @@
 
     <body>
 
-
         <!--To occupy the entire left side-->
         <sidebar id="nav">
             <!--Head Infos-->
-            <div id="navEx">
-                <figure id="navHeader">
-                    <img src="sharedAssets/Wildcat.png" alt="Wilson" width="1373px" height="1072">
-                    <figcaption>The Wildcat App</figcaption>
-                </figure>
-                <div id="navExButton" class="ex hov">
-                    <div class="navLine hov"></div>
-                    <div class="navLine hov"></div>
-                    <div class="navLine hov"></div>
-                </div>
+            <div id="navHead">
+                <h2 id="navHeader">The Wildcat</h2>
             </div>
 
 
@@ -44,7 +34,7 @@
                 <ul>
                     <li class="navModule hov">Announcements</li>
                     <li class="navModule hov">Staff Directory</li>
-                    <li class="navModule hov">Calender</li>
+                    <li class="navModule hov">Calendar</li>
                     <li class="navModule hov">Map</li>
                 </ul>
             </div>
@@ -64,13 +54,14 @@
         <section id="mod">
 
             <!--Append, pull from other html file-->
-            
-            <div id="modHead">
-                <h2>Announcements</h2>
+            <div id="modSpacer">
+                <!--This is for spacing the module from the top of the window-->
             </div>
-
             <!--Anouncements-->
-            <div class="module">
+            <div class="off">
+                <div id="modHead">
+                    <h2>Requests</h2>
+                </div>
                 <div id="reqList">
                     <h2 class="messageOff">No Announcement Requests</h2>
                         <!--Sample-->
@@ -108,7 +99,10 @@
             </div>
 
             <!--Staff Directory-->
-            <div class="module">
+            <div class="off">
+                <div id="modHead">
+                    <h2>Staff</h2>
+                </div>
                 <div class="dirp">
                     <div class="dir">
                         <p style="background-color: #fdffe2">Add new staff</p>
@@ -124,15 +118,20 @@
                 </div>
             </div>
 
-            <!--Calender-->
-            <div class="module">
+            <!--Calendar-->
+            <div class="off">
+                <div id="modHead">
+                    <h2>Current Events</h2>
+                </div>
                 <!--Add calender stuff-->
             </div>
 
             <!--School Map-->
-            <div class="module">
-                <div id="mapBar">
+            <div class="off">
+                <div id="modHead">
                     <h2>School Map</h2>
+                </div>
+                <div id="mapBar">
                     <!--ADD       Update map button-->
                 </div>
                 <figure id="map">
