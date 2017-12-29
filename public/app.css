@@ -211,6 +211,7 @@ a{
 }
 .descShow{
     background-color: #d1d588;
+    letter-spacing: 1px;
 }
 .descHide{
     display: none;
