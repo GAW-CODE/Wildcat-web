@@ -18,6 +18,9 @@
     </head>
 
     <body>
+    	<h1 id="bigOne"> </h1>
+
+
         <div id="topBar">
             <center><b><p id="demo"></p></b></center>
         </div>
@@ -110,6 +113,9 @@
 		    messagingSenderId: "467203906935"
 		  };
 		  firebase.initializeApp(config);
+		  var bigOne=document.getElementById('bigOne');
+		  var dbRef=firebase.database().ref().child('text');
+		  dbRef.on('value',snap=>bigOne.innerText=snap.val());
 		</script>
 
         <script>
