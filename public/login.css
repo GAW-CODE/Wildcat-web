@@ -1,0 +1,28 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#header{
+    padding-top: 3%;
+    font-size: 3vh;
+}
+#wildcat{
+    padding: 1.5%;
+}
+input{
+    padding: 0.3%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    margin: 0.2%;
+    transition-duration: 0.5s;
+    width: 18%;
+    text-align: center;
+}
+input:focus{
+    border-bottom: 2px solid rgb(187, 46, 46);
+    outline: none;
+
+}
