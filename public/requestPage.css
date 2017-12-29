@@ -1,3 +1,18 @@
+body{background-image: url("https://static1.squarespace.com/static/5418aa2ce4b097579b5c27e5/5952853ee4fcb53209577321/5952853ee4fcb53209577320/1495823517521/AdobeStock_108141338.jpg?format=1500w");
+	 text-align: center;
+    padding: 40px 40px;
+    margin-top: 21vh;
+    margin-bottom: 21vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+	}
+#NewAnnouncementBox{
+	display: block;
+	box-sizing: border-box;
+	border-radius: 25px;
+    background-color: #fff9f9;
+}
 #requestFooter{
   width: 100%;  
   margin: auto;
