@@ -124,3 +124,8 @@ body {
     height:12vh;
     width:auto;
 }
+
+#bigOne{
+    font-size: 100px;
+    font-color:black;
+}
