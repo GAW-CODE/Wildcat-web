@@ -15,7 +15,7 @@ input{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 2px solid lightgrey;
     margin: 0.2%;
     transition-duration: 0.5s;
     width: 18%;
@@ -24,5 +24,4 @@ input{
 input:focus{
     border-bottom: 2px solid rgb(187, 46, 46);
     outline: none;
-
 }
