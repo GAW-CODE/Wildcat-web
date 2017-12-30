@@ -88,6 +88,18 @@ body {
         width: 70vw;
         margin: 0.5vw;
     }
+.imgat {
+    width: 70vw;
+    margin-bottom: 2vw;
+    margin-right: 2vw;
+}
+#zoom {
+    display: none;
+}
+
+#zoom:checked + label > span{
+      width: 100%
+      
 
 
 
