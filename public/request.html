@@ -9,31 +9,42 @@
 	<!--links-->
 	<link rel="stylesheet" type="text/css" href="css/request.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 	<!--browser-->
 	<link rel="icon" href="sharedAssets/favicon.png">
 	<title>Send An Announcement!</title>
 </head>
+
 <body>
-<div id="NewAnnouncementBox">
+
 <header>
-	<strong><h1>Send An Announcement<h1><strong>
+	<strong><h1>Send An Announcement<h1></strong>
 </header>
 
-<section>
-<input type="text" id="txtName" placeholder="To:"><br>
-<form><input type="text" name="message" id="message" placeholder="Announcement"></form>
-<p>word count:</p>
-<button>Send</button>
-<button id = "calendarEvent">Request A Calendar Event</button>
-</section>
-</div>
-<script src="js/request.js"> </script>
-<footer style="position: absolute; bottom: 5px;" id = "requestFooter">
-   <footer style="background-color:#aaaaaa;">
-<p>
-© CodeClub
-</p>
-</footer>
+<div id="New">	
+<input type="text" id="txtName" placeholder="Title">
 
+<form id="announce">
+	<textarea type="text" name="message" id="message" rows="5" placeholder="message goes here"></textarea>
+</form>
+
+<div id="wordcount">
+	<p>word count: </p><p id="words"></p>
+</div>
+
+<!--Div below is to space final layout-->
+<div id="spacer"></div>
+
+<div id="calendarEvent" class="hov">Request A Calendar Event</div>
+
+<div id="date" class="hide">
+	<input type="date" name="date" id="cal">
+</div>
+
+<button id="send" class="hov">Send</button>
+</div>	
+
+
+<script src="js/request.js"> </script>		
 </body>
 </html>
