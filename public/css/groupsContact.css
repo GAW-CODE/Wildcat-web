@@ -19,7 +19,6 @@ body{
 }
 
 #navbar {
-    position:relative;
     width: 100%;
     height: 12vh;
     background-color: #c62828;
@@ -60,18 +59,26 @@ body{
     width:auto;
 }
 
-.container{
-	display:flex;
-	margin-top:25%;
-}
-
-.boxes{
-	flex:1;
+.letters {
 	background-color: #c62828;
-	margin-left:5vh;
-	margin-right:5vh;
 }
 
-.icon{
-	text-align:center;
+.letters p {
+	font-size: 50px;
+	color:white;
+    font-family: 'Montserrat', sans-serif;
+    padding:0.85vh;
+}
+
+.contacts{
+	background-color:#FFFFFF;
+	font-size:3vh;
+	font-family: 'Montserrat', sans-serif;
+	padding:3vh;
+	font-weight:bold;
+	border-bottom: 10px solid #c6c6c6;
+}
+
+#random{
+	height:14vh;
 }
