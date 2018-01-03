@@ -16,11 +16,11 @@ var sendButton = document.getElementById('send');
 var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('message');
 
-console.log(dateButton);
-console.log(dateInputBlock);
-console.log(sendButton);
-console.log(announceTitle);
-console.log(announceMessage);
+//console.log(dateButton);
+//console.log(dateInputBlock);
+//console.log(sendButton);
+//console.log(announceTitle);
+//console.log(announceMessage);
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -32,5 +32,10 @@ dateButton.addEventListener('click', function(){
 });
 
 sendButton.addEventListener('click', function(){
-
+	if(announceTitle.value == ""){
+		alert("You must include a title");
+	}
+	if(announceMessage.value == ""){
+		alert("You must include a message");
+	}
 });
