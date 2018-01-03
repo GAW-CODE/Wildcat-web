@@ -11,10 +11,6 @@ body{
 	 padding:0;
 	 margin:0;
 	}
-#message{
-	height: 200px;
-	width: 400px;
-}
 #NewAnnouncementBox{
 	display: block;
 	box-sizing: border-box;
