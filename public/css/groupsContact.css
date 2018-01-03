@@ -1,3 +1,7 @@
+*{
+	margin:0;
+}
+
 #titleBar{
     width: 100%;
     height: 10vh;
@@ -6,4 +10,75 @@
     font-size: 10vw;
     color: white;
     padding-top: 5vw;
+}
+
+body{
+    height: 100%;
+    background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
+    background-attachment: fixed;
+}
+
+#navbar {
+    width: 100%;
+    height: 12vh;
+    background-color: #c62828;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    display: inline-block;
+    display: inline;
+    text-align: center;
+    padding-top:1vh;
+    padding-bottom:1vh;
+}
+
+#profileIcon{
+    position:absolute;
+    right:8vw;
+    bottom: 0vh;
+    width:auto;
+    height:12vh;
+}
+
+#calendar{
+    position:absolute;
+    bottom: 0vw;
+    height: 12vh;
+    position:relative;
+    width:auto;
+    vertical-align: middle;
+    text-align:center;
+
+}
+
+#chat{
+    position:absolute;
+    left: 8vw;
+    bottom: 0vh;
+    height:12vh;
+    width:auto;
+}
+
+.letters {
+	background-color: #c62828;
+}
+
+.letters p {
+	font-size: 50px;
+	color:white;
+    font-family: 'Montserrat', sans-serif;
+    padding:0.85vh;
+}
+
+.contacts{
+	background-color:#FFFFFF;
+	font-size:3vh;
+	font-family: 'Montserrat', sans-serif;
+	padding:3vh;
+	font-weight:bold;
+	border-bottom: 10px solid #c6c6c6;
+}
+
+#random{
+	height:14vh;
 }
