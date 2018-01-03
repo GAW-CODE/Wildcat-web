@@ -105,6 +105,8 @@ button{
 }
 
 #calendarEvent{
+	margin: auto;
+	width: fit-content;
 	font-size: 1.3vw;
 	padding: 0.5%;
 	color: rgba(94, 49, 49, 0.329);
@@ -126,4 +128,14 @@ button{
 }
 #cal:focus{
 	border-bottom: 2px solid gray;
+}
+
+.hide{
+	display: none;
+	visibility: hidden;
+}
+.show{
+	display: block;
+	visibility: visible;
+	padding: 1.5%;
 }
