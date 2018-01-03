@@ -68,8 +68,10 @@ body{
 .boxes{
 	flex:1;
 	background-color: #c62828;
-	margin-left:5vh;
-	margin-right:5vh;
+	margin-left:2vh;
+	margin-right:2vh;
+    height:25%;
+    width:20%;
 }
 
 .icon{
