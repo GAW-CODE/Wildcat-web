@@ -26,3 +26,6 @@ body{
   width: 100%;  
   margin: auto;
 }
+#sentEvent{
+	visibility: hidden;
+}

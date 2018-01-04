@@ -18,6 +18,12 @@ submit.addEventListener('click', e => {
 	const txtdate = document.getElementById("date");
 	const txtstartTime = document.getElementById("starttime");
 	const txtendTime = document.getElementById("endtime");
+	var eventId = "";
+	var randomNum = 0;
+	for(var i = 0; i < 10; i++){
+		randNum = (Math.random() * 10).toFixed(0);
+		eventId += randNum.toString();
+	}
 	const eventObj = {
 		organization: txtorganization.value,
 		name: txteventName.value,
@@ -27,13 +33,14 @@ submit.addEventListener('click', e => {
 		startTime: txtstartTime.value,
 		endTime: txtendTime.value
 	};
-	database.ref('events/').set(eventObj).
+	database.ref('events/' + eventId).set(eventObj).
 		then(
             function() {
                 console.log('Event data successfully stored');
             }).catch(function(error) {
                 console.log(error);
             });
+            document.getElementById("sentEvent").style.visibility = "visible";
 });
 
 //onsSubmit -> send info to database, tell user your event has been received
