@@ -90,3 +90,18 @@ body{
 .images{
     text-align:center;
 }
+
+.people{
+    object-fit: cover;
+    height:15vh;
+    width:15vh;
+    border:5px solid black;
+    border-radius:50%;
+}
+
+.social{
+    height:10vh;
+    width:10vh;
+    padding:2vh;
+    padding-right:5vh;
+}
