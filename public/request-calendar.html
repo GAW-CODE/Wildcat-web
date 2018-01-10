@@ -21,13 +21,16 @@
 </header>
 
 <section>
-<input type="text" id="txtName" placeholder="Name of Organization:"><br>
-<form><input type="text" name="message" id="message" placeholder="Event Information: "></form>
-<p>word count:</p>
-<button>Request</button>
-<button id = "btnAnnouncement">Send An Announcement!</button>
+	<h1>Event Information:</h1>
+<input type="text" id="txtOrganization" placeholder="Name of Organization:"><br>
+<form><input type="text" name="name" id="name" placeholder="Name of the Event: "></form>
+<form><input type="text" name = "location" id = "location" placeholder="Location of Event: "></form>
+<form><textarea id = "description" rows="4" cols="50" name="description" form="usrform" placeholder="Description"></textarea></form>
+<form>Date: <input type = "date" name = "date" id = "date"></form>
+<form>Time: <input type = "time" name = "starttime" id = "starttime"> - <input type="time" name="endtime" id = "endtime"></form>
+<button id = "btn-send">Send An Event!</button>
+<h2 id = "sentEvent">Event Sent!</h2>
 </section>
-<script src = "js/request-calendar.js"></script>
 </div>
 <footer style="position: absolute; bottom: 5px;" id = "requestFooter">
    <footer style="background-color:#aaaaaa;">
@@ -35,6 +38,8 @@
 © CodeClub
 </p>
 </footer>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
+<script src="js/request-calendar.js"></script>
 </body>
 </html>

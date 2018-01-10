@@ -3,6 +3,7 @@
 */
 
 //Sidebar Logic
+
 var modButtons = document.getElementsByClassName("navModule");
 var modules = document.getElementsByClassName("off");
 var announce = modules[0];
@@ -62,4 +63,20 @@ for(var i = 0; i < req.length; i++){
             e.path[2].childNodes[3].className = "descHide";
         }
     }, true);
+
+    var config = {
+    apiKey: "AIzaSyAOCBR_8j5Uf59kPrJeNKmyhm5kkdVUJWo",
+    authDomain: "gaw-wildcat-app.firebaseapp.com",
+    databaseURL: "https://gaw-wildcat-app.firebaseio.com",
+    projectId: "gaw-wildcat-app",
+    storageBucket: "gaw-wildcat-app.appspot.com",
+    messagingSenderId: "467203906935"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+  var eventRequest = firebase.database().ref('events/' + eventId);
+  eventRequest.on('value', function(snapshot) {
+  updateStarCount(postElement, snapshot.val());
+});
 }

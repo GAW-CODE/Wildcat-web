@@ -19,6 +19,7 @@ body{
 }
 
 #navbar {
+    position:relative;
     width: 100%;
     height: 12vh;
     background-color: #c62828;
@@ -59,26 +60,27 @@ body{
     width:auto;
 }
 
-.letters {
-	background-color: #c62828;
+.container{
+    display:flex;
+    margin-top:12.5%;
 }
 
-.letters p {
-	font-size: 50px;
-	color:white;
+.boxes{
+    flex:1;
+    background-color: #c62828;
+    margin-left:2vh;
+    margin-right:2vh;
+    height:25%;
+    width:20%;
+}
+
+.icon{
+    text-align:center;
+    font-size:12.5vh;
+    color:white;    
     font-family: 'Montserrat', sans-serif;
-    padding:0.85vh;
-}
-
-.contacts{
-	background-color:#FFFFFF;
-	font-size:3vh;
-	font-family: 'Montserrat', sans-serif;
-	padding:3vh;
-	font-weight:bold;
-	border-bottom: 10px solid #c6c6c6;
 }
 
 #random{
-	height:14vh;
+    height:14vh;
 }
