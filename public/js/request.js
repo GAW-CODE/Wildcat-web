@@ -33,3 +33,8 @@ sendButton.addEventListener('click', function(){
 		alert("You must include a message");
 	}
 });
+
+var charCount = document.getElementById("chars");
+message.addEventListener('change', function(e){
+	charCount.innerHTML=e.target.value.length;
+});

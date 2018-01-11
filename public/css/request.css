@@ -72,6 +72,7 @@ header{
 	border-radius: 5px;
 	resize: none;
 	padding: 0.7%;
+	overflow: auto;
 	border: 3px solid rgb(255, 255, 190);
 	color: gray;
 	transition-duration: 0.3s;
@@ -85,6 +86,13 @@ header{
 	padding: 1%;
 	margin: auto;
 	color: rgb(194, 194, 194);
+}
+#count{
+	display: inline;
+}
+#chars{
+	color: rgb(22, 22, 22);
+	display: inline;
 }
 
 #spacer{
@@ -139,3 +147,4 @@ button{
 	visibility: visible;
 	padding: 1.5%;
 }
+
