@@ -1,6 +1,3 @@
-*{
-    margin:0;
-}
 ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -18,13 +15,17 @@
 	background-color: #ff2d2d;
 }
 
+*{
+    margin:0;
+}
+
+
 body {
     height: 100%;
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
     background-attachment: fixed;
 }
 
-/*header*/
 #topBar {
     width: 100%;
     height: 12vh;
@@ -68,8 +69,6 @@ body {
 #fundraisers {
     width: 100%;
 }
-
-/*This might not be necessary, look at html*/
 .label {
     color: #e11624;
     font-weight: bolder;
@@ -80,22 +79,6 @@ body {
     vertical-align: top;
     padding-top: 5.5vw;
 }
-/*-----------------------------------*/
-
-.speaker{
-    width: 23vw;
-    display: inline-block;
-}
-.speaker img{
-    margin: auto;
-    display: block;
-}
-.speaker figcaption{
-    margin: auto;
-    width: fit-content;
-    font-size: 1.3em;
-}
-
 #news {
     padding-top: 15vh;
     padding-bottom: 15vh;
@@ -210,7 +193,7 @@ body {
 
 
 #demo {
-    font-size: 8.5vw;
+    font-size: 10vw;
     color: white;
     padding-top: 5vw;
 }
