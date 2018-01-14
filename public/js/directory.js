@@ -50,6 +50,10 @@ var mathDir = document.getElementById('math');
 var engDir = document.getElementById('eng');
 var histDir = document.getElementById('hist');
 var sciDir = document.getElementById('sci');
+var peDir = document.getElementById('pe');
+var witsDir = document.getElementById('wits');
+var vapaDir = document.getElementById('vapa');
+var modDir = document.getElementById('mod');
 
 mathDir.addEventListener('click', function(){
     academics.className = "hide";
@@ -69,6 +73,26 @@ histDir.addEventListener('click', function(){
 sciDir.addEventListener('click', function(){
     academics.className = "hide";
     sci.className="show";
+});
+
+peDir.addEventListener('click', function(){
+    academics.className = "hide";
+    pe.className="show";
+});
+
+witsDir.addEventListener('click', function(){
+    academics.className = "hide";
+    wits.className="show";
+});
+
+vapaDir.addEventListener('click', function(){
+    academics.className = "hide";
+    vapa.className="show";
+});
+
+modDir.addEventListener('click', function(){
+    academics.className = "hide";
+    lang.className="show";
 });
 
 /*sports directory*/
