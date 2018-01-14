@@ -18,30 +18,30 @@
     </div>
     
 	<!--Start of Directory-->
-	<div id = "directory">
+	<div id = "directory" class="show">
 		<div class="container">
 			<div class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				<div class="icon" id="school">
+					<img src = "appAssets/school.png" width="275" height="275">
 				</div>
 			</div>
 			<div class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				<div class="icon" id="groups">
+					<img src = "appAssets/groups.png" width="275" height="275">
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
 			<div class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				<div class="icon" id="sports">
+					<img src = "appAssets/sports.png" width="275" height="275">
 				</div>
 			</div>
 
 			<div class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				<div class="icon" id="clubs">
+					<img src = "appAssets/clubs.png" width="275" height="275">
 				</div>
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 
 
 	<!--start of academic directory-->
-	<div id = "academicDirectory">
+	<div id = "academicDirectory" class="hide">
 		<div class="container">
 			<div class="boxes">
 				<div class="icon">
@@ -112,7 +112,7 @@
 
 
 	<!--start of sports directory-->
-	<div id = "sportsDirectory">
+	<div id = "sportsDirectory" class="hide">
 		<div class="container">
 	        <div class="boxes">
 	            <div class="icon">
@@ -148,7 +148,7 @@
 
 
 	<!-- start of fall sports directory-->
-	<div id = "fallDirectory">
+	<div id = "fallDirectory" class="hide">
 		<div class="container">
 			<div class  = "girls" class="boxes">
 				<div class="icon">
@@ -195,7 +195,7 @@
 
 
 	<!--start of winter sports directory-->
-	<div id = "winterDirectory">
+	<div id = "winterDirectory" class="hide">
 		<div class="container">
 			<div class  = "girls" class="boxes">
 				<div class="icon">
@@ -242,7 +242,7 @@
 
 
 	<!-- start of spring sports directory-->
-	<div id = "springDirectory">
+	<div id = "springDirectory" class="hide">
 		<div class="container">
 			<div class  = "girls" class="boxes">
 				<div class="icon">
@@ -289,7 +289,7 @@
 
 
 	<!--Start of groups contact page-->
-	<div id = "groupsContact">
+	<div id = "groupsContact" class="hide">
 		<div class="letters">
 			<p>A</p>
 		</div>
@@ -393,7 +393,7 @@
 
 
 	<!--start of math directory-->
-	<div id = "mathDirectory">
+	<div id = "mathDirectory" class="hide">
 		<div class="letters">
 			<p>C</p>
 		</div>
@@ -516,7 +516,7 @@
 
 
 	<!-- start of social studies directory-->
-	<div id = "socialStudiesDirectory">
+	<div id = "socialStudiesDirectory" class="hide">
 		<div class="letters">
 			<p>B</p>
 		</div>
@@ -592,7 +592,7 @@
 
 
 	<!-- start of science directory-->
-	<div id = "scienceDirectory">
+	<div id = "scienceDirectory" class="hide">
 		<div class="letters">
 			<p>B</p>
 		</div>
@@ -708,7 +708,7 @@
 
 
 	<!--start of english directory-->
-	<div id = "englishDirectory">
+	<div id = "englishDirectory" class="hide">
 		<div class="letters">
 			<p>A</p>
 		</div>
@@ -820,7 +820,7 @@
 
 
 	<!--start of PE directory-->
-	<div id = "peDirectory">
+	<div id = "peDirectory" class="hide">
 		<div class="letters">
 			<p>C</p>
 		</div>
@@ -856,7 +856,7 @@
 
 
 	<!--start of wits directory-->
-	<div id = "witsDirectory">
+	<div id = "witsDirectory" class="hide">
 		<div class="letters">
 			<p>B</p>
 		</div>
@@ -892,7 +892,7 @@
 
 
 	<!--start of VAPA directory-->
-	<div id = "vapaDirectory">
+	<div id = "vapaDirectory" class="hide">
 		<div class="letters">
 			<p>B</p>
 		</div>
@@ -938,7 +938,7 @@
 
 
 	<!--start of modern languages directory-->
-	<div id = "modernLanguagesDirectory">
+	<div id = "modernLanguagesDirectory" class="hide">
 		<div class="letters">
 			<p>C</p>
 		</div>
@@ -1035,7 +1035,10 @@
     	<p>
     		
     	</p>
-    </div>
+	</div>
+	
+	<!--DOM-->
+	<script src="js/directory.js"></script>
 
 </body>
 </html>
