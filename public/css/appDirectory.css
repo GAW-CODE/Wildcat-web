@@ -23,6 +23,8 @@ body{
     height: 100%;
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
     background-attachment: fixed;
+    background-repeat: none;
+    background-size: cover;
 }
 
 .container{
