@@ -12,6 +12,13 @@
     padding-top: 5vw;
 }
 
+#search{
+    position: absolute;
+    top: 3vh;
+    right: 4vh;
+    height:7vh;
+}
+
 body{
     height: 100%;
     background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);

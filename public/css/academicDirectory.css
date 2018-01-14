@@ -68,24 +68,21 @@ body{
 }
 
 .container{
-    display:flex;
-    margin-top:12.5%;
+	display:flex;
+	margin-top:20%;
 }
 
 .boxes{
-    flex:1;
-    background-color: #c62828;
-    margin-left:2vh;
-    margin-right:2vh;
+	flex:1;
+	background-color: #c62828;
+	margin-left:2vh;
+	margin-right:2vh;
     height:25%;
     width:20%;
 }
 
 .icon{
-    text-align:center;
-    font-size:12.5vh;
-    color:white;    
-    font-family: 'Montserrat', sans-serif;
+	text-align:center;
 }
 
 #random{
