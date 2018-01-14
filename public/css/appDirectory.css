@@ -157,15 +157,16 @@ body{
     animation-name: transIn;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
+    animation-timing-function: ease-out;
 }
 
 @keyframes transIn{
     from{
-        transform: translateY(15px);
+        transform: translateY(20px);
         opacity: 0;
     }
     to{
-        transform: translateY(15px);
+        transform: none;
         opacity: 1;
     }
 }

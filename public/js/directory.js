@@ -8,6 +8,7 @@ var SFall = document.getElementById('fallDirectory');
 var SWinter = document.getElementById('winterDirectory');
 var SSpring = document.getElementById('springDirectory');
 var groups = document.getElementById('groupsContact');
+var clubs = document.getElementById('clubsDirectory');
 var math = document.getElementById('mathDirectory');
 var hist = document.getElementById('socialStudiesDirectory');
 var sci = document.getElementById('scienceDirectory');
@@ -23,4 +24,69 @@ var groupsDir = document.getElementById('groups');
 var sportsDir = document.getElementById('sports');
 var clubsDir = document.getElementById('clubs');
 
-schoolDir.addEventListener('click', function(){});
+
+schoolDir.addEventListener('click', function(){
+    home.className = "hide";
+    academics.className="show";
+});
+
+groupsDir.addEventListener('click', function(){
+    home.className = "hide";
+    groups.className="show";
+});
+
+sportsDir.addEventListener('click', function(){
+    home.className = "hide";
+    sports.className="show";
+});
+
+clubsDir.addEventListener('click', function(){
+    home.className = "hide";
+    clubs.className="show";
+});
+
+/*academic directory*/
+var mathDir = document.getElementById('math');
+var engDir = document.getElementById('eng');
+var histDir = document.getElementById('hist');
+var sciDir = document.getElementById('sci');
+
+mathDir.addEventListener('click', function(){
+    academics.className = "hide";
+    math.className="show";
+});
+
+engDir.addEventListener('click', function(){
+    academics.className = "hide";
+    eng.className="show";
+});
+
+histDir.addEventListener('click', function(){
+    academics.className = "hide";
+    hist.className="show";
+});
+
+sciDir.addEventListener('click', function(){
+    academics.className = "hide";
+    sci.className="show";
+});
+
+/*sports directory*/
+var fall = document.getElementById('fall');
+var winter = document.getElementById('winter');
+var spring = document.getElementById('spring');
+
+fall.addEventListener('click', function(){
+    sports.className = "hide";
+    SFall.className="show";
+});
+
+winter.addEventListener('click', function(){
+    sports.className = "hide";
+    SWinter.className="show";
+});
+
+spring.addEventListener('click', function(){
+    sports.className = "hide";
+    SSpring.className="show";
+});
