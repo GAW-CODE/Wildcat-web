@@ -77,22 +77,16 @@ function displayRequestAnnouncement(announcement) {
   let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
+}
 
-  //Making the request descrptions expand and condense
-  let req = document.getElementsByClassName('req');
 
-  for (let i = 0; i < req.length; i++) {
-      //req[i].addEventListener("click" , description(req[i]));
-      req[i].addEventListener("click" , function(e){
-          console.log(e.path[2].children[1].className);
-
-          if (e.path[2].children[1].className == "descHide"){
-              e.path[2].children[1].className = "descShow";
-          } else {
-              e.path[2].children[1].className = "descHide";
-          }
-      }, true);
-  }
+//Making the request descrptions expand and condense
+function makeAnnouncementHideable(event) {
+    if (event.path[2].children[1].className == "descHide"){
+        event.path[2].children[1].className = "descShow";
+    } else {
+        event.path[2].children[1].className = "descHide";
+    }
 }
 
 //retrieve announcement requests from FIREBASE_DATABASE
@@ -100,6 +94,13 @@ function displayRequestAnnouncement(announcement) {
 FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snapshot, prevChildKey) {
   var val = snapshot.val();
   displayRequestAnnouncement(val);
+
+  let req = document.getElementsByClassName('req');
+
+  for (let i = 0; i < req.length; i++) {
+      //req[i].addEventListener("click" , description(req[i]));
+      req[i].addEventListener("click" , makeAnnouncementHideable, false);
+  }
 });
 
 //approve / deny -> remove from database
