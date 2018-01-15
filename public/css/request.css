@@ -57,7 +57,7 @@ header{
 	border-bottom: 3px solid rgb(226, 112, 18);
 }
 
-#announce{
+#announce {
 	padding-top: 1%;
 	width: 100%;
 	display: flex;
@@ -66,7 +66,7 @@ header{
 	flex-wrap: nowrap;
 	color: gray;
 }
-#message{
+#announcement {
 	width: 80%;
 	outline: none;
 	border-radius: 5px;
@@ -77,7 +77,7 @@ header{
 	color: gray;
 	transition-duration: 0.3s;
 }
-#message:focus{
+#announcement:focus{
 	border-color: rgb(255, 255, 104);
 }
 
@@ -147,4 +147,3 @@ button{
 	visibility: visible;
 	padding: 1.5%;
 }
-

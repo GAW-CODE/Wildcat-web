@@ -79,7 +79,7 @@ function signOut() {
 }
 
 function handleAuthStateChanged(user) {
-  if (user) {
+  if (user) { //&& user is an Admin
     console.log(user);
   } else { //prevent unauthorized users from accessing admin.html
     setTimeout(function() {window.location.href = "404.html";}, 2000);
