@@ -84,9 +84,8 @@ function displayRequestAnnouncement(announcement) {
   for (let i = 0; i < req.length; i++) {
       //req[i].addEventListener("click" , description(req[i]));
       req[i].addEventListener("click" , function(e){
-          console.log(e.path);
-          //console.log(e.path[2].childNodes[3].className);
-          //for (let j = 0; j < )
+          console.log(e.path[2].children[1].className);
+
           if (e.path[2].children[1].className == "descHide"){
               e.path[2].children[1].className = "descShow";
           } else {
@@ -96,18 +95,11 @@ function displayRequestAnnouncement(announcement) {
   }
 }
 
-
-//retrieve announcements from FIREBASE_DATABASE
-FIREBASE_DATABASE.ref('/requests/announcements').once('value')
-    .then((snapshot) => {
-      var val = snapshot.val();
-      for (var key in val) {
-        if (val.hasOwnProperty(key)) {
-          console.log(val[key]);
-          displayRequestAnnouncement(val[key]);
-        }
-      }
-    });
-
+//retrieve announcement requests from FIREBASE_DATABASE
+//note: do not use once() b/c that only retrieves data once & do not use on() b/c that retrieves already displayed data
+FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snapshot, prevChildKey) {
+  var val = snapshot.val();
+  displayRequestAnnouncement(val);
+});
 
 //approve / deny -> remove from database
