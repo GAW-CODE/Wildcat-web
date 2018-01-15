@@ -6,9 +6,6 @@ calendarEvent.addEventListener('click', e => {
 });
 */
 
-
-
-
 //interface js goes below
 var dateButton = document.getElementById('calendarEvent');
 var dateInputBlock = document.getElementById('date');
@@ -32,9 +29,13 @@ sendButton.addEventListener('click', function(){
 	if(announceMessage.value == ""){
 		alert("You must include a message");
 	}
+
+	//send msg to database
+
+	//display "Message successfully sent" if this is true
 });
 
 var charCount = document.getElementById("chars");
-message.addEventListener('change', function(e){
-	charCount.innerHTML=e.target.value.length;
+message.addEventListener('change', function(e) {
+	charCount.innerHTML = e.target.value.length;
 });
