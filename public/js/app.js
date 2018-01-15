@@ -67,8 +67,21 @@ for(var i = 0; i < req.length; i++){
 const FIREBASE_AUTH = firebase.auth();
 
 const logOutBtn = document.getElementById('logout');
-logOutBtn.addEventListener('click', function() {
+logOutBtn.addEventListener('click', signOut);
+
+//know if user is logged in or naw
+FIREBASE_AUTH.onAuthStateChanged(handleAuthStateChanged);
+
+function signOut() {
   FIREBASE_AUTH.signOut();
-  console.log('Signed out');
   window.location.href = "index.html";
-});
+  console.log('Signed out');
+}
+
+function handleAuthStateChanged(user) {
+  if (user) {
+    console.log(user);
+  } else { //prevent unauthorized users from accessing admin.html
+    setTimeout(function() {window.location.href = "404.html";}, 2000);
+  }
+}
