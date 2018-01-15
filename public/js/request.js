@@ -40,7 +40,7 @@ sendButton.addEventListener('click', function(e) {
 		alert("You must include a message");
 	}
 
-	sendAnnouncement(announcement);
+	sendAnnouncement(title, announcement);
 	announceMessage.value = "";
 	announceTitle.value = "";
 
@@ -53,11 +53,13 @@ const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
 
 //send msg to database
-function sendAnnouncement(announcement) {
+function sendAnnouncement(title, announcement) {
 	const profileImg = FIREBASE_AUTH.currentUser.photoURL != null ? FIREBASE_AUTH.currentUser.photoURL : 'https://developers.google.com/experts/img/user/user-default.png';
 	FIREBASE_DATABASE.ref('/requests/announcements').push({
+		title: title,
 		org: FIREBASE_AUTH.currentUser.displayName,
-		announcement: announcement,
+		orgType: '', //retrieve from FIREBASE_DATABASE
+		message: announcement,
 		userProfileImg: profileImg
 	});
 }
