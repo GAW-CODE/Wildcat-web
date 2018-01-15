@@ -3,13 +3,12 @@
 */
 
 //Sidebar Logic
-
-var modButtons = document.getElementsByClassName("navModule");
-var modules = document.getElementsByClassName("off");
-var announce = modules[0];
-var staff = modules[1];
-var calendar = modules [2];
-var map = modules[3];
+let modButtons = document.getElementsByClassName("navModule");
+let modules = document.getElementsByClassName("off");
+let announce = modules[0];
+let staff = modules[1];
+let calendar = modules [2];
+let map = modules[3];
 
 //changes the modules per sidebar
 modManage(announce, staff, calendar, map);
@@ -47,36 +46,61 @@ function modManage(mod0, mod1, mod2, mod3){
 
 //Announcements Logic
 
-//Making the erquest descrptions expand and condense
-var req = document.getElementsByClassName('req');
+const FIREBASE_AUTH = firebase.auth();
+const FIREBASE_DATABASE = firebase.database();
 
-for(var i = 0; i < req.length; i++){
-    //req[i].addEventListener("click" , description(req[i]));
-    req[i].addEventListener("click" , function(e){
-        //console.log(e.path[2].childNodes[3].className);
+const logOutBtn = document.getElementById('logout');
+const requestList = document.getElementById('reqList');
 
-        if(e.path[2].childNodes[3].className==="descHide"){
-            e.path[2].childNodes[3].className = "descShow";
-        }
+logOutBtn.addEventListener('click', signOut);
 
-        else{
-            e.path[2].childNodes[3].className = "descHide";
-        }
-    }, true);
+//know if user is logged in or naw
+FIREBASE_AUTH.onAuthStateChanged(handleAuthStateChanged);
 
-    var config = {
-    apiKey: "AIzaSyAOCBR_8j5Uf59kPrJeNKmyhm5kkdVUJWo",
-    authDomain: "gaw-wildcat-app.firebaseapp.com",
-    databaseURL: "https://gaw-wildcat-app.firebaseio.com",
-    projectId: "gaw-wildcat-app",
-    storageBucket: "gaw-wildcat-app.appspot.com",
-    messagingSenderId: "467203906935"
-  };
-  firebase.initializeApp(config);
-  var database = firebase.database();
-
-  var eventRequest = firebase.database().ref('events/' + eventId);
-  eventRequest.on('value', function(snapshot) {
-  updateStarCount(postElement, snapshot.val());
-});
+function signOut() {
+  FIREBASE_AUTH.signOut();
+  window.location.href = "index.html";
+  console.log('Signed out');
 }
+
+function handleAuthStateChanged(user) {
+  if (user) { //&& user is an Admin
+    console.log(user);
+  } else { //prevent unauthorized users from accessing admin.html
+    setTimeout(function() {window.location.href = "404.html";}, 2000);
+  }
+}
+
+function displayRequestAnnouncement(announcement) {
+  let div = document.createElement('div');
+  //eventually - display organization's profile pic to the LEFT of the announcement title
+  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
+  div.innerHTML = domString;
+  requestList.appendChild(div.firstChild);
+}
+
+
+//Making the request descrptions expand and condense
+function makeAnnouncementHideable(event) {
+    if (event.path[2].children[1].className == "descHide"){
+        event.path[2].children[1].className = "descShow";
+    } else {
+        event.path[2].children[1].className = "descHide";
+    }
+}
+
+//retrieve announcement requests from FIREBASE_DATABASE
+//note: do not use once() b/c that only retrieves data once & do not use on() b/c that retrieves already displayed data
+FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snapshot, prevChildKey) {
+  var val = snapshot.val();
+  displayRequestAnnouncement(val);
+
+  let req = document.getElementsByClassName('req');
+
+  for (let i = 0; i < req.length; i++) {
+      //req[i].addEventListener("click" , description(req[i]));
+      req[i].addEventListener("click" , makeAnnouncementHideable, false);
+  }
+});
+
+//approve / deny -> remove from database
