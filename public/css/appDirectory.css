@@ -45,7 +45,7 @@ body{
 .icon{
     text-align:center;
     font-size:12.5vh;
-    color:white;    
+    color:white;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -94,6 +94,11 @@ body{
     padding:3vh;
     font-weight:bold;
     border-bottom: 10px solid #c6c6c6;
+}
+
+.contacts p a {
+	text-decoration: none;
+	color: #000000;
 }
 
 #navbar {
