@@ -53,7 +53,6 @@ const logOutBtn = document.getElementById('logout');
 const requestList = document.getElementById('reqList');
 
 logOutBtn.addEventListener('click', signOut);
-
 //know if user is logged in or naw
 FIREBASE_AUTH.onAuthStateChanged(handleAuthStateChanged);
 
@@ -79,7 +78,6 @@ function displayRequestAnnouncement(announcement) {
   requestList.appendChild(div.firstChild);
 }
 
-
 //Making the request descrptions expand and condense
 function makeAnnouncementHideable(event) {
     if (event.path[2].children[1].className == "descHide"){
@@ -89,18 +87,63 @@ function makeAnnouncementHideable(event) {
     }
 }
 
+//approve / deny
+function approve(event) {
+  // index of the container = which child to get from database
+  let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let index = reqArray.indexOf(selectedAnnouncement);
+
+  // retrieve announcement corresponding to the one you clicked on
+  let announcement;
+  let keyList = [];
+
+  FIREBASE_DATABASE.ref('/requests/announcements').once('value')
+    .then((snapshot) => {
+      let val = snapshot.val();
+      for (let key in val) {
+        keyList.push(key);
+      }
+      FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
+        .then((snapshot) => {
+          announcement = snapshot.val();
+        });
+    })
+    .then(() => {
+      // insert announcement under “/announcements” in database
+      FIREBASE_DATABASE.ref('/announcements').push(announcement);
+      // remove announcement from ‘/requests/announcements’ in database
+      FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
+    })
+    .then(() => {
+      // remove from admin.html
+      selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
+    });
+
+  // send the message to everyone
+  // display on announce.html (pull from “/announcements”
+  // Categorize the message (put it in the correct category)
+
+}
+
+function deny(event) {
+  let reason = prompt('Explain why the announcement was rejected');
+
+  //send reason back to organization's interface
+}
+
 //retrieve announcement requests from FIREBASE_DATABASE
-//note: do not use once() b/c that only retrieves data once & do not use on() b/c that retrieves already displayed data
+//note: do not use once() b/c that only retrieves data once or on('value') b/c that retrieves already displayed data
 FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snapshot, prevChildKey) {
   var val = snapshot.val();
   displayRequestAnnouncement(val);
 
   let req = document.getElementsByClassName('req');
-
+  let approveBtns = document.getElementsByClassName('reqYes');
+  let denyBtns = document.getElementsByClassName('reqNo');
   for (let i = 0; i < req.length; i++) {
-      //req[i].addEventListener("click" , description(req[i]));
-      req[i].addEventListener("click" , makeAnnouncementHideable, false);
+      req[i].addEventListener("click" , makeAnnouncementHideable);
+      approveBtns[i].addEventListener("click" , approve);
+      denyBtns[i].addEventListener("click" , deny);
   }
 });
-
-//approve / deny -> remove from database

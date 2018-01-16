@@ -54,12 +54,24 @@ const FIREBASE_DATABASE = firebase.database();
 
 //send msg to database
 function sendAnnouncement(title, announcement) {
+	const uid = FIREBASE_AUTH.currentUser.uid;
 	const profileImg = FIREBASE_AUTH.currentUser.photoURL != null ? FIREBASE_AUTH.currentUser.photoURL : 'https://developers.google.com/experts/img/user/user-default.png';
-	FIREBASE_DATABASE.ref('/requests/announcements').push({
-		title: title,
-		org: FIREBASE_AUTH.currentUser.displayName,
-		orgType: '', //retrieve from FIREBASE_DATABASE
-		message: announcement,
-		userProfileImg: profileImg
-	});
+	let org, orgType;
+
+	FIREBASE_DATABASE.ref('/users/' + FIREBASE_AUTH.currentUser.uid).once('value')
+		.then((snapshot) => {
+			org = snapshot.val().organization;
+			orgType = snapshot.val().type;
+			console.log(org);
+			console.log(orgType);
+		})
+		.then(() => {
+			FIREBASE_DATABASE.ref('/requests/announcements').push({
+				title: title,
+				org: org,
+				orgType: orgType,
+				message: announcement,
+				userProfileImg: profileImg
+			});
+		});
 }
