@@ -49,8 +49,8 @@ function modManage(mod0, mod1, mod2, mod3){
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
 
-const logOutBtn = document.getElementById('logout');
-const requestList = document.getElementById('reqList');
+let logOutBtn = document.getElementById('logout');
+let requestList = document.getElementById('reqList');
 
 logOutBtn.addEventListener('click', signOut);
 //know if user is logged in or naw
@@ -119,11 +119,6 @@ function approve(event) {
       // remove from admin.html
       selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
     });
-
-  // send the message to everyone
-  // display on announce.html (pull from “/announcements”
-  // Categorize the message (put it in the correct category)
-
 }
 
 function deny(event) {
