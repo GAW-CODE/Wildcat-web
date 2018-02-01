@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<!--meta tags-->
@@ -19,25 +19,48 @@
 <body>
 	<h1>Sign up</h1>
 	<h6>*Fill in the Required Fields*</h6>
-	<div id="Loginspace">
-		<input type="text" id="txtName" placeholder="Name"><br>
-		<input type="email" id="txtEmail" placeholder = "Email"> <br>
-		<input type="password" id="txtPassword" placeholder="Password"><br>
-		<input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
-		<input type="text" id="txtOrganization" placeholder = "Organization"> <br>
-		<p>
-             <label>Organization Types</label><br>
-             <select id = "Organization Type:">
-               <option value = "Admin">Admin</option>
-               <option value = "Guidance">Guidance</option>
-               <option value = "ASB">ASB</option>
-               <option value = "Campus Org">Campus Org.</option>
-               <option value = "Athletics">Athletics</option>
-              <option value = "Fundraiser">Fundraiser</option>
-             </select>
-          </p>
-          <button id = "SignUp" class = "btn btn-action">Sign Up</button>
-	</div>
+    <div id="Loginspace">
+        <p>
+            <label>Organization Types</label><br>
+            <select id="Organization" onchange="return info(this);">
+                <option value="" disabled selected style="display:none;">Choose</option>
+                <option value="Admin">Admin</option>
+                <option value="Guidance">Guidance</option>
+                <option value="ASB">ASB</option>
+                <option value="Campus Org">Campus Org.</option>
+                <option value="Athletics">Athletics</option>
+                <option value="Fundraiser">Fundraiser</option>
+                <option value="Student">Student</option>
+            </select>
+        </p>
+        <div id="ainfo" style="display: none;">
+            <input type="text" id="txtName" placeholder="Name"><br>
+            <input type="email" id="txtEmail" placeholder="Email"> <br>
+            <input type="password" id="txtPassword" placeholder="Password"><br>
+            <input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
+            <input type="text" id="txtOrganization" placeholder="Organization"> <br>
+        </div>
+        <div id="sinfo" style="display: none;">
+            <input type="text" id="txtName" placeholder="Name"><br>
+            <input type="email" id="txtEmail" placeholder="Email"> <br>
+            <input type="password" id="txtPassword" placeholder="Password"><br>
+            <input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
+        </div>
+        <script>
+            function info(elem) {
+                if (elem.value == 'Admin' || elem.value == 'Guidance' || elem.value == 'ASB' || elem.value == 'Campus Org' || elem.value == 'Athletics' || elem.value == 'Fundraiser') {
+                    document.getElementById('ainfo').style.display = 'block';
+                    document.getElementById('sinfo').style.display = 'none';
+                } else {
+                    document.getElementById('ainfo').style.display = 'none';
+                    document.getElementById('sinfo').style.display = 'block';
+
+                }
+                return false;
+            }
+        </script>
+        <button id="SignUp" class="btn btn-action">Sign Up</button>
+    </div>
 	<script src = "js/SignUp.js"> </script>
 </body>
 </html>
