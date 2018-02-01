@@ -1,0 +1,14 @@
+/*CSS for the new index page*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body, header, section, footer{
+    width: 100%;
+}
+a{
+    color: black;
+    text-decoration: none;
+    font-style: none;
+}
