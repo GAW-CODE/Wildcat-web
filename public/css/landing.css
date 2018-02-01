@@ -4,11 +4,89 @@
     margin: 0;
     font-family: sans-serif;
 }
-body, header, section, footer{
+body, nav, header, section, footer{
     width: 100%;
 }
 a{
     color: black;
     text-decoration: none;
     font-style: none;
+}
+
+/*navigation styles*/
+nav{
+    height: 6.2vh;
+    background-color: rgb(158, 26, 26);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2vw;
+}
+nav ul{
+    list-style-type: none;
+}
+nav li{
+    display: inline-block;
+    padding: 1.3%;
+    width: fit-content;
+    white-space: nowrap;
+}
+nav #navRight li:hover{
+    background-color: rgb(196, 41, 41);
+}
+nav a{
+    color: white;
+}
+#navLeft{
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+#navRight{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/*header styles*/
+header{
+    height: 93.4vh;
+    background-color: rgb(255, 242, 208);
+    text-align: center;
+
+}
+#headerAlign{
+    margin: auto;
+    width: 60%;
+    transition-duration: 0.3s;
+    padding: 10% 0;
+}
+#title{
+    width: 60%;
+    margin: auto;
+    background-color: rgba(219, 93, 93, 0.568);
+    padding: 5% 0;
+    transition-duration: 0.5s;
+}
+#title h3{
+ font-size: 0.7vw;
+}
+#title h1{
+    font-size: 1.3vw;
+}
+#title:hover{
+    transform: scale(1.23);
+}
+#appDirect{
+    padding: 5% 0;
+    width: 50%;
+    margin: auto;
+}
+#appDirect a{
+    background-color: rgb(189, 52, 52);
+    padding: 3%;
+    font-size: 1.3vw;
+    border-radius: 5px;
+    margin: auto;
+    color: white;
 }
