@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en" ng-app="cuppaDatepicker">
+=======
+﻿<!DOCTYPE html>
+<html>
+>>>>>>> 7c8e462ecdc3e430af679d75c77728d643eda6e7
 <head>
 
 	<!--meta tags-->
@@ -26,17 +31,17 @@
 </header>
 
 <div id="New">
-	<!-- display organization login info (profile pic + org name next to it)-->
-	<input type="text" id="txtName" placeholder="Title">
+    <!-- display organization login info (profile pic + org name next to it)-->
+    <input type="text" id="txtName" placeholder="Title">
 
-	<form id="announce">
-		<textarea type="text" name="announcement" id="announcement" rows="5" placeholder="Announcement goes here"></textarea>
-		<!-- file upload button / preview area -->
-	</form>
+    <form id="announce">
+        <textarea type="text" name="announcement" id="announcement" rows="5" placeholder="Announcement goes here"></textarea>
+        <!-- file upload button / preview area -->
+    </form>
 
-	<div id="wordcount">
-		<p id="count">Character count: </p><p id="chars"></p>
-	</div>
+    <div id="wordcount">
+        <p id="count">Character count: </p><p id="chars"></p>
+    </div>
 
 	<!--Div below is to space final layout-->
 	<div id="spacer"></div>
@@ -46,11 +51,26 @@
 	
 	<!-- copy / paste from request-calendar.html -->
 
-	<div id="date" class="hide">
-		<input type="date" name="date" id="cal">
-	</div>
+    <div id="date" class="hide">
+        <input type="date" name="date" id="cal">
+    </div>
+    <div>
+        <ul class="upLoad">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="fileToUpload" accept=".png, .jpeg,"></input>
 
-	<button id="send" class="hov">Send</button>
+            <!----future improvement, add image
+                <img id="upLoadImg" src="" />
+            <script>
+                let fileUpload = document.getElementById('fileToUpload');
+
+                function changeImage() {
+                    document.getElementById("upLoadImg").src = fileUpload;
+                }
+            </script>-->
+        </ul>
+    </div>
+    <button id="send" class="hov">Send</button>
 </div>
 
 <script src="/__/firebase/4.1.3/firebase.js"></script>
