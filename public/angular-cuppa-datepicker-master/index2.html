@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cuppaDatepicker">
+<head>
+
+
+<link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script type="text/javascript" src="js/datepicker-directive.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body> 
+  <p>what dfx</p>
+</body>
+<body ng-controller="cuppaDatepickerController">
+    
+      <div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
+        <div id="cuppaDatePickerContainerStart">
+                <cuppa-datepicker ng-model="myDate" 
+                                  big-banner="true" 
+                                  format="MM/dd/yyyy hh:mm a" 
+                                  default-open="true" 
+                                  time-picker="true" 
+                                  on-date-select="onDateSelect(selectedDate)">
+                </cuppa-datepicker>
+        </div>
+    
+    
+    </div>
+
+  <div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
+        <div id="cuppaDatePickerContainerEnd">
+                <cuppa-datepicker ng-model="myDate" 
+                                  big-banner="true" 
+                                  format="MM/dd/yyyy hh:mm a" 
+                                  default-open="true" 
+                                  time-picker="true" 
+                                  on-date-select="onDateSelect(selectedDate)">
+                </cuppa-datepicker>
+        </div>
+    
+    
+    </div>
+
+
+</body>
+</html>
+
+<!--unecessary 
+  <script type="text/javascript" src="js/datepicker-directive.js"></script> 
