@@ -111,8 +111,7 @@ body{
     display: inline-block;
     display: inline;
     text-align: center;
-    padding-top:1vh;
-    padding-bottom:1vh;
+    padding: 0.2vh 0;
 }
 
 #profileIcon{
