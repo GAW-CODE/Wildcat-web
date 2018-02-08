@@ -7,7 +7,10 @@ var config = {
     messagingSenderId: "467203906935"
   };
   firebase.initializeApp(config);
-  var database = firebase.database();
+  var FIREBASE_DATABASE = firebase.database();
+  const FIREBASE_AUTH = firebase.auth();
+  let eventSent = document.getElementById("eventSent");
+  eventSent.style.display = "none";
 
 const submit = document.getElementById('btn-send');
 submit.addEventListener('click', e => {
@@ -18,31 +21,36 @@ submit.addEventListener('click', e => {
 	const txtdate = document.getElementById("date");
 	const txtstartTime = document.getElementById("starttime");
 	const txtendTime = document.getElementById("endtime");
-	var eventId = txtorganization.value.charAt(0) + txteventName.value.charAt(0) + txtlocation.value.charAt(0);
-	var randomNum = 0;
-	for(var i = 0; i < 10; i++){
-		randNum = (Math.random() * 10).toFixed(0);
-		eventId += randNum.toString();
+	const org = txtorganization.value;
+	const name = txteventName.value;
+	const location = txtlocation.value;
+	const description = txtdescription.value;
+	const date = txtdate.value;
+	const StartTime = txtstartTime.value;
+	const EndTime = txtendTime.value;
+	if(org == "" || name == "" || location == "" || description == "" || date == "" || StartTime == "" || EndTime == ""){
+		alert("Please fill out all necessary information")
 	}
-	const eventObj = {
-		organization: txtorganization.value,
-		name: txteventName.value,
-		location: txtlocation.value,
-		description: txtdescription.value,
-		date: txtdate.value,
-		startTime: txtstartTime.value,
-		endTime: txtendTime.value
-	};
-	database.ref('events/' + eventId).set(eventObj).
-		then(
-            function() {
-                console.log('Event data successfully stored');
-            }).catch(function(error) {
-                console.log(error);
-            });
-            document.getElementById("sentEvent").style.visibility = "visible";
+	else{
+		sendEvent(org, name, location, description, date, StartTime, EndTime);
+		eventSent.style.display = "block";
+	}
+	
 });
-
+function sendEvent(org, name, location, description, date, EndTime, StartTime) {
+	FIREBASE_DATABASE.ref('/users/' + FIREBASE_AUTH.currentUser.uid).once('value')
+		.then(() =>{
+			FIREBASE_DATABASE.ref('/requests/events').push({
+				name: name,
+				org: org,
+				location: location,
+				description: description,
+				date: date,
+				EndTime: EndTime,
+				StartTime: StartTime
+			});
+		});
+	}
 //onsSubmit -> send info to database, tell user your event has been received
 
 /*
