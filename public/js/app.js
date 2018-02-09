@@ -142,3 +142,5 @@ FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snap
       denyBtns[i].addEventListener("click" , deny);
   }
 });
+
+

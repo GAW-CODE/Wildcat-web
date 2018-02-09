@@ -1,6 +1,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
+#cuppaDatePickerContainerStart{
+	text-align: center;
+	width:13vw;
+}
+#cuppaDatePickerContainerEnd{
+	text-align: center;
+	width:13vw;
+}
 *{
 	padding: 0;
 	margin: 0;
@@ -146,4 +154,9 @@ button{
 	display: block;
 	visibility: visible;
 	padding: 1.5%;
+}
+
+.upLoad{
+    margin-left: 7vw;
+    padding-bottom: 1vh;
 }
