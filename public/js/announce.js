@@ -6,6 +6,13 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
+//display date
+let n = new Date();
+let y = n.getFullYear();
+let m = n.getMonth() + 1;
+let d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
