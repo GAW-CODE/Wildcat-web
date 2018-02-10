@@ -38,8 +38,6 @@ submit.addEventListener('click', e => {
 	
 });
 function sendEvent(org, name, location, description, date, EndTime, StartTime) {
-	FIREBASE_DATABASE.ref('/users/' + FIREBASE_AUTH.currentUser.uid).once('value')
-		.then(() =>{
 			FIREBASE_DATABASE.ref('/requests/events').push({
 				name: name,
 				org: org,
@@ -49,8 +47,7 @@ function sendEvent(org, name, location, description, date, EndTime, StartTime) {
 				EndTime: EndTime,
 				StartTime: StartTime
 			});
-		});
-	}
+		};
 //onsSubmit -> send info to database, tell user your event has been received
 
 /*
