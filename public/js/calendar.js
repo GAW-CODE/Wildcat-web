@@ -96,6 +96,39 @@ function storeToken(token) {
   fs.writeFile(TOKEN_PATH, JSON.stringify(token));
   console.log('Token stored to ' + TOKEN_PATH);
 }
+const FIREBASE_DATABASE = database.ref();
+FIREBASE_DATABASE.ref('/events').on('child_added', function(snapshot, prevChildKey){
+  let val = snapshot.val();
+  addEvent(val);
+});
+function addEvent(event){
+  let eventInfo = {
+    'name': event.name,
+    'description': event.description,
+    'location': event.location,
+    'org': event.org,
+    'start'{
+      'date': event.date
+      'time': event.StartTime
+      'timeZone': 'America/Los_Angeles'
+    },
+    'end'{
+    'dateTime': event.date'T'event.EndTime,
+    'timeZone': 'America/Los_Angeles',
+    }
+  }
+  calendar.events.insert({
+  auth: auth,
+  calendarId: 'primary',
+  resource: event,
+}, function(err, event) {
+  if (err) {
+    console.log('There was an error contacting the Calendar service: ' + err);
+    return;
+  }
+  console.log('Event created: %s', event.htmlLink);
+});
+}
 
 /**
  * Lists the next 10 events on the user's primary calendar.
