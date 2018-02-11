@@ -44,9 +44,10 @@
         <input type="date" name="date" id="cal">
     </div>
     <div>
-        <ul class="upLoad">
+        <div class="upLoad">
             Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload" accept=".png, .jpeg,"></input>
+            <input type="file" name="fileToUpload" id="uploadFile" accept=".png, .jpeg,"></input>
+
 
             <!----future improvement, add image
                 <img id="upLoadImg" src="" />
@@ -57,11 +58,10 @@
                     document.getElementById("upLoadImg").src = fileUpload;
                 }
             </script>-->
-        </ul>
+        </div>
     </div>
-    <button id="send" class="hov">Send</button>
+    <button id="send" onclick="file()" class="hov">Send</button>
 </div>
-
 <script src="/__/firebase/4.1.3/firebase.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script src="js/request.js"> </script>

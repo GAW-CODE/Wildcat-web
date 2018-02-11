@@ -12,6 +12,7 @@ var dateInputBlock = document.getElementById('date');
 var sendButton = document.getElementById('send');
 var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('announcement');
+var uploadFile = document.getElementById('uploadFile');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -75,3 +76,21 @@ function sendAnnouncement(title, announcement) {
 			});
 		});
 }
+
+uploadFile.addEventListener('change', function upload(e) {
+    //Create a storage ref
+    var storageRef = firebase.storage().ref('upload/' + file.name);
+    //Upload file
+    var task = storageRef.put(file);
+    //Update progress bar
+    task.on('state_changed',
+        function progess(snapshot) {
+
+        });
+        function error(err) {
+
+        }
+        function complete() {
+
+        }
+});
