@@ -90,9 +90,22 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 
 //search query
 let searchIcon = document.getElementById('searchIcon');
+let searchBar = document.getElementById('search');
+let isSearchOn = false;
+
+function toggleSearchBar() {
+	if (!isSearchOn) { //start search process / search mode
+		searchBar.removeAttribute('hidden');
+		//blur whole screen
+	} else {
+		searchBar.setAttribute('hidden', 'true');
+	}
+	isSearchOn = !isSearchOn;
+}
 
 function search() {
-
+	let filter, ul, li, a, i;
+	filter = searchBar.
 }
 
 // When the page loads, the script indexes the content of all li’s into browser’s memory.
