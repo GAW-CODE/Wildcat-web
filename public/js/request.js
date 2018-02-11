@@ -50,8 +50,22 @@ sendButton.addEventListener('click', function(e) {
 
 //announcements logic
 const FIREBASE_AUTH = firebase.auth();
-//const FIREBASE_MESSAGING = firebase.messaging();
 const FIREBASE_DATABASE = firebase.database();
+
+//date
+let expirationDate = new Date();
+let dd = expirationDate.getDate() + 1;
+let mm = expirationDate.getMonth() + 1; //January is 0!
+let yyyy = expirationDate.getFullYear();
+
+if (dd < 10) {
+    dd = '0'+ dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+expirationDate = mm + '/' + dd + '/' + yyyy;
+//its value is updated in datepicker-directive.js, day after today by default
 
 //send msg to database
 function sendAnnouncement(title, announcement) {
@@ -73,7 +87,7 @@ function sendAnnouncement(title, announcement) {
 				orgType: orgType,
 				message: announcement,
 				userProfileImg: profileImg,
-				expirationDate: expirationDate
+				expirationDate: expirationDate.toString()
 			});
 		});
 }

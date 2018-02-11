@@ -105,7 +105,7 @@ function toggleSearchBar() {
 
 function search() {
 	let filter, ul, li, a, i;
-	filter = searchBar.
+	//filter = searchBar
 }
 
 // When the page loads, the script indexes the content of all li’s into browser’s memory.

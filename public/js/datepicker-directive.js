@@ -1,3 +1,13 @@
+/*
+The MIT License (MIT) Copyright (c) 2016 Cuppa Labs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
 angular.module("cuppaDatepickerDirective",[])
 .directive('cuppaDatepicker',function($document){
     return {
@@ -20,7 +30,7 @@ angular.module("cuppaDatepickerDirective",[])
                             <div class="wc-date-row">{{myDate | date: 'dd'}}</div>
                             <div class="wc-my-sec">
                                 <div class="wc-month-row">
-                                <div>{{myDate | date: 'MMM'}}</div> 
+                                <div>{{myDate | date: 'MMM'}}</div>
                                 </div>
                                 <div class="wc-year-row"  >
                                 <div>{{myDate | date: 'yyyy'}}</div>
@@ -52,12 +62,12 @@ angular.module("cuppaDatepickerDirective",[])
                                 <div class="month-year" ng-if="bigBanner" ng-click="toggleMonthView()">{{myDate | date: 'MMMM'}}
                                 <!-- <i ng-show="!monthsView" class="fa fa-arrow-down"></i>
                                  <i ng-show="monthsView" class="fa fa-arrow-up"></i> -->
-                                </div> 
+                                </div>
                                 <div class="month-year" ng-if="!bigBanner" ng-click="toggleMonthView()">
-                                    {{myDate | date: 'MMMM'}} &nbsp 
+                                    {{myDate | date: 'MMMM'}} &nbsp
                                  <!--    <i ng-show="!monthsView" class="fa fa-arrow-down" ng-click="toggleMonthView()"></i>
                                     <i ng-show="monthsView" class="fa fa-arrow-up" ng-click="toggleMonthView()"></i>  -->
-                                    
+
                                 </div>
                                 <i class="wc-next fa fa-angle-right" ng-click="nextMonth($event)"></i>
                             </div>
@@ -132,7 +142,7 @@ angular.module("cuppaDatepickerDirective",[])
                                 <td class="calendar-day" ng-class="{'today': day == today.getDate() && myDate.getMonth() == today.getMonth() && myDate.getFullYear() == today.getFullYear(),'selected-day': day == myDate.getDate()}" ng-repeat="day in week track by $index">
                                     <span ng-if="day != 0" value="{{day}}">{{day}}</span>
                                 </td>
-                                
+
                             </tr>
                         </table>
                         <div ng-if="!bigBanner">
@@ -144,7 +154,7 @@ angular.module("cuppaDatepickerDirective",[])
                     </div>
                     </div>`,
         link: function(scope, elem, attr){
-            
+
             scope.cal_days_labels = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
             scope.cal_full_days_lables = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
             scope.cal_months_labels = ['January', 'February', 'March', 'April',
@@ -153,8 +163,8 @@ angular.module("cuppaDatepickerDirective",[])
             scope.cal_months_labels_short = ['JAN', 'FEB', 'MAR', 'APR',
                                 'MAY', 'JUN', 'JUL', 'AUG', 'SEP',
                                 'OCT', 'NOV', 'DEC'];
-            
-            scope.cal_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];       
+
+            scope.cal_days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
             scope.myDate = new Date(scope.defaultDate);
             scope.timeViewDate = new Date(scope.myDate);
@@ -199,7 +209,7 @@ angular.module("cuppaDatepickerDirective",[])
                 for (var i = 0; i < 9; i++) {
                     // this loop is for weekdays (cells)
                     dateRow = [];
-                    for (var j = 0; j <= 6; j++) { 
+                    for (var j = 0; j <= 6; j++) {
                         var dateCell = 0;
                     if (day <= monthLength && (i > 0 || j >= startingDay)) {
                         dateCell = day;
@@ -226,7 +236,7 @@ angular.module("cuppaDatepickerDirective",[])
 
             scope.getMonthLength = function(month,year){
                 var monthLength = scope.cal_days_in_month[month];
-                
+
                 // compensate for leap year
                 if (month == 1) { // February only!
                     if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
@@ -266,7 +276,7 @@ angular.module("cuppaDatepickerDirective",[])
                         scope.myDate.setDate(nextmonthLength);
                     }
                     scope.myDate.setMonth(scope.myDate.getMonth() + 1);
-                    
+
                 }
                 scope.generateDays();
             }
@@ -307,9 +317,10 @@ angular.module("cuppaDatepickerDirective",[])
             scope.setDay = function(evt){
                 if(evt.target.getAttribute('value')){
                   var selectedDay = parseInt(evt.target.getAttribute('value'));
-                  scope.myDate.setDate(selectedDay);  
+                  scope.myDate.setDate(selectedDay);
                  // scope.popover = false;
                   console.log(scope.myDate);
+                  expirationDate = scope.myDate;
                   scope.callback({"selectedDate":scope.myDate});
                 }
             }
@@ -404,11 +415,11 @@ angular.module("cuppaDatepickerDirective",[])
             }
            $document.on('click',function(e){
                 if(!angular.element(elem)[0].contains(e.target)){
-                    scope.popover = false;   
-                    scope.timeView = false; 
+                    scope.popover = false;
+                    scope.timeView = false;
                     scope.monthsView = false;
                     scope.yearView = false;
-                    scope.$apply();  
+                    scope.$apply();
                 }
             });
         }
