@@ -165,3 +165,7 @@ button{
     margin-left: 7vw;
     padding-bottom: 1vh;
 }
+#uploader {
+    display: none;
+    margin-left: 16.1vw;
+}

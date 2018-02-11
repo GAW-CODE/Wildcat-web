@@ -6,10 +6,17 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
+//display date
+let n = new Date();
+let y = n.getFullYear();
+let m = n.getMonth() + 1;
+let d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div>
+  let domString = `<div class="saveable">
 		<span><img class="logo" src="${announcement.userProfileImg}" /></span>
 		<span class="announcement">
 				${announcement.message}
@@ -56,13 +63,15 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
 
 
 //student archive
-let announcements = document.getElementById('');
+let announcements = document.getElementsByClassName('saveable');
 
-announcements.addEventListener("click", function() {
-	//display "SAVED"
+for (let i = 0; i < announcements.length; i++) {
+	announcements[i].addEventListener("click", function() {
+		//display "SAVED" momentarily
 
-	//turn bkgd to gold
-	announcements.style.background = "";
+		//turn bkgd to gold
+		announcements.style.background = "#edbe31";
 
-	//add announcement to student archive
-});
+		//add announcement to student archive
+	});
+}
