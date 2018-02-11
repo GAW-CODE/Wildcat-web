@@ -77,7 +77,13 @@ function displayRequestAnnouncement(announcement) {
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
-
+function displayEventAnnouncement(event) {
+  let div = document.createElement('div');
+  //eventually - display organization's profile pic to the LEFT of the announcement title
+  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${event.name}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">Organization: ${event.org}</p><p style="padding: 2%;">Description: ${event.description}</p><p style="padding: 2%;">Location: ${event.location}</p><p style="padding: 2%;">From: ${event.StartTime}</p><p style="padding: 2%;">To: ${event.EndTime}</p><p style="padding: 2%;">Date: ${event.date}</p></div></div>`;
+  div.innerHTML = domString;
+  requestList.appendChild(div.firstChild);
+}
 //Making the request descrptions expand and condense
 function makeAnnouncementHideable(event) {
     if (event.path[2].children[1].className == "descHide"){
@@ -87,7 +93,6 @@ function makeAnnouncementHideable(event) {
     }
 }
 
-//approve / deny
 function approve(event) {
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
@@ -120,7 +125,38 @@ function approve(event) {
       selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
     });
 }
+function approveEvent(event) {
+  // index of the container = which child to get from database
+  let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let index = reqArray.indexOf(selectedAnnouncement);
 
+  // retrieve announcement corresponding to the one you clicked on
+  let announcement;
+  let keyList = [];
+
+  FIREBASE_DATABASE.ref('/requests/events').once('value')
+    .then((snapshot) => {
+      let val = snapshot.val();
+      for (let key in val) {
+        keyList.push(key);
+      }
+      FIREBASE_DATABASE.ref('/requests/events/' + keyList[index]).once('value')
+        .then((snapshot) => {
+          announcement = snapshot.val();
+        });
+    })
+    .then(() => {
+      // insert announcement under “/announcements” in database
+      FIREBASE_DATABASE.ref('/events').push(announcement);
+      // remove announcement from ‘/requests/announcements’ in database
+      FIREBASE_DATABASE.ref('/requests/events').child(keyList[index]).remove()
+    })
+    .then(() => {
+      // remove from admin.html
+      selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
+    });
+}
 function deny(event) {
   let reason = prompt('Explain why the announcement was rejected');
 
@@ -139,6 +175,19 @@ FIREBASE_DATABASE.ref('/requests/announcements').on('child_added', function(snap
   for (let i = 0; i < req.length; i++) {
       req[i].addEventListener("click" , makeAnnouncementHideable);
       approveBtns[i].addEventListener("click" , approve);
+      denyBtns[i].addEventListener("click" , deny);
+  }
+});
+FIREBASE_DATABASE.ref('/requests/events').on('child_added', function(snapshot, prevChildKey) {
+  var val = snapshot.val();
+  displayEventAnnouncement(val);
+
+  let req = document.getElementsByClassName('req');
+  let approveBtns = document.getElementsByClassName('reqYes');
+  let denyBtns = document.getElementsByClassName('reqNo');
+  for (let i = 0; i < req.length; i++) {
+      req[i].addEventListener("click" , makeAnnouncementHideable);
+      approveBtns[i].addEventListener("click" , approveEvent);
       denyBtns[i].addEventListener("click" , deny);
   }
 });
