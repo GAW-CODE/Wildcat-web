@@ -72,7 +72,8 @@ function sendAnnouncement(title, announcement) {
 				org: org,
 				orgType: orgType,
 				message: announcement,
-				userProfileImg: profileImg
+				userProfileImg: profileImg,
+				expirationDate: expirationDate
 			});
 		});
 }
@@ -89,7 +90,7 @@ uploadFile.addEventListener('change', function (e) {
         function progress(snapshot) {
             var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             uploader.value = percentage;
-        },  
+        },
         function error(err) {
 
         },

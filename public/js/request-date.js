@@ -18,7 +18,7 @@ angular.module("cuppaDatepicker",["cuppaDatepickerDirective"])
             //alert(dateVal);
         }
 });
-
+var expirationDate;
 function selectedDate(date) {
-
+  expirationDate=date;
 }
