@@ -18,5 +18,7 @@ angular.module("cuppaDatepicker",["cuppaDatepickerDirective"])
             //alert(dateVal);
         }
 });
-var selectedDate = myDate;
-document.getElementById("yee").innerHTML = selectedDate;
+
+function selectedDate(date) {
+
+}
