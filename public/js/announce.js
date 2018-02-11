@@ -56,12 +56,6 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
   displayAnnouncement(snapshot.val());
 });
 
-//search query
-// When the page loads, the script indexes the content of all li’s into browser’s memory.
-// When a user types text into the search field, the script searches for equivalents among the indexed data and hides the corresponding li’s where no equivalents were found. If nothing found, a message is shown.
-// The script highlights the text equivalents by replacing phases, for example, babylon becomes <span class="highlight">babylon</span>.
-
-
 //student archive
 let announcements = document.getElementsByClassName('saveable');
 
@@ -75,3 +69,14 @@ for (let i = 0; i < announcements.length; i++) {
 		//add announcement to student archive
 	});
 }
+
+//search query
+let searchIcon = document.getElementById('searchIcon');
+
+function search() {
+
+}
+
+// When the page loads, the script indexes the content of all li’s into browser’s memory.
+// When a user types text into the search field, the script searches for equivalents among the indexed data and hides the corresponding li’s where no equivalents were found. If nothing found, a message is shown.
+// The script highlights the text equivalents by replacing phases, for example, babylon becomes <span class="highlight">babylon</span>.
