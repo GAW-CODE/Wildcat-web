@@ -12,6 +12,7 @@ var dateInputBlock = document.getElementById('date');
 var sendButton = document.getElementById('send');
 var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('announcement');
+var uploadFile = document.getElementById('uploadFile');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -75,3 +76,25 @@ function sendAnnouncement(title, announcement) {
 			});
 		});
 }
+
+uploadFile.addEventListener('change', function (e) {
+    document.getElementById('uploader').style.display = 'block';
+    var file = e.target.files[0];
+    //Create a storage ref
+    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    //Upload file
+    var task = storageRef.put(file);
+    //Update progress bar
+    task.on('state_changed',
+        function progress(snapshot) {
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            uploader.value = percentage;
+        },  
+        function error(err) {
+
+        },
+        function complete() {
+
+        }
+    );
+});

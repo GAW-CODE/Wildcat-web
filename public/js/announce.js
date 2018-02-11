@@ -6,13 +6,6 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
-//display date
-let n = new Date();
-let y = n.getFullYear();
-let m = n.getMonth() + 1;
-let d = n.getDate();
-document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -67,8 +60,29 @@ for (let i = 0; i < announcements.length; i++) {
 		announcements.style.background = "#edbe31";
 
 		//add announcement to student archive
-	});
-}
+
+//makes array containing all announcements
+let annList = [];
+
+FIREBASE_DATABASE.ref('/announcements').on('value')
+	.then((snapshot) => {
+		let val = snapshot.val();
+		for (let key in val) {
+			annList.push(key);
+		}
+		//loop that goes through each announcement and deletes at midnight
+		let i=0;
+		while (i < annList.length)
+		{
+			if (getTime() > expirationDate)
+			{
+				FIREBASE_DATABASE.ref().child('/announcements/' + annList[i]).remove();
+			} else
+			{
+				i++;
+			}
+		}
+});
 
 //search query
 let searchIcon = document.getElementById('searchIcon');

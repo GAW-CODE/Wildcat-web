@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\css"
+    "\\public\\css",
+    "\\public\\js"
   ],
-  "SelectedNode": "\\public\\announce.html",
+  "SelectedNode": "\\public\\css\\SignUp.css",
   "PreviewInSolutionExplorer": false
 }
