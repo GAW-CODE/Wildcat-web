@@ -38,7 +38,7 @@ for(var i = 0; i < modButtons.length; i++){
 
 //shows one module, hides the other three
 function modManage(mod0, mod1, mod2, mod3){
-    mod0.className = "module"
+    mod0.className = "module";
     mod1.className = "off";
     mod2.className = "off";
     mod3.className = "off";
@@ -191,5 +191,3 @@ FIREBASE_DATABASE.ref('/requests/events').on('child_added', function(snapshot, p
       denyBtns[i].addEventListener("click" , deny);
   }
 });
-
-

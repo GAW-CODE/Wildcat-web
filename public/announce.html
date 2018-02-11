@@ -11,6 +11,7 @@
         <!--links-->
         <link rel="stylesheet" type="text/css" href="css/announce.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!--browser-->
         <title>Wilson Announcements</title>
@@ -20,6 +21,8 @@
     <body>
         <div id="topBar">
             <center><b><p id="date"></p></b></center>
+            <i class="fa fa-search fa-3x" id="searchIcon"></i>
+            <input type="text" id="search" onkeyup="search()" placeholder="Search" hidden>
         </div>
         <div id="news">
             <div id="admin">
