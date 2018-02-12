@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" ng-app="cuppaDatepicker">
 <head>
 
@@ -36,7 +36,25 @@
 
     <div id="wordcount">
         <p id="count">Character count: </p><p id="chars"></p>
+
+<!--Code For Calendar-->
+
+<!--This project is licensed under the MIT license. See the LICENSE file for more info.-->
+<div id="ExpireDate">
+		<p>Expiration Date: </p>
+
+<div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
+			        <div id="cuppaDatePickerContainerStart">
+			                <cuppa-datepicker ng-model="myDate"
+			                                  big-banner="true"
+			                                  format="MM/dd/yyyy"
+			                                  default-open="true"
+			                                  on-date-select="onDateSelect(selectedDate)">
+			                </cuppa-datepicker>
+			        </div>
+			  </div>
     </div>
+<!--End-->
 
 	<!--Div below is to space final layout-->
 	<div id="spacer"></div>
@@ -50,9 +68,10 @@
         <input type="date" name="date" id="cal">
     </div>
     <div>
-        <ul class="upLoad">
+        <div class="upLoad">
             Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload" accept=".png, .jpeg,"></input>
+            <input type="file" name="fileToUpload" id="uploadFile" accept=".png, .jpeg, .pdf"/>
+            <progress value="0" max="100" id="uploader">0%</progress>
 
             <!--future improvement, add image
                 <img id="upLoadImg" src="" />
@@ -63,53 +82,22 @@
                     document.getElementById("upLoadImg").src = fileUpload;
                 }
             </script>-->
-        </ul>
+        </div>
     </div>
     <button id="send" class="hov">Send</button>
 </div>
-
 <script src="/__/firebase/4.1.3/firebase.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script src="js/request.js"> </script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="js/datepicker-directive.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
+
 
 </body>
 
 <body ng-controller="cuppaDatepickerController" >
+	<link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/datepicker-directive.js"></script>
+	<script type="text/javascript" src="js/request-date.js"></script>
+</body>
 
-      <div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
-        <div id="cuppaDatePickerContainerStart">
-                <cuppa-datepicker ng-model="myDate"
-                                  big-banner="true"
-                                  format="MM/dd/yyyy hh:mm a"
-                                  default-open="true"
-                                  time-picker="true"
-                                  on-date-select="onDateSelect(selectedDate)">
-                </cuppa-datepicker>
-
-        </div>
-
-
-    </div>
-
-  <div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
-        <div id="cuppaDatePickerContainerEnd">
-                <cuppa-datepicker ng-model="myDate"
-                                  big-banner="true"
-                                  format="MM/dd/yyyy hh:mm a"
-                                  default-open="true"
-                                  time-picker="true"
-                                  on-date-select="onDateSelect(selectedDate)">
-                </cuppa-datepicker>
-        </div>
-
-
-    </div>
-<link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script type="text/javascript" src="js/datepicker-directive.js"></script>
-<script type="text/javascript" src="js/request-date.js"></script>
- </body>
 </html>

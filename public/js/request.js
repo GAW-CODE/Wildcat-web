@@ -12,6 +12,7 @@ var dateInputBlock = document.getElementById('date');
 var sendButton = document.getElementById('send');
 var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('announcement');
+var uploadFile = document.getElementById('uploadFile');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -49,8 +50,22 @@ sendButton.addEventListener('click', function(e) {
 
 //announcements logic
 const FIREBASE_AUTH = firebase.auth();
-//const FIREBASE_MESSAGING = firebase.messaging();
 const FIREBASE_DATABASE = firebase.database();
+
+//date
+let expirationDate = new Date();
+let dd = expirationDate.getDate() + 1;
+let mm = expirationDate.getMonth() + 1; //January is 0!
+let yyyy = expirationDate.getFullYear();
+
+if (dd < 10) {
+    dd = '0'+ dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+expirationDate = mm + '/' + dd + '/' + yyyy;
+//its value is updated in datepicker-directive.js, day after today by default
 
 //send msg to database
 function sendAnnouncement(title, announcement) {
@@ -71,7 +86,30 @@ function sendAnnouncement(title, announcement) {
 				org: org,
 				orgType: orgType,
 				message: announcement,
-				userProfileImg: profileImg
+				userProfileImg: profileImg,
+				expirationDate: expirationDate.toString()
 			});
 		});
 }
+
+uploadFile.addEventListener('change', function (e) {
+    document.getElementById('uploader').style.display = 'block';
+    var file = e.target.files[0];
+    //Create a storage ref
+    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    //Upload file
+    var task = storageRef.put(file);
+    //Update progress bar
+    task.on('state_changed',
+        function progress(snapshot) {
+            var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            uploader.value = percentage;
+        },
+        function error(err) {
+
+        },
+        function complete() {
+
+        }
+    );
+});

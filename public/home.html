@@ -10,7 +10,7 @@
  <meta name = "keywords" content = "Wilson, Announcements, WildCatApp, Requesters, Home, Events">
 
  <!--links-->     <!--ADD A CSS FILE LATER-->
- <link rel="stylesheet" type="text/css" href="#">
+ <link rel="stylesheet" type="text/css" href="css/home.css">
  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
  <!--browser-->
@@ -22,55 +22,87 @@
 <body>
 <!--Make requests, change contact info(Directory)-->
 
-<sidebar></sidebar>
+<sidebar>
     <!--This will be the to of the sidebar-->
-    <div>
-        <organization image></organization>
-        <img src="#">
+    <div id="sHead">
         <h2>Organization Name</h2>
+        <div id="headline"></div>
     </div>
 
     <!--Modules List-->
-    <div>
-        <span>Request</span>
-        <span>History</span>
-        <span>Edit Info</span>
+    <div id="modList">
+        <span class="modItem click">Status</span>
+        <span class="modItem click">Requests</span>
+        <span class="modItem click">Edit Info</span>
     </div>
 
     <!--Logout button-->
-    <div>
-        <button>Logout</button>
+    <div id="sFoot">
+        <button id="logout" class="click">Logout</button>
     </div>
 </sidebar>
 
 
 <!--module space-->
 <section>
+    <div id="module" id="request">
+        <div id="borderlay">
 
-    <!--Request: combine with announce.html later-->
-    <div>
+            <!--Status-->
+            <div id="status" class="module">
+                
+                <!--Statistics-->
+                <div id="stats">
+                    <div class="statistic">
+                        <p id="sent" class="statNum" style="color: #f4f44b;">0</p>
+                        <p class="statLabel">Sent</p>
+                    </div>
+                    <div class="statistic">
+                        <p id="approve" class="statNum" style="color: rgb(84, 221, 84);">0</p>
+                        <p class="statLabel">Approved</p>
+                    </div>
+                    <div class="statistic">
+                        <p id="reject" class="statNum" style="color: rgb(133, 22, 22);">0</p>
+                        <p class="statLabel">Rejected</p>
+                    </div>
+                </div>
 
-    </div>
+                <!--Status list-->
+                <div id="sList">
+                    <!--sample block-->
+                    <div class="statusItem">
+                        <div class="statusFolder">
+                            <div class="statusIcon sent"></div>
+                            <h3 class="statusTitle">Title</h3>
+                        </div>
+                        
+                        <div class="statusDraw">
+                            <p class="statusDesc">This is a description</p>
+                        </div>
+                    </div>
+                    <!--end of sample block-->
+                </div>
+            </div>
 
-    <!--History: see what was rejected, approved, or needs edits-->
-    <div>
-        <div id="history">
-            <!--Sample history block-->
-                <!--Copy from admin.html sample-->
-            <!--end of sample history block-->
-        </div>
-    </div>
+            <!--Request-->
+            <div id="req" class="module">
+                
+            </div>
 
-    <!--Edit Info: edit organization information-->
-    <div>
-        <!--Read module-->
-        <div>
-
-        </div>
-
-        <!--Edit module-->
-        <div>
-
+            <!--Organization-->
+            <div id="org" class="module">
+                <h2>organization name</h2>
+                <!--
+Name(img)
+about
+Meeting info
+Coach (img)
+Dates
+Presidents (img)
+Social media
+other
+                -->
+            </div>
         </div>
     </div>
 

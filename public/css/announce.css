@@ -33,7 +33,21 @@ body {
     background-color: #c62828;
     top: 0;
     left: 0;
-    position: fixed;
+}
+
+#searchIcon {
+	color: #ffffff;
+	position: absolute;
+	right: 2vh;
+	top: 2vh;
+}
+
+#search {
+	float: right;
+	border: none;
+	padding: 8px;
+	font-size: 30px;
+	width: 75%;
 }
 
 #navbar {
@@ -76,12 +90,6 @@ body {
     width: 70vw;
     vertical-align: top;
     padding-top: 5.5vw;
-}
-#news {
-    padding-top: 15vh;
-    padding-bottom: 15vh;
-    padding-top: 16vh;
-    padding-bottom: 16vh;
 }
 .logo {
         width: 15vw;
@@ -190,7 +198,7 @@ body {
 
 
 
-#demo {
+#date {
     font-size: 10vw;
     color: white;
     padding-top: 5vw;

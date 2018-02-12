@@ -1,14 +1,19 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+#ExpireDate{
+	margin:center;
+	padding: inherit;
+	width: 75%;
+	color:black;
+	font-size: 150%;
 
+}
 #cuppaDatePickerContainerStart{
+	width:12vw;
 	text-align: center;
-	width:13vw;
 }
-#cuppaDatePickerContainerEnd{
-	text-align: center;
-	width:13vw;
-}
+
+
 *{
 	padding: 0;
 	margin: 0;
@@ -159,4 +164,8 @@ button{
 .upLoad{
     margin-left: 7vw;
     padding-bottom: 1vh;
+}
+#uploader {
+    display: none;
+    margin-left: 16.1vw;
 }
