@@ -113,38 +113,7 @@ winter.addEventListener('click', function(){
 spring.addEventListener('click', function(){
     sports.className = "hide";
     SSpring.className="show";
+});
 
 
-
-
-FIREBASE_DATABASE.ref('/directory/sports/fall').push();
-FIREBASE_DATABASE.ref('/directory/sports/spring').push();
-FIREBASE_DATABASE.ref('/directory/sports/winter').push();
-FIREBASE_DATABASE.ref('/directory/academics/social Studies').push();
-FIREBASE_DATABASE.ref('/directory/academics/math').push();
-FIREBASE_DATABASE.ref('/directory/academics/science').push();
-FIREBASE_DATABASE.ref('/directory/academics/english').push();
-FIREBASE_DATABASE.ref('/directory/academics/pe').push();
-FIREBASE_DATABASE.ref('/directory/academics/wits').push();
-FIREBASE_DATABASE.ref('/directory/academics/vapa').push();
-FIREBASE_DATABASE.ref('/directory/academics/modernLanguages').push();
-FIREBASE_DATABASE.ref('/directory/groups').push();
-FIREBASE_DATABASE.ref('/directory/clubs').push();
-
-FIREBASE_DATABASE.ref('/academics/math').push({
-        fullName: 'Mr. Chang',
-        //other properties
-    });
-
-
-
-
-
-
-
-
-
-//Get contact info from database when you click on a contact card
-
-
-//Display / render this contact info onto a template (using DOM)
+const FIREBASE_DATABASE = firebase.database();//access the database 

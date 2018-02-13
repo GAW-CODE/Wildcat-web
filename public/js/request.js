@@ -55,7 +55,7 @@ const FIREBASE_DATABASE = firebase.database();
 //date
 let expirationDate = new Date();
 let dd = expirationDate.getDate() + 1;
-let mm = expirationDate.getMonth() + 1; //January is 0!
+let mm = expirationDate.getMonth() + 1; //January is 0 so +1 is added to get the proper date
 let yyyy = expirationDate.getFullYear();
 
 if (dd < 10) {

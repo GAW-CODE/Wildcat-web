@@ -112,19 +112,28 @@ section{
     height: 100%;
     margin: auto;
 }
-.hide{
+#status.hide, #req.hide, #org.hide{
     display: none;
-    visibility: hidden;
 }
-.show{
-    display: auto;
-    visibility: visible;
+@keyframes modChange{
+    from {
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 /*Status module*/
 #status{
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #stats{
     height: 100%;
@@ -183,6 +192,123 @@ section{
 }
 
 /*Request Module*/
+#req iframe{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-
-/*Organization Module*/
+/*Information Module*/
+#org{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#intro{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(251, 251, 251);
+}
+#profile{
+    height: 100%;
+    width: 40%;
+}
+#profile img{
+    display: block;
+    padding: 2.5%;
+    width: 9vw;
+    height: 9vw;
+    margin: auto;
+}
+#profile figcaption{
+    width: 70%;
+    padding: 1%;
+    margin: auto;
+    border-top: 3px solid rgb(207, 36, 36);
+    font-size: 1.5vw;
+    text-align: center;
+    word-wrap: break-word;
+}
+#deets{
+    width: 60%;
+    height: 100%;
+    overflow-y: auto;
+}
+#deets h2{
+    font-size: 1.6vw;
+    color: rgb(236, 29, 29);
+    padding: 1.5%
+}
+#details{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 25vh;
+}
+#infoPeople{
+    overflow-y: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: 3;
+}
+.person{
+    width: 20%;
+    height: 50%;
+    padding: 1.5%;
+    margin: 15px;
+    border-bottom: 2px solid rgb(231, 231, 231);
+    text-align: center;
+}
+.person img{
+    display: block;
+    margin: auto;
+    width: 5vw;
+    height: 5vw;
+}
+.person figcaption{
+    padding: 0.5%;
+}
+#media{
+    padding-top: 1%;
+    width: 50%;
+    color: rgb(167, 23, 23);
+    text-align: center;
+}
+#mediaList{
+    width: 98%;
+    height: 80%;
+    margin: auto;
+    list-style-type: none;
+    overflow-y: auto;
+    font-size: 1.2vw;
+}
+.other{
+    width: 100%;
+    padding: 1% 0;
+    text-align: center;
+}
+.other h2{
+    width: fit-content;
+    margin: auto;
+    padding: 0.5% 1.6%;
+    border-bottom: 1px solid rgb(156, 9, 9);
+    color: rgb(167, 35, 35);
+}
+.other p{
+    padding: 1%;
+}
