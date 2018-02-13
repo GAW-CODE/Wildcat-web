@@ -115,10 +115,6 @@ section{
 #status.hide, #req.hide, #org.hide{
     display: none;
 }
-.show{
-    display: auto;
-    visibility: visible;
-}
 /*Status module*/
 #status{
     display: flex;
@@ -182,7 +178,13 @@ section{
 }
 
 /*Request Module*/
-
+#req iframe{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+}
 
 /*Information Module*/
 #org{
