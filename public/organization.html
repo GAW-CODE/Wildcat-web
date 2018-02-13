@@ -33,7 +33,7 @@
     <div id="modList">
         <span class="modItem click">Status</span>
         <span class="modItem click">Requests</span>
-        <span class="modItem click">Edit Info</span>
+        <span class="modItem click">Information</span>
     </div>
 
     <!--Logout button-->
@@ -45,11 +45,11 @@
 
 <!--module space-->
 <section>
-    <div id="module" id="request">
+    <div id="module" id="workSpace">
         <div id="borderlay">
 
             <!--Status-->
-            <div id="status" class="module">
+            <div id="status" class="module hide">
                 
                 <!--Statistics-->
                 <div id="stats">
@@ -85,41 +85,75 @@
             </div>
 
             <!--Request-->
-            <div id="req" class="module">
+            <div id="req" class="module hide">
                 
             </div>
 
             <!--Organization-->
             <!--read-->
             <div id="org" class="module">
-                <figure>
-                    <img src="#">
-                    <figcaption>Organization Name</figcaption>
-                </figure>
-                <h2>About You</h2>
-                <p>description</p>
-                <h2>Meeting Information</h2>
-                <p>actual meeting info</p>
+                <div id="intro">
+                     <figure id="profile">
+                        <img src="#" alt="org name">
+                        <figcaption>Organization Name</figcaption>
+                    </figure>
+                    <div id="deets">
+                        <h2>Meeting Information</h2>
+                        <p>actual meeting info</p>
+                        <h2>About</h2>
+                        <p>description</p>
+                    </div>
+                </div>      
 
-                <div id="infoPeople">
-                <figure class="person">
-                    <img src="#">
-                    <figcaption class="infoName"></figcaption>
-                    <figcaption class="infoRole"></figcaption>
-                </figure>
+                <div id="details">
+                    <div id="infoPeople">
+                        <!--sample person-->
+                        <figure class="person">
+                            <img src="#" alt="person">
+                            <figcaption class="infoName">first last</figcaption>
+                            <figcaption class="infoRole">position</figcaption>
+                        </figure>
+                        <!--end of sample person-->
 
-                <h2>Social Media/Contacts</h2>
+                        <!--sample person-->
+                        <figure class="person">
+                            <img src="#" alt="person">
+                            <figcaption class="infoName">first last</figcaption>
+                            <figcaption class="infoRole">position</figcaption>
+                        </figure>
+                        <!--end of sample person-->
+
+                         <!--sample person-->
+                        <figure class="person">
+                            <img src="#" alt="person">
+                            <figcaption class="infoName">first last</figcaption>
+                            <figcaption class="infoRole">position</figcaption>
+                        </figure>
+                        <!--end of sample person-->
+                    </div>
+
+                    <div id="media">
+                        <h2>Social Media/Contacts</h2>
+                        <ul id="mediaList">
+                            <a href="#">social media</a>
+                        </ul>
+                        
+                    </div>
+                </div>
+                
 
                 <!--other section sample-->
                 <div class="other">
+                    <hr>
                     <h2>Some title</h2>
-                    <pre>Some text about the title</pre>
+                    <p>
+                        users should be able to add as many other things that they want
+                    </p>
                 </div>
                 <!--end of other section sample-->
-                </div>
-               
+
             </div>
-         <!--write-->
+         <!--write/edit: do later-->
         </div>
     </div>
 
