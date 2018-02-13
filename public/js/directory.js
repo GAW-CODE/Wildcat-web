@@ -132,16 +132,14 @@ FIREBASE_DATABASE.ref('/directory/groups').push();
 FIREBASE_DATABASE.ref('/directory/clubs').push();
 
 FIREBASE_DATABASE.ref('/academics/math').push({
-        fullName: 'Mr. Chang',
-        //other properties
+        Name: 'Mr. Chang',
+        RoomNumber: 'TBD',
+        Classes: 'TBD',
+        OfficeHours:'TBD',
+        AskMeAbout: 'TBD',
+        Pic:
+        Quote:'TBD'
     });
-
-
-
-
-
-
-
 
 
 //Get contact info from database when you click on a contact card
