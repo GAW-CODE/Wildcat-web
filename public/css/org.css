@@ -115,11 +115,25 @@ section{
 #status.hide, #req.hide, #org.hide{
     display: none;
 }
+@keyframes modChange{
+    from {
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
 /*Status module*/
 #status{
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #stats{
     height: 100%;
@@ -184,6 +198,10 @@ section{
     overflow: hidden;
     border: 0;
     outline: none;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /*Information Module*/
@@ -193,6 +211,10 @@ section{
     margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
+    animation-name: modChange;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #intro{
     height: 25vh;
