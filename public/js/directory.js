@@ -133,624 +133,624 @@ FIREBASE_DATABASE.ref('/directory/clubs').push();
 
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Allen, Willie',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Arteaga, Ember',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Barone, Samuel',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Barragan, Gino',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Branconier- Habash, Patricia',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Brown, DeJohn',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Bushyeager, Courtney',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/wits').push({
     Name: 'Bushyeager, Courtney',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Casey, Josipa',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Chang, Leo',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Chang, Leo',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/pe').push({
     Name: 'Chang, Nina',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Craft, Kiley',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Eusebi, Jason',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Fessenden, Mark',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Gilbert, Matthew',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Gomez, Mike',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Han, Jungsoo',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Hansen, Scot',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Hernandez, Kelly',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Hinojosa, Miguel',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Johnson, Maria',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Kim, Mijin',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Leon, Ernesto',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Leung, Lisa',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Lin, Tamara',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/pe').push({
     Name: 'Lopez, Jerelyn',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Lorenz, Mike ',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/wits').push({
     Name: 'Manassero, Mike',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Nguyen, Catherine',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Ortega-Carcamo, Johana',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Orth, Liz',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/pe').push({
     Name: 'Ortiz, Salvador',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Oviedo, Robert',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Pham, Chris',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Piner, Mary-Louise',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Recinos, Ricardo',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Ro, Justin',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/wits').push({
     Name: 'Ro, Justin',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Robles, Pilar',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Rogan, Robert',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/wits').push({
     Name: 'Rojas, Matthew',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Rouw, Christina',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Santos, Enid',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Shin, Eilene',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Suh, David',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Suh, David',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Thompson, Mark',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Trimborn, Trent',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Udeshi, Jinasha',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Valentine, Chris',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Van Gorden, Claudia',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/modernLanguages').push({
     Name: 'Wann, Suzanna',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/vapa').push({
     Name: 'Weaver, Kim',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Weiss, Cindy',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Wever, Michael',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/science').push({
     Name: 'Wu, Sharon',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/english').push({
     Name: 'Yep, Monica',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Young, Shirley',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: 'Zertuche, Donna',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 FIREBASE_DATABASE.ref('/academics/math').push({
     Name: 'Zheng, Yan',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 
 FIREBASE_DATABASE.ref('/academics/socialStudies').push({
     Name: ' Van Gorden, Claudia',
-    Pic: 'http://anilana.com/images/profile-img.png'
+    Pic: 'http://anilana.com/images/profile-img.png',
     Quote: 'TBD',
     RoomNumber: 'TBD',
-    Email:'TBD'
+    Email:'TBD',
     Classes: 'TBD',
     OfficeHours: 'TBD',
-    AskMeAbout: 'TBD',
+    AskMeAbout: 'TBD'
 });
 
 FIREBASE_DATABASE.ref('/clubs').push({
