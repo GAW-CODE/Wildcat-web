@@ -115,5 +115,4 @@ spring.addEventListener('click', function(){
     SSpring.className="show";
 });
 
-
-const FIREBASE_DATABASE = firebase.database();//access the database 
+const FIREBASE_DATABASE = firebase.database();//access the database
