@@ -5,8 +5,9 @@
     width: 100%;
     height: 10vh;
     font-family: 'Montserrat', sans-serif;
-    background-color: #d32f2f;
+    background-color: #c62828;
     font-size: 8vh;
+    overflow: hidden;
     color: white;
     padding-top: 5vw;
     position: fixed;

@@ -2,12 +2,12 @@
 
 var fs = require('fs');
 var readline = require('readline');
-var google = require('googleapis');
+var {google} = require('googleapis');
 var googleAuth = require('google-auth-library');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/calendar-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+var SCOPES = ['https://www.googleapis.com/auth/calendar'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'calendar-nodejs-quickstart.json';
@@ -96,39 +96,6 @@ function storeToken(token) {
   fs.writeFile(TOKEN_PATH, JSON.stringify(token));
   console.log('Token stored to ' + TOKEN_PATH);
 }
-const FIREBASE_DATABASE = database.ref();
-FIREBASE_DATABASE.ref('/events').on('child_added', function(snapshot, prevChildKey){
-  let val = snapshot.val();
-  addEvent(val);
-});
-function addEvent(event){
-  let eventInfo = {
-    'name': event.name,
-    'description': event.description,
-    'location': event.location,
-    'org': event.org,
-    'start'{
-      'date': event.date
-      'time': event.StartTime
-      'timeZone': 'America/Los_Angeles'
-    },
-    'end'{
-    'dateTime': event.date'T'event.EndTime,
-    'timeZone': 'America/Los_Angeles',
-    }
-  }
-  calendar.events.insert({
-  auth: auth,
-  calendarId: 'primary',
-  resource: event,
-}, function(err, event) {
-  if (err) {
-    console.log('There was an error contacting the Calendar service: ' + err);
-    return;
-  }
-  console.log('Event created: %s', event.htmlLink);
-});
-}
 
 /**
  * Lists the next 10 events on the user's primary calendar.
@@ -136,10 +103,10 @@ function addEvent(event){
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 function listEvents(auth) {
-  var calendar = google.calendar('v3');
+  let calendar = google.calendar('v3');
   calendar.events.list({
     auth: auth,
-    calendarId: 'primary',
+    calendarId: 'fjk6cu6719g51e912al0fpht98@group.calendar.google.com',
     timeMin: (new Date()).toISOString(),
     maxResults: 10,
     singleEvents: true,

@@ -114,3 +114,5 @@ spring.addEventListener('click', function(){
     sports.className = "hide";
     SSpring.className="show";
 });
+
+const FIREBASE_DATABASE = firebase.database();//access the database

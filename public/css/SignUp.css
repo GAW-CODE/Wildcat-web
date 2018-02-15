@@ -1,20 +1,34 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     text-align: center;
-    padding: 40px 40px;
-    margin-top: 21vh;
-    margin-bottom: 21vh;
-    display: block;
-    border: 1px solid #ccc;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    background-image: url("http://www.freebiesgallery.com/wp-content/uploads/2013/09/red-background-3.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    width: 100%;
 }
-
+h1{
+    padding-top: 13vh;
+}
+h6{
+    color: rgb(134, 11, 11);
+}
 #Loginspace {
+    padding-top: 2vh;
+    width: 50%;
+    margin: auto;
+}
+input{
+    padding: 1.5%;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid white;
+    transition-duration: 0.3s;
+}
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(136, 0, 0);
+}
+#SignUp{
+    transform: translateY(1vh);
 }

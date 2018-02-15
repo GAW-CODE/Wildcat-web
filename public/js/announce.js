@@ -88,11 +88,50 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 		}
 });
 
+//function to convert a date to Epoch time, milliseconds since Jan 1 1970
+//not sure how to reference a variable from a different file??
+function convertToEpoch(){
+	expirationDate.dd = dd - 1;
+	expirationDate.mm = mm - 1;
+	expirationDate.yyyy = yyyy - 1970;
+
+	d = d * 86400000;
+	if (m = 1 || 3 || 5 || 7 || 8 || 10 || 12)
+		{
+			m = m * 86400000 * 31;
+		}
+	if (m = 4 || 6 || 9 || 11)
+		{
+			m = m * 86400000 * 30;
+		}
+  if (m = 2)
+		{
+			m = m * 86400000 * 27;
+		}
+  y = y * 86400000 * 365.2422;
+
+	let dateInEpoch = d + m + y - 26000;
+	return dateInEpoch;
+}
+
 //search query
 let searchIcon = document.getElementById('searchIcon');
+let searchBar = document.getElementById('search');
+let isSearchOn = false;
+
+function toggleSearchBar() {
+	if (!isSearchOn) { //start search process / search mode
+		searchBar.removeAttribute('hidden');
+		//blur whole screen
+	} else {
+		searchBar.setAttribute('hidden', 'true');
+	}
+	isSearchOn = !isSearchOn;
+}
 
 function search() {
-
+	let filter, ul, li, a, i;
+	//filter = searchBar
 }
 
 // When the page loads, the script indexes the content of all li’s into browser’s memory.
