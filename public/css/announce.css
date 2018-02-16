@@ -48,10 +48,6 @@ body {
     left: 0;
 }
 
-<<<<<<< HEAD
-#searchIcon{
-		line-height: 5vh;
-=======
 #searchIcon {
 	color: #ffffff;
 	position: absolute;
@@ -65,7 +61,6 @@ body {
 	padding: 8px;
 	font-size: 30px;
 	width: 75%;
->>>>>>> b0c44f1e3bfc382815ee7e0d39ac55aaec4a3d2b
 }
 
 #navbar {
