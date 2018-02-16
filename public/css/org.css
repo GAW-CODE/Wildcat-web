@@ -217,7 +217,7 @@ section{
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 #intro, #introEdit{
-    height: 25vh;
+    height: 16vw;
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -257,7 +257,7 @@ section{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    height: 25vh;
+    height: 12vw;
 }
 #infoPeople, #infoPeopleEdit{
     overflow-y: auto;
@@ -268,7 +268,7 @@ section{
 }
 .person{
     width: 20%;
-    height: 50%;
+    height: 70%;
     padding: 1.5%;
     margin: 15px;
     border-bottom: 2px solid rgb(231, 231, 231);
@@ -311,4 +311,18 @@ section{
 }
 .other p{
     padding: 1%;
+}
+/*Full on input styling for write module*/
+#orgEdit input, #orgEdit textarea{
+    padding: 1%;
+    width: 90%;
+    outline: none;
+    border: 1px solid gray;
+    display: block;
+}
+.centerInput{
+    margin: auto;
+}
+#orgEdit input[type~="file"]{
+    display: none;
 }

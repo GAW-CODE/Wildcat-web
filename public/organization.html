@@ -163,18 +163,19 @@
          <div id="orgEdit" class="module hide">
             <div id="introEdit">
                  <figure id="profileEdit">
+                    <input type="file" name="OrgUpload" id="uploadOrg" accept=".png, .jpeg, .pdf"/>
                     <img src="#" alt="Organization Image">
                     <!--
                         for all inputs:
                         the value should be set to whatever the current value is
                     -->
-                    <input name="OrganizationName" type="text" value="" placeholder="Organization Name">
+                    <input name="OrganizationName" type="text" value="" placeholder="Organization Name" class="centerInput">
                 </figure>
                 <div id="deetsEdit">
                     <h2>Meeting Information</h2>
                     <input name="MeetingInfo" type="text" value="" placeholder="Meeting Information">
                     <h2>About</h2>
-                    <input name="About" type="text" value="" placeholder="Description">
+                    <textarea name="About" type="text" value="" placeholder="Description"></textarea>
                 </div>
             </div>      
 
@@ -194,9 +195,10 @@
                 <div id="infoPeopleEdit">
                     <!--sample person-->
                     <figure class="person">
+                            <input type="file" name="personUpload" class="personUpload" accept=".png, .jpeg, .pdf"/>
                         <img src="#" alt="person">
-                        <input name="PersonName" type="text" value="" placeholder="Name">
-                        <input name="Position" type="text" value="" placeholder="Position or Role">
+                        <input name="PersonName" type="text" value="" placeholder="Name" class="centerInput">
+                        <input name="Position" type="text" value="" placeholder="Position or Role" class="centerInput">
                     </figure>
                     <!--end of sample person-->
                 </div>
@@ -204,8 +206,8 @@
                 <div id="mediaEdit">
                     <h2>Social Media/Contacts</h2>
                     <ul id="mediaListEdit">
-                        <input name="MediaText" type="text" vaule="" placeholder="Social Media">
-                        <input name="MediaLink" type="text" value="" placeholder="Paste Link here">
+                        <input name="MediaText" type="text" vaule="" placeholder="Social Media" class="centerInput">
+                        <input name="MediaLink" type="text" value="" placeholder="Paste Link here" class="centerInput">
                     </ul>
                     
                 </div>
@@ -215,12 +217,12 @@
                 <img src="#">
                 <img src="#">
             </div>
-            
+
             <!--other section sample-->
             <div class="other">
                 <hr>
-                <input name="OtherTitle" type="text" value="" placeholder="title">
-                <textarea name="OtherContent" value="" placeholder="content"></textarea>
+                <input name="OtherTitle" type="text" value="" placeholder="title" class="centerInput">
+                <textarea name="OtherContent" value="" placeholder="content" class="centerInput"></textarea>
             </div>
             <!--end of other section sample-->
 
