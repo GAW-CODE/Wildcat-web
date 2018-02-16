@@ -160,7 +160,7 @@
 
 
          <!--write/edit: do later-->
-         <div id="orgEdit" class="module hide">
+         <div id="orgEdit" class="module">
             <div id="introEdit">
                  <figure id="profileEdit">
                     <input type="file" name="OrgUpload" id="uploadOrg" accept=".png, .jpeg, .pdf"/>
@@ -175,7 +175,7 @@
                     <h2>Meeting Information</h2>
                     <input name="MeetingInfo" type="text" value="" placeholder="Meeting Information">
                     <h2>About</h2>
-                    <textarea name="About" type="text" value="" placeholder="Description"></textarea>
+                    <textarea rows="5" name="About" type="text" value="" placeholder="Description"></textarea>
                 </div>
             </div>      
 
@@ -197,8 +197,8 @@
                     <figure class="person">
                             <input type="file" name="personUpload" class="personUpload" accept=".png, .jpeg, .pdf"/>
                         <img src="#" alt="person">
-                        <input name="PersonName" type="text" value="" placeholder="Name" class="centerInput">
-                        <input name="Position" type="text" value="" placeholder="Position or Role" class="centerInput">
+                        <input name="PersonName" type="text" value="" placeholder="Name" style="margin:auto">
+                        <input name="Position" type="text" value="" placeholder="Position or Role" style="margin:auto">
                     </figure>
                     <!--end of sample person-->
                 </div>
@@ -222,7 +222,7 @@
             <div class="other">
                 <hr>
                 <input name="OtherTitle" type="text" value="" placeholder="title" class="centerInput">
-                <textarea name="OtherContent" value="" placeholder="content" class="centerInput"></textarea>
+                <textarea rows="5" name="OtherContent" value="" placeholder="content" class="centerInput"></textarea>
             </div>
             <!--end of other section sample-->
 
