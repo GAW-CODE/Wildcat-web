@@ -6,10 +6,12 @@
     height: 10vh;
     font-family: 'Montserrat', sans-serif;
     background-color: #c62828;
-    font-size: 10vw;
+    font-size: 8vh;
+    overflow: hidden;
     color: white;
     padding-top: 5vw;
     position: fixed;
+		line-height: 5vh;
 }
 
 #search{
@@ -21,7 +23,7 @@
 
 body{
     height: 100%;
-    background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
+    background: rgb(245,245,245);
     background-attachment: fixed;
     background-repeat: none;
     background-size: cover;
@@ -35,7 +37,7 @@ body{
 
 .boxes{
 	flex:1;
-	background-color: #e86a6a;
+	background-color: rgb(205,205,205);;
 	margin-left:2vh;
 	margin-right:2vh;
     width:20vw;
@@ -47,6 +49,12 @@ body{
     font-size:12.5vh;
     color:white;
     font-family: 'Montserrat', sans-serif;
+}
+
+img{
+	width: 35vw;
+	height: auto;
+	margin: auto;
 }
 
 .girls{
