@@ -49,7 +49,7 @@
         <div id="borderlay">
 
             <!--Status-->
-            <div id="status" class="module">
+            <div id="status" class="module hide">
                 
                 <!--Statistics-->
                 <div id="stats">
@@ -157,7 +157,74 @@
                 <!--end of other section sample-->
 
             </div>
+
+
          <!--write/edit: do later-->
+         <div id="orgEdit" class="module hide">
+            <div id="introEdit">
+                 <figure id="profileEdit">
+                    <img src="#" alt="Organization Image">
+                    <!--
+                        for all inputs:
+                        the value should be set to whatever the current value is
+                    -->
+                    <input name="OrganizationName" type="text" value="" placeholder="Organization Name">
+                </figure>
+                <div id="deetsEdit">
+                    <h2>Meeting Information</h2>
+                    <input name="MeetingInfo" type="text" value="" placeholder="Meeting Information">
+                    <h2>About</h2>
+                    <input name="About" type="text" value="" placeholder="Description">
+                </div>
+            </div>      
+
+            <div id="detailsEdit">
+                <!--This is for adding/subtracting people/social media-->
+                <div id="detailEditBar">
+                    <div id="EditPeopleBar">
+                        <img src="#">
+                        <img src="#">
+                    </div>
+                    <div id="EditMediaBar">
+                        <img src="#">
+                        <img src="#">
+                    </div>
+                </div>
+
+                <div id="infoPeopleEdit">
+                    <!--sample person-->
+                    <figure class="person">
+                        <img src="#" alt="person">
+                        <input name="PersonName" type="text" value="" placeholder="Name">
+                        <input name="Position" type="text" value="" placeholder="Position or Role">
+                    </figure>
+                    <!--end of sample person-->
+                </div>
+
+                <div id="mediaEdit">
+                    <h2>Social Media/Contacts</h2>
+                    <ul id="mediaListEdit">
+                        <input name="MediaText" type="text" vaule="" placeholder="Social Media">
+                        <input name="MediaLink" type="text" value="" placeholder="Paste Link here">
+                    </ul>
+                    
+                </div>
+            </div>
+            
+            <div id="EditOtherBar">
+                <img src="#">
+                <img src="#">
+            </div>
+            
+            <!--other section sample-->
+            <div class="other">
+                <hr>
+                <input name="OtherTitle" type="text" value="" placeholder="title">
+                <textarea name="OtherContent" value="" placeholder="content"></textarea>
+            </div>
+            <!--end of other section sample-->
+
+        </div>
         </div>
     </div>
 
