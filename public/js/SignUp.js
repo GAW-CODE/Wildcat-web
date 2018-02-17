@@ -15,7 +15,7 @@ var config = {
   const txtName = document.getElementById("txtName");
   const txtReenterPassword = document.getElementById("txtReenterPassword");
   const btnSignUp = document.getElementById("SignUp");
-  const txtType = document.getElementById("Organization Type:");
+  const txtType = document.getElementById("Organization");
 
   btnSignUp.addEventListener('click', e => {
     const reenterpass = txtReenterPassword.value;	
