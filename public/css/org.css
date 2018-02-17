@@ -328,6 +328,11 @@ section{
     padding: 1%;
 }
 /*Full-on input styling for write module*/
+#optionsBar, #optionsBarEdit{
+    padding: 0.5%;
+    border-top: 2px solid rgb(192, 192, 192);
+    background-color: rgb(243, 243, 243);
+}
 #orgEdit input, #orgEdit textarea{
     padding: 1%;
     width: 90%;
@@ -343,6 +348,9 @@ section{
 #orgEdit input[type~="file"]{
     display: none;
 }
+#profileEdit input, #infoPeopleEdit input, [name~="OtherTitle"]{
+    text-align: center;
+}
 #detailEditBar{
     padding: 0.6%;
     box-sizing: border-box;
@@ -352,15 +360,45 @@ section{
     border-top: 1px solid rgb(228, 228, 228);
     border-bottom: 1px solid rgb(228, 228, 228);
 }
-#detailEditBar img{
-    padding: 0.2%;
+#detailEditBar img, #EditOtherBar img{
+    padding: 1%;
+}
+#detailEditBar img:hover, #EditOtherBar img:hover{
+    background-color: rgb(243, 243, 243);
 }
 #EditPeopleBar{
     width: 50%;
+}
+.personRemove{
+    margin: auto;
+    width: 15px;
+    height: 15px;
 }
 #EditMediaBar{
     width: 50%;
 }
 #EditOtherBar{
     width: 100%;
+}
+.editMedia{
+    display: flex;
+    width: 98%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.removeMedia{
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.removeMedia img{
+    padding: 5%;
+}
+.removeMedia img:hover{
+    background-color: rgb(243, 243, 243);
+}
+.mediaInputs{
+    width: 90%;
 }
