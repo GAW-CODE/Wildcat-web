@@ -134,23 +134,39 @@ let announcementsDiv = document.getElementById('news');
 let isSearchOn = false;
 
 function toggleSearchBar() {
+	console.log('toggle search bar');
 	if (!isSearchOn) { //start search process / search mode
+		//collapse whole page - only display announcements
 		searchBar.removeAttribute('hidden');
+		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+				announcementsDiv.childNodes[i].style.display = 'none';
+			}
+		}
 		//blur whole screen
 	} else {
 		searchBar.setAttribute('hidden', 'true');
+		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+				announcementsDiv.childNodes[i].style.display = '';
+			}
+		}
 	}
 	isSearchOn = !isSearchOn;
 }
 
 function search() {
+	console.log('search query');
 	let filter = searchBar.value.toUpperCase();
 	for (let i = 0; i < announcements.length; i++) {
 		let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
 		if (annText.toUpperCase().indexOf(filter) != -1) { //match found
 			announcements[i].style.display = '';
+			console.log(filter);
+			announcements[i].parentNode.style.display = '';
 		} else {
 			announcements[i].style.display = 'none';
+			announcements[i].parentNode.style.display = 'none';
 		}
 	}
 	//let announcementsAll =
