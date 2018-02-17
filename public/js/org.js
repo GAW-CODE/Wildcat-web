@@ -5,10 +5,12 @@
 /**
  * This is the DOM behind organization.html (below code)
 */
-//sidebar selections
+//sidebar & button selections
 let status = document.getElementsByClassName('modItem')[0];
 let request = document.getElementsByClassName('modItem')[1];
 let info = document.getElementsByClassName('modItem')[2];
+let edit = document.getElementById('editOrg');
+let cancel = document.getElementById('cancel');
 
 //module selections
 let sMod = document.getElementById('status');
@@ -32,6 +34,14 @@ request.addEventListener('click', function(){
 info.addEventListener('click', function(){
     sMod.className = "module hide";
     rMod.className = "module hide";
+    iMod.className = "module";
+    eMod.className = "module hide";
+});
+edit.addEventListener('click', function(){
+    iMod.className = "module hide";
+    eMod.className = "module";
+});
+cancel.addEventListener('click', function(){
     iMod.className = "module";
     eMod.className = "module hide";
 });

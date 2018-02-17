@@ -49,7 +49,7 @@
         <div id="borderlay">
 
             <!--Status-->
-            <div id="status" class="module hide">
+            <div id="status" class="module">
                 
                 <!--Statistics-->
                 <div id="stats">
@@ -98,7 +98,7 @@
             <div id="org" class="module hide">
 
                 <div id="optionsBar">
-                    <img src="appAssets/edit.png" width="32" height="32" alt="edit" title="Edit Information">
+                    <img src="appAssets/edit.png" width="32" height="32" id="editOrg" alt="edit" title="Edit Information">
                 </div>
 
                 <div id="intro">
@@ -165,11 +165,11 @@
 
 
          <!--write/edit: do later-->
-         <div id="orgEdit" class="module">
+         <div id="orgEdit" class="module hide">
 
             <div id="optionsBarEdit">
                  <img src="appAssets/submit.png" width="28" height="28" alt="Submit" title="Submit">
-                 <img src="appAssets/cancel.png" width="28" height="28" alt="Cancel" title="Cancel">
+                 <img src="appAssets/cancel.png" width="28" height="28" id="cancel" alt="Cancel" title="Cancel">
             </div>
 
             <div id="introEdit">
@@ -204,12 +204,17 @@
 
                 <div id="infoPeopleEdit">
                     <!--sample person-->
+        
                     <figure class="person">
+                        <div class="personEdit">
+                            <img src="appAssets/sub.png" alt="Remove" title="Remove" class="personRemove">
+                        </div>
                         <input type="file" name="personUpload" class="personUpload" accept=".png, .jpeg, .pdf"/>
                         <img src="#" alt="person">
                         <input name="PersonName" type="text" value="" placeholder="Name" style="margin:auto">
                         <input name="Position" type="text" value="" placeholder="Position or Role" style="margin:auto">
                     </figure>
+                    
                     <!--end of sample person-->
                 </div>
 
