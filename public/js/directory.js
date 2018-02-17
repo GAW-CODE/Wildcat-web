@@ -115,5 +115,12 @@ spring.addEventListener('click', function(){
     SSpring.className="show";
 });
 
-
-const FIREBASE_DATABASE = firebase.database();//access the database 
+//note: distinguish between staff and organizations
+let contactCards = document.getElementsByClassName('contacts');
+for (let i = 0; i < contactCards.length; i++) {
+  contactCards[i].addEventListener('click', function() {
+    let name = contactCards[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+    let url = 'card-template-staff.html?name=' + encodeURIComponent(name);
+    document.location.href = url;
+  });
+}

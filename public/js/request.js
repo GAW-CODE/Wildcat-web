@@ -92,6 +92,7 @@ function sendAnnouncement(title, announcement) {
 		});
 }
 
+//file upload
 uploadFile.addEventListener('change', function (e) {
     document.getElementById('uploader').style.display = 'block';
     var file = e.target.files[0];

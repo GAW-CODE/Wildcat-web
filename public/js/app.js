@@ -147,9 +147,19 @@ function approveEvent(event) {
         });
     })
     .then(() => {
-      // insert announcement under “/announcements” in database
+      let endTime = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/EndTime');
+      let startTime = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/StartTime');
+      let date = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/date');
+      let description =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/description');
+      let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
+      let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
+      let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
+      calendar.get('/calendar.js', function(req, res){
+        res.addEvent(endTime, startTime, date, description, location, name, org);
+      });
+      // insert announcement under “/events in database
       FIREBASE_DATABASE.ref('/events').push(announcement);
-      // remove announcement from ‘/requests/announcements’ in database
+      // remove announcement from ‘/requests/events in database
       FIREBASE_DATABASE.ref('/requests/events').child(keyList[index]).remove()
     })
     .then(() => {
