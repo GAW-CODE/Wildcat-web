@@ -55,6 +55,7 @@ const FIREBASE_DATABASE = firebase.database();
 const FIREBASE_STORAGE = firebase.storage();
 
 //date
+//if regular anonouncement:
 let expirationDate = new Date();
 let dd = expirationDate.getDate() + 1;
 let mm = expirationDate.getMonth() + 1; //January is 0 so +1 is added to get the proper date
@@ -68,6 +69,8 @@ if (mm < 10) {
 }
 expirationDate = mm + '/' + dd + '/' + yyyy;
 //its value is updated in datepicker-directive.js, day after today by default
+
+
 
 //send msg to database
 function sendAnnouncement(title, announcement) {
