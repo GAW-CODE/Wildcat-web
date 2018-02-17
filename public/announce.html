@@ -46,22 +46,6 @@
                 <img class="modal-content" id="img01">
             </div>
 
-            <script>
-                //move to announce.js and modularize (wrap inside a function)
-                var modal = document.getElementById('modal1');
-                var img = document.getElementById('imgattach1');
-                var modalImg = document.getElementById("img01");
-                img.onclick = function () {
-                    modal.style.display = "block";
-                    modalImg.src = this.src;
-                }
-                var span = document.getElementsByClassName("close")[0];
-                span.onclick = function () {
-                    modal.style.display = "none";
-                }
-            </script>
-
-
             <div id="guidance">
                 <div>
                     <img class="logo" src="http://jonvilma.com/images/red-5.jpg" />

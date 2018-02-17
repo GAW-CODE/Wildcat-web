@@ -6,6 +6,20 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
+//media
+//TODO: modularize (wrap inside a function)
+var modal = document.getElementById('modal1');
+var img = document.getElementById('imgattach1');
+var modalImg = document.getElementById("img01");
+img.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+}
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+		modal.style.display = "none";
+}
+
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -50,7 +64,7 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
 });
 
 //student archive
-let announcements = document.getElementsByClassName('saveable');
+let announcements = document.getElementsByClassName('saveable'); //all announcement DOM elements on the page
 
 for (let i = 0; i < announcements.length; i++) {
 	announcements[i].addEventListener("click", function() {
@@ -64,7 +78,7 @@ for (let i = 0; i < announcements.length; i++) {
 }
 
 //daily deletion of expired announcements
-//makes array containing all announcements
+//makes array containing all announcements (in the database)
 let annList = [];
 
 //TODO: repeat this code every day at midnight
@@ -115,8 +129,8 @@ function convertToEpoch(){
 }
 
 //search query
-let searchIcon = document.getElementById('searchIcon');
 let searchBar = document.getElementById('search');
+let announcementsDiv = document.getElementById('news');
 let isSearchOn = false;
 
 function toggleSearchBar() {
@@ -130,7 +144,16 @@ function toggleSearchBar() {
 }
 
 function search() {
-	let filter, ul, li, a, i;
+	let filter = searchBar.value.toUpperCase();
+	for (let i = 0; i < announcements.length; i++) {
+		let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
+		if (annText.toUpperCase().indexOf(filter) != -1) { //match found
+			announcements[i].style.display = '';
+		} else {
+			announcements[i].style.display = 'none';
+		}
+	}
+	//let announcementsAll =
 	//filter = searchBar
 }
 
