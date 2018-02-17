@@ -41,20 +41,15 @@
             <input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
             <input type="text" id="txtOrganization" placeholder="Organization"> <br>
         </div>
-        <div id="sinfo" style="display: none;">
-            <input type="text" id="txtName" placeholder="Name"><br>
-            <input type="email" id="txtEmail" placeholder="Email"> <br>
-            <input type="password" id="txtPassword" placeholder="Password"><br>
-            <input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
+
         </div>
         <script>
             function info(elem) {
-                if (elem.value == 'Admin' || elem.value == 'Guidance' || elem.value == 'ASB' || elem.value == 'Campus Org' || elem.value == 'Athletics' || elem.value == 'Fundraiser') {
+                if (elem.value !== "Student") {
                     document.getElementById('ainfo').style.display = 'block';
-                    document.getElementById('sinfo').style.display = 'none';
                 } else {
-                    document.getElementById('ainfo').style.display = 'none';
-                    document.getElementById('sinfo').style.display = 'block';
+                    document.getElementById('ainfo').style.display = 'block';
+                    document.getElementById('txtOrganization').style.display = 'none';
 
                 }
                 return false;

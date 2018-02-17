@@ -25,3 +25,7 @@ input:focus{
     border-bottom: 2px solid rgb(187, 46, 46);
     outline: none;
 }
+#wrong {
+    display: none;
+    color: #FF4444;
+}

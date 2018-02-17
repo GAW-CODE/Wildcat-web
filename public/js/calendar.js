@@ -96,7 +96,39 @@ function storeToken(token) {
   fs.writeFile(TOKEN_PATH, JSON.stringify(token));
   console.log('Token stored to ' + TOKEN_PATH);
 }
+function addEvent(endTime, startTime, date, description, location, name, org){
+  // Refer to the Node.js quickstart on how to setup the environment:
+// https://developers.google.com/google-apps/calendar/quickstart/node
+// Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
+// stored credentials.
 
+var event = {
+  'summary': name,
+  'Organization': org,
+  'location': location,
+  'description': description,
+  'start': {
+    'dateTime': date + 'T' + startTime,
+    'timeZone': 'America/Los_Angeles',
+  },
+  'end': {
+    'dateTime': date + 'T' + startTime,
+    'timeZone': 'America/Los_Angeles',
+  },
+};
+
+calendar.events.insert({
+  auth: auth,
+  calendarId: 'fjk6cu6719g51e912al0fpht98@group.calendar.google.com',
+  resource: event,
+}, function(err, event) {
+  if (err) {
+    console.log('There was an error contacting the Calendar service: ' + err);
+    return;
+  }
+  console.log('Event created: %s', event.htmlLink);
+});
+}
 /**
  * Lists the next 10 events on the user's primary calendar.
  *

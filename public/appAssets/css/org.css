@@ -9,7 +9,23 @@ body{
     height: 100%;
     overflow: hidden;
 }
+/*scroll bar*/
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);
+	background-color: #F5F5F5;
+}
 
+::-webkit-scrollbar
+{
+	width: 3px;
+	background-color: rgb(121, 8, 8);
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #fc232360;
+}
 /*cursor styles*/
 .click{
     cursor: pointer;
@@ -112,7 +128,7 @@ section{
     height: 100%;
     margin: auto;
 }
-#status.hide, #req.hide, #org.hide{
+#status.hide, #req.hide, #org.hide, #orgEdit.hide{
     display: none;
 }
 @keyframes modChange{
@@ -205,9 +221,7 @@ section{
 }
 
 /*Information Module*/
-#org{
-    width: 90%;
-    height: 100%;
+#org, #orgEdit{
     margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
@@ -216,18 +230,18 @@ section{
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-#intro{
-    height: 25vh;
+#intro, #introEdit{
+    height: 16vw;
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     background-color: rgb(251, 251, 251);
 }
-#profile{
+#profile, #profileEdit{
     height: 100%;
     width: 40%;
 }
-#profile img{
+#profile img, #profileEdit img{
     display: block;
     padding: 2.5%;
     width: 9vw;
@@ -243,24 +257,25 @@ section{
     text-align: center;
     word-wrap: break-word;
 }
-#deets{
+#deets, #deetsEdit{
     width: 60%;
     height: 100%;
     overflow-y: auto;
 }
-#deets h2{
+#deets h2, #deetsEdit h2{
     font-size: 1.6vw;
     color: rgb(236, 29, 29);
     padding: 1.5%
 }
-#details{
+#details, #detailsEdit{
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    height: 25vh;
+    height: 12vw;
 }
-#infoPeople{
+#infoPeople, #infoPeopleEdit{
     overflow-y: auto;
+    overflow-x: hidden;
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -268,7 +283,7 @@ section{
 }
 .person{
     width: 20%;
-    height: 50%;
+    height: 70%;
     padding: 1.5%;
     margin: 15px;
     border-bottom: 2px solid rgb(231, 231, 231);
@@ -283,13 +298,13 @@ section{
 .person figcaption{
     padding: 0.5%;
 }
-#media{
+#media, #mediaEdit{
     padding-top: 1%;
     width: 50%;
     color: rgb(167, 23, 23);
     text-align: center;
 }
-#mediaList{
+#mediaList, #mediaListEdit{
     width: 98%;
     height: 80%;
     margin: auto;
@@ -311,4 +326,41 @@ section{
 }
 .other p{
     padding: 1%;
+}
+/*Full-on input styling for write module*/
+#orgEdit input, #orgEdit textarea{
+    padding: 1%;
+    width: 90%;
+    outline: none;
+    border: 1px solid gray;
+    display: block;
+    resize: none;
+    margin: 0.5%;
+}
+.centerInput{
+    margin: auto;
+}
+#orgEdit input[type~="file"]{
+    display: none;
+}
+#detailEditBar{
+    padding: 0.6%;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(228, 228, 228);
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+#detailEditBar img{
+    padding: 0.2%;
+}
+#EditPeopleBar{
+    width: 50%;
+}
+#EditMediaBar{
+    width: 50%;
+}
+#EditOtherBar{
+    width: 100%;
 }
