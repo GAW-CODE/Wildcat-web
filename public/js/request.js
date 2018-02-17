@@ -70,6 +70,8 @@ if (mm < 10) {
 expirationDate = mm + '/' + dd + '/' + yyyy;
 //its value is updated in datepicker-directive.js, day after today by default
 
+
+
 //send msg to database
 function sendAnnouncement(title, announcement) {
 	const uid = FIREBASE_AUTH.currentUser.uid;

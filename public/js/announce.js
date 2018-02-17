@@ -6,20 +6,6 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
-//media
-//TODO: modularize (wrap inside a function)
-var modal = document.getElementById('modal1');
-var img = document.getElementById('imgattach1');
-var modalImg = document.getElementById("img01");
-img.onclick = function () {
-		modal.style.display = "block";
-		modalImg.src = this.src;
-}
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-		modal.style.display = "none";
-}
-
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -64,7 +50,7 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
 });
 
 //student archive
-let announcements = document.getElementsByClassName('saveable'); //all announcement DOM elements on the page
+let announcements = document.getElementsByClassName('saveable');
 
 for (let i = 0; i < announcements.length; i++) {
 	announcements[i].addEventListener("click", function() {
@@ -77,10 +63,11 @@ for (let i = 0; i < announcements.length; i++) {
 	});
 }
 //daily deletion of expired announcements
-//makes array containing all announcements (in the database)
 let annList = [];
 
 //TODO: repeat this code every day at midnight
+//may need to involve server, computer can't always be running
+function delete(){
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
@@ -103,74 +90,23 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 };
 
 
-//function to convert a date to Epoch time, milliseconds since Jan 1 1970
-//TODO:not sure how to reference a variable from a different file??
-function convertToEpoch(){
-	expirationDate.dd = dd - 1;
-	expirationDate.mm = mm - 1;
-	expirationDate.yyyy = yyyy - 1970;
-
-	d = d * 86400000;
-	if (m = 1 || 3 || 5 || 7 || 8 || 10 || 12)
-		{
-			m = m * 86400000 * 31;
-		}
-	if (m = 4 || 6 || 9 || 11)
-		{
-			m = m * 86400000 * 30;
-		}
-  if (m = 2)
-		{
-			m = m * 86400000 * 27;
-		}
-  y = y * 86400000 * 365.2422;
-
-	let dateInEpoch = d + m + y - 26000;
-	return dateInEpoch;
-}
-
 //search query
+let searchIcon = document.getElementById('searchIcon');
 let searchBar = document.getElementById('search');
-let announcementsDiv = document.getElementById('news');
 let isSearchOn = false;
 
 function toggleSearchBar() {
-	console.log('toggle search bar');
 	if (!isSearchOn) { //start search process / search mode
-		//collapse whole page - only display announcements
 		searchBar.removeAttribute('hidden');
-		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				announcementsDiv.childNodes[i].style.display = 'none';
-			}
-		}
 		//blur whole screen
 	} else {
 		searchBar.setAttribute('hidden', 'true');
-		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				announcementsDiv.childNodes[i].style.display = '';
-			}
-		}
 	}
 	isSearchOn = !isSearchOn;
 }
 
 function search() {
-	console.log('search query');
-	let filter = searchBar.value.toUpperCase();
-	for (let i = 0; i < announcements.length; i++) {
-		let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
-		if (annText.toUpperCase().indexOf(filter) != -1) { //match found
-			announcements[i].style.display = '';
-			console.log(filter);
-			announcements[i].parentNode.style.display = '';
-		} else {
-			announcements[i].style.display = 'none';
-			announcements[i].parentNode.style.display = 'none';
-		}
-	}
-	//let announcementsAll =
+	let filter, ul, li, a, i;
 	//filter = searchBar
 }
 
@@ -194,8 +130,8 @@ var timeoutId = 0;
 }).on('mouseup mouseleave', function() {
     clearTimeout(timeoutId);
 });
-//send announcement by pressing down
-function save(){
+//send announcement
+function saveTo(){
 
 
 }
