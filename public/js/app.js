@@ -169,8 +169,37 @@ function approveEvent(event) {
 }
 function deny(event) {
   let reason = prompt('Explain why the announcement was rejected');
+  // index of the container = which child to get from database
+  // index of the container = which child to get from database
+  let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let index = reqArray.indexOf(selectedAnnouncement);
 
-  //send reason back to organization's interface
+  // retrieve announcement corresponding to the one you clicked on
+  let announcement;
+  let keyList = [];
+
+  FIREBASE_DATABASE.ref('/requests/announcements').once('value')
+    .then((snapshot) => {
+      let val = snapshot.val();
+      for (let key in val) {
+        keyList.push(key);
+      }
+      FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
+        .then((snapshot) => {
+          announcement = snapshot.val();
+        });
+    })
+    .then(() => {
+      // insert announcement under “/Rejections” in database
+      FIREBASE_DATABASE.ref('/Rejections').push(announcement);
+      // remove announcement from ‘/requests/announcements’ in database
+      FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
+    })
+    .then(() => {
+      // remove from admin.html
+      selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
+    });
 }
 
 //retrieve announcement requests from FIREBASE_DATABASE

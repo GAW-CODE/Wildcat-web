@@ -13,6 +13,7 @@ var sendButton = document.getElementById('send');
 var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('announcement');
 var uploadFile = document.getElementById('uploadFile');
+var preview = document.getElementById('preview');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -51,6 +52,7 @@ sendButton.addEventListener('click', function(e) {
 //announcements logic
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
+const FIREBASE_STORAGE = firebase.storage();
 
 //date
 let expirationDate = new Date();
@@ -113,4 +115,8 @@ uploadFile.addEventListener('change', function (e) {
 
         }
     );
+    FIREBASE_STORAGE.ref('/upload/' + file.name).on('child_added', function (snapshot) {
+        console.log(snapshot.val());
+        preview = snapshot.val();
+    });
 });
