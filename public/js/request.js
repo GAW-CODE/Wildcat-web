@@ -53,6 +53,7 @@ const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
 
 //date
+//if regular anonouncement:
 let expirationDate = new Date();
 let dd = expirationDate.getDate() + 1;
 let mm = expirationDate.getMonth() + 1; //January is 0 so +1 is added to get the proper date

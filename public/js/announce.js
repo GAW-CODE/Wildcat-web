@@ -62,7 +62,6 @@ for (let i = 0; i < announcements.length; i++) {
 		//add announcement to student archive
 	});
 }
-
 //daily deletion of expired announcements
 //makes array containing all announcements
 let annList = [];
@@ -87,9 +86,11 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 			}
 		}
 });
+};
+
 
 //function to convert a date to Epoch time, milliseconds since Jan 1 1970
-//not sure how to reference a variable from a different file??
+//TODO:not sure how to reference a variable from a different file??
 function convertToEpoch(){
 	expirationDate.dd = dd - 1;
 	expirationDate.mm = mm - 1;
@@ -145,3 +146,21 @@ let y = n.getFullYear();
 let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+//if announcement is pressed down
+var timeoutId = 0;
+
+('announcements').on('mousedown', function() {
+    timeoutId = setTimeout(save(), 3000);
+}).on('mouseup mouseleave', function() {
+    clearTimeout(timeoutId);
+});
+//send announcement by pressing down
+function save(){
+
+
+}
+
+//be able to delete saved msgs
+//if held down for 2 seconds, prompt for deletion? yes and no button
+FIREBASE_DATABASE.ref().child('/announcements/this').remove();
