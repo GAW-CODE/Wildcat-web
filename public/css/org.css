@@ -327,7 +327,7 @@ section{
 .other p{
     padding: 1%;
 }
-/*Full on input styling for write module*/
+/*Full-on input styling for write module*/
 #orgEdit input, #orgEdit textarea{
     padding: 1%;
     width: 90%;
@@ -342,4 +342,25 @@ section{
 }
 #orgEdit input[type~="file"]{
     display: none;
+}
+#detailEditBar{
+    padding: 0.6%;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(228, 228, 228);
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+#detailEditBar img{
+    padding: 0.2%;
+}
+#EditPeopleBar{
+    width: 50%;
+}
+#EditMediaBar{
+    width: 50%;
+}
+#EditOtherBar{
+    width: 100%;
 }
