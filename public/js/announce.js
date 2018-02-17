@@ -77,7 +77,7 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 		let i = 0;
 		while (i < annList.length)
 		{	//annList[i] returns the key of the ith announcement in the database
-			if ((new Date()).getTime() > val[annList[i]].expirationDate) //expirationDate is a property of each announcement object in the database
+			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate)) //expirationDate is a property of each announcement object in the database
 			{
 				FIREBASE_DATABASE.ref().child('/announcements/' + annList[i]).remove();
 			} else
