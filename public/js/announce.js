@@ -100,8 +100,6 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 			}
 		}
 });
-};
-
 
 //function to convert a date to Epoch time, milliseconds since Jan 1 1970
 //TODO:not sure how to reference a variable from a different file??
@@ -189,7 +187,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 //if announcement is pressed down
 var timeoutId = 0;
 
-('announcements').on('mousedown', function() {
+announcements.on('mousedown', function() {
     timeoutId = setTimeout(save(), 3000);
 }).on('mouseup mouseleave', function() {
     clearTimeout(timeoutId);
