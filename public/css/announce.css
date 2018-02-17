@@ -1,18 +1,31 @@
+/* screen lock-test it out
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+*/
 ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: rgb(255, 210, 84);
+	background-color: white;
 }
 
 ::-webkit-scrollbar
 {
 	width: 6px;
-	background-color: rgb(255, 68, 68);
+	background-color: rgb(255, 226, 145);
 }
 
 ::-webkit-scrollbar-thumb
 {
-	background-color: #ff2d2d;
+	background-color: rgb(235, 196, 125);
 }
 
 *{
@@ -22,7 +35,7 @@
 
 body {
     height: 100%;
-    background: linear-gradient(to bottom, #ffff8d 0%, #f57f17 100%);
+    background-color: rgb(245,245,245);
     background-attachment: fixed;
 }
 
@@ -30,7 +43,7 @@ body {
     width: 100%;
     height: 12vh;
     font-family: 'Montserrat', sans-serif;
-    background-color: #c62828;
+    background-color: #d32f2f;
     top: 0;
     left: 0;
 }
@@ -54,7 +67,7 @@ body {
     position: relative;
     width: 100%;
     height: 12vh;
-    background-color: #c62828;
+    background-color: #d32f2f;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -82,7 +95,7 @@ body {
     width: 100%;
 }
 .label {
-    color: #e11624;
+    color: #ba000d;
     font-weight: bolder;
     font-size: 10vw;
     font-family: Arial;
@@ -104,9 +117,9 @@ body {
         margin-right: 2vw;
         font-family:Arial;
         font-size: 5vw;
-        background-color: white;
+        background-color: rgb(205,205,205);
         border-radius: 2vw;
-        border: 2vw solid white;
+        border: 2vw solid rgb(205,205,205);
         display: inline-block;
         width: 70vw;
         margin: 0.5vw;
@@ -117,10 +130,10 @@ body {
     margin-left: 23vw;
     font-family: Arial;
     font-size: 5vw;
-    background-color: white;
+    background-color: rgb(235,235,235);
     border-bottom-left-radius: 3vw;
     border-bottom-right-radius: 3vw;
-    border: 2vw solid white;
+    border: 2vw solid rgb(235,235,235);
     display: block;
     max-width: 70vw;
     text-decoration: underline;
