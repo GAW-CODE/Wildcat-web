@@ -24,13 +24,12 @@
             <label>Are you a student or an organization?</label><br>
             <select id="Organization" onchange="return info(this);">
                 <option value="" disabled selected style="display:none;">Choose</option>
-                <option value="Student">Student</option>
                 <option value="Admin">Admin</option>
+								<option value="Campus Org">Campus Org.</option>
                 <option value="Guidance">Guidance</option>
                 <option value="ASB">ASB</option>
-                <option value="Campus Org">Campus Org.</option>
                 <option value="Athletics">Athletics</option>
-                <option value="Fundraiser">Fundraiser</option>
+                <option value="Fundraiser">Fundraiser</option> <!-- TODO: make fundraiser a type of announcement, NOT user -->
                 <option value="Student">Student</option>
             </select>
         </p>
@@ -57,6 +56,8 @@
         </script>
         <button id="SignUp" class="btn btn-action">Sign Up</button>
     </div>
+	<script src="/__/firebase/4.1.3/firebase.js"></script>
+	<script src="/__/firebase/init.js"></script>
 	<script src = "js/SignUp.js"> </script>
 </body>
 </html>
