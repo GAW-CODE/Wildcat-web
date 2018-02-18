@@ -171,7 +171,6 @@ function approveEvent(event) {
 function deny(event) {
   let reason = prompt('Explain why the announcement was rejected');
   // index of the container = which child to get from database
-  // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
   let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
   let index = reqArray.indexOf(selectedAnnouncement);
@@ -192,10 +191,9 @@ function deny(event) {
         });
     })
     .then(() => {
-      // insert announcement under “/Rejections” in database
-    
-      FIREBASE_DATABASE.ref('/Rejections').push(announcement);
-     
+      // insert announcement under “/request/rejections” in database
+      FIREBASE_DATABASE.ref('/request/rejections').push(announcement);
+
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
