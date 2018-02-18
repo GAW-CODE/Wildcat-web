@@ -188,12 +188,12 @@ function deny(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          console.log(announcement);
         });
     })
     .then(() => {
       // insert announcement under “/request/rejections” in database
       FIREBASE_DATABASE.ref('/request/rejections').push(announcement);
-
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
