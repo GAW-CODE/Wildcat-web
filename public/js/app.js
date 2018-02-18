@@ -112,7 +112,7 @@ function approve(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
-          announcement.expirationDate += ' 23:59:59'
+          console.log(announcement);
         });
     })
     .then(() => {
@@ -188,7 +188,8 @@ function deny(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
-          announcement.rejectionReason = reason;
+          announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
+          console.log(announcement);
         });
     })
     .then(() => {
