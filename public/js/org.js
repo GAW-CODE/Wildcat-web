@@ -1,15 +1,17 @@
 //Database - displaying announcement request status
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
-console.log(FIREBASE_AUTH.currentUser);
-let userId = FIREBASE_AUTH.currentUser.uid;
-console.log(userId);
 
-let organization;
-FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-  organization = snapshot.val();
-  console.log(organization);
-});
+function displayRequestStatus() {
+  let userId = FIREBASE_AUTH.currentUser.uid;
+  let organization;
+  FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
+    organization = snapshot.val().organization;
+    console.log(organization);
+  });
+
+  //TODO: Kyle: insert your pseudocode here
+}
 
 //logout
 let logOutBtn = document.getElementById('logout');
@@ -27,6 +29,7 @@ function signOut() {
 function handleAuthStateChanged(user) {
   if (user) { //&& user is an Organization
     console.log(user);
+    displayRequestStatus();
   } else { //prevent unauthorized users from accessing admin.html
     setTimeout(function() {window.location.href = "404.html";}, 2000);
   }
