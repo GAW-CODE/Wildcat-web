@@ -33,7 +33,7 @@ body {
     text-align: center;
     padding-top:1vh;
     padding-bottom:1vh;
-
+    font-family: 'Quicksand', sans-serif;
 }
 #admin {
     width: 100%;
@@ -96,6 +96,7 @@ body {
     font-size: 10vw;
     color: white;
     padding-top: 5vw;
+     font-family: 'Quicksand', sans-serif;
 }
 
 #profileIcon{
@@ -129,4 +130,5 @@ body {
 #bigOne{
     font-size: 100px;
     font-color:black;
+     font-family: 'Quicksand', sans-serif;
 }
