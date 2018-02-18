@@ -67,7 +67,7 @@ if (dd < 10) {
 if (mm < 10) {
     mm = '0' + mm;
 }
-expirationDate = mm + '/' + dd + '/' + yyyy;
+expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 //its value is updated in datepicker-directive.js, day after today by default
 
 

@@ -112,6 +112,7 @@ function approve(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          announcement.expirationDate += ' 23:59:59'
         });
     })
     .then(() => {
