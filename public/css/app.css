@@ -4,7 +4,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;;
     font-size: 100%;
     cursor: default;
     z-index: 0;
@@ -12,7 +12,7 @@
 }
 body{
     overflow: hidden;
-}
+}S
 .hov{
     cursor: pointer;
 }
@@ -20,7 +20,9 @@ a{
     text-decoration: none;
     font-style: none;
 }
-
+p {
+    font-family: 'Open Sans', sans-serif;
+}
 /*---------------SIDEBAR STYLES---------------*/
 
 #nav{
