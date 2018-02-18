@@ -192,7 +192,9 @@ function deny(event) {
     })
     .then(() => {
       // insert announcement under “/Rejections” in database
+    
       FIREBASE_DATABASE.ref('/Rejections').push(announcement);
+     
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
