@@ -12,6 +12,8 @@ let info = document.getElementsByClassName('modItem')[2];
 let edit = document.getElementById('editOrg');
 let cancel = document.getElementById('cancel');
 
+
+
 //module selections
 let sMod = document.getElementById('status');
 let rMod = document.getElementById('req');
@@ -45,3 +47,15 @@ cancel.addEventListener('click', function(){
     iMod.className = "module";
     eMod.className = "module hide";
 });
+
+let database = firebase.database();
+const FIREBASE_AUTH = firebase.auth();
+console.log(FIREBASE_AUTH.currentUser);
+let userId=FIREBASE_AUTH.currentUser.uid;
+
+let organization;
+firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  organization=snapshot.val();
+  console.log(organization);
+});
+console.log(userId);
