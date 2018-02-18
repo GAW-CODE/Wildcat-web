@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+     font-family: 'Quicksand', sans-serif;
 }
 body, nav, header, section, footer{
     width: 100%;
@@ -12,11 +12,26 @@ a{
     text-decoration: none;
     font-style: none;
 }
+/*scroll bar*/
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffebeb; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 51, 51); 
+}
 
 /*navigation styles*/
 nav{
     height: 6.2vh;
-    background-color: #9c0304;
+    background-color: #c90101;
     display: flex;
     justify-content: space-between;
     font-size: 1.2vw;
@@ -31,7 +46,7 @@ nav li{
     white-space: nowrap;
 }
 nav #navRight li:hover{
-    background-color: rgb(196, 41, 41);
+    background-color: rgb(223, 57, 57);
 }
 nav a{
     color: white;
@@ -54,7 +69,7 @@ header{
     text-align: center;
     overflow: hidden;
     background-image: url("../webassets/indexBackdrop.jpg");
-    background-color: rgb(255, 242, 208);
+    background-color: rgb(255, 241, 119);
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -67,7 +82,7 @@ header{
     transition-duration: 0.5s;
 }
 #headerAlign:hover{
-    background-color: rgba(34, 34, 34, 0.548);
+    background-color: rgba(141, 141, 141, 0.26);
 }
 #headSpacer{
     width: 100%;
@@ -97,7 +112,7 @@ header{
     margin: auto;
 }
 #appDirect a{
-    background-color: rgb(216, 71, 71);
+    background-color: rgb(236, 64, 64);
     padding: 3%;
     font-size: 1.3vw;
     border-radius: 5px;
@@ -105,23 +120,158 @@ header{
     color: white;
     box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.52);
 }
-#appDirect a:hover{
-    background-color: rgb(168, 42, 42);
+#appDirect a:active{
+    background-color: rgb(211, 49, 49);
 }
 
 /*body top*/
+#main{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    padding-top: 5%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: rgb(250, 250, 250);
+}
+#phoneview{
+    width: 50%;
+    height: 100%;
+}
+#phoneview img{
+    display: block;
+    margin: auto;
+    width: 39vw;
+    height: 39vw;
+}
+.one{
+    animation-name: bob;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.two{
+    animation-name: bob;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.three{
+    animation-name: bob;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+@keyframes bob{
+    0%{transform: none;}
+    25%{transform: translateY(-7px);}
+    50%{transform: none;}
+    100%{transform: none;}
+}
+#desc{
+    width: 50%;
+    height: 100%;
+    text-align: right;
+}
+#desc h2{
+    font-size: 3.5vw;
+    color: #ff0000;
+    padding: 1%;
+    border-bottom: 5px solid #ff6161;
+}
+#desc p{
+    padding: 2%;
+    font-size: 1.5vw;
+    color: rgb(105, 105, 105);
+    font-weight: 400;
+}
+#listing{
+    font-size: 2.3vw;
+    text-align: left;
+    padding: 0%;
+    color: #ff5f5f;
+}
+#listing li{
+    padding: 2%;
+}
 
 
 /*body bottom*/
 #feats{
     width: 100%;
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(236, 236, 236);
+    padding: 2% 0 2% 0;
+    height: fit-content;
 }
 #feats h2{
     width: 50%;
+    height: 18%;
+    font-size: 2.5vw;
     margin: auto;
     text-align: center;
-    padding: 1.5%;
-    border-bottom: 3px solid rgb(158, 7, 7);
+    color: rgb(255, 48, 48);
+    padding: 0.7%;
+    border-bottom: 3px solid rgb(240, 57, 57);
 }
-#flexFeats
+#flexFeats{
+    width: 100%;
+    height: 78%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    padding: 2% 0;
+}
+.feature{
+    text-align: center;
+    width: 20%;
+    height: 90%;
+    padding: 1%;
+}
+.feature h4{
+    font-size: 1.8vw;
+    color: rgb(243, 69, 26);
+}
+.feature img{
+    display: block;
+    margin: auto;
+    padding: 1%;
+    box-sizing: border-box;
+    width: 9vw;
+    height: 9vw;
+}
+.feature p{
+    font-size: 1.5vw;
+    color: rgb(146, 146, 146);
+}
+
+/*footer styles*/
+footer{
+    background-color: rgb(34, 34, 34);
+    color: rgb(216, 216, 216);
+    text-align: center;
+    padding-top: 1%;
+}
+footer a{  
+    transform: translateY(17px);
+    font-size: 3vw;
+    transition-duration: 0.3s;
+    color: white;
+}
+footer a:hover{
+    color: rgb(255, 103, 103);
+}
+footer p{
+    width: fit-content;
+    margin: auto;
+    padding: 3%;
+    transition-duration: 0.3s;
+}
+footer p:hover{
+    transform: translateY(-5px);
+    color: white;
+}

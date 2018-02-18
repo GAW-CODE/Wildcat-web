@@ -1,0 +1,37 @@
+body{
+	background-image: url("https://static1.squarespace.com/static/5418aa2ce4b097579b5c27e5/5952853ee4fcb53209577321/5952853ee4fcb53209577320/1495823517521/AdobeStock_108141338.jpg?format=1500w");
+		background-repeat: no-repeat;
+    	background-attachment: fixed;
+    	background-position: center;
+    	background-size: cover;
+	 text-align: center;
+	 font-family: 'Montserrat', sans-serif;
+	 width:100%;
+	 height: 100%;
+	 padding:0;
+	 margin:0;
+	}
+
+#txtName{
+	width:400px;
+}
+#message{
+	height: 200px;
+	width: 400px;
+	text-align:left;
+}
+#NewAnnouncementBox{
+	display: block;
+	box-sizing: border-box;
+	border-radius: 25px;
+    background-color: #fff9f9;
+     padding: 30px 30px;
+    margin-top: 21vh;
+    margin-bottom: 21vh;
+    margin-left: 21vh;
+    margin-right: 21vh;
+}
+#requestFooter{
+  width: 100%;  
+  margin: auto;
+}
