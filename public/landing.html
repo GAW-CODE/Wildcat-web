@@ -11,9 +11,7 @@
 
 <!--links-->
 <link rel="stylesheet" type="text/css" href="css/landing.css">
-<link href="https://fonts.googleapis.com/css?family=Barlow:500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 <!--browser-->
 <link rel="icon" href="sharedAssets/favicon.png">
 <title>Home</title>
@@ -25,7 +23,7 @@
 
 <!--Navigation goes here-->
 <!--Include 'go to app' button-->
-<nav>
+<nav id="reach">
     <!--To self, login, and signup-->
     <ul id="navLeft">
         <li><a href="landing.html"><img src="sharedAssets/Wildcat.png" width="76.277" height="59.111" alt="Wildcat App"></a></li>
@@ -51,13 +49,21 @@
 </header>
 
 <!--Display + Our biggest feature-->
-<section>
-    <div>
-
+<section id="main">
+    <div id="phoneview">
+        <img src="webAssets/phone.png">
     </div>
-    <div>
+    <div id="desc">
         <h2>Get Updates Anywhere</h2>
-        <p></p>
+        <p>Access to what's important to you-anytime, anywhere.</p>
+        <ul id="listing">
+            <li>Administration</li>
+            <li>Guidance</li>
+            <li>Wilson ASB</li>
+            <li>Campus Organizations</li>
+            <li>Athletics</li>
+            <li>Fundraisers</li>
+        </ul>
     </div>
 </section>
 
@@ -67,17 +73,17 @@
     <div id="flexFeats">
         <div class="feature">
             <h4>Campus Updates</h4>
-            <img src="#">
+            <img src="webAssets/message.png" class="one">
             <p>Get the latest buzz on campus</p>
         </div>
         <div class="feature">
             <h4>Event Calendar</h4>
-            <img src="#">
+            <img src="webAssets/events.png" class="two">
             <p>Check out upcoming activities</p>
         </div>
         <div class="feature">
             <h4>Informative Directory</h4>
-            <img src="#">
+            <img src="webAssets/book.png" class="three">
             <p>Look up staff and campus groups</p>
         </div>
     </div>
@@ -85,7 +91,8 @@
 
 <!--Things-->
 <footer>
-        <p>Powered by CODE Club</p>
+    <b><a href="#reach">^ ^ ^</a></b>
+    <p>A CODE Club Project</p>
 </footer>
 
 </body>

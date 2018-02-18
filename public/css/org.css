@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;;
 }
 body{
     width: 100%;
@@ -168,6 +168,7 @@ section{
 .statLabel{
     padding: 2% 0;
     font-size: 1.9vw;
+
 }
 #sList{
     width: 80%;
@@ -407,4 +408,7 @@ img.personRemove:hover{
 }
 .mediaInputs{
     width: 90%;
+}
+.wc-date-popover{
+    font-family: 'Quicksand', sans-serif;
 }
