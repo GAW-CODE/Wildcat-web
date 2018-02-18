@@ -67,7 +67,6 @@ let annList = [];
 
 //TODO: repeat this code every day at midnight
 //may need to involve server, computer can't always be running
-function delete(){
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
