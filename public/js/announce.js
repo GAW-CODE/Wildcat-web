@@ -129,10 +129,19 @@ announcements.on('mousedown', function() {
 });
 //send announcement
 function saveTo(){
+//clone
+
+//send to student archive
 
 
 }
 
 //be able to delete saved msgs
 //if held down for 2 seconds, prompt for deletion? yes and no button
-FIREBASE_DATABASE.ref().child('/announcements/this').remove();
+studentAnnouncements.on('mousedown', function() {
+    timeoutId = setTimeout(save(), 3000);
+}).on('mouseup mouseleave', function() {
+    clearTimeout(timeoutId);
+//get key of this announcement
+let sAnnouncekey = //snapshot?
+FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
