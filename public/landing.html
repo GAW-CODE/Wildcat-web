@@ -8,12 +8,25 @@
 <meta name="language" content="English">
 <meta name="description" content="The Wildcat App">
 <meta name = "keywords" content = "Wilson, Announcements, Wildcat App, Wildcat Home, Wilson Announcements, Glen A. Wilson, Glen A. Wilson High School, Wilson High School">
+<!-- enables progressive Web App -->
+<link rel="manifest" href="manifest.json">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Wildcat">
+<meta name="apple-mobile-web-app-title" content="Wildcat">
+<meta name="theme-color" content="#c90101">
+<meta name="msapplication-navbutton-color" content="#c90101">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/index.html">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" type="image/png" sizes="192x192" href="sharedAssets/favicon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="192x192" href="sharedAssets/favicon.png">
 
 <!--links-->
 <link rel="stylesheet" type="text/css" href="css/landing.css">
-<link href="https://fonts.googleapis.com/css?family=Barlow:500" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 <!--browser-->
 <link rel="icon" href="sharedAssets/favicon.png">
 <title>Home</title>
@@ -25,7 +38,7 @@
 
 <!--Navigation goes here-->
 <!--Include 'go to app' button-->
-<nav>
+<nav id="reach">
     <!--To self, login, and signup-->
     <ul id="navLeft">
         <li><a href="landing.html"><img src="sharedAssets/Wildcat.png" width="76.277" height="59.111" alt="Wildcat App"></a></li>
@@ -51,13 +64,21 @@
 </header>
 
 <!--Display + Our biggest feature-->
-<section>
-    <div>
-
+<section id="main">
+    <div id="phoneview">
+        <img src="webAssets/phone.png">
     </div>
-    <div>
+    <div id="desc">
         <h2>Get Updates Anywhere</h2>
-        <p></p>
+        <p>Access to what's important to you-anytime, anywhere.</p>
+        <ul id="listing">
+            <li>Administration</li>
+            <li>Guidance</li>
+            <li>Wilson ASB</li>
+            <li>Campus Organizations</li>
+            <li>Athletics</li>
+            <li>Fundraisers</li>
+        </ul>
     </div>
 </section>
 
@@ -67,17 +88,17 @@
     <div id="flexFeats">
         <div class="feature">
             <h4>Campus Updates</h4>
-            <img src="#">
+            <img src="webAssets/message.png" class="one">
             <p>Get the latest buzz on campus</p>
         </div>
         <div class="feature">
             <h4>Event Calendar</h4>
-            <img src="#">
+            <img src="webAssets/events.png" class="two">
             <p>Check out upcoming activities</p>
         </div>
         <div class="feature">
             <h4>Informative Directory</h4>
-            <img src="#">
+            <img src="webAssets/book.png" class="three">
             <p>Look up staff and campus groups</p>
         </div>
     </div>
@@ -85,7 +106,8 @@
 
 <!--Things-->
 <footer>
-        <p>Powered by CODE Club</p>
+    <b><a href="#reach">^ ^ ^</a></b>
+    <p>A CODE Club Project</p>
 </footer>
 
 </body>

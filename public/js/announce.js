@@ -62,6 +62,7 @@ for (let i = 0; i < announcements.length; i++) {
 		//add announcement to student archive
 	});
 }
+
 //daily deletion of expired announcements
 let annList = [];
 
@@ -85,6 +86,7 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 				i++;
 			}
 		}
+		console.log('end of loop reached');
 });
 
 //search query
@@ -93,24 +95,42 @@ let searchBar = document.getElementById('search');
 let isSearchOn = false;
 
 function toggleSearchBar() {
-	if (!isSearchOn) { //start search process / search mode
-		searchBar.removeAttribute('hidden');
-		//blur whole screen
-	} else {
-		searchBar.setAttribute('hidden', 'true');
-	}
-	isSearchOn = !isSearchOn;
+	console.log('toggle search bar');
+	 if (!isSearchOn) { //start search process / search mode
+			//collapse whole page - only display announcements
+		 searchBar.removeAttribute('hidden');
+			for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+				if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+					announcementsDiv.childNodes[i].style.display = 'none';
+				}
+			}
+		 //blur whole screen
+	 } else {
+		 searchBar.setAttribute('hidden', 'true');
+			for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+				if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+					announcementsDiv.childNodes[i].style.display = '';
+				}
+			}
+	 }
+	 isSearchOn = !isSearchOn;
 }
 
 function search() {
-	let filter, ul, li, a, i;
-	//filter = searchBar
+	console.log('search query');
+ let filter = searchBar.value.toUpperCase();
+ for (let i = 0; i < announcements.length; i++) {
+	 let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
+	 if (annText.toUpperCase().indexOf(filter) != -1) { //match found
+		 announcements[i].style.display = '';
+			console.log(filter);
+			announcements[i].parentNode.style.display = '';
+	 } else {
+		 announcements[i].style.display = 'none';
+			announcements[i].parentNode.style.display = 'none';
+	 }
+ }
 }
-
-// When the page loads, the script indexes the content of all li’s into browser’s memory.
-// When a user types text into the search field, the script searches for equivalents among the indexed data and hides the corresponding li’s where no equivalents were found. If nothing found, a message is shown.
-// The script highlights the text equivalents by replacing phases, for example, babylon becomes <span class="highlight">babylon</span>.
-
 
 //get the date
 let n = new Date();
@@ -120,13 +140,15 @@ let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
 //if announcement is pressed down
-var timeoutId = 0;
+let timeoutId = 0;
+for (let i = 0; i < announcements.length; i++) {
+	announcements[i].addEventListener('mousedown', function() {
+	    timeoutId = setTimeout(save(), 3000);
+	}).addEventListener('mouseup mouseleave', function() {
+	    clearTimeout(timeoutId);
+	});
+}
 
-announcements.on('mousedown', function() {
-    timeoutId = setTimeout(save(), 3000);
-}).on('mouseup mouseleave', function() {
-    clearTimeout(timeoutId);
-});
 //send announcement
 function saveTo(){
 //clone
