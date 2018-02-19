@@ -4,12 +4,13 @@
   "description": "Keeping Wildcats in the loop",
   "lang": "en-US",
   "start_url": "/index.html",
-  "display": "standalone",
+  "scope": "/",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#c90101",
   "icons": [
     {
-      "src": "sharedAssets/",
+      "src": "sharedAssets/favicon.png",
       "sizes": "192x192",
       "type": "image/png"
     }
