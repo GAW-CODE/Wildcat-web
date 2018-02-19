@@ -6,6 +6,7 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
+//display announcements
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -43,31 +44,13 @@ function displayAnnouncement(announcement) {
 	}
 }
 
-//display announcements
 FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, prevChildKey) {
 	console.log(snapshot.val());
   displayAnnouncement(snapshot.val());
 });
 
-//student archive
-let announcements = document.getElementsByClassName('saveable');
-
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener("click", function() {
-		//display "SAVED" momentarily
-
-		//turn bkgd to gold
-		announcements.style.background = "#edbe31";
-
-		//add announcement to student archive
-	});
-}
-
 //daily deletion of expired announcements
 let annList = [];
-
-//TODO: repeat this code every day at midnight
-//may need to involve server, computer can't always be running
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
@@ -78,7 +61,8 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 		let i = 0;
 		while (i < annList.length)
 		{	//annList[i] returns the key of the ith announcement in the database
-			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate)) //expirationDate is a property of each announcement object in the database
+			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
+				//expirationDate is a property of each announcement object in the database
 			{
 				FIREBASE_DATABASE.ref().child('/announcements/' + annList[i]).remove();
 			} else
@@ -167,3 +151,17 @@ studentAnnouncements.on('mousedown', function() {
 //get key of this announcement
 let sAnnouncekey = //snapshot?
 FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
+
+//student archive
+let announcements = document.getElementsByClassName('saveable');
+
+for (let i = 0; i < announcements.length; i++) {
+	announcements[i].addEventListener("click", function() {
+		//display "SAVED" momentarily
+
+		//turn bkgd to gold
+		announcements.style.background = "#edbe31";
+
+		//add announcement to student archive
+	});
+}
