@@ -92,7 +92,7 @@ function sendAnnouncement(title, announcement) {
 				orgType: orgType,
 				message: announcement,
 				userProfileImg: profileImg,
-				expirationDate: expirationDate.toString()
+				expirationDate: (new Date(expirationDate)).toString()
 			});
 		});
 }

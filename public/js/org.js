@@ -1,5 +1,39 @@
+//Database - displaying announcement request status
+const FIREBASE_AUTH = firebase.auth();
+const FIREBASE_DATABASE = firebase.database();
 
-//Any database code should go above
+function displayRequestStatus() {
+  let userId = FIREBASE_AUTH.currentUser.uid;
+  let organization;
+  FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
+    organization = snapshot.val().organization;
+    console.log(organization);
+  });
+
+  //TODO: Kyle: insert your pseudocode here
+}
+
+//logout
+let logOutBtn = document.getElementById('logout');
+
+logOutBtn.addEventListener('click', signOut);
+//know if user is logged in or naw
+FIREBASE_AUTH.onAuthStateChanged(handleAuthStateChanged);
+
+function signOut() {
+  FIREBASE_AUTH.signOut();
+  window.location.href = "index.html";
+  console.log('Signed out');
+}
+
+function handleAuthStateChanged(user) {
+  if (user) { //&& user is an Organization
+    console.log(user);
+    displayRequestStatus();
+  } else { //prevent unauthorized users from accessing admin.html
+    setTimeout(function() {window.location.href = "404.html";}, 2000);
+  }
+}
 
 
 /**
@@ -11,8 +45,6 @@ let request = document.getElementsByClassName('modItem')[1];
 let info = document.getElementsByClassName('modItem')[2];
 let edit = document.getElementById('editOrg');
 let cancel = document.getElementById('cancel');
-
-
 
 //module selections
 let sMod = document.getElementById('status');
@@ -47,15 +79,3 @@ cancel.addEventListener('click', function(){
     iMod.className = "module";
     eMod.className = "module hide";
 });
-
-let database = firebase.database();
-const FIREBASE_AUTH = firebase.auth();
-console.log(FIREBASE_AUTH.currentUser);
-let userId=FIREBASE_AUTH.currentUser.uid;
-
-let organization;
-firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-  organization=snapshot.val();
-  console.log(organization);
-});
-console.log(userId);
