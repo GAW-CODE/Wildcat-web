@@ -8,10 +8,22 @@
         <meta name = "description" content = "Check out the latest announcements!">
         <meta name = "keywords" content = "Wilson, Announcements, WildCatApp, Viewers, Events">
 
+        <!-- enables progressive Web App -->
+      	<link rel="manifest" href="manifest.json">
+        <meta name="mobile-web-app-capable" content="yes">
+      	<meta name="apple-mobile-web-app-capable" content="yes">
+      	<meta name="application-name" content="Wildcat">
+      	<meta name="apple-mobile-web-app-title" content="Wildcat">
+      	<meta name="theme-color" content="#c90101">
+      	<meta name="msapplication-navbutton-color" content="#c90101">
+      	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+      	<meta name="msapplication-starturl" content="/index.html">
+      	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
         <!--links-->
         <link rel="stylesheet" type="text/css" href="css/announce.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
         <!--browser-->
         <title>Wilson Announcements</title>
@@ -25,7 +37,7 @@
             <input type="text" id="search" onkeyup="search()" placeholder="Search" hidden>
         </div>
         <div id="news">
-            <div id="admin">
+          <div id="admin">
                 <div>
                     <img class="logo" src="http://jonvilma.com/images/red-5.jpg" />
                     <p class="label">Admin</p>
@@ -39,13 +51,11 @@
                   <div><a class="linkattach" href="https://78.media.tumblr.com/ee98da65020e4ffc89c29b2f30f810b8/tumblr_o3dikz274b1upf2pto1_400.gif">https://78.media.tumblr.com/ee98da65020e4ffc89c29b2f30f810b8/tumblr_o3dikz274b1upf2pto1_400.gi</a></div>
                 </div>
             </div>
-
             <!--this is just a modal for the image-->
             <div id="modal1" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="img01">
             </div>
-
             <div id="guidance">
                 <div>
                     <img class="logo" src="http://jonvilma.com/images/red-5.jpg" />
@@ -107,17 +117,16 @@
                 </div>
             </div>
         </div>
-
         <div id="navbar">
-            <span>
+            <span class="nav">
                 <a href="announce.html"><img id="chat" src="webAssets/chat.png"></a>
             </span>
 
-            <span>
+            <span class="nav">
                 <a href="#"><img id="calendar" src="webAssets/Calendar.png"></a>
             </span>
 
-            <span>
+            <span class="nav">
                 <a href="appDirectory.html"><img id="profileIcon" src="webAssets/User.png"></a>
             </span>
         </div>

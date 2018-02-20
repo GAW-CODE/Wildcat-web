@@ -55,44 +55,54 @@ var witsDir = document.getElementById('wits');
 var vapaDir = document.getElementById('vapa');
 var modDir = document.getElementById('mod');
 
+let currentDepartment;
+
 mathDir.addEventListener('click', function(){
     academics.className = "hide";
     math.className="show";
+    currentDepartment = "math";
 });
 
 engDir.addEventListener('click', function(){
     academics.className = "hide";
     eng.className="show";
+    currentDepartment = "english";
 });
 
 histDir.addEventListener('click', function(){
     academics.className = "hide";
     hist.className="show";
+    currentDepartment = "socialStudies";
 });
 
 sciDir.addEventListener('click', function(){
     academics.className = "hide";
     sci.className="show";
+    currentDepartment = "science";
 });
 
 peDir.addEventListener('click', function(){
     academics.className = "hide";
     pe.className="show";
+    currentDepartment = "pe";
 });
 
 witsDir.addEventListener('click', function(){
     academics.className = "hide";
     wits.className="show";
+    currentDepartment = "wits";
 });
 
 vapaDir.addEventListener('click', function(){
     academics.className = "hide";
     vapa.className="show";
+    currentDepartment = "vapa";
 });
 
 modDir.addEventListener('click', function(){
     academics.className = "hide";
     lang.className="show";
+    currentDepartment = "modernLanguages";
 });
 
 /*sports directory*/
@@ -120,7 +130,7 @@ let contactCards = document.getElementsByClassName('contacts');
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener('click', function() {
     let name = contactCards[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-    let url = 'card-template-staff.html?name=' + encodeURIComponent(name);
+    let url = 'card-template-staff.html?name=' + encodeURIComponent(name) + " ." + encodeURIComponent(currentDepartment);
     document.location.href = url;
   });
 }

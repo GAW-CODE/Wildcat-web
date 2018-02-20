@@ -2,6 +2,7 @@
 <html>
 <!--This is the interface for those with non-admin accounts-->
 <head>
+<<<<<<< HEAD
  <!--meta tags-->
  <script src="/__/firebase/4.1.3/firebase.js"></script>
   <script src="/__/firebase/init.js"></script>
@@ -17,6 +18,35 @@
  <!--browser-->
  <title>Wilson Announcements</title>
  <link rel="icon" href="sharedAssets/favicon.png">
+=======
+   <!--meta tags-->
+   <meta charset="UTF-8">
+   <meta lang="eng-US">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name = "description" content = "Check out the latest announcements!">
+   <meta name = "keywords" content = "Wilson, Announcements, WildCatApp, Requesters, Home, Events">
+
+   <!-- enables progressive Web App -->
+   <link rel="manifest" href="manifest.json">
+   <meta name="mobile-web-app-capable" content="yes">
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <meta name="application-name" content="Wildcat">
+   <meta name="apple-mobile-web-app-title" content="Wildcat">
+   <meta name="theme-color" content="#c90101">
+   <meta name="msapplication-navbutton-color" content="#c90101">
+   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+   <meta name="msapplication-starturl" content="/index.html">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
+   <!--links-->
+   <link rel="stylesheet" type="text/css" href="css/org.css">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+
+   <!--browser-->
+   <title>Wilson Announcements</title>
+   <link rel="icon" href="sharedAssets/favicon.png">
+>>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
 </head>
 
 
@@ -50,7 +80,11 @@
         <div id="borderlay">
 
             <!--Status-->
+<<<<<<< HEAD
             <div id="status" class="module hide">
+=======
+            <div id="status" class="module">
+>>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
 
                 <!--Statistics-->
                 <div id="stats">
@@ -97,6 +131,11 @@
             <!--Organization-->
             <!--read-->
             <div id="org" class="module hide">
+
+                <div id="optionsBar">
+                    <img src="appAssets/edit.png" width="32" height="32" id="editOrg" alt="edit" title="Edit Information">
+                </div>
+
                 <div id="intro">
                      <figure id="profile">
                         <img src="#" alt="org name">
@@ -161,7 +200,13 @@
 
 
          <!--write/edit: do later-->
-         <div id="orgEdit" class="module">
+         <div id="orgEdit" class="module hide">
+
+            <div id="optionsBarEdit">
+                 <img src="appAssets/submit.png" width="28" height="28" alt="Submit" title="Submit">
+                 <img src="appAssets/cancel.png" width="28" height="28" id="cancel" alt="Cancel" title="Cancel">
+            </div>
+
             <div id="introEdit">
                  <figure id="profileEdit">
                     <input type="file" name="OrgUpload" id="uploadOrg" accept=".png, .jpeg, .pdf"/>
@@ -182,12 +227,10 @@
 
             <div id="detailEditBar">
                 <div id="EditPeopleBar">
-                    <img src="appAssets/add.png" width="32" height="32">
-                    <img src="appAssets/sub.png" width="32" height="32">
+                    <img src="appAssets/add.png" width="32" height="32" alt="add" title="Add Person">
                 </div>
                 <div id="EditMediaBar">
-                    <img src="appAssets/add.png" width="32" height="32">
-                    <img src="appAssets/sub.png" width="32" height="32">
+                    <img src="appAssets/add.png" width="32" height="32" alt="add" title="Add Social Media">
                 </div>
             </div>
 
@@ -196,28 +239,40 @@
 
                 <div id="infoPeopleEdit">
                     <!--sample person-->
+
                     <figure class="person">
-                            <input type="file" name="personUpload" class="personUpload" accept=".png, .jpeg, .pdf"/>
+                        <div class="personEdit">
+                            <img src="appAssets/sub.png" alt="Remove" title="Remove" class="personRemove">
+                        </div>
+                        <input type="file" name="personUpload" class="personUpload" accept=".png, .jpeg, .pdf"/>
                         <img src="#" alt="person">
                         <input name="PersonName" type="text" value="" placeholder="Name" style="margin:auto">
                         <input name="Position" type="text" value="" placeholder="Position or Role" style="margin:auto">
                     </figure>
+
                     <!--end of sample person-->
                 </div>
 
                 <div id="mediaEdit">
                     <h2>Social Media/Contacts</h2>
                     <ul id="mediaListEdit">
-                        <input name="MediaText" type="text" vaule="" placeholder="Social Media" class="centerInput">
-                        <input name="MediaLink" type="text" value="" placeholder="Paste Link here" class="centerInput">
+                        <span class="editMedia">
+                            <div class="removeMedia">
+                                <img src="appAssets/sub.png" width="32" height="32">
+                            </div>
+                            <div class="mediaInputs">
+                                <input name="MediaText" type="text" vaule="" placeholder="Social Media" class="centerInput">
+                                <input name="MediaLink" type="text" value="" placeholder="Paste Link here" class="centerInput">
+                            </div>
+                        </span>
+
                     </ul>
 
                 </div>
             </div>
 
             <div id="EditOtherBar">
-                <img src="appAssets/add.png" width="32" height="32">
-                <img src="appAssets/sub.png" width="32" height="32">
+                <img src="appAssets/add.png" width="32" height="32" alt="add" title="Add Section">
             </div>
 
             <!--other section sample-->
@@ -233,7 +288,8 @@
     </div>
 
 </section>
-
+<script src="/__/firebase/4.1.3/firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
 <script src="js/org.js"></script>
 
 </body>
