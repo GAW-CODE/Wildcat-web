@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;;
 }
 body{
     width: 100%;
@@ -168,6 +168,7 @@ section{
 .statLabel{
     padding: 2% 0;
     font-size: 1.9vw;
+
 }
 #sList{
     width: 80%;
@@ -327,7 +328,12 @@ section{
 .other p{
     padding: 1%;
 }
-/*Full on input styling for write module*/
+/*Full-on input styling for write module*/
+#optionsBar, #optionsBarEdit{
+    padding: 0.5%;
+    border-top: 2px solid rgb(192, 192, 192);
+    background-color: rgb(243, 243, 243);
+}
 #orgEdit input, #orgEdit textarea{
     padding: 1%;
     width: 90%;
@@ -342,4 +348,67 @@ section{
 }
 #orgEdit input[type~="file"]{
     display: none;
+}
+#profileEdit input, #infoPeopleEdit input, [name~="OtherTitle"]{
+    text-align: center;
+}
+#detailEditBar{
+    padding: 0.6%;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(228, 228, 228);
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+#detailEditBar img, #EditOtherBar img{
+    padding: 1%;
+}
+#detailEditBar img:hover, #EditOtherBar img:hover{
+    background-color: rgb(243, 243, 243);
+}
+#EditPeopleBar{
+    width: 50%;
+}
+.personEdit{
+    width: 100%;
+}
+img.personRemove{
+    width: 17px;
+    height: 17px;
+    padding: 2%;
+}
+img.personRemove:hover{
+    background-color: rgb(243, 243, 243);
+}
+#EditMediaBar{
+    width: 50%;
+}
+#EditOtherBar{
+    width: 100%;
+}
+.editMedia{
+    display: flex;
+    width: 98%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.removeMedia{
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.removeMedia img{
+    padding: 5%;
+}
+.removeMedia img:hover{
+    background-color: rgb(243, 243, 243);
+}
+.mediaInputs{
+    width: 90%;
+}
+.wc-date-popover{
+    font-family: 'Quicksand', sans-serif;
 }
