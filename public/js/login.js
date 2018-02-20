@@ -3,6 +3,7 @@ const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnForgot = document.getElementById('btnForgot');
+const email = document.getElementById('email');
 btnSignUp.addEventListener('click', e => {
   window.location.href = "SignUp.html";
 });
@@ -32,6 +33,14 @@ btnLogin.addEventListener('click', e => {
           });
       });
 });
-    // take email from #email to send password reset request
-sendPasswordResetEmail(email, actionCodeSettings)
-
+// take email from #email to send password reset request
+btnForgot.addEventListener('click', function () {
+    firebase.auth().sendPasswordResetEmail(
+        email.value)
+        .then(function () {
+            // Password reset email sent.
+        })
+        .catch(function (error) {
+            // Error occurred. Inspect error.code.
+        })
+});
