@@ -128,8 +128,8 @@ body {
 	.label {
 			color: #ba000d;
 			font-weight: bolder;
+			font-family: 'Quicksand', sans-serif;
 			font-size: 5vw;
-			font-family: Arial;
 			display: inline-block;
 			width: 70vw;
 			vertical-align: top;
@@ -170,7 +170,7 @@ body {
 			.announcement {
 			        margin-bottom: 1.5vw;
 			        margin-right: 1vw;
-			        font-family:Arial;
+			        font-family: 'Quicksand', sans-serif;
 			        font-size: 3vw;
 			        border-bottom: 2px solid rgb(205,205,205);
 			        display: inline-block;
@@ -196,7 +196,7 @@ body {
 			margin-bottom: 1.5vw;
 			margin-left: 24vw;
 			margin-right: 2vw;
-			font-family: Arial;
+			font-family: 'Quicksand', sans-serif;
 			font-size: 3vw;
 			border-bottom: 2px solid rgb(205,205,205);
 			display: block;
