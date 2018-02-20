@@ -11,26 +11,17 @@ btnLogin.addEventListener('click', e => {
   const PASS = txtPassword.value;
   const EMAIL = txtEmail.value;
   const FIREBASE_AUTH = firebase.auth();
-  const PROMISE = FIREBASE_AUTH.signInWithEmailAndPassword(EMAIL, PASS);
-  const UID = FIREBASE_AUTH.currentUser.uid;
-    //First check the username and password
-    //Second read the type from the user
-    //Third move them to the webpage them need to go
-  PROMISE.catch(e => {
-      console.log(e.message);
-      document.getElementById('wrong').style.display = "block";
-      document.getElementById('btnForgot').style.display = "block";
-  });
-  
-
-  firebase.database().ref('/users/' + UID).once('value')
-      .then((snapshot) => {
-          console.log(snapshot.val().type);
-          //student go to annouce
-          //campus org, guidance, ASB, Athletics, Fundraiser  go to orginization
-          //Admin go to admin
-          
-          PROMISE.then(function (v) {
+  const PROMISE = FIREBASE_AUTH.signInWithEmailAndPassword(EMAIL, PASS)
+    .then(function(user) {
+        //First check the username and password
+        //Second read the type from the user
+        //Third move them to the webpage them need to go
+      firebase.database().ref('/users/' + user.uid).once('value')
+          .then((snapshot) => {
+              console.log(snapshot.val().type);
+              //student go to annouce
+              //campus org, guidance, ASB, Athletics, Fundraiser  go to orginization
+              //Admin go to admin
               if (snapshot.val().type == 'Student') {
                   window.location.href = 'announce.html'
               } else if (snapshot.val().type == 'Admin') {
