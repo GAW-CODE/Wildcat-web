@@ -29,9 +29,12 @@ btnLogin.addEventListener('click', e => {
               } else {
                   window.location.href = 'organization.html'
               }
-          });
-      });
+        });
+    }).catch(e => {
+        console.log(e.message);
+        document.getElementById('wrong').style.display = "block";
+        document.getElementById('btnForgot').style.display = "block";
+    });;
 });
     // take email from #email to send password reset request
 sendPasswordResetEmail(email, actionCodeSettings)
-
