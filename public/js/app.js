@@ -154,6 +154,7 @@ function approveEvent(event) {
       let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
       let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
       let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
+
       calendar.get('/calendar.js', function(req, res){
         res.addEvent(endTime, startTime, date, description, location, name, org);
       });
@@ -192,7 +193,8 @@ function deny(event) {
     })
     .then(() => {
       // insert announcement under “/Rejections” in database
-      FIREBASE_DATABASE.ref('/Rejections').push(announcement);
+      FIREBASE_DATABASE.push('/Rejections');
+
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })

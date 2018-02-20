@@ -1,0 +1,41 @@
+[debug] [2018-02-17T19:09:02.401Z] ----------------------------------------------------------------------
+[debug] [2018-02-17T19:09:02.401Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Robert\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-02-17T19:09:02.401Z] CLI Version:   3.16.0
+[debug] [2018-02-17T19:09:02.401Z] Platform:      win32
+[debug] [2018-02-17T19:09:02.401Z] Node Version:  v8.9.3
+[debug] [2018-02-17T19:09:02.401Z] Time:          Sat Feb 17 2018 11:09:02 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:02.401Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-02-17T19:09:02.417Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-02-17T19:09:02.417Z] > authorizing via signed-in user
+[debug] [2018-02-17T19:09:02.417Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-02-17T19:09:02.417Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/3GBZukJu8btsgjdY__sHwrYDKEBiu530KiXePiavDyQvk-dPTR3s5wxPnkxgEz8S',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Feb 17 2018 11:09:02 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:06.480Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-17T19:09:06.511Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Feb 17 2018 11:09:06 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:11.798Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-17T19:09:11.798Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/gaw-wildcat-app/tokens  
+  
+ Sat Feb 17 2018 11:09:11 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:15.892Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Robert\Desktop\Wildcat\Wildcat-web'...
+[info] 
+[debug] [2018-02-17T19:09:50.516Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Feb 17 2018 11:09:50 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:52.766Z] <<< HTTP RESPONSE 200
+[debug] [2018-02-17T19:09:52.781Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/467203906935/clients/_:getWebAppConfig  
+  
+ Sat Feb 17 2018 11:09:52 GMT-0800 (Pacific Standard Time)
+[debug] [2018-02-17T19:09:57.703Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

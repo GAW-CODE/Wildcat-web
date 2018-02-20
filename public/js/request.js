@@ -90,6 +90,7 @@ function sendAnnouncement(title, announcement) {
 				message: announcement,
 				userProfileImg: profileImg,
 				expirationDate: expirationDate.toString()
+				<!--Testing-->
 			});
 		});
 }
