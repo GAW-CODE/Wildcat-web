@@ -2,6 +2,7 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
+const btnForgot = document.getElementById('btnForgot');
 btnSignUp.addEventListener('click', e => {
   window.location.href = "SignUp.html";
 });
@@ -15,6 +16,13 @@ btnLogin.addEventListener('click', e => {
     //First check the username and password
     //Second read the type from the user
     //Third move them to the webpage them need to go
+  PROMISE.catch(e => {
+      console.log(e.message);
+      document.getElementById('wrong').style.display = "block";
+      document.getElementById('btnForgot').style.display = "block";
+  });
+  
+
   firebase.database().ref('/users/' + UID).once('value')
       .then((snapshot) => {
           console.log(snapshot.val().type);
@@ -32,11 +40,7 @@ btnLogin.addEventListener('click', e => {
               }
           });
       });
-  /*PROMISE.then(function(v){
-    window.location.href = "admin.html";
-    //else redirect to request.html (and eventually a separate interface for campus orgs / teachers)
-  });
-    */
-  PROMISE.catch(e => console.log(e.message));
-  document.getElementById('wrong').style.display = "block";
 });
+    // take email from #email to send password reset request
+sendPasswordResetEmail(email, actionCodeSettings)
+
