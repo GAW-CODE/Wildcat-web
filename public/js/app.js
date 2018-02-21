@@ -73,7 +73,22 @@ function handleAuthStateChanged(user) {
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
+  let domString = `<div class="req">
+      <div class="reqMeta">
+        <h3 style="padding: 2%;">${announcement.title}</h3>
+        <div style="padding: 2%;"><img src="appAssets/approve.png"
+        title="Approve"
+        class="reqYes reqDecision hov"><img src="appAssets/reject.png"
+        title="Reject"
+        class="reqNo reqDecision hov">
+        </div>
+        </div>
+        <div class="descHide">
+        <p style="padding: 2%;">${announcement.message}</p>
+
+      </div>
+
+    </div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
