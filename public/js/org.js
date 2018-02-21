@@ -56,7 +56,7 @@ let userId = firebase.auth().currentUser.uid;
 let organization;
 firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   organization=snapshot.val();
-  
+
   console.log(organization);
 });
 console.log(userId);
@@ -86,8 +86,6 @@ info.addEventListener('click', function(){
     iMod.className = "module";
     eMod.className = "module hide";
 });
-<<<<<<< HEAD
-=======
 edit.addEventListener('click', function(){
     iMod.className = "module hide";
     eMod.className = "module";
@@ -96,4 +94,3 @@ cancel.addEventListener('click', function(){
     iMod.className = "module";
     eMod.className = "module hide";
 });
->>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
