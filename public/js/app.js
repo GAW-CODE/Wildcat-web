@@ -209,13 +209,8 @@ function deny(event) {
         });
     })
     .then(() => {
-<<<<<<< HEAD
-      // insert announcement under “/Rejections” in database
-      FIREBASE_DATABASE.push('/Rejections');
-=======
       // insert announcement under “/requests/rejections” in database
       FIREBASE_DATABASE.ref('/requests/rejections').push(announcement);
->>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
 
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()

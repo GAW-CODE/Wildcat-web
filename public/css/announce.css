@@ -38,6 +38,7 @@ body {
     height: 100%;
     background-color: white;
     background-attachment: fixed;
+    user-select: none;
 }
 
 #topBar {
@@ -70,7 +71,7 @@ body {
 #navbar {
     position: relative;
     width: 100%;
-    height: 12vh;
+    height: 5vh;
     background-color: white;
     bottom: 0;
     left: 0;
@@ -300,13 +301,13 @@ body {
 		    right:8vw;
 		    bottom: 0vh;
 		    width:auto;
-		    height:12vh;
+		    height:5vh;
 		}
 
 		#calendar{
 		    position:absolute;
 		    bottom: 0vw;
-		    height: 12vh;
+		    height: 5vh;
 		    position:relative;
 		    width:auto;
 		    vertical-align: middle;
@@ -317,7 +318,7 @@ body {
 		    position:absolute;
 		    left: 8vw;
 		    bottom: 0vh;
-		    height:12vh;
+		    height:5vh;
 		    width:auto;
 		}
 }
