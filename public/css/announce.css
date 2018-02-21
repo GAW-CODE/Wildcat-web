@@ -38,6 +38,7 @@ body {
     height: 100%;
     background-color: rgb(245,245,245);
     background-attachment: fixed;
+    user-select: none;
 }
 
 #topBar {

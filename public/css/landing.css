@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
      font-family: 'Quicksand', sans-serif;
+     user-select: none;
 }
 body, nav, header, section, footer{
     width: 100%;
