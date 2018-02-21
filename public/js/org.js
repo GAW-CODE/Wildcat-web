@@ -39,12 +39,10 @@ function handleAuthStateChanged(user) {
 /**
  * This is the DOM behind organization.html (below code)
 */
-<<<<<<< HEAD
-//sidebar selections
 
-=======
+//sidebar selections
 //sidebar & button selections
->>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
+
 let status = document.getElementsByClassName('modItem')[0];
 let request = document.getElementsByClassName('modItem')[1];
 let info = document.getElementsByClassName('modItem')[2];
@@ -56,7 +54,7 @@ let userId = firebase.auth().currentUser.uid;
 let organization;
 firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
   organization=snapshot.val();
-  
+
   console.log(organization);
 });
 console.log(userId);
