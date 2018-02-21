@@ -7,6 +7,19 @@
 	<meta name="language" content="English">
 	<meta name="description" content="Sign up to request announcements">
 
+	<!-- enables progressive Web App -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Wildcat">
+	<meta name="apple-mobile-web-app-title" content="Wildcat">
+	<meta name="theme-color" content="#c90101">
+	<meta name="msapplication-navbutton-color" content="#c90101">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
 	<!--links-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/SignUp.css">
@@ -24,13 +37,12 @@
             <label>Are you a student or an organization?</label><br>
             <select id="Organization" onchange="return info(this);">
                 <option value="" disabled selected style="display:none;">Choose</option>
-                <option value="Student">Student</option>
                 <option value="Admin">Admin</option>
+								<option value="Campus Org">Campus Org.</option>
                 <option value="Guidance">Guidance</option>
                 <option value="ASB">ASB</option>
-                <option value="Campus Org">Campus Org.</option>
                 <option value="Athletics">Athletics</option>
-                <option value="Fundraiser">Fundraiser</option>
+                <option value="Fundraiser">Fundraiser</option> <!-- TODO: make fundraiser a type of announcement, NOT user -->
                 <option value="Student">Student</option>
             </select>
         </p>

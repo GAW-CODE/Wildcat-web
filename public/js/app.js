@@ -112,6 +112,7 @@ function approve(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          console.log(announcement);
         });
     })
     .then(() => {
@@ -128,7 +129,7 @@ function approve(event) {
 function approveEvent(event) {
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
-  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
   let index = reqArray.indexOf(selectedAnnouncement);
 
   // retrieve announcement corresponding to the one you clicked on
@@ -154,6 +155,7 @@ function approveEvent(event) {
       let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
       let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
       let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
+
       calendar.get('/calendar.js', function(req, res){
         res.addEvent(endTime, startTime, date, description, location, name, org);
       });
@@ -168,11 +170,10 @@ function approveEvent(event) {
     });
 }
 function deny(event) {
-  let reason = prompt('Explain why the announcement was rejected');
-  // index of the container = which child to get from database
+  let reason = prompt('Explain why the announcement was rejected'); //TODO: change prompt() popup to actual user interface
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
-  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
   let index = reqArray.indexOf(selectedAnnouncement);
 
   // retrieve announcement corresponding to the one you clicked on
@@ -188,11 +189,19 @@ function deny(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
+          console.log(announcement);
         });
     })
     .then(() => {
+<<<<<<< HEAD
       // insert announcement under “/Rejections” in database
-      FIREBASE_DATABASE.ref('/Rejections').push(announcement);
+      FIREBASE_DATABASE.push('/Rejections');
+=======
+      // insert announcement under “/requests/rejections” in database
+      FIREBASE_DATABASE.ref('/requests/rejections').push(announcement);
+>>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
+
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
@@ -227,6 +236,10 @@ FIREBASE_DATABASE.ref('/requests/events').on('child_added', function(snapshot, p
   for (let i = 0; i < req.length; i++) {
       req[i].addEventListener("click" , makeAnnouncementHideable);
       approveBtns[i].addEventListener("click" , approveEvent);
-      denyBtns[i].addEventListener("click" , deny);
+      denyBtns[i].addEventListener("click" , denyEvent);
   }
 });
+
+function denyEvent(e) { //e is an object representing the click event (you can trace which element was clicked on)
+
+}

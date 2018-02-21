@@ -67,7 +67,7 @@ if (dd < 10) {
 if (mm < 10) {
     mm = '0' + mm;
 }
-expirationDate = mm + '/' + dd + '/' + yyyy;
+expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 //its value is updated in datepicker-directive.js, day after today by default
 
 
@@ -92,7 +92,12 @@ function sendAnnouncement(title, announcement) {
 				orgType: orgType,
 				message: announcement,
 				userProfileImg: profileImg,
+<<<<<<< HEAD
 				expirationDate: expirationDate.toString()
+				<!--Testing-->
+=======
+				expirationDate: (new Date(expirationDate)).toString()
+>>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
 			});
 		});
 }

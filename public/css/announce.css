@@ -36,7 +36,7 @@
 
 body {
     height: 100%;
-    background-color: rgb(245,245,245);
+    background-color: white;
     background-attachment: fixed;
     user-select: none;
 }
@@ -45,13 +45,14 @@ body {
     width: 100%;
     height: 12vh;
     font-family: 'Quicksand', sans-serif;
-    background-color: #d32f2f;
+    background-color: white;
+		border-bottom: 2px solid rgb(180, 180, 180);
     top: 0;
     left: 0;
 }
 
 #searchIcon {
-	color: #ffffff;
+	color: #ba000d;
 	position: absolute;
 	right: 2vh;
 	top: 2vh;
@@ -66,11 +67,12 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+
 #navbar {
     position: relative;
     width: 100%;
-    height: 12vh;
-    background-color: #d32f2f;
+    height: 5vh;
+    background-color: white;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -78,6 +80,21 @@ body {
     display: inline;
     text-align: center;
     padding: 0.2vh 0;
+		border-top: 2px solid rgb(180, 180, 180);
+}
+@media screen and (min-width: 1000px){
+	#navbar {
+	    position: absolute;
+	    width: 9vw;
+	    height: 100%;
+	    background-color: white;
+	    position: fixed;
+	    display: flex;
+	    text-align: center;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			border-right: 2px solid rgb(180, 180, 180);
+	}
 }
 #admin {
     width: 100%;
@@ -100,48 +117,95 @@ body {
 .label {
     color: #ba000d;
     font-weight: bolder;
-    font-size: 10vw;
+    font-size: 7vw;
     font-family: 'Quicksand', sans-serif;
     display: inline-block;
     width: 70vw;
     vertical-align: top;
-    padding-top: 5.5vw;
+    padding-top: 4vw;
+}
+
+@media screen and (min-width: 1000px) {
+	.label {
+			color: #ba000d;
+			font-weight: bolder;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 5vw;
+			display: inline-block;
+			width: 70vw;
+			vertical-align: top;
+			padding-top: 6vw;
+	}
 }
 .logo {
-        width: 15vw;
-        height: 15vw;
+        width: 9vw;
+        height: 9vw;
         border-radius: 50%;
         margin: 3vw;
         display: inline-block;
     }
+@media screen and (min-width: 1000px) {
+	.logo {
+					width: 8vw;
+					height: 8vw;
+					border-radius: 50%;
+					margin: 2vw;
+					margin-top: 5vw;
+					margin-bottom: 0vw;
+					display: inline-block;
+					margin-left: 13vw;
+			}
+}
 .announcement {
-        margin-top: 2vw;
         margin-bottom: 2vw;
         margin-right: 2vw;
         font-family: 'Quicksand', sans-serif;
-        font-size: 5vw;
-        background-color: rgb(205,205,205);
-        border-radius: 2vw;
-        border: 2vw solid rgb(205,205,205);
+        font-size: 4.5vw;
+        border-bottom: 2px solid rgb(205,205,205);
         display: inline-block;
-        width: 70vw;
+        width: 82vw;
         margin: 0.5vw;
+				margin-right: 0;
     }
+@media screen and (min-width: 1000px) {
+			.announcement {
+			        margin-bottom: 1.5vw;
+			        margin-right: 1vw;
+			        font-family: 'Quicksand', sans-serif;
+			        font-size: 3vw;
+			        border-bottom: 2px solid rgb(205,205,205);
+			        display: inline-block;
+			        width: 73vw;
+			        margin: 0.5vw;
+			    }
+}
 .linkattach {
     margin-bottom: 2vw;
-    margin-right: 4vw;
-    margin-left: 23vw;
+    margin-left: 16vw;
     font-family: 'Quicksand', sans-serif;
-    font-size: 5vw;
-    background-color: rgb(235,235,235);
-    border-bottom-left-radius: 3vw;
-    border-bottom-right-radius: 3vw;
-    border: 2vw solid rgb(235,235,235);
+    font-size: 4vw;
+    border-bottom: 2px solid rgb(205,205,205);
     display: block;
-    max-width: 70vw;
-    text-decoration: underline;
+    max-width: 82vw;
+		text-decoration: none;
     color: blue;
     word-wrap: break-word;
+}
+@media screen and (min-width: 1000px) {
+	.linkattach {
+			margin-top: 0.5vw;
+			margin-bottom: 1.5vw;
+			margin-left: 24vw;
+			margin-right: 2vw;
+			font-family: 'Quicksand', sans-serif;
+			font-size: 3vw;
+			border-bottom: 2px solid rgb(205,205,205);
+			display: block;
+			max-width: 70vw;
+			text-decoration: none;
+			color: blue;
+			word-wrap: break-word;
+		}
 }
 
 .imgattach {
@@ -150,7 +214,18 @@ body {
     cursor: pointer;
     transition: 0.3s;
     max-width:70vw;
-    margin-left: 23vw;
+    margin-left: 16.6vw;
+}
+@media screen and (min-width:1000px){
+	.imgattach {
+			border-bottom-left-radius: 3vw;
+			border-bottom-right-radius: 3vw;
+			cursor: pointer;
+			transition: 0.3s;
+			max-width:50vw;
+			text-align: left;
+			margin-left: 24vw;
+	}
 }
 .modal {
     display: none;
@@ -220,33 +295,77 @@ body {
     padding-top: 5vw;
      font-family: 'Quicksand', sans-serif;
 }
+@media screen and (max-width: 999px){
+		#profileIcon{
+		    position:absolute;
+		    right:8vw;
+		    bottom: 0vh;
+		    width:auto;
+		    height:5vh;
+		}
 
-#profileIcon{
-    position:absolute;
-    right:8vw;
-    bottom: 0vh;
-    width:auto;
-    height:12vh;
+		#calendar{
+		    position:absolute;
+		    bottom: 0vw;
+		    height: 5vh;
+		    position:relative;
+		    width:auto;
+		    vertical-align: middle;
+		    text-align:center;
+		}
+
+		#chat{
+		    position:absolute;
+		    left: 8vw;
+		    bottom: 0vh;
+		    height:5vh;
+		    width:auto;
+		}
+}
+@media screen and (min-width:1000px){
+		#profileIcon{
+			position:absolute;
+			bottom: 0vw;
+			height: auto;
+			position:relative;
+			width: 8vw;
+			vertical-align: bottom;
+			text-align:center;
+		}
 }
 
-#calendar{
-    position:absolute;
-    bottom: 0vw;
-    height: 12vh;
-    position:relative;
-    width:auto;
-    vertical-align: middle;
-    text-align:center;
-    font-family: 'Quicksand', sans-serif;
-
+@media screen and (min-width:1000px) {
+		#calendar{
+		    position:absolute;
+		    bottom: 0vw;
+		    height: auto;
+		    position:relative;
+		    width: 8vw;
+		    vertical-align: middle;
+		    text-align:center;
+		}
 }
 
-#chat{
-    position:absolute;
-    left: 8vw;
-    bottom: 0vh;
-    height:12vh;
-    width:auto;
+@media screen and (min-width: 1000px){
+		#chat{
+			position:absolute;
+			bottom: 0vw;
+			height: auto;
+			position:relative;
+			width: 8vw;
+			vertical-align: middle;
+			text-align:center;
+		}
+}
+
+@media screen and (min-width: 1000px){
+	.nav{
+		text-align: center;
+		line-height: 75px;
+		font-size: 30px;
+		padding-bottom: 10vh;
+		padding-top: 10vh;
+	}
 }
 
 #bigOne{

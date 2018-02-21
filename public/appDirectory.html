@@ -2,19 +2,34 @@
 <html>
 <head>
 	<title>Directory</title>
+
+	<!-- enables progressive Web App -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Wildcat">
+	<meta name="apple-mobile-web-app-title" content="Wildcat">
+	<meta name="theme-color" content="#c90101">
+	<meta name="msapplication-navbutton-color" content="#c90101">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="sharedAssets/favicon.png">
+	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
 	<script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.9.1/firebase-messaging.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
+  <script defer src="/__/firebase/4.9.1/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
 
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script defer src="js/directory.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/appDirectory.css">
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="js/directory.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/appDirectory.css">
 </head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
 <body>
 	<div id = "titleBar">
@@ -922,15 +937,15 @@
 	<!--end of modern languages directory-->
 
 	<div id="navbar">
-	    <span>
+	    <span class="nav">
 	        <a href="announce.html"><img id="chat" src="webAssets/chat.png"></a>
 	    </span>
 
-	    <span>
+	    <span class="nav">
 	        <a href="#"><img id="calendar" src="webAssets/Calendar.png"></a>
 	    </span>
 
-	    <span>
+	    <span class="nav">
 	        <a href="appDirectory.html"><img id="profileIcon" src="webAssets/User.png"></a>
 	    </span>
 	</div>
