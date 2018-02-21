@@ -1,10 +1,11 @@
 *{
-	margin:0;
+    margin:0;
+    user-select: none;
 }
 #titleBar{
     width: 100%;
     height: 10vh;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     background-color: white;
     font-size: 8vh;
     overflow: hidden;
@@ -21,7 +22,7 @@ center p{
 	#titleBar{
 	    width: 100%;
 	    height: 5vh;
-	    font-family: 'Montserrat', sans-serif;
+	    font-family: 'Quicksand', sans-serif;
 	    background-color: white;
 	    font-size: 8vh;
 	    overflow: hidden;
@@ -85,28 +86,28 @@ body{
     text-align:center;
     font-size:12.5vh;
     color:white;
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Quicksand', sans-serif;
 }
 @media screen and (min-width:1000px){
 	.container .boys{
 			text-align:center;
 			font-size:12.5vh;
 			color:white;
-			font-family: 'Montserrat', sans-serif;
+			font-family: 'Quicksand', sans-serif;
 			margin-right: 20vw;
 	}
 	.container .girls{
 			text-align:center;
 			font-size:12.5vh;
 			color:white;
-			font-family: 'Montserrat', sans-serif;
+			font-family: 'Quicksand', sans-serif;
 			margin-right: 20vw;
 	}
 	.container .co{
 			text-align:center;
 			font-size:12.5vh;
 			color:white;
-			font-family: 'Montserrat', sans-serif;
+			font-family: 'Quicksand', sans-serif;
 			margin-right: 20vw;
 	}
 }
@@ -159,14 +160,14 @@ img{
 .letters p {
     font-size: 50px;
     color:white;
-    font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
     padding:0.85vh;
 }
 
 .contacts{
     background-color:#FFFFFF;
     font-size:3vh;
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Quicksand', sans-serif;
     padding:3vh;
     font-weight:bold;
     border-bottom: 10px solid #c6c6c6;
@@ -175,7 +176,7 @@ img{
 	.contacts{
 	    background-color:#FFFFFF;
 	    font-size:3vh;
-	    font-family: 'Montserrat', sans-serif;
+	   font-family: 'Quicksand', sans-serif;
 	    padding: 4vh;
 	    font-weight:bold;
 	    border-bottom: 10px solid #c6c6c6;
@@ -191,7 +192,7 @@ img{
 
 #navbar {
     width: 100%;
-    height: 12vh;
+    height: 5vh;
     background-color: white;
     bottom: 0;
     left: 0;
@@ -222,13 +223,13 @@ img{
 		    right:8vw;
 		    bottom: 0vh;
 		    width:auto;
-		    height:12vh;
+		    height:5vh;
 		}
 
 		#calendar{
 		    position:absolute;
 		    bottom: 0vw;
-		    height: 12vh;
+		    height: 5vh;
 		    position:relative;
 		    width:auto;
 		    vertical-align: middle;
@@ -239,7 +240,7 @@ img{
 		    position:absolute;
 		    left: 8vw;
 		    bottom: 0vh;
-		    height:12vh;
+		    height:5vh;
 		    width:auto;
 		}
 }
