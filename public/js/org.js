@@ -18,15 +18,17 @@ function displayRequestStatus() {
 
   function gotData(data){
     //console.log(data.val());
-    let rejectionReason=data.val();
-    let keys=Object.keys(rejectionReason);
+    let rejection=data.val();
+    let keys=Object.keys(rejection);
     for(let i=0;i<keys.length;i++){
       let k=keys[i];
-      let r=rejectionReason[k].r;
-      if(r==null){
+      let rejectionReason=rejection[k].rejectionReason;
+      let message=rejection[k].message;
+      if(rejectionReason==null){
         console.log("Reason not displaying");
       }
-      console.log(r);
+      console.log(rejectionReason);
+      console.log(message);
     }
     //console.log(keys);
   }
