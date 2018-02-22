@@ -4,11 +4,37 @@ const FIREBASE_DATABASE = firebase.database();
 
 function displayRequestStatus() {
   let userId = FIREBASE_AUTH.currentUser.uid;
-  let organization;
+  let organizationName;
+  let clubRejections;
+  let rejectionsRef;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organization = snapshot.val().organization;
-    console.log(organization);
+    organizationName = snapshot.val().organization;
+    console.log(organizationName);
   });
+
+<!--Using rejectionsGame since app js is not working properly -->
+  rejectionsRef=database.ref('/requests/rejectionsGame/');
+  rejectionsRef.on('value', gotData, errData);
+
+  function gotData(data){
+    //console.log(data.val());
+    let rejectionReason=data.val();
+    let keys=Object.keys(rejectionReason);
+    for(let i=0;i<keys.length;i++){
+      let k=keys[i];
+      let r=rejectionReason[k].r;
+      if(r==null){
+        console.log("Reason not displaying");
+      }
+      console.log(r);
+    }
+    //console.log(keys);
+  }
+  function errData(err){
+    console.log('Error!');
+    console.log(err);
+  }
+
 
   //TODO: Kyle: insert your pseudocode here
 }
