@@ -73,7 +73,22 @@ function handleAuthStateChanged(user) {
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
+  let domString = `<div class="req">
+      <div class="reqMeta">
+        <h3 style="padding: 2%;">${announcement.title}</h3>
+        <div style="padding: 2%;"><img src="appAssets/approve.png"
+        title="Approve"
+        class="reqYes reqDecision hov"><img src="appAssets/reject.png"
+        title="Reject"
+        class="reqNo reqDecision hov">
+        </div>
+        </div>
+        <div class="descHide">
+        <p style="padding: 2%;">${announcement.message}</p>
+
+      </div>
+
+    </div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
@@ -194,13 +209,8 @@ function deny(event) {
         });
     })
     .then(() => {
-<<<<<<< HEAD
-      // insert announcement under “/Rejections” in database
-      FIREBASE_DATABASE.push('/Rejections');
-=======
       // insert announcement under “/requests/rejections” in database
       FIREBASE_DATABASE.ref('/requests/rejections').push(announcement);
->>>>>>> 56314ee1b01c5d50a2683b63256bebfd0c1cfb3a
 
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
