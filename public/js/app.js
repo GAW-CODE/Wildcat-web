@@ -73,22 +73,7 @@ function handleAuthStateChanged(user) {
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req">
-      <div class="reqMeta">
-        <h3 style="padding: 2%;">${announcement.title}</h3>
-        <div style="padding: 2%;"><img src="appAssets/approve.png"
-        title="Approve"
-        class="reqYes reqDecision hov"><img src="appAssets/reject.png"
-        title="Reject"
-        class="reqNo reqDecision hov">
-        </div>
-        </div>
-        <div class="descHide">
-        <p style="padding: 2%;">${announcement.message}</p>
-
-      </div>
-
-    </div>`;
+  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
@@ -170,7 +155,6 @@ function approveEvent(event) {
       let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
       let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
       let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
-
       calendar.get('/calendar.js', function(req, res){
         res.addEvent(endTime, startTime, date, description, location, name, org);
       });
@@ -181,7 +165,7 @@ function approveEvent(event) {
     })
     .then(() => {
       // remove from admin.html
-      selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
+      selectedAnnouncement.parentNode .removeChild(selectedAnnouncement);
     });
 }
 function deny(event) {
