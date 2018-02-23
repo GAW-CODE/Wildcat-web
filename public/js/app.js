@@ -66,7 +66,7 @@ function handleAuthStateChanged(user) {
   if (user) { //&& user is an Admin
     console.log(user);
   } else { //prevent unauthorized users from accessing admin.html
-    setTimeout(function() {window.location.href = "404.html";}, 2000);
+    setTimeout(function() {window.location.href = "login.html";}, 2000);
   }
 }
 
