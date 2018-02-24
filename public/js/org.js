@@ -8,13 +8,13 @@ function displayRequestStatus() {
   let organizationName;
   let clubRejections;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organizationName = snapshot.val().organization;
+    organizationName = "rejections"+snapshot.val().organization;
     console.log(organizationName);
   });
 
 
 // <!--Using rejectionsGame since app js is not working properly -->
-  FIREBASE_DATABASE.ref('/requests/rejectionsGame/').on('value', gotData, errData);
+  FIREBASE_DATABASE.ref('/requests/{organizationName}/').on('value', gotData, errData);
 
   function gotData(data){
     //console.log(data.val());

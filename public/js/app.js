@@ -182,6 +182,7 @@ function deny(event) {
   // retrieve announcement corresponding to the one you clicked on
   let announcement;
   let keyList = [];
+  let orgName;
 
   FIREBASE_DATABASE.ref('/requests/announcements').once('value')
     .then((snapshot) => {
@@ -193,12 +194,13 @@ function deny(event) {
         .then((snapshot) => {
           announcement = snapshot.val();
           announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
+          orgName=announcement.org;
           console.log(announcement);
         });
     })
     .then(() => {
       // insert announcement under “/requests/rejections” in database
-      FIREBASE_DATABASE.ref('/requests/rejections').push(announcement);
+      FIREBASE_DATABASE.ref('/requests/rejections'+ orgName).push(announcement);
 
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
