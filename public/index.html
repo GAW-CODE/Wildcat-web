@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<!--met tags-->
+	<!--meta tags-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<meta name="language" content="English">
-	<meta name="description" content="Homepage of the Wildcat App">
-	<meta name = "keywords" content = "Wilson, Announcements, Wildcat App, Wildcat Home, Wilson Announcements, Glen A. Wilson, Glen A. Wilson High School, Wilson High School">
+	<meta name="description" content="Log in to access features">
 
 	<!-- enables progressive Web App -->
 	<link rel="manifest" href="manifest.json">
@@ -22,65 +21,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!--links-->
-	<link rel="stylesheet" type="text/css" href="css/web.css">
-	<link href="https://fonts.googleapis.com/css?family=Barlow:500" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+	<!--browser-->
 	<link rel="icon" href="sharedAssets/favicon.png">
-  <title>Home</title>
+	<title>Login</title>
 
 	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
 </head>
+<center>
 <body>
-	<header>
-		<section>
-			<div id = "topBar" >
-                <p id="loginLink">
-
-                    <a href="login.html"><i class="material-icons" id="input">input</i></a></font>
-                </p>
-			</div>
-			<div id = "header1">
-				<h1 id = "appName">
-					The Wildcat
-				</h1>
-				<img src = "sharedAssets/Wildcat.png" height = "40%"; width = "40%">
-				<h1 id = "logoPhrase">
-				Home of the Wildcats:
-				</h1>
-				<h3>Committed to a shared vision of Academic Excellence, Social Responsibility, Creative Expression, and Athletic Development
-				</h3>
-			</div>
-		</section>
+	<header id="header">
+	<h1> The Wildcat </h1>
+	<img src = "sharedAssets/Wildcat.png" width="200px" id="wildcat">
 	</header>
-	<section id = "advertising">
-		<h1>
-			Get connected to CODE!
-		</h1>
-	<a href="https://www.facebook.com/gawcode">
-		<img src="https://league-mp7static.mlsdigital.net/elfinderimages/DCS/facebook.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
-	<a href="https://www.instagram.com/gawcode">
-  		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2000px-Instagram_logo_2016.svg.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
-	<a href="https://www.youtube.com/channel/UCUBqAzggd_nAnn8ll6fmGUw">
-  		<img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/youtube_circle-512.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
+	<section>
+		<div>
+			<input type = "email" id = "txtEmail" placeholder="Email">
+		</div>
+		<div>
+			<input type = "password" id = "txtPassword" placeholder="Password">
+		</div>
 	</section>
-	<footer>
-    	<footer>
-		<p>
-			Powered by CODE Club
-		</p>
-	</footer>
+	<br>
+    <p id="wrong">Username or Password Invalid</p>
+	<button href="login.html" id = "btnLogin" class = "btn btn-action">
+		Log In
+	</button>
+	<button id = "btnSignUp" class = "btn btn-action">
+		Sign Up
+	</button>
+    <button id = "btnForgot" class = "btn btn-action" >
+        Forgot Password
+    </button>
+    <p> Reset Password:</p>
+    <input type="email" id="email" placeholder="Email">
+
+	<script src="/__/firebase/4.1.3/firebase.js"></script>
+	<script src="/__/firebase/init.js"></script>
+	<script src ="js/login.js"></script>
 
 </body>
+</center>
 </html>

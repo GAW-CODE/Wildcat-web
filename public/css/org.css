@@ -1,13 +1,4 @@
 /*The organization interface*/
-
-#rejection{
-   margin:auto;
-   border: 2px solid red;
-   padding: 10px;
-   animation-name: moduleIn;
-   animation-duration: 1s;
-   animation-iteration-count: 1;
-}
 *{
     margin: 0;
     padding: 0;

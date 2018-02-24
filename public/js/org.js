@@ -1,67 +1,45 @@
 //Database - displaying announcement request status
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
-//let rejectionsF=domcument.getElementById('rejection');
 
 function displayRequestStatus() {
   let userId = FIREBASE_AUTH.currentUser.uid;
   let organizationName;
   let clubRejections;
+  let rejectionsRef;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organizationName = "rejections"+snapshot.val().organization;
+    organizationName = snapshot.val().organization;
     console.log(organizationName);
   });
 
-
-// <!--Using rejectionsGame since app js is not working properly -->
-  FIREBASE_DATABASE.ref('/requests/{organizationName}/').on('value', gotData, errData);
+<!--Using rejectionsGame since app js is not working properly -->
+  rejectionsRef=database.ref('/requests/rejectionsGame/');
+  rejectionsRef.on('value', gotData, errData);
 
   function gotData(data){
     //console.log(data.val());
-    let rejection = data.val();
-    let keys = Object.keys(rejection);
-    for (let i = 0; i < keys.length; i++){
-      let k = keys[i];
-      let rejectionReason = rejection[k].rejectionReason;
-      let message = rejection[k].message;
+    let rejection=data.val();
+    let keys=Object.keys(rejection);
+    for(let i=0;i<keys.length;i++){
+      let k=keys[i];
+      let rejectionReason=rejection[k].rejectionReason;
+      let message=rejection[k].message;
+      if(rejectionReason==null){
+        console.log("Reason not displaying");
+      }
       console.log(rejectionReason);
       console.log(message);
-      displayRequestAnnouncement(message,rejectionReason);
     }
     //console.log(keys);
   }
-
-  function errData(err) {
+  function errData(err){
     console.log('Error!');
     console.log(err);
   }
+
+
   //TODO: Kyle: insert your pseudocode here
 }
-
-function displayRequestAnnouncement(message,rejectionReason){
-let rejectionList=document.getElementById('rejection');
-let div = document.createElement('div');
-  let template=
-  `
-  <div>
-  <h>Original Request</h>
-    <p>${message}</p>
-  </div>
-  <div class="descHide">
-  <h>Rejection Reason</h>
-    <p>${rejectionReason}</p>
-  </div>
-  `;
-  div.innerHTML=template;
-  rejectionList.appendChild(div);
-}
-//let div = document.createElement("div");
-//let header=document.createElement("Header")
-//let currMessage=document.createTextNode("Message: "+message+"\n");
-//let currReason=document.createTextNode("Rejection Reason: "+rejectionReason);
-//div.appendChild(currMessage);
-//div.appendChild(currReason);
-//document.getElementById("rejection").appendChild(div);
 
 //logout
 let logOutBtn = document.getElementById('logout');
@@ -81,7 +59,7 @@ function handleAuthStateChanged(user) {
     console.log(user);
     displayRequestStatus();
   } else { //prevent unauthorized users from accessing admin.html
-    setTimeout(function() {window.location.href = "login.html";}, 2000);
+    setTimeout(function() {window.location.href = "404.html";}, 2000);
   }
 }
 
@@ -98,6 +76,17 @@ let request = document.getElementsByClassName('modItem')[1];
 let info = document.getElementsByClassName('modItem')[2];
 let edit = document.getElementById('editOrg');
 let cancel = document.getElementById('cancel');
+
+let database = firebase.database();
+let userId = firebase.auth().currentUser.uid;
+let organization;
+firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  organization=snapshot.val();
+
+  console.log(organization);
+});
+console.log(userId);
+
 
 //module selections
 let sMod = document.getElementById('status');

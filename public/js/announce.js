@@ -63,18 +63,29 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 		{	//annList[i] returns the key of the ith announcement in the database
 			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
 				//expirationDate is a property of each announcement object in the database
+			{
+				//retrieve announcement's key
+				let archiveAnn;
 				let selectedAnn = annList[i];
+				let annKeyList = [];
 
+				//placing the key values in an array
+				FIREBASE_DATABASE.ref('/announcements').once('value')
+			    .then((snapshot) => {
+			      let val = snapshot.val();
+			      for (let key in val) {
+			        annKeyList.push(key);
+				FIREBASE_DATABASE.ref('/announcements/' + annKeyList[i]).once('value')
+				  .then((snapshot) => {
+				    archiveAnn = snapshot.val();
 						//print the announcement to be archived
-				    console.log(annList[i]);
+				    console.log(archiveAnn);
 				   });
 				 })
-
-				 }
 				 //the actual moving part
          .then(() => {
 				// insert announcement in school archive in database
-				FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
+				FIREBASE_DATABASE.ref('/schoolArchive/').push(archiveAnn);
 				//remove announcement from announcements in database
 				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
 				//remove from announce.html - remove the particular element
@@ -149,10 +160,13 @@ for (let i = 0; i < announcements.length; i++) {
 }
 
 //send announcement
-//function saveTo(){
+function saveTo(){
 //clone
 
 //send to student archive
+
+
+}
 
 //be able to delete saved msgs
 //if held down for 2 seconds, prompt for deletion? yes and no button

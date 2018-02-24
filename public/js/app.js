@@ -66,14 +66,29 @@ function handleAuthStateChanged(user) {
   if (user) { //&& user is an Admin
     console.log(user);
   } else { //prevent unauthorized users from accessing admin.html
-    setTimeout(function() {window.location.href = "login.html";}, 2000);
+    setTimeout(function() {window.location.href = "404.html";}, 2000);
   }
 }
 
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
+  let domString = `<div class="req">
+      <div class="reqMeta">
+        <h3 style="padding: 2%;">${announcement.title}</h3>
+        <div style="padding: 2%;"><img src="appAssets/approve.png"
+        title="Approve"
+        class="reqYes reqDecision hov"><img src="appAssets/reject.png"
+        title="Reject"
+        class="reqNo reqDecision hov">
+        </div>
+        </div>
+        <div class="descHide">
+        <p style="padding: 2%;">${announcement.message}</p>
+
+      </div>
+
+    </div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
@@ -155,6 +170,7 @@ function approveEvent(event) {
       let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
       let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
       let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
+
       calendar.get('/calendar.js', function(req, res){
         res.addEvent(endTime, startTime, date, description, location, name, org);
       });
@@ -165,15 +181,11 @@ function approveEvent(event) {
     })
     .then(() => {
       // remove from admin.html
-      selectedAnnouncement.parentNode .removeChild(selectedAnnouncement);
+      selectedAnnouncement.parentNode.removeChild(selectedAnnouncement);
     });
 }
 function deny(event) {
-  let reason;
-  while(!reason){
-    reason = prompt('Explain why the announcement was rejected');
-  }
-   //TODO: change prompt() popup to actual user interface
+  let reason = prompt('Explain why the announcement was rejected'); //TODO: change prompt() popup to actual user interface
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
   let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
@@ -182,7 +194,6 @@ function deny(event) {
   // retrieve announcement corresponding to the one you clicked on
   let announcement;
   let keyList = [];
-  let orgName;
 
   FIREBASE_DATABASE.ref('/requests/announcements').once('value')
     .then((snapshot) => {
@@ -194,13 +205,12 @@ function deny(event) {
         .then((snapshot) => {
           announcement = snapshot.val();
           announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
-          orgName=announcement.org;
           console.log(announcement);
         });
     })
     .then(() => {
       // insert announcement under “/requests/rejections” in database
-      FIREBASE_DATABASE.ref('/requests/rejections'+ orgName).push(announcement);
+      FIREBASE_DATABASE.ref('/requests/rejections').push(announcement);
 
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()

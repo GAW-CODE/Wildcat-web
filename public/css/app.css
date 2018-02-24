@@ -75,6 +75,8 @@ p {
 }
 .navModule:hover{
     text-indent: 5px;
+    color: #fff59d;
+    background-color: #7f0000;
 }
 
 /*Setting area styles*/
@@ -182,7 +184,7 @@ p {
     margin: auto;
     margin-bottom: 10px;
     border: 2px solid #fdffe2;
-    transition-duration:  0.3s;
+    transition-duration: 0.3s;
 }
 .reqMeta{
     background-color: #fdffe2;
