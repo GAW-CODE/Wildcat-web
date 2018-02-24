@@ -169,7 +169,11 @@ function approveEvent(event) {
     });
 }
 function deny(event) {
-  let reason = prompt('Explain why the announcement was rejected'); //TODO: change prompt() popup to actual user interface
+  let reason;
+  while(!reason){
+    reason = prompt('Explain why the announcement was rejected');
+  }
+   //TODO: change prompt() popup to actual user interface
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
   let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
