@@ -46,6 +46,8 @@ let div = document.createElement('div');
   <div>
   <h>Original Request</h>
     <p>${message}</p>
+  </div>
+  <div class="descHide">
   <h>Rejection Reason</h>
     <p>${rejectionReason}</p>
   </div>
