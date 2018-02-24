@@ -1,67 +1,110 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
-	<!--meta tags-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<meta name="language" content="English">
-	<meta name="description" content="Log in to access features">
+  <!--met tags-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="language" content="English">
+  <meta name="description" content="The Wildcat App">
+  <meta name = "keywords" content = "Wilson, Announcements, Wildcat App, Wildcat Home, Wilson Announcements, Glen A. Wilson, Glen A. Wilson High School, Wilson High School">
 
-	<!-- enables progressive Web App -->
-	<link rel="manifest" href="manifest.json">
+  <!-- enables progressive Web App -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Wildcat">
+  <meta name="apple-mobile-web-app-title" content="Wildcat">
+  <meta name="theme-color" content="#c90101">
+  <meta name="msapplication-navbutton-color" content="#c90101">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="msapplication-starturl" content="/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
 
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Wildcat">
-	<meta name="apple-mobile-web-app-title" content="Wildcat">
-	<meta name="theme-color" content="#c90101">
-	<meta name="msapplication-navbutton-color" content="#c90101">
-	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="msapplication-starturl" content="/index.html">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!--links-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
-
-	<!--browser-->
-	<link rel="icon" href="sharedAssets/favicon.png">
-	<title>Login</title>
-
-	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+  <!--links-->
+  <link rel="stylesheet" type="text/css" href="css/landing.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+  <!--browser-->
+  <link rel="icon" href="sharedAssets/favicon.png">
+  <title>Home</title>
 </head>
-<center>
-<body>
-	<header id="header">
-	<h1> The Wildcat </h1>
-	<img src = "sharedAssets/Wildcat.png" width="200px" id="wildcat">
-	</header>
-	<section>
-		<div>
-			<input type = "email" id = "txtEmail" placeholder="Email">
-		</div>
-		<div>
-			<input type = "password" id = "txtPassword" placeholder="Password">
-		</div>
-	</section>
-	<br>
-    <p id="wrong">Username or Password Invalid</p>
-	<button href="login.html" id = "btnLogin" class = "btn btn-action">
-		Log In
-	</button>
-	<button id = "btnSignUp" class = "btn btn-action">
-		Sign Up
-	</button>
-    <button id = "btnForgot" class = "btn btn-action" >
-        Forgot Password
-    </button>
-    <p> Reset Password:</p>
-    <input type="email" id="email" placeholder="Email">
 
-	<script src="/__/firebase/4.1.3/firebase.js"></script>
-	<script src="/__/firebase/init.js"></script>
-	<script src ="js/login.js"></script>
+
+<body>
+
+<!--Navigation goes here-->
+<!--Include 'go to app' button-->
+<nav id="reach">
+    <!--To self, login, and signup-->
+    <ul id="navLeft">
+        <li><a href="landing.html"><img src="sharedAssets/Wildcat.png" width="76.277" height="59.111" alt="Wildcat App"></a></li>
+    </ul>
+    <ul id="navRight">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="SignUp.html">Sign Up</a></li>
+    </ul>
+</nav>
+
+<!--Super cool parallax-->
+<header>
+    <div id="headerAlign">
+        <div id="headSpacer"></div>
+        <div id="title">
+            <h3>Glen A. Wilson High</h3>
+            <h1>Campus Updates in One Place</h1>
+        </div>
+        <div id="appDirect">
+            <a href="announce.html">Go to App</a>
+        </div>
+    </div>
+</header>
+
+<!--Display + Our biggest feature-->
+<section id="main">
+    <div id="phoneview">
+        <img src="webAssets/phone.png">
+    </div>
+    <div id="desc">
+        <h2>Get Updates Anywhere</h2>
+        <p>Access to what's important to you-anytime, anywhere.</p>
+        <ul id="listing">
+            <li>Administration</li>
+            <li>Guidance</li>
+            <li>Wilson ASB</li>
+            <li>Campus Organizations</li>
+            <li>Athletics</li>
+            <li>Fundraisers</li>
+        </ul>
+    </div>
+</section>
+
+<!--Feature list: Announcements, Calendar, Directory-->
+<section id="feats">
+    <h2>Get Connected With Wilson</h2>
+    <div id="flexFeats">
+        <div class="feature">
+            <h4>Campus Updates</h4>
+            <img src="webAssets/message.png" class="one">
+            <p>Get the latest buzz on campus</p>
+        </div>
+        <div class="feature">
+            <h4>Event Calendar</h4>
+            <img src="webAssets/events.png" class="two">
+            <p>Check out upcoming activities</p>
+        </div>
+        <div class="feature">
+            <h4>Informative Directory</h4>
+            <img src="webAssets/book.png" class="three">
+            <p>Look up staff and campus groups</p>
+        </div>
+    </div>
+</section>
+
+<!--Things-->
+<footer>
+    <b><a href="#reach">^ ^ ^</a></b>
+    <p>A CODE Club Project</p>
+</footer>
 
 </body>
-</center>
 </html>
