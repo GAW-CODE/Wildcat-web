@@ -21,10 +21,38 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     //READ data from Database
     //display it with DOM
 
-    let div = document.createElement('div');
-    let information = document.createTextNode(snapshot.val().Name);
-    div.appendChild(information);
-    document.getElementById("roomNum").appendChild(div.firstChild);
+    let name = document.createElement('div');
+    let nameInfo = document.createTextNode(snapshot.val().Name);
+    name.appendChild(nameInfo);
+    document.getElementById("name").appendChild(name.firstChild);
+
+    let roomNumber = document.createElement('div');
+    let roomInfo = document.createTextNode(snapshot.val().RoomNumber);
+    roomNumber.appendChild(roomInfo);
+    document.getElementById("roomNum").appendChild(roomNumber.firstChild);
+
+    let Email = document.createElement('div');
+    let mailInfo = document.createTextNode(snapshot.val().Email);
+    Email.appendChild(mailInfo);
+    document.getElementById("email").appendChild(Email.firstChild);
+
+    let classes = document.createElement('div');
+    let classInfo = document.createTextNode(snapshot.val().Classes);
+    classes.appendChild(classInfo);
+    document.getElementById("classList").appendChild(classes.firstChild);
+
+    let officeHours = document.createElement('div');
+    let officeHoursInfo = document.createTextNode(snapshot.val().officeHours);
+    officeHours.appendChild(officeHoursInfo);
+    document.getElementById("officeHours").appendChild(officeHours.firstChild);
+
+
+    let askMeAbout = document.createElement('div');
+    let askMeAboutInfo = document.createTextNode(snapshot.val().askMeAbout);
+    askMeAbout.appendChild(askMeAboutInfo);
+    document.getElementById("askMeAbout").appendChild(askMeAbout.firstChild);
+
+
     //you don't necessarily have to append a new element in your case, Jeffrey
     //you should just change the text of pre-existing elements
   });
