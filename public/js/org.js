@@ -13,8 +13,7 @@ function displayRequestStatus() {
     console.log(organizationName);
   });
 
-<!--Using rejectionsGame since app js is not working properly -->
-  rejectionsRef=database.ref('/requests/rejectionsGame/');
+  rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejectionsGame/');
   rejectionsRef.on('value', gotData, errData);
 
   function gotData(data){
@@ -101,15 +100,6 @@ let info = document.getElementsByClassName('modItem')[2];
 let edit = document.getElementById('editOrg');
 let cancel = document.getElementById('cancel');
 
-let database = firebase.database();
-let userId = firebase.auth().currentUser.uid;
-let organization;
-firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-  organization=snapshot.val();
-
-  console.log(organization);
-});
-console.log(userId);
 
 
 //module selections
