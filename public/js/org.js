@@ -2,6 +2,7 @@
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
 
+
 function displayRequestStatus() {
   let userId = FIREBASE_AUTH.currentUser.uid;
   let organizationName;
@@ -24,11 +25,9 @@ function displayRequestStatus() {
       let k=keys[i];
       let rejectionReason=rejection[k].rejectionReason;
       let message=rejection[k].message;
-      if(rejectionReason==null){
-        console.log("Reason not displaying");
-      }
       console.log(rejectionReason);
       console.log(message);
+       displayRequestAnnouncement(message,rejectionReason);
     }
     //console.log(keys);
   }
@@ -40,6 +39,31 @@ function displayRequestStatus() {
 
   //TODO: Kyle: insert your pseudocode here
 }
+
+function displayRequestAnnouncement(message,rejectionReason){
+ let rejectionList=document.getElementById('rejection');
+ let div = document.createElement('div');
+   let template=
+  `
+   <div>
+   <h>Original Request</h>
+     <p>${message}</p>
+  </div>
+  <div class="descHide">
+   <h>Rejection Reason</h>
+     <p>${rejectionReason}</p>
+   </div>
+   `;
+   div.innerHTML=template;
+   rejectionList.appendChild(div);
+}
+ //let div = document.createElement("div");
+ //let header=document.createElement("Header")
+ //let currMessage=document.createTextNode("Message: "+message+"\n");
+ //let currReason=document.createTextNode("Rejection Reason: "+rejectionReason);
+ //div.appendChild(currMessage);
+ //div.appendChild(currReason);
+ //document.getElementById("rejection").appendChild(div);
 
 //logout
 let logOutBtn = document.getElementById('logout');
