@@ -75,6 +75,8 @@ p {
 }
 .navModule:hover{
     text-indent: 5px;
+    color: #fff59d;
+    background-color: #7f0000;
 }
 
 /*Setting area styles*/

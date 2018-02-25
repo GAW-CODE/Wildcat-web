@@ -1,86 +1,110 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE>
 <html>
 <head>
-	<!--met tags-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<meta name="language" content="English">
-	<meta name="description" content="Homepage of the Wildcat App">
-	<meta name = "keywords" content = "Wilson, Announcements, Wildcat App, Wildcat Home, Wilson Announcements, Glen A. Wilson, Glen A. Wilson High School, Wilson High School">
+  <!--met tags-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="language" content="English">
+  <meta name="description" content="The Wildcat App">
+  <meta name = "keywords" content = "Wilson, Announcements, Wildcat App, Wildcat Home, Wilson Announcements, Glen A. Wilson, Glen A. Wilson High School, Wilson High School">
 
-	<!-- enables progressive Web App -->
-	<link rel="manifest" href="manifest.json">
+  <!-- enables progressive Web App -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Wildcat">
+  <meta name="apple-mobile-web-app-title" content="Wildcat">
+  <meta name="theme-color" content="#c90101">
+  <meta name="msapplication-navbutton-color" content="#c90101">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="msapplication-starturl" content="/index.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
 
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Wildcat">
-	<meta name="apple-mobile-web-app-title" content="Wildcat">
-	<meta name="theme-color" content="#c90101">
-	<meta name="msapplication-navbutton-color" content="#c90101">
-	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="msapplication-starturl" content="/index.html">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!--links-->
-	<link rel="stylesheet" type="text/css" href="css/web.css">
-	<link href="https://fonts.googleapis.com/css?family=Barlow:500" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-	<link rel="icon" href="sharedAssets/favicon.png">
+  <!--links-->
+  <link rel="stylesheet" type="text/css" href="css/landing.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+  <!--browser-->
+  <link rel="icon" href="sharedAssets/favicon.png">
   <title>Home</title>
-
-	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body>
-	<header>
-		<section>
-			<div id = "topBar" >
-                <p id="loginLink">
 
-                    <a href="login.html"><i class="material-icons" id="input">input</i></a></font>
-                </p>
-			</div>
-			<div id = "header1">
-				<h1 id = "appName">
-					The Wildcat
-				</h1>
-				<img src = "sharedAssets/Wildcat.png" height = "40%"; width = "40%">
-				<h1 id = "logoPhrase">
-				Home of the Wildcats:
-				</h1>
-				<h3>Committed to a shared vision of Academic Excellence, Social Responsibility, Creative Expression, and Athletic Development
-				</h3>
-			</div>
-		</section>
-	</header>
-	<section id = "advertising">
-		<h1>
-			Get connected to CODE!
-		</h1>
-	<a href="https://www.facebook.com/gawcode">
-		<img src="https://league-mp7static.mlsdigital.net/elfinderimages/DCS/facebook.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
-	<a href="https://www.instagram.com/gawcode">
-  		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2000px-Instagram_logo_2016.svg.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
-	<a href="https://www.youtube.com/channel/UCUBqAzggd_nAnn8ll6fmGUw">
-  		<img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/youtube_circle-512.png" style="border:0;width:100px;height:100px; padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;">
-	</a>
-	</section>
-	<footer>
-    	<footer>
-		<p>
-			Powered by CODE Club
-		</p>
-	</footer>
+
+<body>
+
+<!--Navigation goes here-->
+<!--Include 'go to app' button-->
+<nav id="reach">
+    <!--To self, login, and signup-->
+    <ul id="navLeft">
+        <li><a href="landing.html"><img src="sharedAssets/Wildcat.png" width="76.277" height="59.111" alt="Wildcat App"></a></li>
+    </ul>
+    <ul id="navRight">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="SignUp.html">Sign Up</a></li>
+    </ul>
+</nav>
+
+<!--Super cool parallax-->
+<header>
+    <div id="headerAlign">
+        <div id="headSpacer"></div>
+        <div id="title">
+            <h3>Glen A. Wilson High</h3>
+            <h1>Campus Updates in One Place</h1>
+        </div>
+        <div id="appDirect">
+            <a href="announce.html">Go to App</a>
+        </div>
+    </div>
+</header>
+
+<!--Display + Our biggest feature-->
+<section id="main">
+    <div id="phoneview">
+        <img src="webAssets/phone.png">
+    </div>
+    <div id="desc">
+        <h2>Get Updates Anywhere</h2>
+        <p>Access to what's important to you-anytime, anywhere.</p>
+        <ul id="listing">
+            <li>Administration</li>
+            <li>Guidance</li>
+            <li>Wilson ASB</li>
+            <li>Campus Organizations</li>
+            <li>Athletics</li>
+            <li>Fundraisers</li>
+        </ul>
+    </div>
+</section>
+
+<!--Feature list: Announcements, Calendar, Directory-->
+<section id="feats">
+    <h2>Get Connected With Wilson</h2>
+    <div id="flexFeats">
+        <div class="feature">
+            <h4>Campus Updates</h4>
+            <img src="webAssets/message.png" class="one">
+            <p>Get the latest buzz on campus</p>
+        </div>
+        <div class="feature">
+            <h4>Event Calendar</h4>
+            <img src="webAssets/events.png" class="two">
+            <p>Check out upcoming activities</p>
+        </div>
+        <div class="feature">
+            <h4>Informative Directory</h4>
+            <img src="webAssets/book.png" class="three">
+            <p>Look up staff and campus groups</p>
+        </div>
+    </div>
+</section>
+
+<!--Things-->
+<footer>
+    <b><a href="#reach">^ ^ ^</a></b>
+    <p>A CODE Club Project</p>
+</footer>
 
 </body>
 </html>
