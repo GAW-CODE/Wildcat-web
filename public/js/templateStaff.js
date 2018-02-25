@@ -25,36 +25,13 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     let info = snapshot.val()[key];
     console.log(info);
 
-    let name = document.createElement('div');
-    let nameInfo = document.createTextNode(snapshot.val().Name);
-    name.appendChild(nameInfo);
-    document.getElementById("name").appendChild(name.firstChild);
-
-    let roomNumber = document.createElement('div');
-    let roomInfo = document.createTextNode(snapshot.val().RoomNumber);
-    roomNumber.appendChild(roomInfo);
-    document.getElementById("roomNum").appendChild(roomNumber.firstChild);
-
-    let Email = document.createElement('div');
-    let mailInfo = document.createTextNode(snapshot.val().Email);
-    Email.appendChild(mailInfo);
-    document.getElementById("email").appendChild(Email.firstChild);
-
-    let classes = document.createElement('div');
-    let classInfo = document.createTextNode(snapshot.val().Classes);
-    classes.appendChild(classInfo);
-    document.getElementById("classList").appendChild(classes.firstChild);
-
-    let officeHours = document.createElement('div');
-    let officeHoursInfo = document.createTextNode(snapshot.val().officeHours);
-    officeHours.appendChild(officeHoursInfo);
-    document.getElementById("officeHours").appendChild(officeHours.firstChild);
-
-
-    let askMeAbout = document.createElement('div');
-    let askMeAboutInfo = document.createTextNode(snapshot.val().askMeAbout);
-    askMeAbout.appendChild(askMeAboutInfo);
-    document.getElementById("askMeAbout").appendChild(askMeAbout.firstChild);
+    pic.setAttribute("src", info.Pic);
+    document.getElementById("name").textContent = info.Name;
+    document.getElementById("roomNum").textContent = info.RoomNumber;
+    document.getElementById("email").textContent = info.Email;
+    document.getElementById("classList").textContent = info.Classes;
+    document.getElementById("officeHours").textContent = info.OfficeHours;
+    document.getElementById("askMeAbout").textContent = info.AskMeAbout;
 
 
     //you don't necessarily have to append a new element in your case, Jeffrey
