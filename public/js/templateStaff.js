@@ -15,11 +15,15 @@ const FIREBASE_DATABASE = firebase.database(); //access the database
 
 //make sure currentDepartment value is obtained first
 //snapshot contains the ENTIRE data of the matching person (key not needed)
-FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild("Name").equalTo(name).once('value')
-  .then((snapshot) => {
-    console.log(snapshot.val());
+FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild("Name").equalTo(name).on('value', function(snapshot) {
     //READ data from Database
-    //display it with DOM
+    //display data with DOM
+    let key;
+    snapshot.forEach(function(data) { //assumptiin: only one teacher with a certain name exists at Wilson
+        key = data.key;
+    });
+    let info = snapshot.val()[key];
+    console.log(info);
 
     let name = document.createElement('div');
     let nameInfo = document.createTextNode(snapshot.val().Name);
