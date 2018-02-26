@@ -51,59 +51,53 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
 
 //daily deletion of expired announcements
 let annList = [];
+let annMessage = [];
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
 		for (let key in val) {
 			annList.push(key);
+			annMessage.push(val[key].message);
 		}
 		//loop that goes through each announcement and deletes at midnight
-		let i = 0;
-		while (i < annList.length)
+		 let i = 0;
+		 while (i < annList.length)
 		{	//annList[i] returns the key of the ith announcement in the database
 			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
 				//expirationDate is a property of each announcement object in the database
 			{
+      	let thisHtml;
 
-				let annHtml = [];
 
 				//get message of each announcement, make array that contains text in each index
-				FIREBASE_DATABASE.ref('/announcements').once('value')
-					.then((snapshot) => {
-						let nVal = snapshot.val().message;
-						for (let text in nVal) {
-							annHtml.push(text);
-						}
-						});
+
 
 				//get text of this html
-				FIREBASE_DATABASE.ref('/announcements/' + annList[i]).once('value')
-					.then((snapshot) => {
-						let thisHtml = snapshot.val().message;
-					});
-				//match them up
-				let x = 0;
-				while (x < annHtml.length)
-				  {
-					if (annHtml[x] == thisHtml)
-					{
-						//the actual moving part
-	 				// insert announcement in school archive in database
-	 				FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
-	 				//remove announcement from announcements in database
-	 				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
-	 				//remove from announce.html - remove the particular element
-					document.getElementById("announcement").textContent.remove();
-			   }
-				 else {
-				 	x++;
-				 }
-				}
-			}
-			 else
-			{
-				i++;
-			}
+
+				// //match them up
+				// let x = 0;
+				// while (x < annHtml.length)
+				//   {
+				// 	if (annHtml[x] == thisHtml)
+				// 	{
+				// 		//the actual moving part
+	 			// 	// insert announcement in school archive in database
+	 			// 	FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
+	 			// 	//remove announcement from announcements in database
+	 			// 	FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
+	 			// 	//remove from announce.html - remove the particular element
+				// 	document.getElementById("announcement").textContent.remove();
+			  //  }
+				//  else {
+				//  	x++;
+				//  }
+				// }
+		}
+		// else
+		//  	{
+		// console.log(i);
+		// 		i++;
+		// 	}
 		}
 		console.log('end of loop reached');
 });
