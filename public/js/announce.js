@@ -88,14 +88,12 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 					if (annHtml[x] == thisHtml)
 					{
 						//the actual moving part
-	          .then(() => {
 	 				// insert announcement in school archive in database
 	 				FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
 	 				//remove announcement from announcements in database
 	 				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
 	 				//remove from announce.html - remove the particular element
 					document.getElementById("announcement").textContent.remove();
-						});
 			   }
 				 else {
 				 	x++;
@@ -160,45 +158,45 @@ let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
-//if announcement is pressed down
-let timeoutId = 0;
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener('mousedown', function() {
-	    timeoutId = setTimeout(save(), 3000);
-	}).addEventListener('mouseup mouseleave', function() {
-	    clearTimeout(timeoutId);
-	});
-}
+// //if announcement is pressed down
+// let timeoutId = 0;
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener('mousedown', function() {
+// 	    timeoutId = setTimeout(save(), 3000);
+// 	}).addEventListener('mouseup mouseleave', function() {
+// 	    clearTimeout(timeoutId);
+// 	});
+// }
 
 //send announcement
-function saveTo(){
+//function saveTo(){
 //clone
 
 //send to student archive
 
 
-}
+//}
 
-//be able to delete saved msgs
-//if held down for 2 seconds, prompt for deletion? yes and no button
-studentAnnouncements.on('mousedown', function() {
-    timeoutId = setTimeout(save(), 3000);
-}).on('mouseup mouseleave', function() {
-    clearTimeout(timeoutId);
-//get key of this announcement
-let sAnnouncekey = //snapshot?
-FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
-
-//student archive
-let announcements = document.getElementsByClassName('saveable');
-
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener("click", function() {
-		//display "SAVED" momentarily
-
-		//turn bkgd to gold
-		announcements.style.background = "#edbe31";
-
-		//add announcement to student archive
-	});
-}
+// //be able to delete saved msgs
+// //if held down for 2 seconds, prompt for deletion? yes and no button
+// studentAnnouncements.on('mousedown', function() {
+//     timeoutId = setTimeout(save(), 3000);
+// }).on('mouseup mouseleave', function() {
+//     clearTimeout(timeoutId);
+// //get key of this announcement
+// let sAnnouncekey = //snapshot?
+// FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
+//
+// //student archive
+// let announcements = document.getElementsByClassName('saveable');
+//
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener("click", function() {
+// 		//display "SAVED" momentarily
+//
+// 		//turn bkgd to gold
+// 		announcements.style.background = "#edbe31";
+//
+// 		//add announcement to student archive
+// 	});
+// }
