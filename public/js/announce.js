@@ -51,50 +51,53 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
 
 //daily deletion of expired announcements
 let annList = [];
+let annMessage = [];
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
 		for (let key in val) {
 			annList.push(key);
+			annMessage.push(val[key].message);
 		}
 		//loop that goes through each announcement and deletes at midnight
-		let i = 0;
-		while (i < annList.length)
+		 let i = 0;
+		 while (i < annList.length)
 		{	//annList[i] returns the key of the ith announcement in the database
 			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
 				//expirationDate is a property of each announcement object in the database
 			{
-				//retrieve announcement's key
-				let archiveAnn;
-				let selectedAnn = annList[i];
-				let annKeyList = [];
+      	let thisHtml;
 
-				//placing the key values in an array
-				FIREBASE_DATABASE.ref('/announcements').once('value')
-			    .then((snapshot) => {
-			      let val = snapshot.val();
-			      for (let key in val) {
-			        annKeyList.push(key);
-				FIREBASE_DATABASE.ref('/announcements/' + annKeyList[i]).once('value')
-				  .then((snapshot) => {
-				    archiveAnn = snapshot.val();
-						//print the announcement to be archived
-				    console.log(archiveAnn);
-				   });
-				 })
-				 //the actual moving part
-         .then(() => {
-				// insert announcement in school archive in database
-				FIREBASE_DATABASE.ref('/schoolArchive/').push(archiveAnn);
-				//remove announcement from announcements in database
-				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
-				//remove from announce.html - remove the particular element
-				selectedAnn.parentNode.removeChild(selectedAnn);
-			})
-			} else
-			{
-				i++;
-			}
+
+				//get message of each announcement, make array that contains text in each index
+
+
+				//get text of this html
+
+				// //match them up
+				// let x = 0;
+				// while (x < annHtml.length)
+				//   {
+				// 	if (annHtml[x] == thisHtml)
+				// 	{
+				// 		//the actual moving part
+	 			// 	// insert announcement in school archive in database
+	 			// 	FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
+	 			// 	//remove announcement from announcements in database
+	 			// 	FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
+	 			// 	//remove from announce.html - remove the particular element
+				// 	document.getElementById("announcement").textContent.remove();
+			  //  }
+				//  else {
+				//  	x++;
+				//  }
+				// }
+		}
+		// else
+		//  	{
+		// console.log(i);
+		// 		i++;
+		// 	}
 		}
 		console.log('end of loop reached');
 });
@@ -149,45 +152,45 @@ let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
-//if announcement is pressed down
-let timeoutId = 0;
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener('mousedown', function() {
-	    timeoutId = setTimeout(save(), 3000);
-	}).addEventListener('mouseup mouseleave', function() {
-	    clearTimeout(timeoutId);
-	});
-}
+// //if announcement is pressed down
+// let timeoutId = 0;
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener('mousedown', function() {
+// 	    timeoutId = setTimeout(save(), 3000);
+// 	}).addEventListener('mouseup mouseleave', function() {
+// 	    clearTimeout(timeoutId);
+// 	});
+// }
 
 //send announcement
-function saveTo(){
+//function saveTo(){
 //clone
 
 //send to student archive
 
 
-}
+//}
 
-//be able to delete saved msgs
-//if held down for 2 seconds, prompt for deletion? yes and no button
-studentAnnouncements.on('mousedown', function() {
-    timeoutId = setTimeout(save(), 3000);
-}).on('mouseup mouseleave', function() {
-    clearTimeout(timeoutId);
-//get key of this announcement
-let sAnnouncekey = //snapshot?
-FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
-
-//student archive
-let announcements = document.getElementsByClassName('saveable');
-
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener("click", function() {
-		//display "SAVED" momentarily
-
-		//turn bkgd to gold
-		announcements.style.background = "#edbe31";
-
-		//add announcement to student archive
-	});
-}
+// //be able to delete saved msgs
+// //if held down for 2 seconds, prompt for deletion? yes and no button
+// studentAnnouncements.on('mousedown', function() {
+//     timeoutId = setTimeout(save(), 3000);
+// }).on('mouseup mouseleave', function() {
+//     clearTimeout(timeoutId);
+// //get key of this announcement
+// let sAnnouncekey = //snapshot?
+// FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
+//
+// //student archive
+// let announcements = document.getElementsByClassName('saveable');
+//
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener("click", function() {
+// 		//display "SAVED" momentarily
+//
+// 		//turn bkgd to gold
+// 		announcements.style.background = "#edbe31";
+//
+// 		//add announcement to student archive
+// 	});
+// }
