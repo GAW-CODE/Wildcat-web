@@ -32,8 +32,4 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     document.getElementById("classList").textContent = info.Classes;
     document.getElementById("officeHours").textContent = info.OfficeHours;
     document.getElementById("askMeAbout").textContent = info.AskMeAbout;
-
-
-    //you don't necessarily have to append a new element in your case, Jeffrey
-    //you should just change the text of pre-existing elements
   });

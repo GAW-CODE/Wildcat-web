@@ -26,10 +26,4 @@ FIREBASE_DATABASE.ref('/directory/sports/' + currentDepartment).orderByChild("Na
     document.getElementById("captain1").textContent = info.Captains;
     document.getElementById("captain2").textContent = info.Captains;
     document.getElementById("other").textContent = info.Other;
-
-
-
-
-    //you don't necessarily have to append a new element in your case, Jeffrey
-    //you should just change the text of pre-existing elements
   });

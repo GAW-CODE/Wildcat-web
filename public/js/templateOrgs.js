@@ -9,20 +9,9 @@ name = decodeURIComponent(params.substring(params.indexOf('=') + 1));
 
 const FIREBASE_DATABASE = firebase.database();
 
-+FIREBASE_DATABASE.ref('/directory/groups').push({
-     Name: 'CODE',
-     Description: 'TBD',
-     MeetingInfo:'TBD',
-     Advisor:'TBD',
-     Dates:'TBD',
-     President:'TBD',
-     SocialMedia:'TBD',
-     Other:'TBD'
- });
-
 FIREBASE_DATABASE.ref('/directory/groups').orderByChild("Name").equalTo(name).on('value', function(snapshot) {
     let key;
-    snapshot.forEach(function(data) { 
+    snapshot.forEach(function(data) {
         key = data.key;
     });
     let info = snapshot.val()[key];
