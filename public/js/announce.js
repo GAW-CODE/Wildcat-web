@@ -64,34 +64,45 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
 				//expirationDate is a property of each announcement object in the database
 			{
-				//retrieve announcement's key
-				let archiveAnn;
-				let selectedAnn = annList[i];
-				let annKeyList = [];
 
-				//placing the key values in an array
+				let annHtml = [];
+
+				//get message of each announcement, make array that contains text in each index
 				FIREBASE_DATABASE.ref('/announcements').once('value')
-			    .then((snapshot) => {
-			      let val = snapshot.val();
-			      for (let key in val) {
-			        annKeyList.push(key);
-				FIREBASE_DATABASE.ref('/announcements/' + annKeyList[i]).once('value')
-				  .then((snapshot) => {
-				    archiveAnn = snapshot.val();
-						//print the announcement to be archived
-				    console.log(archiveAnn);
-				   });
-				 })
-				 //the actual moving part
-         .then(() => {
-				// insert announcement in school archive in database
-				FIREBASE_DATABASE.ref('/schoolArchive/').push(archiveAnn);
-				//remove announcement from announcements in database
-				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
-				//remove from announce.html - remove the particular element
-				selectedAnn.parentNode.removeChild(selectedAnn);
-			})
-			} else
+					.then((snapshot) => {
+						let nVal = snapshot.val().message;
+						for (let text in nVal) {
+							annHtml.push(text);
+						}
+						});
+
+				//get text of this html
+				FIREBASE_DATABASE.ref('/announcements/' + annList[i]).once('value')
+					.then((snapshot) => {
+						let thisHtml = snapshot.val().message;
+					});
+				//match them up
+				let x = 0;
+				while (x < annHtml.length)
+				  {
+					if (annHtml[x] == thisHtml)
+					{
+						//the actual moving part
+	          .then(() => {
+	 				// insert announcement in school archive in database
+	 				FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
+	 				//remove announcement from announcements in database
+	 				FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
+	 				//remove from announce.html - remove the particular element
+					document.getElementById("announcement").textContent.remove();
+						});
+			   }
+				 else {
+				 	x++;
+				 }
+				}
+			}
+			 else
 			{
 				i++;
 			}
