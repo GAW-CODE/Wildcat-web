@@ -49,8 +49,11 @@ FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, pre
   displayAnnouncement(snapshot.val());
 });
 
+//array containing ALL announcements on the page (except for the placeholder ones)
+let announcements = document.getElementsByClassName('saveable');
+
 //daily deletion of expired announcements
-let annList = [];
+let annList = []; //annList[i] returns the key of the ith announcement in the database
 let annMessage = [];
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
@@ -60,44 +63,49 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 			annMessage.push(val[key].message);
 		}
 		//loop that goes through each announcement and deletes at midnight
-		 let i = 0;
-		 while (i < annList.length)
-		{	//annList[i] returns the key of the ith announcement in the database
+		let i = 0;
+		while (i < annList.length)
+		{
 			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
-				//expirationDate is a property of each announcement object in the database
+			//expirationDate is a property of each announcement object in the database
 			{
-      	let thisHtml;
+				//get message of each announcement, contained in array that contains text in each announcement
+				let currentMessage = annMessage[i];
+				let annText;
 
+				//find the DOM element containing the announcement
+				let j = 0;
+				while (j < announcements.length)
+				{
+					console.log(j);
+					annText = announcements[j].getElementsByClassName('announcement')[0].innerHTML;
+					if (annText.indexOf(currentMessage) != -1)
+					{	//the actual moving part
+						//insert announcement in school archive in database
+						FIREBASE_DATABASE.ref('/school-archive').push(val[annList[i]]);
+						//remove announcement from announcements in database
+						FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove();
 
-				//get message of each announcement, make array that contains text in each index
+						//needed to prevent infinite loop! - https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript?page=1&tab=votes#tab-top
+						annList.splice(j, 1);
+						annMessage.splice(j, 1);
 
+						//remove from announce.html - remove the particular element using DOM
+						announcements[j].remove();
 
-				//get text of this html
-
-				// //match them up
-				// let x = 0;
-				// while (x < annHtml.length)
-				//   {
-				// 	if (annHtml[x] == thisHtml)
-				// 	{
-				// 		//the actual moving part
-	 			// 	// insert announcement in school archive in database
-	 			// 	FIREBASE_DATABASE.ref('/schoolArchive/').push(annList[i]);
-	 			// 	//remove announcement from announcements in database
-	 			// 	FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove()
-	 			// 	//remove from announce.html - remove the particular element
-				// 	document.getElementById("announcement").textContent.remove();
-			  //  }
-				//  else {
-				//  	x++;
-				//  }
-				// }
-		}
-		// else
-		//  	{
-		// console.log(i);
-		// 		i++;
-		// 	}
+						break; //do not continue on
+					}
+					else
+					{
+						j++;
+					}
+				}
+			}
+			else
+		 	{
+				console.log(i);
+				i++;
+			}
 		}
 		console.log('end of loop reached');
 });
@@ -131,18 +139,18 @@ function toggleSearchBar() {
 
 function search() {
 	console.log('search query');
- let filter = searchBar.value.toUpperCase();
- for (let i = 0; i < announcements.length; i++) {
-	 let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
-	 if (annText.toUpperCase().indexOf(filter) != -1) { //match found
-		 announcements[i].style.display = '';
+	let filter = searchBar.value.toUpperCase();
+	for (let i = 0; i < announcements.length; i++) {
+		let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
+		if (annText.toUpperCase().indexOf(filter) != -1) { //match found
+			announcements[i].style.display = '';
 			console.log(filter);
 			announcements[i].parentNode.style.display = '';
-	 } else {
-		 announcements[i].style.display = 'none';
+		} else {
+			announcements[i].style.display = 'none';
 			announcements[i].parentNode.style.display = 'none';
-	 }
- }
+		}
+	}
 }
 
 //get the date
@@ -181,8 +189,7 @@ document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 // let sAnnouncekey = //snapshot?
 // FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
 //
-// //student archive
-// let announcements = document.getElementsByClassName('saveable');
+//student archive
 //
 // for (let i = 0; i < announcements.length; i++) {
 // 	announcements[i].addEventListener("click", function() {
