@@ -113,24 +113,37 @@ var spring = document.getElementById('spring');
 fall.addEventListener('click', function(){
     sports.className = "hide";
     SFall.className="show";
+    currentDepartment = "fall";
+
 });
 
 winter.addEventListener('click', function(){
     sports.className = "hide";
     SWinter.className="show";
+    currentDepartment = "winter";
 });
 
 spring.addEventListener('click', function(){
     sports.className = "hide";
     SSpring.className="show";
+    currentDepartment = "spring";
 });
 
 //note: distinguish between staff and organizations
-let contactCards = document.getElementsByClassName('contacts');
-for (let i = 0; i < contactCards.length; i++) {
-  contactCards[i].addEventListener('click', function() {
-    let name = contactCards[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-    let url = 'card-template-staff.html?name=' + encodeURIComponent(name) + " ." + encodeURIComponent(currentDepartment);
-    document.location.href = url;
+let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
+for (let i = 0; i < contactCardsStaff.length; i++) {
+  contactCardsStaff[i].addEventListener('click', function() {
+    let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+    let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
+    document.location.href = urlStaff;
+  });
+}
+
+let contactCardsSports = document.getElementsByClassName('contact-Sports');
+for (let i = 0; i < contactCardsSports.length; i++) {
+  contactCardsSports[i].addEventListener('click', function() {
+    let nameSports = contactCardsSports[i].id;
+    let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
+    document.location.href = urlSports;
   });
 }
