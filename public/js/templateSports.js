@@ -18,7 +18,6 @@ FIREBASE_DATABASE.ref('/directory/sports/' + currentDepartment).orderByChild("Na
     let info = snapshot.val()[key];
     console.log(info);
 
-    //pic.setAttribute("src", info.Pic); //i didnt put a pic property in the database
     document.getElementById("name").textContent = info.Name;
     document.getElementById("coach").textContent = info.Coach;
     document.getElementById("email").textContent = info.Email;
