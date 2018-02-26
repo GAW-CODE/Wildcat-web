@@ -147,3 +147,12 @@ for (let i = 0; i < contactCardsSports.length; i++) {
     document.location.href = urlSports;
   });
 }
+
+let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
+for (let i = 0; i < contactCardsOrgs.length; i++) {
+  contactCardsOrgs[i].addEventListener('click', function() {
+    let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+    let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
+    document.location.href = urlOrgs;
+  });
+}
