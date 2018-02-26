@@ -18,7 +18,7 @@ FIREBASE_DATABASE.ref('/directory/sports/' + currentDepartment).orderByChild("Na
     let info = snapshot.val()[key];
     console.log(info);
 
-    document.getElementById("name").textContent = info.Name;
+    document.getElementById("name").textContent = info.Name.replace(/-/g,' ');;
     document.getElementById("coach").textContent = info.Coach;
     document.getElementById("email").textContent = info.Email;
     document.getElementById("phone").textContent = info.PhoneNumber;

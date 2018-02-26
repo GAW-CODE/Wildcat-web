@@ -26,7 +26,7 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     console.log(info);
 
     pic.setAttribute("src", info.Pic);
-    document.getElementById("name").textContent = info.Name;
+    document.getElementById("name").textContent = info.Name.replace(/-/g,' ');;
     document.getElementById("roomNum").textContent = info.RoomNumber;
     document.getElementById("email").textContent = info.Email;
     document.getElementById("classList").textContent = info.Classes;
