@@ -1,5 +1,8 @@
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+*{
+	user-select: none;
+}
 #ExpireDate{
 	margin:center;
 	padding: inherit;

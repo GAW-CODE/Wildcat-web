@@ -2,16 +2,30 @@
 <html>
 <head>
 	<title>Mr. Chang</title>
-    <script src="/__/firebase/4.1.3/firebase.js"></script> 
-    <script src="/__/firebase/init.js"></script> 
+
+	<!-- enables progressive Web App -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Wildcat">
+	<meta name="apple-mobile-web-app-title" content="Wildcat">
+	<meta name="theme-color" content="#c90101">
+	<meta name="msapplication-navbutton-color" content="#c90101">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="sharedAssets/favicon.png">
+	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="/__/firebase/4.1.3/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
     <script defer src = "js/templateStaff.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/codeContact.css">
 </head>
 <body>
 	<div class = "club">
-		<center><img style="border-radius: 50%" src="https://i1.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg"></center>
-		<p>
-			Chang, Leo
+		<center><img id = "pic" style="border-radius: 50%" src="https://i1.wp.com/www.sardiniauniqueproperties.com/wp-content/uploads/2015/10/Square-Profile-Pic-1-1.jpg"></center>
+		<p id = "name">
 		</p>
 	</div>
 
@@ -22,8 +36,8 @@
     		</p>
     	</div>
     	<div class = "description">
-    		<p>
-    			A-1a
+    		<p id = "roomNum">
+                
     		</p>
     	</div>
 
@@ -33,8 +47,7 @@
     		</p>
     	</div>
     	<div class = "description">
-    		<p>
-				lchang@hlpusd.k12.ca.us
+    		<p id = "email">
     		</p>
     	</div>
 
@@ -44,10 +57,7 @@
     		</p>
     	</div>
     	<div class = "description">
-    		<p>
-				Math II<br/>
-				Chinese I<br/>
-				Chinese II<br/>
+    		<p id = "classList">
     		</p>
     	</div>
 
@@ -57,7 +67,7 @@
     		</p>
     	</div>
     	<div class = "description">
-    		<p>7AM - 7:30AM, Lunch, 3PM - 3:30PM M W F</p>
+    		<p id = "officeHours"></p>
     	</div>
 
 			<div class ="title">
@@ -66,7 +76,7 @@
     		</p>
     	</div>
     	<div class = "description">
-    		<p>Key Club</p>
+    		<p id = "askMeAbout"></p>
     	</div>
     </div>
 

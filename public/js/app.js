@@ -73,7 +73,22 @@ function handleAuthStateChanged(user) {
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req"><div class="reqMeta"><h3 style="padding: 2%;">${announcement.title}</h3><div style="padding: 2%;"><img src="appAssets/approve.png" title="Approve" class="reqYes reqDecision hov"><img src="appAssets/reject.png" title="Reject" class="reqNo reqDecision hov"></div></div><div class="descHide"><p style="padding: 2%;">${announcement.message}</p></div></div>`;
+  let domString = `<div class="req">
+      <div class="reqMeta">
+        <h3 style="padding: 2%;">${announcement.title}</h3>
+        <div style="padding: 2%;"><img src="appAssets/approve.png"
+        title="Approve"
+        class="reqYes reqDecision hov"><img src="appAssets/reject.png"
+        title="Reject"
+        class="reqNo reqDecision hov">
+        </div>
+        </div>
+        <div class="descHide">
+        <p style="padding: 2%;">${announcement.message}</p>
+
+      </div>
+
+    </div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
@@ -112,6 +127,7 @@ function approve(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          console.log(announcement);
         });
     })
     .then(() => {
@@ -128,7 +144,7 @@ function approve(event) {
 function approveEvent(event) {
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
-  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
   let index = reqArray.indexOf(selectedAnnouncement);
 
   // retrieve announcement corresponding to the one you clicked on
@@ -147,6 +163,17 @@ function approveEvent(event) {
         });
     })
     .then(() => {
+      let endTime = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/EndTime');
+      let startTime = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/StartTime');
+      let date = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/date');
+      let description =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/description');
+      let location = FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/location');
+      let name =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/name');
+      let org =  FIREBASE_DATABASE.ref('/requests/events/' + keyList[index] + '/org');
+
+      calendar.get('/calendar.js', function(req, res){
+        res.addEvent(endTime, startTime, date, description, location, name, org);
+      });
       // insert announcement under “/events in database
       FIREBASE_DATABASE.ref('/events').push(announcement);
       // remove announcement from ‘/requests/events in database
@@ -158,16 +185,16 @@ function approveEvent(event) {
     });
 }
 function deny(event) {
-  let reason = prompt('Explain why the announcement was rejected');
-  // index of the container = which child to get from database
+  let reason = prompt('Explain why the announcement was rejected'); //TODO: change prompt() popup to actual user interface
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
-  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
   let index = reqArray.indexOf(selectedAnnouncement);
 
   // retrieve announcement corresponding to the one you clicked on
   let announcement;
   let keyList = [];
+  let orgName;
 
   FIREBASE_DATABASE.ref('/requests/announcements').once('value')
     .then((snapshot) => {
@@ -178,11 +205,15 @@ function deny(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
+          orgName = announcement.org;
+          console.log(announcement);
         });
     })
     .then(() => {
-      // insert announcement under “/Rejections” in database
-      FIREBASE_DATABASE.ref('/Rejections').push(announcement);
+      // insert announcement under “/requests/rejections” in database
+      FIREBASE_DATABASE.ref('/requests/rejections/' + orgName).push(announcement);
+
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
@@ -217,6 +248,10 @@ FIREBASE_DATABASE.ref('/requests/events').on('child_added', function(snapshot, p
   for (let i = 0; i < req.length; i++) {
       req[i].addEventListener("click" , makeAnnouncementHideable);
       approveBtns[i].addEventListener("click" , approveEvent);
-      denyBtns[i].addEventListener("click" , deny);
+      denyBtns[i].addEventListener("click" , denyEvent);
   }
 });
+
+function denyEvent(e) { //e is an object representing the click event (you can trace which element was clicked on)
+
+}

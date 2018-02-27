@@ -2,19 +2,34 @@
 <html>
 <head>
 	<title>Directory</title>
+
+	<!-- enables progressive Web App -->
+	<link rel="manifest" href="manifest.json">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Wildcat">
+	<meta name="apple-mobile-web-app-title" content="Wildcat">
+	<meta name="theme-color" content="#c90101">
+	<meta name="msapplication-navbutton-color" content="#c90101">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="msapplication-starturl" content="/index.html">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="sharedAssets/favicon.png">
+	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
 	<script defer src="/__/firebase/4.9.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.9.1/firebase-messaging.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.9.1/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.9.1/firebase-database.js"></script>
+  <script defer src="/__/firebase/4.9.1/firebase-messaging.js"></script>
 	<script defer src="/__/firebase/4.9.1/firebase-storage.js"></script>
 
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script defer src="js/directory.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="css/appDirectory.css">
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="js/directory.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/appDirectory.css">
 </head>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
 <body>
 	<div id = "titleBar">
@@ -164,41 +179,41 @@
 	<!-- start of fall sports directory-->
 	<div id = "fallDirectory" class="hide">
 		<div class="container">
-			<div class = "girls" class="boxes" id="girls-tennis">
-				<div class="icon">
-					<a href="card-template-sports.html"><img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png"></a>
+			<div class="girls boxes contact-Sports" id="Girls-Tennis">
+				<div class="icon" id="girls-tennis">
+					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png"></a>
 				</div>
 			</div>
-			<div class = "girls" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Girls-Golf">
+				<div class="icon" id="girls-golf">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class = "girls" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Girls-Volleyball">
+				<div class="icon" id="girls-volleyball">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 
-			<div class  = "boys" class="boxes">
-				<div class="icon">
+			<div class="boys boxes contact-Sports" id = "Boys-Waterpolo">
+				<div class="icon" id = "boys-waterpolo">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class = "co" class="boxes">
-				<div class="icon">
+			<div class="boys boxes contact-Sports" id = "Football">
+				<div class="icon" id = "football">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 
-			<div class = "co" class="boxes">
-				<div class="icon">
+			<div class="co boxes contact-Sports" id = "Cross-Country">
+				<div class="icon" id = "cross-country">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
@@ -211,41 +226,41 @@
 	<!--start of winter sports directory-->
 	<div id = "winterDirectory" class="hide">
 		<div class="container">
-			<div class  = "girls" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Girls-Basketball">
+				<div class="icon" id="girls-basketball">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
-			<div class = "girls" class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class  = "boys" class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
-				</div>
-			</div>
-
-			<div class  = "boys" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Girls-Soccer">
+				<div class="icon" id="girls-soccer">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class = "boys" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Girls-Waterpolo">
+				<div class="icon" id="girls-waterpolo">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 
-			<div class = "co" class="boxes">
-				<div class="icon">
+			<div class="boys boxes contact-Sports" id="Boys-Soccer">
+				<div class="icon" id="boys-soccer">
+					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="boys boxes contact-Sports" id="Boys-Basketball">
+				<div class="icon" id="boys-basketball">
+					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				</div>
+			</div>
+
+			<div class="co boxes contact-Sports" id="Wrestling">
+				<div class="icon" id="wrestling">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
@@ -258,41 +273,41 @@
 	<!-- start of spring sports directory-->
 	<div id = "springDirectory" class="hide">
 		<div class="container">
-			<div class  = "girls" class="boxes">
-				<div class="icon">
+			<div class="girls boxes contact-Sports" id="Softball">
+				<div class="icon" id="softball">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
-			<div class = "boys" class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
-				</div>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class  = "boys" class="boxes">
-				<div class="icon">
-					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
-				</div>
-			</div>
-
-			<div class  = "co" class="boxes">
-				<div class="icon">
+			<div class="boys boxes contact-Sports" id="Baseball">
+				<div class="icon" id="baseball">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<div class = "co" class="boxes">
-				<div class="icon">
+			<div class="boys boxes contact-Sports" id="Boys-Tennis">
+				<div class="icon" id="boys-tennis">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
 
-			<div class = "co" class="boxes">
-				<div class="icon">
+			<div class="co boxes contact-Sports" id="Swimming">
+				<div class="icon" id="swimming">
+					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="co boxes contact-Sports" id="Track-And-Field">
+				<div class="icon" id="track-and-field">
+					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
+				</div>
+			</div>
+
+			<div class="co boxes contact-Sports" id="Badminton">
+				<div class="icon" id="badminton">
 					<img src = "http://weclipart.com/gimg/2A7CE7B3317BA863/graduation-cap-silhouette.png">
 				</div>
 			</div>
@@ -308,103 +323,93 @@
 			<p>A</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Associated Student Body
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Associated Student Body</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				AVID
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>AVID</p>
 		</div>
 
 		<div class="letters">
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				<a href="card-template-orgs.html">CODE</a>
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>CODE</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Cyber Patriots
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Cyber Patriots</p>
 		</div>
 
 		<div class="letters">
 			<p>D</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Dance
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Dance</p>
 		</div>
 
 		<div class="letters">
 			<p>E</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				English Lang. Learners
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>English Lang. Learners</p>
 		</div>
 
 		<div class="letters">
 			<p>I</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				International Baccalaureate
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>International Baccalaureate</p>
 		</div>
 
 		<div class="letters">
 			<p>M</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Mock Trial
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Mock Trial</p>
+		</div>
+
+		<div class="letters">
+			<p>P</p>
+		</div>
+
+		<div class = "contacts contacts-Orgs">
+			<p>Paw Prints</p>
+		</div>
+
+		<div class = "contacts contacts-Orgs">
+			<p>Prowler</p>
 		</div>
 
 		<div class="letters">
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Robotics
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Robotics</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Royal Wilson Marching Alliance
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Royal Wilson Marching Alliance</p>
 		</div>
 
 		<div class="letters">
 			<p>S</p>
 		</div>
 
-		<div class = "contacts">
-			<p>
-				Science Olympiad
-			</p>
+		<div class = "contacts contacts-Orgs">
+			<p>Science Olympiad</p>
 		</div>
 	</div>
 	<!-- end of groups contact page-->
 
-	<!--Start of groups contact page-->
+	<!--Start of clubs contact page-->
 	<div id = "clubsDirectory" class="hide">
 		<div class="letters">
 			<p>C</p>
@@ -416,7 +421,7 @@
 			</p>
 		</div>
 	</div>
-	<!-- end of groups contact page-->
+	<!-- end of clubs contact page-->
 
 	<!--start of math directory-->
 	<div id = "mathDirectory" class="hide">
@@ -424,7 +429,7 @@
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Chang, Leo</p>
 		</div>
 
@@ -432,7 +437,7 @@
 			<p>E</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Eusebi, Jason</p>
 		</div>
 
@@ -440,7 +445,7 @@
 			<p>G</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Ginther, Michelle</p>
 		</div>
 
@@ -448,7 +453,7 @@
 			<p>K</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Kim, Mijin</p>
 		</div>
 
@@ -456,7 +461,7 @@
 			<p>L</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Lin, Tamara</p>
 		</div>
 
@@ -464,7 +469,7 @@
 			<p>N</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Nguyen, Catherine</p>
 		</div>
 
@@ -472,7 +477,7 @@
 			<p>S</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Suh, David</p>
 		</div>
 
@@ -480,7 +485,7 @@
 			<p>T</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Tabatabai, Eric</p>
 		</div>
 
@@ -488,11 +493,11 @@
 			<p>W</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Weiss, Cindy</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Wever, Michael</p>
 		</div>
 
@@ -500,7 +505,7 @@
 			<p>Y</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Young, Shirley</p>
 		</div>
 
@@ -508,7 +513,7 @@
 			<p>Z</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Zheng, Yan</p>
 		</div>
 
@@ -523,7 +528,7 @@
 			<p>B</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Barone, Samuel</p>
 		</div>
 
@@ -531,7 +536,7 @@
 			<p>L</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Lorenz, Mike</p>
 		</div>
 
@@ -539,7 +544,7 @@
 			<p>O</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Oviedo, Robert</p>
 		</div>
 
@@ -547,7 +552,7 @@
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Rogan, Robert</p>
 		</div>
 
@@ -555,7 +560,7 @@
 			<p>T</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Thompson, Mark</p>
 		</div>
 
@@ -563,7 +568,7 @@
 			<p>V</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Van Gorden, Claudia</p>
 		</div>
 
@@ -571,7 +576,7 @@
 			<p>Z</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Zertuche, Donna</p>
 		</div>
 	</div>
@@ -583,7 +588,7 @@
 			<p>B</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Branconier- Habash, Patricia</p>
 		</div>
 
@@ -591,7 +596,7 @@
 			<p>F</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Fessenden, Mark</p>
 		</div>
 
@@ -599,7 +604,7 @@
 			<p>G</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Garcia, Walter</p>
 		</div>
 
@@ -607,23 +612,15 @@
 			<p>H</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Han, Jungsoo</p>
-		</div>
-
-		<div class="letters">
-			<p>K</p>
-		</div>
-
-		<div class = "contacts">
-			<p>Kindig, Norm</p>
 		</div>
 
 		<div class="letters">
 			<p>L</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Leon, Ernesto</p>
 		</div>
 
@@ -631,7 +628,7 @@
 			<p>P</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Pham, Chris</p>
 		</div>
 
@@ -639,7 +636,7 @@
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Ro, Justin</p>
 		</div>
 
@@ -647,7 +644,7 @@
 			<p>T</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Trimborn, Trent</p>
 		</div>
 
@@ -655,7 +652,7 @@
 			<p>U</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Udeshi, Jinasha</p>
 		</div>
 
@@ -663,7 +660,7 @@
 			<p>W</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Wu, Sharon</p>
 		</div>
 	</div>
@@ -677,7 +674,7 @@
 			<p>A</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Arteaga, Ember</p>
 		</div>
 
@@ -685,7 +682,7 @@
 			<p>B</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Barragan, Gino</p>
 		</div>
 
@@ -693,7 +690,7 @@
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Casey, Josipa</p>
 		</div>
 
@@ -701,7 +698,7 @@
 			<p>G</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Gomez, Mike</p>
 		</div>
 
@@ -709,7 +706,7 @@
 			<p>L</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Leung, Lisa</p>
 		</div>
 
@@ -717,7 +714,7 @@
 			<p>P</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Piner, Mary-Louise</p>
 		</div>
 
@@ -725,11 +722,11 @@
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Robles, Pilar</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Rouw, Christina</p>
 		</div>
 
@@ -737,7 +734,7 @@
 			<p>S</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Santos, Enid</p>
 		</div>
 
@@ -745,7 +742,7 @@
 			<p>V</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Valentine, Chris</p>
 		</div>
 
@@ -753,7 +750,7 @@
 			<p>Y</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Yep, Monica</p>
 		</div>
 	</div>
@@ -767,7 +764,7 @@
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Chang, Nina</p>
 		</div>
 
@@ -775,7 +772,7 @@
 			<p>L</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Lopez, Jerelyn</p>
 		</div>
 
@@ -783,7 +780,7 @@
 			<p>O</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Ortiz, Salvador</p>
 		</div>
 	</div>
@@ -795,7 +792,7 @@
 			<p>B</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Bushyeager, Courtney</p>
 		</div>
 
@@ -803,7 +800,7 @@
 			<p>H</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Han, Jungsoo</p>
 		</div>
 
@@ -811,7 +808,7 @@
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Ro, Justin</p>
 		</div>
 	</div>
@@ -825,7 +822,7 @@
 			<p>B</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Brown, DeJohn</p>
 		</div>
 
@@ -833,15 +830,15 @@
 			<p>G</p>
 		</div>
 
-		<div class = "contacts">
-			<p>Gilbert, Matt</p>
+		<div class = "contacts contacts-Staff">
+			<p>Gilbert, Matthew</p>
 		</div>
 
 		<div class="letters">
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Kraft, Kiley</p>
 		</div>
 
@@ -849,7 +846,7 @@
 			<p>W</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Weaver, Kim</p>
 		</div>
 	</div>
@@ -863,7 +860,7 @@
 			<p>C</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Chang, Leo</p>
 		</div>
 
@@ -871,7 +868,7 @@
 			<p>H</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Hinojosa, Miguel</p>
 		</div>
 
@@ -879,7 +876,7 @@
 			<p>J</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Johnson, Miguel</p>
 		</div>
 
@@ -887,11 +884,11 @@
 			<p>O</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Ortega-Carcamo, Johana</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Orth, Liz</p>
 		</div>
 
@@ -899,7 +896,7 @@
 			<p>R</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Recinos, Ricardo</p>
 		</div>
 
@@ -907,7 +904,7 @@
 			<p>S</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Shin, Eilene</p>
 		</div>
 
@@ -915,22 +912,22 @@
 			<p>W</p>
 		</div>
 
-		<div class = "contacts">
+		<div class = "contacts contacts-Staff">
 			<p>Wann, Suzanna</p>
 		</div>
 	</div>
 	<!--end of modern languages directory-->
 
 	<div id="navbar">
-	    <span>
+	    <span class="nav">
 	        <a href="announce.html"><img id="chat" src="webAssets/chat.png"></a>
 	    </span>
 
-	    <span>
+	    <span class="nav">
 	        <a href="#"><img id="calendar" src="webAssets/Calendar.png"></a>
 	    </span>
 
-	    <span>
+	    <span class="nav">
 	        <a href="appDirectory.html"><img id="profileIcon" src="webAssets/User.png"></a>
 	    </span>
 	</div>

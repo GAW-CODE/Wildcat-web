@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 body {
     text-align: center;
@@ -23,6 +24,7 @@ input{
     outline: none;
     border-bottom: 2px solid white;
     transition-duration: 0.3s;
+    width: 40%;
 }
 input:focus{
     border: none;
@@ -31,4 +33,26 @@ input:focus{
 }
 #SignUp{
     transform: translateY(1vh);
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-style: none;
+}
+button{
+    outline: none;
+    border: none;
+    background-color: rgb(226, 28, 28);
+    color: white;
+    padding: 0.5% 0;  
+    border-radius: 7px;
+    display: block;
+    margin: auto;
+    width: 5%;
+}
+a:hover{
+    color: white;
+    font-style:none;
+    text-decoration:none;
 }

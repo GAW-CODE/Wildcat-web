@@ -2,6 +2,7 @@ body{
     padding: 0;
     margin: 0;
     overflow: hidden;
+    user-select: none;
 }
 #header{
     padding-top: 3%;
@@ -26,6 +27,5 @@ input:focus{
     outline: none;
 }
 #wrong {
-    display: none;
     color: #FF4444;
 }

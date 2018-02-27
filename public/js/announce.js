@@ -6,20 +6,7 @@ let campusorgsDiv = document.getElementById('campusorgs');
 let athleticsDiv = document.getElementById('athletics');
 let fundraisersDiv = document.getElementById('fundraisers');
 
-//media
-//TODO: modularize (wrap inside a function)
-var modal = document.getElementById('modal1');
-var img = document.getElementById('imgattach1');
-var modalImg = document.getElementById("img01");
-img.onclick = function () {
-		modal.style.display = "block";
-		modalImg.src = this.src;
-}
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function () {
-		modal.style.display = "none";
-}
-
+//display announcements
 function displayAnnouncement(announcement) {
 	let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -57,101 +44,97 @@ function displayAnnouncement(announcement) {
 	}
 }
 
-//display announcements
 FIREBASE_DATABASE.ref('/announcements').on('child_added', function(snapshot, prevChildKey) {
 	console.log(snapshot.val());
   displayAnnouncement(snapshot.val());
 });
 
-//student archive
-let announcements = document.getElementsByClassName('saveable'); //all announcement DOM elements on the page
+//array containing ALL announcements on the page (except for the placeholder ones)
+let announcements = document.getElementsByClassName('saveable');
 
-for (let i = 0; i < announcements.length; i++) {
-	announcements[i].addEventListener("click", function() {
-		//display "SAVED" momentarily
-
-		//turn bkgd to gold
-		announcements.style.background = "#edbe31";
-
-		//add announcement to student archive
-	});
-}
 //daily deletion of expired announcements
-//makes array containing all announcements (in the database)
-let annList = [];
-
-//TODO: repeat this code every day at midnight
+let annList = []; //annList[i] returns the key of the ith announcement in the database
+let annMessage = [];
 FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are taking a snapshot once daily
 	.then((snapshot) => {
 		let val = snapshot.val();
 		for (let key in val) {
 			annList.push(key);
+			annMessage.push(val[key].message);
 		}
 		//loop that goes through each announcement and deletes at midnight
 		let i = 0;
 		while (i < annList.length)
-		{	//annList[i] returns the key of the ith announcement in the database
-			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate)) //expirationDate is a property of each announcement object in the database
+		{
+			if ((new Date()).getTime() > Date.parse(val[annList[i]].expirationDate))
+			//expirationDate is a property of each announcement object in the database
 			{
-				FIREBASE_DATABASE.ref().child('/announcements/' + annList[i]).remove();
-			} else
-			{
+				//get message of each announcement, contained in array that contains text in each announcement
+				let currentMessage = annMessage[i];
+				let annText;
+
+				//find the DOM element containing the announcement
+				let j = 0;
+				while (j < announcements.length)
+				{
+					console.log(j);
+					annText = announcements[j].getElementsByClassName('announcement')[0].innerHTML;
+					if (annText.indexOf(currentMessage) != -1)
+					{	//the actual moving part
+						//insert announcement in school archive in database
+						FIREBASE_DATABASE.ref('/school-archive').push(val[annList[i]]);
+						//remove announcement from announcements in database
+						FIREBASE_DATABASE.ref('/announcements').child(annList[i]).remove();
+
+						//needed to prevent infinite loop! - https://stackoverflow.com/questions/5767325/how-do-i-remove-a-particular-element-from-an-array-in-javascript?page=1&tab=votes#tab-top
+						annList.splice(j, 1);
+						annMessage.splice(j, 1);
+
+						//remove from announce.html - remove the particular element using DOM
+						announcements[j].remove();
+
+						break; //do not continue on
+					}
+					else
+					{
+						j++;
+					}
+				}
+			}
+			else
+		 	{
+				console.log(i);
 				i++;
 			}
 		}
+		console.log('end of loop reached');
 });
 
-//function to convert a date to Epoch time, milliseconds since Jan 1 1970
-//TODO:not sure how to reference a variable from a different file??
-function convertToEpoch(){
-	expirationDate.dd = dd - 1;
-	expirationDate.mm = mm - 1;
-	expirationDate.yyyy = yyyy - 1970;
-
-	d = d * 86400000;
-	if (m = 1 || 3 || 5 || 7 || 8 || 10 || 12)
-		{
-			m = m * 86400000 * 31;
-		}
-	if (m = 4 || 6 || 9 || 11)
-		{
-			m = m * 86400000 * 30;
-		}
-  if (m = 2)
-		{
-			m = m * 86400000 * 27;
-		}
-  y = y * 86400000 * 365.2422;
-
-	let dateInEpoch = d + m + y - 26000;
-	return dateInEpoch;
-}
-
 //search query
+let searchIcon = document.getElementById('searchIcon');
 let searchBar = document.getElementById('search');
-let announcementsDiv = document.getElementById('news');
 let isSearchOn = false;
 
 function toggleSearchBar() {
 	console.log('toggle search bar');
-	if (!isSearchOn) { //start search process / search mode
-		//collapse whole page - only display announcements
-		searchBar.removeAttribute('hidden');
-		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				announcementsDiv.childNodes[i].style.display = 'none';
+	 if (!isSearchOn) { //start search process / search mode
+			//collapse whole page - only display announcements
+		 searchBar.removeAttribute('hidden');
+			for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+				if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+					announcementsDiv.childNodes[i].style.display = 'none';
+				}
 			}
-		}
-		//blur whole screen
-	} else {
-		searchBar.setAttribute('hidden', 'true');
-		for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-			if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-				announcementsDiv.childNodes[i].style.display = '';
+		 //blur whole screen
+	 } else {
+		 searchBar.setAttribute('hidden', 'true');
+			for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+				if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+					announcementsDiv.childNodes[i].style.display = '';
+				}
 			}
-		}
-	}
-	isSearchOn = !isSearchOn;
+	 }
+	 isSearchOn = !isSearchOn;
 }
 
 function search() {
@@ -168,14 +151,7 @@ function search() {
 			announcements[i].parentNode.style.display = 'none';
 		}
 	}
-	//let announcementsAll =
-	//filter = searchBar
 }
-
-// When the page loads, the script indexes the content of all li’s into browser’s memory.
-// When a user types text into the search field, the script searches for equivalents among the indexed data and hides the corresponding li’s where no equivalents were found. If nothing found, a message is shown.
-// The script highlights the text equivalents by replacing phases, for example, babylon becomes <span class="highlight">babylon</span>.
-
 
 //get the date
 let n = new Date();
@@ -184,20 +160,44 @@ let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
-//if announcement is pressed down
-var timeoutId = 0;
+// //if announcement is pressed down
+// let timeoutId = 0;
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener('mousedown', function() {
+// 	    timeoutId = setTimeout(save(), 3000);
+// 	}).addEventListener('mouseup mouseleave', function() {
+// 	    clearTimeout(timeoutId);
+// 	});
+// }
 
-announcements.on('mousedown', function() {
-    timeoutId = setTimeout(save(), 3000);
-}).on('mouseup mouseleave', function() {
-    clearTimeout(timeoutId);
-});
-//send announcement by pressing down
-function save(){
+//send announcement
+//function saveTo(){
+//clone
+
+//send to student archive
 
 
-}
+//}
 
-//be able to delete saved msgs
-//if held down for 2 seconds, prompt for deletion? yes and no button
-FIREBASE_DATABASE.ref().child('/announcements/this').remove();
+// //be able to delete saved msgs
+// //if held down for 2 seconds, prompt for deletion? yes and no button
+// studentAnnouncements.on('mousedown', function() {
+//     timeoutId = setTimeout(save(), 3000);
+// }).on('mouseup mouseleave', function() {
+//     clearTimeout(timeoutId);
+// //get key of this announcement
+// let sAnnouncekey = //snapshot?
+// FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
+//
+//student archive
+//
+// for (let i = 0; i < announcements.length; i++) {
+// 	announcements[i].addEventListener("click", function() {
+// 		//display "SAVED" momentarily
+//
+// 		//turn bkgd to gold
+// 		announcements.style.background = "#edbe31";
+//
+// 		//add announcement to student archive
+// 	});
+// }
