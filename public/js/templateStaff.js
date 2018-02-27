@@ -25,6 +25,19 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     let info = snapshot.val()[key];
     console.log(info);
 
+<<<<<<< HEAD
+FIREBASE_DATABASE.ref('/directory/academics/math').once('value')
+	.then( (snapshot) => {
+			console.log(snapshot.val());
+      console.log(name);
+				//code that handles the snapshot
+				//snapshot.val() is the actual, usable data (parsed into JSON)
+			let div = document.createElement('div');
+			let domString = ``; //use template literals here
+			div.innerHTML = domString;
+			//selectedElement.appendChild(div.firstChild);
+	});
+=======
     pic.setAttribute("src", info.Pic);
     document.getElementById("name").textContent = info.Name;
     document.getElementById("roomNum").textContent = info.RoomNumber;
@@ -33,3 +46,4 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     document.getElementById("officeHours").textContent = info.OfficeHours;
     document.getElementById("askMeAbout").textContent = info.AskMeAbout;
   });
+>>>>>>> 554e6b0e3d62913e54cb5e206ec811ec961b107f
