@@ -41,7 +41,7 @@ p {
     flex-wrap: nowrap;
     width: 100%;
     height: 9%;
-    color:linear-gradient(to right, #af1818 , #c62828);
+    background:linear-gradient(to right, #af1818 , #c62828);
 }
 
 /*Title styles*/
@@ -52,7 +52,7 @@ p {
     white-space: nowrap;
     font-weight: 600;
     font-size: 1.7vw;
-    color: linear-gradient(to right, #af1818 , #c62828);
+    background: linear-gradient(to right, #af1818 , #c62828);
 }
 
 /*Module list styles*/
@@ -61,7 +61,7 @@ p {
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    color: linear-gradient(to right, #af1818 , #c62828);
+    background: linear-gradient(to right, #af1818 , #c62828);
 }
 #navMods ul{
     list-style-type: none;
