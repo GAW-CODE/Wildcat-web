@@ -172,3 +172,9 @@ button{
     display: none;
     margin-left: 16.1vw;
 }
+div.wc-date-popover{
+		left:-20vw;
+		top:-5vh;
+		width: 20vw;
+		height: auto;
+}
