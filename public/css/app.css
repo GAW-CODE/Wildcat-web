@@ -130,7 +130,7 @@ p {
     height: 90%;
     border-radius: 30px;
     margin: auto;
-    background-color: rgb(205,205,205);
+    background:linear-gradient(to right, #cdcdcd, #d8d8d8);
     animation-name: moduleIn;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
