@@ -178,3 +178,12 @@ div.wc-date-popover{
 		width: 20vw;
 		height: auto;
 }
+#location1 {
+    display: none;
+}
+
+#map {
+    display: none;
+    width: 60vw;
+    height:50vh;
+}

@@ -14,6 +14,8 @@ var announceTitle = document.getElementById('txtName');
 var announceMessage = document.getElementById('announcement');
 var uploadFile = document.getElementById('uploadFile');
 var preview = document.getElementById('preview');
+let btnLocation = document.getElementById('location');
+let btnLocation1 = document.getElementById('location1');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -123,3 +125,23 @@ uploadFile.addEventListener('change', function (e) {
         preview = snapshot.val();
     });
 });
+
+let map = L.map('map', {
+    crs: L.CRS.Simple
+});
+let bounds = [[0, 0], [500, 650]];
+
+let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
+
+map.fitBounds(bounds);
+
+btnLocation.addEventListener('click', function () {
+    document.getElementById('map').style.display = "block";
+    document.getElementById('location1').style.display = "block";
+    document.getElementById('location').style.display = "none";
+})
+btnLocation1.addEventListener('click', function () {
+    document.getElementById('map').style.display = "none";
+    document.getElementById('location1').style.display = "none";
+    document.getElementById('location').style.display = "block";
+})

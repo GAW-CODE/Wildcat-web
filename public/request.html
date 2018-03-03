@@ -2,35 +2,42 @@
 <html lang="en" ng-app="cuppaDatepicker">
 <head>
 
-	<!--meta tags-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<meta name="language" content="English">
-	<meta name="description" content="Request an announcement here!">
+    <!--meta tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="language" content="English">
+    <meta name="description" content="Request an announcement here!">
 
-	<!-- enables progressive Web App -->
-	<link rel="manifest" href="manifest.json">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Wildcat">
-	<meta name="apple-mobile-web-app-title" content="Wildcat">
-	<meta name="theme-color" content="#c90101">
-	<meta name="msapplication-navbutton-color" content="#c90101">
-	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-	<meta name="msapplication-starturl" content="/index.html">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+    <!-- enables progressive Web App -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Wildcat">
+    <meta name="apple-mobile-web-app-title" content="Wildcat">
+    <meta name="theme-color" content="#c90101">
+    <meta name="msapplication-navbutton-color" content="#c90101">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
 
-	<!--links-->
-	<link rel="stylesheet" type="text/css" href="css/request.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--links-->
+    <link rel="stylesheet" type="text/css" href="css/request.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-	<!--browser-->
-	<link rel="icon" href="sharedAssets/favicon.png">
+    <!--browser-->
+    <link rel="icon" href="sharedAssets/favicon.png">
 
-	<link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+    <link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
 
-	<title>Request An Announcement</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+
+    <title>Request An Announcement</title>
 </head>
 
 <body>
@@ -77,6 +84,10 @@
 
 
 	<!-- copy / paste from request-calendar.html -->
+    <!-- location option-->
+    <button id="location">Location</button>
+    <button id="location1">Location</button>
+    <div id="map" style="width: 50vw; height: 65vh"></div>
 
     <div id="date" class="hide">
         <input type="date" name="date" id="cal">
