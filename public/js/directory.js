@@ -23,6 +23,7 @@ var schoolDir = document.getElementById('school');
 var groupsDir = document.getElementById('groups');
 var sportsDir = document.getElementById('sports');
 var clubsDir = document.getElementById('clubs');
+var mapDir = document.getElementById('map');
 
 
 schoolDir.addEventListener('click', function(){
