@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff 50%, #f2f2f2 100%);
+    background-attachment: fixed;
+}
+
+#titleBar {
+    width: 100%;
+    height: 15vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #d42c2c;
+    top: 0;
+    left: 0;
+}
+
+#title {
+	font-size: 12vw;
+	text-align: center;
+	color: white;
+	text-indent: 15%;
+	padding-top: 5%;
+}
+
+#banner {
+	position: absolute;
+	top: 0;
+	left: 50;
+	height: 200px;
+	padding-left: 15px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+table {
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+td, th {
+  	border-bottom: solid 1px black;
+  	text-align: center;
+}
