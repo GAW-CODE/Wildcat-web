@@ -3,8 +3,13 @@ const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
-const btnForgot = document.getElementById('btnForgot');
 const email = document.getElementById('email');
+const btnSend = document.getElementById('send')
+let forgot = document.getElementById('btnForgot');
+let reset = document.getElementById('reset');
+const back = document.getElementById('back');
+
+
 btnSignUp.addEventListener('click', e => {
     window.location.href = "SignUp.html";
 });
@@ -35,11 +40,10 @@ btnLogin.addEventListener('click', e => {
         }).catch(e => {
             console.log(e.message);
             document.getElementById('wrong').style.display = "block";
-            document.getElementById('btnForgot').style.display = "block";
         });;
 });
 // take email from #email to send password reset request
-btnForgot.addEventListener('click', function () {
+btnSend.addEventListener('click', function () {
     firebase.auth().sendPasswordResetEmail(
         email.value)
         .then(function () {
@@ -49,3 +53,14 @@ btnForgot.addEventListener('click', function () {
             // Error occurred. Inspect error.code.
         })
 });
+//DOM for forgetting password
+
+forgot.addEventListener('click', function () {
+    reset.style.display= "block" ;
+    loginpg.style.display = "none";
+})
+
+back.addEventListener('click', function () {
+    reset.style.display = "none";
+    loginpg.style.display = "block";
+})
