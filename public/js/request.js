@@ -104,7 +104,7 @@ uploadFile.addEventListener('change', function (e) {
     document.getElementById('uploader').style.display = 'block';
     var file = e.target.files[0];
     //Create a storage ref
-    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    var storageRef = firebase.storage().ref('/announcements/' + file.name);
     //Upload file
     var task = storageRef.put(file);
     //Update progress bar
