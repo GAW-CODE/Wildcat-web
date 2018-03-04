@@ -160,6 +160,22 @@ let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
+//display image attachments
+//TODO: modularize this into a function, use classes instead of id
+let modal = document.getElementById('modal1');
+let img = document.getElementById('imgattach1');
+let modalImg = document.getElementById("img01");
+
+img.onclick = function() {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+}
+
+let span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+	modal.style.display = "none";
+}
+
 // //if announcement is pressed down
 // let timeoutId = 0;
 // for (let i = 0; i < announcements.length; i++) {
