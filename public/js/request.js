@@ -105,7 +105,7 @@ uploadFile.addEventListener('change', function (e) {
     document.getElementById('uploader').style.display = 'block';
     var file = e.target.files[0];
     //Create a storage ref
-    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    var storageRef = firebase.storage().ref('/announcements/' + file.name);
     //Upload file
     var task = storageRef.put(file);
     //Update progress bar
@@ -146,6 +146,35 @@ btnLocation1.addEventListener('click', function () {
     document.getElementById('location1').style.display = "none";
     document.getElementById('location').style.display = "block";
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //dropdown menu for selecting location
 /* When the user clicks on the button,
