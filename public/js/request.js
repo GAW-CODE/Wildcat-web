@@ -16,6 +16,7 @@ var uploadFile = document.getElementById('uploadFile');
 var preview = document.getElementById('preview');
 let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
+let selLocationBtn = document.getElementById('selLocation');
 
 dateButton.addEventListener('click', function(){
 	if(dateInputBlock.className == 'hide'){
@@ -145,3 +146,25 @@ btnLocation1.addEventListener('click', function () {
     document.getElementById('location1').style.display = "none";
     document.getElementById('location').style.display = "block";
 })
+
+//dropdown menu for selecting location
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
