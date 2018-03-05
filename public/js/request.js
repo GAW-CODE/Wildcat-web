@@ -72,8 +72,6 @@ if (mm < 10) {
 expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 //its value is updated in datepicker-directive.js, day after today by default
 
-
-
 //send msg to database
 function sendAnnouncement(title, announcement) {
 	const uid = FIREBASE_AUTH.currentUser.uid;
@@ -126,6 +124,7 @@ uploadFile.addEventListener('change', function (e) {
     });
 });
 
+//map
 let map = L.map('map', {
     crs: L.CRS.Simple
 });
