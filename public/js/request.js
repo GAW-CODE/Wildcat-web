@@ -16,6 +16,7 @@ var uploadFile = document.getElementById('uploadFile');
 var preview = document.getElementById('preview');
 let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
+let selLocationBtn = document.getElementById('selLocation');
 
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function(e) {
@@ -63,8 +64,6 @@ if (mm < 10) {
 expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 //its value is updated in datepicker-directive.js, day after today by default
 
-
-
 //send msg to database
 function sendAnnouncement(title, announcement) {
 	const uid = FIREBASE_AUTH.currentUser.uid;
@@ -95,7 +94,7 @@ uploadFile.addEventListener('change', function (e) {
     document.getElementById('uploader').style.display = 'block';
     var file = e.target.files[0];
     //Create a storage ref
-    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    var storageRef = firebase.storage().ref('/announcements/' + file.name);
     //Upload file
     var task = storageRef.put(file);
     //Update progress bar
@@ -117,6 +116,7 @@ uploadFile.addEventListener('change', function (e) {
     });
 });
 
+//map
 let map = L.map('map', {
     crs: L.CRS.Simple
 });
@@ -136,3 +136,54 @@ btnLocation1.addEventListener('click', function () {
     document.getElementById('location1').style.display = "none";
     document.getElementById('location').style.display = "block";
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//dropdown menu for selecting location
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
