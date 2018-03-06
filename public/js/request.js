@@ -17,15 +17,6 @@ var preview = document.getElementById('preview');
 let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
 
-dateButton.addEventListener('click', function(){
-	if(dateInputBlock.className == 'hide'){
-		dateInputBlock.className = 'show';
-	}
-	else{
-		dateInputBlock.className = 'hide';
-	}
-});
-
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function(e) {
 	charCount.innerHTML = e.target.value.length;

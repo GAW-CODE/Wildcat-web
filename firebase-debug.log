@@ -1,0 +1,32 @@
+[debug] [2018-03-04T01:23:48.998Z] ----------------------------------------------------------------------
+[debug] [2018-03-04T01:23:49.002Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\John\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-03-04T01:23:49.003Z] CLI Version:   3.17.4
+[debug] [2018-03-04T01:23:49.003Z] Platform:      win32
+[debug] [2018-03-04T01:23:49.003Z] Node Version:  v9.5.0
+[debug] [2018-03-04T01:23:49.003Z] Time:          Sat Mar 03 2018 17:23:49 GMT-0800 (Pacific Standard Time)
+[debug] [2018-03-04T01:23:49.003Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-04T01:23:49.021Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-04T01:23:49.022Z] > authorizing via signed-in user
+[debug] [2018-03-04T01:23:49.025Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Mar 03 2018 17:23:49 GMT-0800 (Pacific Standard Time)
+[debug] [2018-03-04T01:23:49.790Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-04T01:23:49.791Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/gaw-wildcat-app/tokens  
+  
+ Sat Mar 03 2018 17:23:49 GMT-0800 (Pacific Standard Time)
+[debug] [2018-03-04T01:23:50.238Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\John\Desktop\Wildcat-web'...
+[info] 
+[debug] [2018-03-04T01:23:50.247Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Mar 03 2018 17:23:50 GMT-0800 (Pacific Standard Time)
+[debug] [2018-03-04T01:23:50.746Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-04T01:23:50.747Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/467203906935/clients/_:getWebAppConfig  
+  
+ Sat Mar 03 2018 17:23:50 GMT-0800 (Pacific Standard Time)
+[debug] [2018-03-04T01:23:51.405Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
