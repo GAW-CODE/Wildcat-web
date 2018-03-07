@@ -138,34 +138,6 @@ btnLocation1.addEventListener('click', function () {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //dropdown menu for selecting location
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -177,13 +149,32 @@ function myFunction() {
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+		let subDrops = document.getElementsByClassName("dropdown-sub")
+    let i;
     for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
+      let openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
       }
     }
+		// for b;
+		// for (b = 0; b < subDrops.length; b++) {
+    //   let openDropdown = subDrops[b];
+    //   if (openDropdown.classList.contains('show')) {
+    //     openDropdown.classList.remove('show');
+    //   }
+    // }
   }
 }
+
+//when block a is clicked, open sub categories
+let blockA = document.getElementById("blockA");
+let blockASub = document.getElementById("blockASub");
+// blockA.addEventListener('click', function(){
+//     document.getElementById("blockASub").classList.toggle("show");
+// });
+
+blockA.addEventListener('click', function(){
+    blockASub.className="show";
+});
