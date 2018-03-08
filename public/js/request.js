@@ -118,10 +118,10 @@ uploadFile.addEventListener('change', function (e) {
 
 //map
 let map = L.map('map', {
+    maxZoom: 3,
     crs: L.CRS.Simple
 });
-let bounds = [[0, 0], [500, 650]];
-
+let bounds = [[0, 0], [700, 850]];
 let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
@@ -129,11 +129,13 @@ map.fitBounds(bounds);
 btnLocation.addEventListener('click', function () {
     document.getElementById('map').style.display = "block";
     document.getElementById('location1').style.display = "block";
+    document.getElementById('dropbtn').style.display = "block";
     document.getElementById('location').style.display = "none";
 })
 btnLocation1.addEventListener('click', function () {
     document.getElementById('map').style.display = "none";
     document.getElementById('location1').style.display = "none";
+    document.getElementById('dropbtn').style.display = "none";
     document.getElementById('location').style.display = "block";
 })
 

@@ -41,11 +41,23 @@
 </head>
 
 <body>
-
 <header>
 	<strong><h1>Request An Announcement<h1></strong>
 </header>
-
+    <!-- map modal -->
+    <div class="map">
+        <span id="location1">&times;</span>
+        <div id="map" style="width: 80vw; height:95vh"></div>
+    </div>
+    <!-- choose location of event -->
+    <div class="dropdown">
+      <button onclick="myFunction()" id="dropbtn">Select Location</button>
+      <div id="myDropdown" class="dropdown-content" display="none">
+        <ul>Block A</ul>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
 <div id="New">
     <!-- display organization login info (profile pic + org name next to it)-->
     <input type="text" id="txtName" placeholder="Title">
@@ -86,18 +98,6 @@
 	<!-- copy / paste from request-calendar.html -->
     <!-- location option-->
     <button id="location">Location</button>
-    <button id="location1">Location</button>
-    <div id="map" style="width: 50vw; height: 65vh"></div>
-
-    <!-- choose location of event -->
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Select Location</button>
-      <div id="myDropdown" class="dropdown-content">
-        <ul>Block A</ul>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-    </div>
 
 
     <div id="date" class="hide">
