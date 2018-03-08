@@ -180,10 +180,51 @@ window.onclick = function(event) {
 //when block a is clicked, open sub categories
 let blockA = document.getElementById("blockA");
 let blockASub = document.getElementById("blockASub");
-// blockA.addEventListener('click', function(){
-//     document.getElementById("blockASub").classList.toggle("show");
-// });
+
+let blockB = document.getElementById("blockB");
+let blockBSub = document.getElementById("blockBSub");
+
+let blockC = document.getElementById("blockC");
+let blockCSub = document.getElementById("blockCSub");
+
+let blockD = document.getElementById("blockD");
+let blockDSub = document.getElementById("blockDSub");
+
+let blockE = document.getElementById("blockE");
+let blockESub = document.getElementById("blockESub");
+
+let blockF = document.getElementById("blockF");
+let blockFSub = document.getElementById("blockFSub");
+
+let blockG = document.getElementById("blockG");
+let blockGSub = document.getElementById("blockGSub");
+
+let other = document.getElementById("other");
+let otherSub = document.getElementById("otherSub");
 
 blockA.addEventListener('click', function(){
     blockASub.className="show";
+});
+
+blockB.addEventListener('click', function(){
+    blockBSub.className="show";
+});
+
+blockC.addEventListener('click', function(){
+    blockCSub.className="show";
+});
+blockD.addEventListener('click', function(){
+    blockDSub.className="show";
+});
+blockE.addEventListener('click', function(){
+    blockESub.className="show";
+});
+blockF.addEventListener('click', function(){
+    blockFSub.className="show";
+});
+blockG.addEventListener('click', function(){
+    blockGSub.className="show";
+});
+other.addEventListener('click', function(){
+    otherSub.className="show";
 });
