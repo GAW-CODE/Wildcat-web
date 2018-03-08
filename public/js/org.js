@@ -9,12 +9,15 @@ function displayRequestStatus() {
   let clubRejections;
   let rejectionsRef;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organizationName = snapshot.val().organization;
+    organizationName =snapshot.val().organization;
     console.log(organizationName);
+  })
+  .then(() =>{
+    rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejections/'+organizationName);
+    rejectionsRef.on('value', gotData, errData);
   });
+}
 
-  rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejectionsGame/');
-  rejectionsRef.on('value', gotData, errData);
 
   function gotData(data){
     //console.log(data.val());
@@ -36,8 +39,7 @@ function displayRequestStatus() {
   }
 
 
-  //TODO: Kyle: insert your pseudocode here
-}
+
 
 function displayRequestAnnouncement(message,rejectionReason){
  let rejectionList=document.getElementById('rejection');
