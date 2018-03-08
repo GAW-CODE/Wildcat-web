@@ -127,13 +127,13 @@ let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
 btnLocation.addEventListener('click', function () {
-    document.getElementById('map').style.display = "block";
+    document.getElementById('map').style.visibility = "visible";
     document.getElementById('location1').style.display = "block";
     document.getElementById('dropbtn').style.display = "block";
     document.getElementById('location').style.display = "none";
 })
 btnLocation1.addEventListener('click', function () {
-    document.getElementById('map').style.display = "none";
+    document.getElementById('map').style.visibility = "hidden";
     document.getElementById('location1').style.display = "none";
     document.getElementById('dropbtn').style.display = "none";
     document.getElementById('location').style.display = "block";
