@@ -172,3 +172,82 @@ button{
     display: none;
     margin-left: 16.1vw;
 }
+div.wc-date-popover{
+		left:-20vw;
+		top:-5vh;
+		width: 20vw;
+		height: auto;
+}
+#location1 {
+    display: none;
+}
+
+#map {
+    display: none;
+    width: 60vw;
+    height:50vh;
+}
+
+/* for dropdown menu*/
+.dropbtn {
+	display: block;
+	margin: auto;
+	outline: none;
+	border: none;
+	background-color: rgb(170, 21, 21);
+	color: white;
+	padding: 0.5%;
+	border-radius: 3px;
+	font-size: 1.5vw;
+
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgb(150, 21, 21);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-sub {
+		position: absolute;
+		display: right;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content ul {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-subContent {
+		display: none;
+    visibility: hidden;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		overflow: auto;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+}
+
+.dropdown-sub:hover .dropdown-subContent {
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
