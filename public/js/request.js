@@ -126,6 +126,13 @@ let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
+const x = 20
+const y = 40
+//1a
+var sol = L.latLng([y, x]);
+L.marker(sol).addTo(map);
+
+
 btnLocation.addEventListener('click', function () {
     document.getElementById('map').style.visibility = "visible";
     document.getElementById('location1').style.display = "block";
