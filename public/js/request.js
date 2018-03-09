@@ -147,30 +147,9 @@ function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    let dropdowns = document.getElementsByClassName("dropdown-content");
-		let subDrops = document.getElementsByClassName("dropdown-sub")
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-		// for b;
-		// for (b = 0; b < subDrops.length; b++) {
-    //   let openDropdown = subDrops[b];
-    //   if (openDropdown.classList.contains('show')) {
-    //     openDropdown.classList.remove('show');
-    //   }
-    // }
-  }
-}
-
 //when block a is clicked, open sub categories
+let subCategories = document.getElementsByClassName("dropdown-subContent");
+
 let blockA = document.getElementById("blockA");
 let blockASub = document.getElementById("blockASub");
 
@@ -195,29 +174,51 @@ let blockGSub = document.getElementById("blockGSub");
 let other = document.getElementById("other");
 let otherSub = document.getElementById("otherSub");
 
+//when clicking a category, show its sub categories and close out of other open ones to preserve space
+
 blockA.addEventListener('click', function(){
+	  closeOtherSub();
     blockASub.className="show";
 });
 
 blockB.addEventListener('click', function(){
+	 closeOtherSub();
     blockBSub.className="show";
 });
 
 blockC.addEventListener('click', function(){
+	  closeOtherSub();
     blockCSub.className="show";
 });
 blockD.addEventListener('click', function(){
+	  closeOtherSub();
     blockDSub.className="show";
 });
 blockE.addEventListener('click', function(){
+	  closeOtherSub();
     blockESub.className="show";
 });
 blockF.addEventListener('click', function(){
+	  closeOtherSub();
     blockFSub.className="show";
 });
 blockG.addEventListener('click', function(){
+	  closeOtherSub();
     blockGSub.className="show";
 });
 other.addEventListener('click', function(){
+	  closeOtherSub();
     otherSub.className="show";
 });
+
+function closeOtherSub()
+{
+	blockASub.className = "hide";
+	blockBSub.className = "hide";
+	blockCSub.className = "hide";
+	blockDSub.className = "hide";
+	blockESub.className = "hide";
+	blockFSub.className = "hide";
+	blockGSub.className = "hide";
+	otherSub.className = "hide";
+}

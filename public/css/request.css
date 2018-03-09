@@ -242,6 +242,10 @@ div.wc-date-popover{
     display: block;
 }
 
+.dropdown-content li:hover{
+	background-color: #cccccc
+}
+
 .dropdown-subContent {
 		display: none;
 		position: absolute;
@@ -252,5 +256,6 @@ div.wc-date-popover{
 		z-index: 1;
 }
 
+.hide {display: none;}
 
 .show {display:block;}
