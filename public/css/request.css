@@ -180,29 +180,37 @@ div.wc-date-popover{
 }
 #location1 {
     display: none;
+    color: red;
+    float: right;
+    font-size: 10vw;
+    font-weight: bold;
 }
 
 #map {
-    display: none;
-    width: 60vw;
-    height:50vh;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 20vw;
+    top: 0;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
-
 /* for dropdown menu*/
-.dropbtn {
-	display: block;
-	margin: auto;
-	outline: none;
-	border: none;
-	background-color: rgb(170, 21, 21);
-	color: white;
-	padding: 0.5%;
-	border-radius: 3px;
-	font-size: 1.5vw;
-
+#dropbtn {
+    display: none;
+    z-index: 1;
+    outline: none;
+    border: none;
+    float: right
+    background-color: rgb(170, 21, 21);
+    color: white;
+    padding: 0.5%;
+    border-radius: 3px;
+    font-size: 1.5vw;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+#dropbtn:hover, .dropbtn:focus {
     background-color: rgb(150, 21, 21);
 }
 
@@ -226,16 +234,20 @@ div.wc-date-popover{
     z-index: 1;
 }
 
-.dropdown-content ul {
+.dropdown-content li {
+	 list-style-type: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
+.dropdown-content li:hover{
+	background-color: #cccccc
+}
+
 .dropdown-subContent {
 		display: none;
-    visibility: hidden;
 		position: absolute;
 		background-color: #f1f1f1;
 		min-width: 160px;
@@ -244,10 +256,6 @@ div.wc-date-popover{
 		z-index: 1;
 }
 
-.dropdown-sub:hover .dropdown-subContent {
-    display: block;
-}
-
-.dropdown a:hover {background-color: #ddd}
+.hide {display: none;}
 
 .show {display:block;}
