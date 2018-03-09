@@ -12,6 +12,7 @@ function displayRequestStatus() {
     organizationName =snapshot.val().organization;
     console.log(organizationName);
   })
+   // pull all rejections
   .then(() =>{
     rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejections/'+organizationName);
     rejectionsRef.on('value', gotData, errData);
@@ -38,9 +39,6 @@ function displayRequestStatus() {
     console.log(err);
   }
 
-
-
-
 function displayRequestAnnouncement(message,rejectionReason){
  let rejectionList=document.getElementById('rejection');
  let div = document.createElement('div');
@@ -58,6 +56,8 @@ function displayRequestAnnouncement(message,rejectionReason){
    div.innerHTML=template;
    rejectionList.appendChild(div);
 }
+
+
  //let div = document.createElement("div");
  //let header=document.createElement("Header")
  //let currMessage=document.createTextNode("Message: "+message+"\n");
