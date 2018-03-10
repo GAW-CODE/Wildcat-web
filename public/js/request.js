@@ -17,6 +17,7 @@ var preview = document.getElementById('preview');
 let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
 let selLocationBtn = document.getElementById('selLocation');
+let A1 = document.getElementById('A1');
 
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function(e) {
@@ -126,12 +127,16 @@ let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
-const x = 20
-const y = 40
+var x = 20;
+var y = 40;
 //1a
 var sol = L.latLng([y, x]);
 L.marker(sol).addTo(map);
 
+A1.addEventListener('click', function () {
+    x = 100;
+    sol = L.latLng([y, x]);
+})
 
 btnLocation.addEventListener('click', function () {
     document.getElementById('map').style.visibility = "visible";
@@ -159,14 +164,14 @@ window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
 
     let dropdowns = document.getElementsByClassName("dropdown-content");
-		let subDrops = document.getElementsByClassName("dropdown-sub")
+	/*	let subDrops = document.getElementsByClassName("dropdown-sub")
     let i;
     for (i = 0; i < dropdowns.length; i++) {
       let openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
         openDropdown.classList.remove('show');
       }
-    }
+    }  */
 		// for b;
 		// for (b = 0; b < subDrops.length; b++) {
     //   let openDropdown = subDrops[b];
