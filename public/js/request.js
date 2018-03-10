@@ -17,6 +17,7 @@ var preview = document.getElementById('preview');
 let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
 let selLocationBtn = document.getElementById('selLocation');
+let A1 = document.getElementById('A1');
 
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function(e) {
@@ -130,12 +131,6 @@ let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
 
-const x = 20
-const y = 40
-//1a
-var sol = L.latLng([y, x]);
-L.marker(sol).addTo(map);
-
 
 btnLocation.addEventListener('click', function () {
     document.getElementById('map').style.visibility = "visible";
@@ -147,6 +142,7 @@ btnLocation1.addEventListener('click', function () {
     document.getElementById('map').style.visibility = "hidden";
     document.getElementById('location1').style.display = "none";
     document.getElementById('dropbtn').style.display = "none";
+    document.getElementById('myDropdown').style.display = "none";
     document.getElementById('location').style.display = "block";
 })
 
@@ -155,7 +151,30 @@ btnLocation1.addEventListener('click', function () {
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("myDropdown").style.display = "block";
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+	/*	let subDrops = document.getElementsByClassName("dropdown-sub")
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }  */
+		// for b;
+		// for (b = 0; b < subDrops.length; b++) {
+    //   let openDropdown = subDrops[b];
+    //   if (openDropdown.classList.contains('show')) {
+    //     openDropdown.classList.remove('show');
+    //   }
+    // }
+  }
 }
 
 //when block a is clicked, open sub categories
@@ -257,104 +276,192 @@ let b22 = document.getElementById("B22");
 let b23 = document.getElementById("B23");
 let b26 = document.getElementById("B26");
 let b27 = document.getElementById("B27");
+let M = document.getElementById("M");
+let B = document.getElementById("B");
+
+let C1 = document.getElementById("C1");
+let C2 = document.getElementById("C2");
+let C3 = document.getElementById("C3");
+let C4 = document.getElementById("C4");
+let C5 = document.getElementById("C5");
+let C6A = document.getElementById("C6A");
+let C6B = document.getElementById("C6B");
+let C7 = document.getElementById("C7");
+let C8 = document.getElementById("C8");
+let C9 = document.getElementById("C9");
+let C10A = document.getElementById("C10A");
+let C10B = document.getElementById("C10B");
+let C11 = document.getElementById("C11");
+let C12 = document.getElementById("C12");
+
+//orginal
+var x = 20;
+var y = 40;
+//1a
+var sol = L.latLng([y, x]);
+L.marker(sol).addTo(map);
 
 //set markers
 // TODO: insert proper location in between marker([])
 a1A.addEventListener('click', function(){
-	let marker = L.latLng([100,100]);
+	let marker = L.latLng([612,445]);
 	L.marker(marker).addTo(map);
 });
 a1B.addEventListener('click', function(){
-	let marker = L.latLng([200,200]);
+	let marker = L.latLng([635,445]);
 	L.marker(marker).addTo(map);
 });
 a2.addEventListener('click', function(){
-	let marker = L.latLng([150,150]);
+	let marker = L.latLng([620,475]);
 	L.marker(marker).addTo(map);
 });
 a3.addEventListener('click', function(){
-	let marker = L.latLng([]);
+	let marker = L.latLng([612,513]);
 	L.marker(marker).addTo(map);
 });
 a3B.addEventListener('click', function(){
-	let marker = L.latLng([]);
+	let marker = L.latLng([635,513]);
 	L.marker(marker).addTo(map);
 });
 a4.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([620,540]);
 		L.marker(marker).addTo(map);
 });
 
 
 b2.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([580,245]);
 		L.marker(marker).addTo(map);
 });
 b3.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([560,245]);
 		L.marker(marker).addTo(map);
 });
 b4.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([539,245]);
 		L.marker(marker).addTo(map);
 });
 b5.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([518,245]);
 		L.marker(marker).addTo(map);
 });
 b6A.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([478,245]);
 		L.marker(marker).addTo(map);
 });
 b6B.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([498,245]);
 		L.marker(marker).addTo(map);
 });
 b7.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([485,265]);
 		L.marker(marker).addTo(map);
 });
 b8.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([518,265]);
 		L.marker(marker).addTo(map);
 });
 b9.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([539,265]);
 		L.marker(marker).addTo(map);
 });
 b10.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([560,265]);
 		L.marker(marker).addTo(map);
 });
 b11.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([580,265]);
 		L.marker(marker).addTo(map);
 });
 b12.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([495,338]);
 		L.marker(marker).addTo(map);
 });
 b18.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([570,365]);
 		L.marker(marker).addTo(map);
 });
 b20.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([525,365]);
 		L.marker(marker).addTo(map);
 });
 b22.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([480, 365]);
 		L.marker(marker).addTo(map);
 });
 b23.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([480,385]);
 		L.marker(marker).addTo(map);
 });
 b26.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([525,385]);
 		L.marker(marker).addTo(map);
 });
 b27.addEventListener('click', function(){
-		let marker = L.latLng([]);
+		let marker = L.latLng([570,385]);
 		L.marker(marker).addTo(map);
+});
+M.addEventListener('click', function () {
+    let marker = L.latLng([485, 300]);
+    L.marker(marker).addTo(map);
+});
+B.addEventListener('click', function () {
+    let marker = L.latLng([475, 335]);
+    L.marker(marker).addTo(map);
+});
+C1.addEventListener('click', function () {
+    let marker = L.latLng([558, 460]);
+    L.marker(marker).addTo(map);
+});
+C2.addEventListener('click', function () {
+    let marker = L.latLng([530, 460]);
+    L.marker(marker).addTo(map);
+});
+C3.addEventListener('click', function () {
+    let marker = L.latLng([505, 450]);
+    L.marker(marker).addTo(map);
+});
+C4.addEventListener('click', function () {
+    let marker = L.latLng([505, 471]);
+    L.marker(marker).addTo(map);
+});
+C5.addEventListener('click', function () {
+    let marker = L.latLng([480, 498]);
+    L.marker(marker).addTo(map);
+});
+C6A.addEventListener('click', function () {
+    let marker = L.latLng([470, 454]);
+    L.marker(marker).addTo(map);
+});
+C6B.addEventListener('click', function () {
+    let marker = L.latLng([462, 476]);
+    L.marker(marker).addTo(map);
+});
+C7.addEventListener('click', function () {
+    let marker = L.latLng([462, 498]);
+    L.marker(marker).addTo(map);
+});
+C8.addEventListener('click', function () {
+    let marker = L.latLng([462, 520]);
+    L.marker(marker).addTo(map);
+});
+C9.addEventListener('click', function () {
+    let marker = L.latLng([480, 520]);
+    L.marker(marker).addTo(map);
+});
+C10A.addEventListener('click', function () {
+    let marker = L.latLng([560, 498]);
+    L.marker(marker).addTo(map);
+});
+C10B.addEventListener('click', function () {
+    let marker = L.latLng([540, 498]);
+    L.marker(marker).addTo(map);
+});
+C11.addEventListener('click', function () {
+    let marker = L.latLng([550, 523]);
+    L.marker(marker).addTo(map);
+});
+C12.addEventListener('click', function () {
+    let marker = L.latLng([550, 546]);
+    L.marker(marker).addTo(map);
 });
