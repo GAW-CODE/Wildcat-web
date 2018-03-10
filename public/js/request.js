@@ -67,6 +67,8 @@ expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 
 //send msg to database
 function sendAnnouncement(title, announcement) {
+	let startTime; //generate milliseconds for the starting point
+	startTime=new Date().getTime();
 	const uid = FIREBASE_AUTH.currentUser.uid;
 	const profileImg = FIREBASE_AUTH.currentUser.photoURL != null ? FIREBASE_AUTH.currentUser.photoURL : 'https://developers.google.com/experts/img/user/user-default.png';
 	let org, orgType;
@@ -79,8 +81,10 @@ function sendAnnouncement(title, announcement) {
 			console.log(orgType);
 		})
 		.then(() => {
-			FIREBASE_DATABASE.ref('/requests/announcements').push({
+			FIREBASE_DATABASE.ref('/requests/announcements/'+org).push({
+				//directs requests to specified club folder
 				title: title,
+				currentTime:startTime, //pushing current time variable
 				org: org,
 				orgType: orgType,
 				message: announcement,
