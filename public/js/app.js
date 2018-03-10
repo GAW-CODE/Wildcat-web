@@ -117,6 +117,10 @@ function approve(event) {
   // retrieve announcement corresponding to the one you clicked on
   let announcement;
   let keyList = [];
+  let orgName;
+  let startTime;
+
+  startTime=new Date().getTime();
 
   FIREBASE_DATABASE.ref('/requests/announcements').once('value')
     .then((snapshot) => {
@@ -127,12 +131,14 @@ function approve(event) {
       FIREBASE_DATABASE.ref('/requests/announcements/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          orgName = announcement.org;
+          announcement.currentTime=startTime;
           console.log(announcement);
         });
     })
     .then(() => {
       // insert announcement under “/announcements” in database
-      FIREBASE_DATABASE.ref('/announcements').push(announcement);
+      FIREBASE_DATABASE.ref('/announcements/' + orgName).push(announcement);
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
@@ -150,6 +156,10 @@ function approveEvent(event) {
   // retrieve announcement corresponding to the one you clicked on
   let announcement;
   let keyList = [];
+  let orgName;
+  let startTime;
+
+  startTime=new Date().getTime();
 
   FIREBASE_DATABASE.ref('/requests/events').once('value')
     .then((snapshot) => {
@@ -160,6 +170,8 @@ function approveEvent(event) {
       FIREBASE_DATABASE.ref('/requests/events/' + keyList[index]).once('value')
         .then((snapshot) => {
           announcement = snapshot.val();
+          orgName = announcement.org;
+          announcement.currentTime=startTime;
         });
     })
     .then(() => {
@@ -175,7 +187,7 @@ function approveEvent(event) {
         res.addEvent(endTime, startTime, date, description, location, name, org);
       });
       // insert announcement under “/events in database
-      FIREBASE_DATABASE.ref('/events').push(announcement);
+      FIREBASE_DATABASE.ref('/events/' + orgName).push(announcement);
       // remove announcement from ‘/requests/events in database
       FIREBASE_DATABASE.ref('/requests/events').child(keyList[index]).remove()
     })
@@ -195,6 +207,13 @@ function deny(event) {
   let announcement;
   let keyList = [];
   let orgName;
+  let startTime;
+
+  startTime=new Date().getTime();
+  //testing date in milliseconds by displaying the actual date
+  let test=new Date(startTime);
+  let date=test.toString();
+  console.log(test.toString());
 
   FIREBASE_DATABASE.ref('/requests/announcements').once('value')
     .then((snapshot) => {
@@ -206,12 +225,15 @@ function deny(event) {
         .then((snapshot) => {
           announcement = snapshot.val();
           announcement.rejectionReason = reason; //rejection stored as a subnode/property of the announcement object
+          announcement.currentTime=startTime; //stores the current time in milliseconds from 1970
+          announcement.currentDate=date; // testing that the current date is correct
           orgName = announcement.org;
           console.log(announcement);
         });
     })
     .then(() => {
       // insert announcement under “/requests/rejections” in database
+
       FIREBASE_DATABASE.ref('/requests/rejections/' + orgName).push(announcement);
 
       // remove announcement from ‘/requests/announcements’ in database

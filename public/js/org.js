@@ -2,6 +2,8 @@
 const FIREBASE_AUTH = firebase.auth();
 const FIREBASE_DATABASE = firebase.database();
 
+// create method to compare the current time to the time on firebase
+//return a string that will be displayed (time stamp)
 
 function displayRequestStatus() {
   let userId = FIREBASE_AUTH.currentUser.uid;
@@ -9,24 +11,34 @@ function displayRequestStatus() {
   let clubRejections;
   let rejectionsRef;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organizationName = snapshot.val().organization;
+    organizationName =snapshot.val().organization;
     console.log(organizationName);
+  })
+   // pull all rejections
+  .then(() =>{
+    rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejections/'+organizationName);
+    rejectionsRef.on('value', gotData, errData);
   });
+}
 
-  rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejectionsGame/');
-  rejectionsRef.on('value', gotData, errData);
 
   function gotData(data){
     //console.log(data.val());
+    let timeStamp;
     let rejection=data.val();
     let keys=Object.keys(rejection);
     for(let i=0;i<keys.length;i++){
       let k=keys[i];
       let rejectionReason=rejection[k].rejectionReason;
       let message=rejection[k].message;
+      let timeofAction=rejection[k].currentTime;
+      console.log(timeofAction);
       console.log(rejectionReason);
       console.log(message);
-       displayRequestAnnouncement(message,rejectionReason);
+      timeStamp=timeDifference(timeofAction);
+      //setting timeStamp variable equal to return of time difference method
+      console.log(timeStamp);
+      displayRequestAnnouncement(message,rejectionReason,timeStamp);
     }
     //console.log(keys);
   }
@@ -35,11 +47,54 @@ function displayRequestStatus() {
     console.log(err);
   }
 
+  function timeDifference(timeofAction){
+    let now; //now is the current time
+    let millSecDiff; //difference between the 2 milliseconds
+    let dateDiff;
+    let days;
+    let hours;
+    let minutes;
+    let seconds;
 
-  //TODO: Kyle: insert your pseudocode here
-}
+    now=new Date().getTime();
+    millSecDiff=now-timeofAction;
+    days = Math.floor(millSecDiff / 1000 / 60 / (60 * 24)); //days difference
+    hours = Math.floor(millSecDiff / 3600000);
+    minutes = Math.floor((millSecDiff - (hours * 3600000)) / 60000);
+    seconds = Math.floor((millSecDiff - (hours * 3600000) - (minutes * 60000)) / 1000);
+    console.log(hours);
 
-function displayRequestAnnouncement(message,rejectionReason){
+    if(days!=0){
+      if(days>1){
+        return "Rejected "+days+" days ago";
+      }
+      else{
+        return "Rejected "+days+" day ago";
+      }
+    }
+    else if (hours!=0) {
+      if(hours>1){
+      return "Rejected "+hours+" hours ago";
+      }
+      else{
+      return "Rejected "+hours+" hour ago";
+      }
+    }
+    else if (minutes!=0) {
+      if(minutes>1){
+      return "Rejected "+minutes+" minutes ago";
+      }
+      else{
+      return "Rejected "+minutes+" minute ago";
+      }
+    }
+    else{
+      return "Rejected just now";
+    }
+
+  }
+
+function displayRequestAnnouncement(message,rejectionReason,timeStamp){
  let rejectionList=document.getElementById('rejection');
  let div = document.createElement('div');
    let template=
@@ -52,10 +107,17 @@ function displayRequestAnnouncement(message,rejectionReason){
    <h>Rejection Reason</h>
      <p>${rejectionReason}</p>
    </div>
+   <div>
+     <p>${timeStamp}</p>
+  </div>
    `;
    div.innerHTML=template;
    rejectionList.appendChild(div);
 }
+
+
+
+
  //let div = document.createElement("div");
  //let header=document.createElement("Header")
  //let currMessage=document.createTextNode("Message: "+message+"\n");
