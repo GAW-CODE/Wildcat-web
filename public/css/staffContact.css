@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff 50%, #f2f2f2 100%);
+    background-attachment: fixed;
+}
+
+#navbar {
+    position: relative;
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    display: inline-block;
+    display: inline;
+    text-align: center;
+    padding: 0.2vh 0;
+    border-top: 2px solid rgb(180, 180, 180);
+}
+
+#profileIcon{
+    position:absolute;
+    right:8vw;
+    bottom: 0vh;
+    width: auto;
+    height: 5vh;
+}
+
+#calendar{
+    position:absolute;
+    bottom: 0vw;
+    height: 5vh;
+    position:relative;
+    width:auto;
+    vertical-align: middle;
+    text-align:center;
+
+}
+
+#chat{
+    position:absolute;
+    left: 8vw;
+    bottom: 0vh;
+    height:5vh;
+    width:auto;
+}
+
+.club img{
+    height: 30vh;
+    text-align:center;
+    border: 2px solid rgb(180, 180, 180);
+
+}
+
+.club p{
+    text-align:center;
+    font-weight:bold;
+    font-size:5vh;
+    font-family: 'Quicksand', sans-serif;
+    border-bottom: 2px solid lightgray;
+    padding-top: 2vh;
+}
+
+.information{
+     font-family: 'Quicksand', sans-serif;
+}
+
+.title{
+    font-size: 3vh;
+    font-color: black;
+    padding-top: 2vh;
+    padding-left: 1.5vh;
+}
+
+.description{
+    color: #c62828;
+    font-size:2vh;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 2vh;
+    font-weight:bold;
+}
+
+#random{
+    height:14vh;
+}
+
+.images{
+    text-align:center;
+}
+
+.people{
+    object-fit: cover;
+    height:15vh;
+    width:15vh;
+    border:5px solid black;
+    border-radius:50%;
+}
+
+.social{
+    height:10vh;
+    width:10vh;
+    padding:2vh;
+    padding-right:5vh;
+}
