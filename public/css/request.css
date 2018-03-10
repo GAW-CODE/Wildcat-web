@@ -188,10 +188,10 @@ div.wc-date-popover{
 
 #map {
     visibility: hidden;
-    position: absolute;
+    position: fixed;
+    top: 3vh;
     z-index: 1;
     left: 20vw;
-    top: 0;
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
@@ -202,7 +202,6 @@ div.wc-date-popover{
     z-index: 1;
     outline: none;
     border: none;
-    float: right
     background-color: rgb(170, 21, 21);
     color: white;
     padding: 0.5%;
