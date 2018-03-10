@@ -53,7 +53,7 @@ body{
 .club img{
     height:30vh;
     text-align:center;
-
+    border-radius: 50%
 }
 
 .club p{
