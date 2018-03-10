@@ -155,8 +155,6 @@ function myFunction() {
 }
 
 //when block a is clicked, open sub categories
-let subCategories = document.getElementsByClassName("dropdown-subContent");
-
 let blockA = document.getElementById("blockA");
 let blockASub = document.getElementById("blockASub");
 
@@ -229,3 +227,130 @@ function closeOtherSub()
 	blockGSub.className = "hide";
 	otherSub.className = "hide";
 }
+
+let a1A = document.getElementById("A1A");
+let a1B = document.getElementById("A1B");
+let a2 = document.getElementById("A2");
+let a3 = document.getElementById("A3");
+let a3B = document.getElementById("A3B");
+let a4 = document.getElementById("A4");
+
+let b2 = document.getElementById("B2");
+let b3 = document.getElementById("B3");
+let b4 = document.getElementById("B4");
+let b5 = document.getElementById("B5");
+let b6A = document.getElementById("B6A");
+let b6B = document.getElementById("B6B");
+let b7 = document.getElementById("B7");
+let b8 = document.getElementById("B8");
+let b9 = document.getElementById("B9");
+let b10 = document.getElementById("B10");
+let b11 = document.getElementById("B11");
+let b12 = document.getElementById("B12");
+let b18 = document.getElementById("B18");
+let b20 = document.getElementById("B20");
+let b22 = document.getElementById("B22");
+let b23 = document.getElementById("B23");
+let b26 = document.getElementById("B26");
+let b27 = document.getElementById("B27");
+
+//set markers
+// TODO: insert proper location in between marker([])
+a1A.addEventListener('click', function(){
+	let marker = L.latLng([100,100]);
+	L.marker(marker).addTo(map);
+});
+a1B.addEventListener('click', function(){
+	let marker = L.latLng([200,200]);
+	L.marker(marker).addTo(map);
+});
+a2.addEventListener('click', function(){
+	let marker = L.latLng([150,150]);
+	L.marker(marker).addTo(map);
+});
+a3.addEventListener('click', function(){
+	let marker = L.latLng([]);
+	L.marker(marker).addTo(map);
+});
+a3B.addEventListener('click', function(){
+	let marker = L.latLng([]);
+	L.marker(marker).addTo(map);
+});
+a4.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+
+
+b2.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b3.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b4.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b5.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b6A.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b6B.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b7.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b8.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b9.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b10.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b11.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b12.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b18.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b20.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b22.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b23.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b26.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
+b27.addEventListener('click', function(){
+		let marker = L.latLng([]);
+		L.marker(marker).addTo(map);
+});
