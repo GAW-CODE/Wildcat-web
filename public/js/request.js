@@ -15,15 +15,6 @@ var announceMessage = document.getElementById('announcement');
 var uploadFile = document.getElementById('uploadFile');
 var preview = document.getElementById('preview');
 
-dateButton.addEventListener('click', function(){
-	if(dateInputBlock.className == 'hide'){
-		dateInputBlock.className = 'show';
-	}
-	else{
-		dateInputBlock.className = 'hide';
-	}
-});
-
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function(e) {
 	charCount.innerHTML = e.target.value.length;
@@ -70,10 +61,10 @@ if (mm < 10) {
 expirationDate = mm + '/' + dd + '/' + yyyy + ' 23:59:59';
 //its value is updated in datepicker-directive.js, day after today by default
 
-
-
 //send msg to database
 function sendAnnouncement(title, announcement) {
+	let startTime; //generate milliseconds for the starting point
+	startTime=new Date().getTime();
 	const uid = FIREBASE_AUTH.currentUser.uid;
 	const profileImg = FIREBASE_AUTH.currentUser.photoURL != null ? FIREBASE_AUTH.currentUser.photoURL : 'https://developers.google.com/experts/img/user/user-default.png';
 	let org, orgType;
@@ -86,8 +77,10 @@ function sendAnnouncement(title, announcement) {
 			console.log(orgType);
 		})
 		.then(() => {
-			FIREBASE_DATABASE.ref('/requests/announcements').push({
+			FIREBASE_DATABASE.ref('/requests/announcements/'+org).push({
+				//directs requests to specified club folder
 				title: title,
+				currentTime:startTime, //pushing current time variable
 				org: org,
 				orgType: orgType,
 				message: announcement,
@@ -102,7 +95,7 @@ uploadFile.addEventListener('change', function (e) {
     document.getElementById('uploader').style.display = 'block';
     var file = e.target.files[0];
     //Create a storage ref
-    var storageRef = firebase.storage().ref('/upload/' + file.name);
+    var storageRef = firebase.storage().ref('/announcements/' + file.name);
     //Upload file
     var task = storageRef.put(file);
     //Update progress bar
@@ -123,3 +116,4 @@ uploadFile.addEventListener('change', function (e) {
         preview = snapshot.val();
     });
 });
+

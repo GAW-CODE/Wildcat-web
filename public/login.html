@@ -36,6 +36,7 @@
 	<h1> The Wildcat </h1>
 	<img src = "sharedAssets/Wildcat.png" width="200px" id="wildcat">
 	</header>
+<div id="loginpg">
 	<section>
 		<div>
 			<input type = "email" id = "txtEmail" placeholder="Email">
@@ -54,9 +55,14 @@
 	</button>
     <button id = "btnForgot" class = "btn btn-action" >
         Forgot Password
-    </button>
-    <p> Reset Password:</p>
-    <input type="email" id="email" placeholder="Email">
+	</button>
+ </div>
+     <div id="reset">
+         <p> Reset Password:</p>
+         <input type="email" id="email" placeholder="Email">
+         <button id="send">Send</button>
+         <button id="back">Go Back</button>
+     </div>
 
 	<script src="/__/firebase/4.1.3/firebase.js"></script>
 	<script src="/__/firebase/init.js"></script>

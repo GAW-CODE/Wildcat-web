@@ -1,4 +1,5 @@
 const FIREBASE_DATABASE = firebase.database();
+const FIREBASE_STORAGE = firebase.storage();
 let adminDiv = document.getElementById('admin');
 let guidanceDiv = document.getElementById('guidance');
 let asbDiv = document.getElementById('asb');
@@ -159,6 +160,33 @@ let y = n.getFullYear();
 let m = n.getMonth() + 1;
 let d = n.getDate();
 document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+
+//display image attachments
+let storageRef = FIREBASE_STORAGE.ref();
+storageRef.child('announcements/Untitled4.png').getDownloadURL().then(function(url) {
+  // `url` is the download URL for 'images/stars.jpg'
+  img.src = url;
+	console.log(url);
+}).catch(function(error) {
+  // Handle any errors
+	console.log(error);
+});
+
+
+//TODO: modularize this into a function, use classes instead of id
+let modal = document.getElementById('modal1');
+let img = document.getElementById('imgattach1');
+let modalImg = document.getElementById("img01");
+
+img.onclick = function() {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+}
+
+let span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+	modal.style.display = "none";
+}
 
 // //if announcement is pressed down
 // let timeoutId = 0;

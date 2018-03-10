@@ -29,3 +29,8 @@ input:focus{
 #wrong {
     color: #FF4444;
 }
+
+#reset {
+    display: none;
+    width: 100%;
+}
