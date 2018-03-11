@@ -276,8 +276,6 @@ let b22 = document.getElementById("B22");
 let b23 = document.getElementById("B23");
 let b26 = document.getElementById("B26");
 let b27 = document.getElementById("B27");
-let M = document.getElementById("M");
-let B = document.getElementById("B");
 
 let C1 = document.getElementById("C1");
 let C2 = document.getElementById("C2");
@@ -293,6 +291,52 @@ let C10A = document.getElementById("C10A");
 let C10B = document.getElementById("C10B");
 let C11 = document.getElementById("C11");
 let C12 = document.getElementById("C12");
+
+let d1 = document.getElementById("D1");
+let d2 = document.getElementById("D2");
+let d3 = document.getElementById("D3");
+let d4 = document.getElementById("D4");
+let d5 = document.getElementById("D5");
+let d6 = document.getElementById("D6");
+let d7 = document.getElementById("D7");
+let d8 = document.getElementById("D8");
+let d9 = document.getElementById("D9");
+let d10 = document.getElementById("D10");
+let d11 = document.getElementById("D11");
+let d12 = document.getElementById("D12");
+let d13 = document.getElementById("D13");
+let d14 = document.getElementById("D14");
+let d15 = document.getElementById("D15");
+let d16 = document.getElementById("D16");
+let d17 = document.getElementById("D17");
+let d18 = document.getElementById("D18");
+let d19 = document.getElementById("D19");
+let d20 = document.getElementById("D20");
+
+let e1 = document.getElementById("E1");
+let e3 = document.getElementById("E3");
+
+let f1 = document.getElementById("F1");
+let f2 = document.getElementById("F2");
+
+let g1 = document.getElementById("G1");
+let g2 = document.getElementById("G2");
+let g3 = document.getElementById("G3");
+let g4 = document.getElementById("G4");
+let g5 = document.getElementById("G5");
+let g6 = document.getElementById("G6");
+let g7 = document.getElementById("G7");
+let g8 = document.getElementById("G8");
+let g9 = document.getElementById("G9");
+let g10 = document.getElementById("G10");
+let g11 = document.getElementById("G11");
+let g12 = document.getElementById("G12");
+
+let theatre = document.getElementById("otherTheatre");
+let blackTop = document.getElementById("otherBlacktop");
+let gym = document.getElementById("otherGym");
+let mediaCenter = document.getElementById("otherMC");
+let bookRoom = document.getElementById("otherBook");
 
 //orginal
 var x = 20;
@@ -401,14 +445,7 @@ b27.addEventListener('click', function () {
     let marker = L.latLng([570, 385]);
     L.marker(marker).addTo(map);
 });
-M.addEventListener('click', function () {
-    let marker = L.latLng([485, 300]);
-    L.marker(marker).addTo(map);
-});
-B.addEventListener('click', function () {
-    let marker = L.latLng([475, 335]);
-    L.marker(marker).addTo(map);
-});
+
 C1.addEventListener('click', function () {
     let marker = L.latLng([558, 460]);
     L.marker(marker).addTo(map);
@@ -463,5 +500,179 @@ C11.addEventListener('click', function () {
 });
 C12.addEventListener('click', function () {
     let marker = L.latLng([550, 546]);
+    L.marker(marker).addTo(map);
+});
+
+
+d1.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d2.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d3.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d4.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d5.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d6.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d7.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d8.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d9.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d10.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d11.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d12.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d13.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d14.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d15.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d16.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d17.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d18.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d19.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+d20.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+
+
+e1.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+e3.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+
+
+f1.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+f2.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+
+
+g1.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g2.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g3.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g4.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+}g);
+g5.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g6.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g7.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g8.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g9.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g10.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g11.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+g12.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+
+
+theatre.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+blackTop.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+gym.addEventListener('click', function () {
+    let marker = L.latLng([]);
+    L.marker(marker).addTo(map);
+});
+mediaCenter.addEventListener('click', function () {
+    let marker = L.latLng([485, 300]);
+    L.marker(marker).addTo(map);
+});
+bookRoom.addEventListener('click', function () {
+    let marker = L.latLng([475, 335]);
     L.marker(marker).addTo(map);
 });
