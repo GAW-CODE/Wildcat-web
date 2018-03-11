@@ -77,7 +77,7 @@ function sendAnnouncement(title, announcement) {
 			console.log(orgType);
 		})
 		.then(() => {
-			FIREBASE_DATABASE.ref('/requests/announcements/'+org).push({
+			FIREBASE_DATABASE.ref('/requests/announcements/').push({
 				//directs requests to specified club folder
 				title: title,
 				currentTime:startTime, //pushing current time variable
@@ -116,4 +116,3 @@ uploadFile.addEventListener('change', function (e) {
         preview = snapshot.val();
     });
 });
-

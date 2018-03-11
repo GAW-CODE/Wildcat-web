@@ -25,7 +25,7 @@ FIREBASE_DATABASE.ref('/directory/academics/' + currentDepartment).orderByChild(
     let info = snapshot.val()[key];
     console.log(info);
 
-    pic.setAttribute("src", info.Pic);
+    //pic.setAttribute("src", info.Pic);
     document.getElementById("name").textContent = info.Name;
     document.getElementById("roomNum").textContent = info.RoomNumber;
     document.getElementById("email").textContent = info.Email;

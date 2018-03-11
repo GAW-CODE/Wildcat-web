@@ -138,7 +138,7 @@ function approve(event) {
     })
     .then(() => {
       // insert announcement under “/announcements” in database
-      FIREBASE_DATABASE.ref('/announcements/').push(announcement);
+      FIREBASE_DATABASE.ref('/announcements/'+orgName).push(announcement);
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })

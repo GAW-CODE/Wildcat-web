@@ -23,8 +23,10 @@ function displayRequestStatus() {
   })
   // pull all requests received by the database
   .then(()=>{
-    requestRef=FIREBASE_DATABASE.ref('/requests/announcements/'+organizationName);
-    requestRef.on('value', requestsRec,errData);
+    requestRef=FIREBASE_DATABASE.ref('/requests/announcements/');
+    requestRef.orderByChild('org').equalTo(`${organizationName}`).on('child_added',function(snapshot){
+      console.log(snapshot.key);
+    });
   })
   .then(()=>{
     approvedRef=FIREBASE_DATABASE.ref('/announcements/'+organizationName);
@@ -53,26 +55,7 @@ function approvedRec(data){
 
 }
 
-  //Function for Requests to Admin
-  function requestsRec(data){
-    let timeStamp;
-    let request=data.val();
-    let keys=Object.keys(request);
 
-    for(let i=0;i<keys.length;i++){
-      let k=keys[i];
-      let message=request[k].message;
-      let timeofAction=request[k].currentTime;
-      console.log(timeofAction);
-      console.log(message);
-      let keyword="Request Sent ";
-      timeStamp=timeDifference(timeofAction,keyword);
-      //setting timeStamp variable equal to return of time difference method
-      console.log(timeStamp);
-      displayRequestAnnouncement(message,timeStamp);
-    }
-
-  }
 
   // Function for Rejections
   function gotData(data){
