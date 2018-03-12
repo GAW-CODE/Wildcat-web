@@ -18,21 +18,26 @@
   	<meta name="msapplication-starturl" content="/index.html">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+  	<script src="scroll.js" type="text/javascript" charset="utf-8"></script>
 
  	 	<!--links-->
  	 	<link rel="stylesheet" type="text/css" href="css/school-archive.css">
  	 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
  		<!--browser-->
  		<title>School Archive</title>
-    <link rel="icon" href="sharedAssets/favicon.png">
-
+   		<link rel="icon" href="sharedAssets/favicon.png">
 	</head>
 
 	<body>
 		<div id="titleBar">
-				<img class="resize" src="appAssets/title.png">
-		</div>
-		<table  width="100%"; border="0"; cellspacing="0"; cellpadding="0">
+			<img class="resize" src="appAssets/title.png">
+			<form class="search" action="action_page.php">
+ 				<input type="text" onkeyup="myFunction()" placeholder="Search for past announcements...">	
+ 				<button type="submit"><i class="fa fa-search"></i></button>
+   			</form>
+ 		</div>
+
+		<table width="100%"; border="0"; cellspacing="0"; cellpadding="0">
 				<tr>
 					<th style="background-color:#cc0000ff; height:40px";><font color="white"><font size="5">March</font></font></th>
 				</tr>
