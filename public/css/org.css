@@ -7,6 +7,22 @@
    animation-duration: 1s;
    animation-iteration-count: 1;
  }
+ #requests{
+   margin:auto;
+    border: 2px solid yellow;
+     padding: 10px;
+    animation-name: moduleIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+  }
+  #approvedRequests{
+    margin:auto;
+     border: 2px solid green;
+      padding: 10px;
+     animation-name: moduleIn;
+     animation-duration: 1s;
+     animation-iteration-count: 1;
+   }
 *{
     margin: 0;
     padding: 0;

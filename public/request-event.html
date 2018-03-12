@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--meta tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="language" content="English">
+    <meta name="description" content="Request an announcement here!">
+
+    <!-- enables progressive Web App -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Wildcat">
+    <meta name="apple-mobile-web-app-title" content="Wildcat">
+    <meta name="theme-color" content="#c90101">
+    <meta name="msapplication-navbutton-color" content="#c90101">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="msapplication-starturl" content="/index.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--links-->
+    <link rel="stylesheet" type="text/css" href="css/request-event.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <!--browser-->
+    <link rel="icon" href="sharedAssets/favicon.png">
+
+    <link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+
+    <title>Request An Announcement</title>
+</head>
+
+<body>
+<header>
+	<strong><h1>Request An Announcement<h1></strong>
+</header>
+    <!-- map modal -->
+<div class="map">
+    <span id="location1">&times;</span>
+    <div id="map" style="width: 60vw; height:95vh"></div>
+    <!-- choose location of event -->
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn" id= "dropbtn">Select Location</button>
+            <div id="myDropdown" class="dropdown-content">
+
+                <span id = "blockA"><li> Block A </li></span>
+                  <div id="blockASub" class="dropdown-subContent">
+                    <ul>
+                        <li id = "A1A">1A</li>
+                        <li id = "A1B">1B</li>
+                        <li id = "A2">2</li>
+                        <li id = "A3">3</li>
+                        <li id = "A3B">3B</li>
+                        <li id = "A4">4</li>
+                    </ul>
+                  </div>
+                <span id = "blockB"><li>Block B</li></span>
+                  <div id="blockBSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "B2">2</li>
+                      <li id = "B3">3</li>
+                      <li id = "B4">4</li>
+                      <li id = "B5">5</li>
+                      <li id = "B6A">6A</li>
+                      <li id = "B6B">6B</li>
+                      <li id = "B7">7</li>
+                      <li id = "B8">8</li>
+                      <li id = "B9">9</li>
+                      <li id = "B10">10</li>
+                      <li id = "B11">11</li>
+                      <li id = "B12">12</li>
+                      <li id = "B18">18</li>
+                      <li id = "B20">20</li>
+                      <li id = "B22">22</li>
+                      <li id = "B23">23</li>
+                      <li id = "B26">26</li>
+                      <li id = "B27">27</li>
+
+                    </ul>
+                  </div>
+
+                <span id = "blockC"><li>Block C</li></span>
+                  <div id="blockCSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "C1">1</li>
+                      <li id = "C2">2</li>
+                      <li id = "C3">3</li>
+                      <li id = "C4">4</li>
+                      <li id = "C5">5</li>
+                      <li id = "C6A">6A</li>
+                      <li id = "C6B">6B</li>
+                      <li id = "C7">7</li>
+                      <li id = "C8">8</li>
+                      <li id = "C9">9</li>
+                      <li id = "C10A">10A</li>
+                      <li id = "C10B">10B</li>
+                      <li id = "C11">11</li>
+                      <li id = "C12">12</li>
+                    </ul>
+                  </div>
+
+                <span id = "blockD"><li>Block D</li></span>
+                  <div id="blockDSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "D1">1</li>
+                      <li id = "D2">2</li>
+                      <li id = "D3">3</li>
+                      <li id = "D4">4</li>
+                      <li id = "D5">5</li>
+                      <li id = "D6">6</li>
+                      <li id = "D7">7</li>
+                      <li id = "D8">8</li>
+                      <li id = "D9">9</li>
+                      <li id = "D10">10</li>
+                      <li id = "D11">11</li>
+                      <li id = "D12">12</li>
+                      <li id = "D13">13</li>
+                      <li id = "D14">14</li>
+                      <li id = "D15">15</li>
+                      <li id = "D16">16</li>
+                      <li id = "D17">17</li>
+                      <li id = "D18">18</li>
+                      <li id = "D19">19</li>
+                      <li id = "D20">20</li>
+                    </ul>
+                  </div>
+
+                <span id = "blockE"><li>Block E</li></span>
+                  <div id="blockESub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "E1">1</li>
+                      <li id = "E3">3</li>
+                    </ul>
+                  </div>
+
+                <span id = "blockF"><li>Block F</li></span>
+                  <div id="blockFSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "F1">1</li>
+                      <li id = "F2">2</li>
+                    </ul>
+                  </div>
+
+                <span id = "blockG"><li>Block G</li></span>
+                  <div id="blockGSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "G1">1</li>
+                      <li id = "G2">2</li>
+                      <li id = "G3">3</li>
+                      <li id = "G4">4</li>
+                      <li id = "G5">5</li>
+                      <li id = "G6">6</li>
+                      <li id = "G7">7</li>
+                      <li id = "G8">8</li>
+                      <li id = "G9">9</li>
+                      <li id = "G10">10</li>
+                      <li id = "G11">11</li>
+                      <li id = "G12">12</li>
+                    </ul>
+                  </div>
+
+                <span id = "other"><li>Other</li></span>
+                  <div id="otherSub" class="dropdown-subContent">
+                    <ul>
+                      <li id = "otherTheatre">Theatre</li>
+                      <li id = "otherBlacktop">Blacktop</li>
+                      <li id = "otherGym">Gym</li>
+                      <li id = "otherMC">Media Center</li>
+                      <li id = "otherBook">Book Room<li>
+                    </ul>
+                  </div>
+          </div>
+</div>
+
+<div id="New">
+    <!-- display organization login info (profile pic + org name next to it)-->
+    <input type="text" id="txtName" placeholder="Title">
+
+    <form id="announce">
+        <textarea type="text" name="announcement" id="announcement" rows="5" placeholder="Announcement goes here"></textarea>
+        <!-- file upload button / preview area -->
+    </form>
+
+    <div id="wordcount">
+        <p id="count">Character count: </p><p id="chars"></p>
+
+<!--Code For Calendar-->
+
+<!--This project is licensed under the MIT license. See the LICENSE file for more info.-->
+<div id="ExpireDate">
+		<p>Expiration Date: </p>
+
+<div class="container datepicker-container col-sm-6 col-md-6 col-lg-3">
+			        <div id="cuppaDatePickerContainerStart">
+			                <cuppa-datepicker ng-model="myDate"
+			                                  big-banner="true"
+			                                  format="MM/dd/yyyy"
+			                                  default-open="true"
+			                                  on-date-select="onDateSelect(selectedDate)">
+			                </cuppa-datepicker>
+			        </div>
+			  </div>
+    </div>
+<!--End-->
+
+	<!--Div below is to space final layout-->
+	<div id="spacer"></div>
+	<button id="calendarEvent">Request a Calendar Event</button></a>
+
+
+
+	<!-- copy / paste from request-calendar.html -->
+    <!-- location option-->
+    <button id="location">Location</button>
+    <button id="location1">Location</button>
+
+    <div id="map" style="width: 50vw; height: 65vh"></div>
+
+    <!-- choose location of event -->
+
+
+
+    <div id="date" class="hide">
+        <input type="date" name="date" id="cal">
+    </div>
+    <div>
+        <div class="upLoad">
+            Select image to upload:
+            <input type="file" name="fileToUpload" id="uploadFile" accept=".png, .jpeg, .pdf"/>
+            <progress value="0" max="100" id="uploader">0%</progress>
+            <img id="preview"></img>
+            <!--future improvement, add image
+                <img id="upLoadImg" src="" />
+            <script>
+                let fileUpload = document.getElementById('fileToUpload');
+
+                function changeImage() {
+                    document.getElementById("upLoadImg").src = fileUpload;
+                }
+            </script>-->
+        </div>
+    </div>
+    <button id="send" class="hov">Send</button>
+</div>
+<script src="/__/firebase/4.1.3/firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="js/request-event.js"> </script>
+
+
+</body>
+
+<body ng-controller="cuppaDatepickerController" >
+	<link href="css/cuppa-datepicker-styles.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/datepicker-directive.js"></script>
+	<script type="text/javascript" src="js/request-date.js"></script>
+</body>
+
+</html>

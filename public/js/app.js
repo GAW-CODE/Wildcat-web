@@ -111,7 +111,7 @@ function makeAnnouncementHideable(event) {
 function approve(event) {
   // index of the container = which child to get from database
   let reqArray = Array.prototype.slice.call(document.getElementsByClassName('req'));
-  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode
+  let selectedAnnouncement = event.target.parentNode.parentNode.parentNode;
   let index = reqArray.indexOf(selectedAnnouncement);
 
   // retrieve announcement corresponding to the one you clicked on
@@ -138,7 +138,7 @@ function approve(event) {
     })
     .then(() => {
       // insert announcement under “/announcements” in database
-      FIREBASE_DATABASE.ref('/announcements/' + orgName).push(announcement);
+      FIREBASE_DATABASE.ref('/announcements/'+orgName).push(announcement);
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
