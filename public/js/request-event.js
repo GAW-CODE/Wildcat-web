@@ -505,167 +505,167 @@ C12.addEventListener('click', function () {
 
 
 d1.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([444, 265]);
     L.marker(marker).addTo(map);
 });
 d2.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([424, 265]);
     L.marker(marker).addTo(map);
 });
 d3.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([403, 265]);
     L.marker(marker).addTo(map);
 });
 d4.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([382, 265]);
     L.marker(marker).addTo(map);
 });
 d5.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([382, 285]);
     L.marker(marker).addTo(map);
 });
 d6.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([403, 285]);
     L.marker(marker).addTo(map);
 });
 d7.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([424, 285]);
     L.marker(marker).addTo(map);
 });
 d8.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([444, 285]);
     L.marker(marker).addTo(map);
 });
 d9.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([392, 305]);
     L.marker(marker).addTo(map);
 });
 d10.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([374, 305]);
     L.marker(marker).addTo(map);
 });
 d11.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([374, 324]);
     L.marker(marker).addTo(map);
 });
 d12.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([392, 324]);
     L.marker(marker).addTo(map);
 });
 d13.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([444, 344]);
     L.marker(marker).addTo(map);
 });
 d14.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([423, 344]);
     L.marker(marker).addTo(map);
 });
 d15.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([402, 344]);
     L.marker(marker).addTo(map);
 });
 d16.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([381, 344]);
     L.marker(marker).addTo(map);
 });
 d17.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([381, 364]);
     L.marker(marker).addTo(map);
 });
 d18.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([402, 364]);
     L.marker(marker).addTo(map);
 });
 d19.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([423, 364]);
     L.marker(marker).addTo(map);
 });
 d20.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([444, 364]);
     L.marker(marker).addTo(map);
 });
 
 
 e1.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([411, 453]);
     L.marker(marker).addTo(map);
 });
 e3.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([372, 453]);
     L.marker(marker).addTo(map);
 });
 
 
 f1.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([403, 540]);
     L.marker(marker).addTo(map);
 });
 f2.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([373, 540]);
     L.marker(marker).addTo(map);
 });
 
 
 g1.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([351, 305]);
     L.marker(marker).addTo(map);
 });
 g2.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([331, 305]);
     L.marker(marker).addTo(map);
 });
 g3.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([331, 324]);
     L.marker(marker).addTo(map);
 });
 g4.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([351, 324]);
     L.marker(marker).addTo(map);
-}g);
+});
 g5.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([346, 346]);
     L.marker(marker).addTo(map);
 });
 g6.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([326, 346]);
     L.marker(marker).addTo(map);
 });
 g7.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([305, 346]);
     L.marker(marker).addTo(map);
 });
 g8.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([285, 346]);
     L.marker(marker).addTo(map);
 });
 g9.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([285, 366]);
     L.marker(marker).addTo(map);
 });
 g10.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([305, 366]);
     L.marker(marker).addTo(map);
 });
 g11.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([326, 366]);
     L.marker(marker).addTo(map);
 });
 g12.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([346, 366]);
     L.marker(marker).addTo(map);
 });
 
 
 theatre.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([391, 464]);
     L.marker(marker).addTo(map);
 });
 blackTop.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([371, 685]);
     L.marker(marker).addTo(map);
 });
 gym.addEventListener('click', function () {
-    let marker = L.latLng([]);
+    let marker = L.latLng([200, 634]);
     L.marker(marker).addTo(map);
 });
 mediaCenter.addEventListener('click', function () {
