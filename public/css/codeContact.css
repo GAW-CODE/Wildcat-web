@@ -58,6 +58,7 @@ body{
     float:left;
     padding-top:2vh;
     padding-left:2vh;
+    border-radius:50%;
 }
 
 .club p{

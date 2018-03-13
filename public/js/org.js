@@ -12,6 +12,8 @@ function displayRequestStatus() {
   let rejectionsRef;
   let requestRef;
   let approvedRef;
+  let keyList = []; // stores the keys of announcements that contain the organization
+  let val;
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
     organizationName =snapshot.val().organization;
     console.log(organizationName);
@@ -25,9 +27,10 @@ function displayRequestStatus() {
   .then(()=>{
     requestRef=FIREBASE_DATABASE.ref('/requests/announcements/');
     requestRef.orderByChild('org').equalTo(`${organizationName}`).on('child_added',function(snapshot){
-      console.log(snapshot.key);
-    });
-  })
+      keyList.push(snapshot.key);
+    })
+    console.log(keyList);
+  }) // .then method ends here
   .then(()=>{
     approvedRef=FIREBASE_DATABASE.ref('/announcements/'+organizationName);
     approvedRef.on('value', approvedRec,errData);
