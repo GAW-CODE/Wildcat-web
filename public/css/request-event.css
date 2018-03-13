@@ -211,6 +211,18 @@ div.wc-date-popover {
     background-color: rgba(0,0,0,0.4);
 }
 /* for dropdown menu*/
+#sendl {
+    display: none;
+    float: right;
+    z-index: 1;
+    outline: none;
+    border: none;
+    background-color: rgb(170, 21, 21);
+    color: white;
+    padding: 0.5%;
+    border-radius: 3px;
+    font-size: 1.5vw;
+}
 #dropbtn {
     display: none;
     z-index: 1;

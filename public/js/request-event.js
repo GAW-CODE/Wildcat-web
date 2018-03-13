@@ -19,6 +19,7 @@ let btnLocation = document.getElementById('location');
 let btnLocation1 = document.getElementById('location1');
 let selLocationBtn = document.getElementById('selLocation');
 let A1 = document.getElementById('A1');
+let sendl = document.getElementById('sendl');
 
 var charCount = document.getElementById("chars");
 announceMessage.addEventListener('change', function (e) {
@@ -91,9 +92,12 @@ function sendAnnouncement(title, announcement) {
                 message: announcement,
                 userProfileImg: profileImg,
                 expirationDate: (new Date(expirationDate)).toString(),
-                location: loca,
+                location: locat,
             });
-        });
+        })
+        .then(() => {
+            locat = null;
+    })
 }
 
 //file upload
@@ -138,6 +142,7 @@ btnLocation.addEventListener('click', function () {
     document.getElementById('map').style.visibility = "visible";
     document.getElementById('location1').style.display = "block";
     document.getElementById('dropbtn').style.display = "block";
+    document.getElementById('sendl').style.display = "block";
     document.getElementById('location').style.display = "none";
 })
 btnLocation1.addEventListener('click', function () {
@@ -757,3 +762,14 @@ bookRoom.addEventListener('click', function () {
     L.marker(marker).addTo(map);
     loca.push("bookRoom");
 });
+
+sendl.addEventListener('click', function () {
+    locat = loca;
+    loca = null;
+    document.getElementById('map').style.visibility = "hidden";
+    document.getElementById('location1').style.display = "none";
+    document.getElementById('dropbtn').style.display = "none";
+    document.getElementById('myDropdown').style.display = "none";
+    document.getElementById('sendl').style.display = "none";
+    document.getElementById('location').style.display = "block";
+})
