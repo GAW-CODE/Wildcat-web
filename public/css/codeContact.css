@@ -73,6 +73,7 @@ body{
     font-size:3vh;
     font-color:black;
     padding-top:1vh;
+     font-family: 'Quicksand', sans-serif;
 }
 
 .description{
@@ -81,6 +82,7 @@ body{
     border-bottom: 5px solid black;
     padding-bottom:1vh;
     font-weight:bold;
+    Sfont-family: 'Quicksand', sans-serif;
 }
 
 #random{
