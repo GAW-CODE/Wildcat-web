@@ -178,3 +178,7 @@ div.wc-date-popover{
 		width: 20vw;
 		height: auto;
 }
+
+.hide {display: none;}
+
+.show {display:block;}

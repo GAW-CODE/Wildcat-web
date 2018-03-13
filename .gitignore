@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 IconDoc.psd
 appLogo.psd
@@ -9,3 +10,18 @@ yearbook_img
 EditIcons.psd
 landIcons.psd
 landPhone.psd
+.vs
+=======
+.DS_Store
+IconDoc.psd
+appLogo.psd
+icons.psd
+functions/node_modules
+accredation.xlsx
+indexBackdrop.psd
+yearbook_img
+EditIcons.psd
+landIcons.psd
+landPhone.psd
+.vs
+>>>>>>> 6024182b6f110536b70c268eccf08622fdf802a8
