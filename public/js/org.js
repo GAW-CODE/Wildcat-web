@@ -14,6 +14,10 @@ function displayRequestStatus() {
   let approvedRef;
   let keyList = []; // stores the keys of announcements that contain the organization
   let val;
+  let index;
+  let messages=[];
+  let time=[];
+
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
     organizationName =snapshot.val().organization;
     console.log(organizationName);
@@ -29,7 +33,22 @@ function displayRequestStatus() {
     requestRef.orderByChild('org').equalTo(`${organizationName}`).on('child_added',function(snapshot){
       keyList.push(snapshot.key);
     })
-    console.log(keyList);
+    for (let i=0;i<keyList.length;i++){
+    FIREBASE_DATABASE.ref('/requests/announcements/'+keyList[i]).once('value')
+    .then((snapshot)=>{
+      let announcement;
+      announcement=snapshot.val();
+      let message=announcement.message;
+      let timeofAction=announcement.currentTime;
+      messages.push(message); //pushes the message to messages array
+      time.push(timeofAction); //pushes the time to time array
+      //in display method, display the message and timeofAction of the same index
+    })
+    console.log(messages);
+    console.log(time);
+    console.log(val);
+
+    }
   }) // .then method ends here
   .then(()=>{
     approvedRef=FIREBASE_DATABASE.ref('/announcements/'+organizationName);
