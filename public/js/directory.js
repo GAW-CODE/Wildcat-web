@@ -157,3 +157,10 @@ for (let i = 0; i < contactCardsOrgs.length; i++) {
     document.location.href = urlOrgs;
   });
 }
+
+let directoryArr = new Array((contactCardsStaff.length + contactCardsSports.length + contactCardsOrgs.length) - 3);
+    directoryArr.push(contactCardsStaff);
+
+    directoryArr.push(contactCardsSports);
+
+    directoryArr.push(contactCardsOrgs);

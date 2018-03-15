@@ -1,4 +1,3 @@
-
 let name;
 let currentDepartment;
 let key;
