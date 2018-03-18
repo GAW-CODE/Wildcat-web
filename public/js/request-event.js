@@ -134,6 +134,16 @@ let map = L.map('map', {
 });
 let bounds = [[0, 0], [700, 850]];
 let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
+let markerR = L.icon({
+  iconUrl: 'red-marker-icon.png',
+  shadowUrl: 'marker-shadow.png',
+
+  iconSize: [25,41],
+  shadowSize: [41,41],
+  iconAnchor: [12, 39],
+  shadowAnchor: [12, 39],
+  popupAnchor: [12,3],
+});
 
 map.fitBounds(bounds);
 
@@ -763,7 +773,7 @@ bookRoom.addEventListener('click', function () {
 
 function addMarker(x,y){
     marker = L.latLng([x, y]);
-    L.marker(marker).addTo(map);
+    L.marker(marker, {icon: markerR}).addTo(map);
 }
 
 sendl.addEventListener('click', function () {

@@ -35,7 +35,7 @@ submit.addEventListener('click', e => {
 		sendEvent(org, name, location, description, date, StartTime, EndTime);
 		eventSent.style.display = "block";
 	}
-	
+
 });
 function sendEvent(org, name, location, description, date, EndTime, StartTime) {
 			FIREBASE_DATABASE.ref('/requests/events').push({
