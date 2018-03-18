@@ -114,6 +114,7 @@ FIREBASE_DATABASE.ref('/announcements').once('value') //using once b/c we are ta
 //search query
 let searchIcon = document.getElementById('searchIcon');
 let searchBar = document.getElementById('search');
+let announcementsDiv = document.getElementById('news');
 let isSearchOn = false;
 
 function toggleSearchBar() {
