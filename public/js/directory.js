@@ -196,7 +196,6 @@ function search() {
       contactCardsAll[i].parentNode.className = 'show';
   	} else {
   		contactCardsAll[i].style.display = 'none';
-      contactCardsAll[i].parentNode.className = 'hide';
   	}
 	}
 }
