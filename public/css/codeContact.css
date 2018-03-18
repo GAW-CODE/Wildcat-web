@@ -80,6 +80,7 @@ body{
     font-size:3vh;
     font-color:black;
     padding-top:1vh;
+    font-family: 'Quicksand', sans-serif;
     padding-left:1vh;
 }
 
@@ -90,6 +91,7 @@ body{
     border-bottom: 2px solid lightgray;
     padding-bottom:1vh;
     font-weight:bold;
+    font-family: 'Quicksand', sans-serif;
     padding-left:1vh;
     padding-right:1vh;
 }
