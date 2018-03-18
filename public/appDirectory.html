@@ -28,16 +28,16 @@
   <script defer src="/__/firebase/init.js"></script>
   <script defer src="js/directory.js"></script>
   <link rel="stylesheet" type="text/css" href="css/appDirectory.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Quicksand" rel="stylesheet">
 
 <body>
 	<div id = "titleBar">
 		<center><p>Directory</p></center>
-		<!--should do the search when the html/css structure improves-->
-		<!-- Search icon
-		<img id = "search" src="http://freevector.co/wp-content/uploads/2013/06/14435-search-symbol1.png">
-		-->
+		<!-- Search icon -->
+		<i class="fa fa-search fa" id="searchIcon" onclick="toggleSearchBar()"></i>
+		<input type="text" id="search" onkeyup="search()" placeholder="Search" hidden>
 	</div>
 
 	<div id ="topFiller">
@@ -47,17 +47,6 @@
     </div>
 
 	<!--Start of Directory-->
-
-	<div class = 'searchBarArea'>
-		<div id = 'directoryListDiv' hidden>	
-			<ul id = 'directoryList'>
-				
-			</ul>
-		</div>
-
-		<div class="autocomplete">
-    		<input type="text" id="searchBar" onkeyup="myFunction()" placeholder="Search for names..">
-  		</div>
 
 	<div id = "directory" class="show">
 		<div class="container">

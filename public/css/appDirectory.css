@@ -19,8 +19,11 @@ center p{
 	color: #ba000d;
 }
 
-#directoryListDiv{
-	display:none;  
+#searchIcon {
+  color: #ba000d;
+	position: absolute;
+	right: 2vh;
+	top: 2vh;
 }
 
 @media screen and (min-width:1000px){
