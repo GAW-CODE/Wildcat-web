@@ -131,57 +131,102 @@ spring.addEventListener('click', function(){
 });
 
 //note: distinguish between staff and organizations
-let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
-for (let i = 0; i < contactCardsStaff.length; i++) {
-  contactCardsStaff[i].addEventListener('click', function() {
-    let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-    let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
-    document.location.href = urlStaff;
-  });
+
+// let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
+// for (let i = 0; i < contactCardsStaff.length; i++) {
+//   contactCardsStaff[i].addEventListener('click', function() {
+//     let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+//     let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
+//     document.location.href = urlStaff;
+//   });
+// }
+//
+// let contactCardsSports = document.getElementsByClassName('contact-Sports');
+// for (let i = 0; i < contactCardsSports.length; i++) {
+//   contactCardsSports[i].addEventListener('click', function() {
+//     let nameSports = contactCardsSports[i].id;
+//     let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
+//     document.location.href = urlSports;
+//   });
+// }
+//
+// let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
+// for (let i = 0; i < contactCardsOrgs.length; i++) {
+//   contactCardsOrgs[i].addEventListener('click', function() {
+//     let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+//     let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
+//     document.location.href = urlOrgs;
+//   });
+// }
+//
+// let directoryArr = new Array();
+// for(let i = 0; i < contactCardsStaff.length; i++){
+//     directoryArr.push(contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML);
+// }
+// for(let i = 0; i < contactCardsSports.length; i++){
+//     directoryArr.push(contactCardsSports[i].id);
+// }
+// for(let i = 0; i < contactCardsOrgs.length; i++){
+//     directoryArr.push(contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML);
+// }
+//
+// for(let index = 0; index < directoryArr.length; index++){
+//     let node = document.createElement('li');
+//     let text = document.createTextNode(directoryArr[index]);
+//     node.appendChild(text);
+//     document.getElementById("directoryList").appendChild(node);
+// }
+//
+// function myFunction() {
+//     let input = document.getElementById('searchBar');
+//     let filter = input.value.toUpperCase();
+//     let ul = document.getElementById('directoryList');
+//     let li = document.getElementsById('ul');
+//     for (let i = 0; i < li.length; i++) {
+//
+//     }
+// }
+
+//search query code
+let searchIcon = document.getElementById('searchIcon');
+let searchBar = document.getElementById('search');
+let announcementsDiv = document.getElementById('news');
+let isSearchOn = false;
+
+function toggleSearchBar() {
+	console.log('toggle search bar');
+  if (!isSearchOn) { //start search process / search mode
+		//collapse whole page - only display announcements
+		searchBar.removeAttribute('hidden');
+		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+		// 	if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+		// 		announcementsDiv.childNodes[i].style.display = 'none';
+		// 	}
+		// }
+	 //blur whole screen
+	} else {
+    searchBar.setAttribute('hidden', 'true');
+		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
+    //   if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
+    //     announcementsDiv.childNodes[i].style.display = '';
+    //   }
+		// }
+	}
+	isSearchOn = !isSearchOn;
 }
 
-let contactCardsSports = document.getElementsByClassName('contact-Sports');
-for (let i = 0; i < contactCardsSports.length; i++) {
-  contactCardsSports[i].addEventListener('click', function() {
-    let nameSports = contactCardsSports[i].id;
-    let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
-    document.location.href = urlSports;
-  });
-}
-
-let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
-for (let i = 0; i < contactCardsOrgs.length; i++) {
-  contactCardsOrgs[i].addEventListener('click', function() {
-    let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-    let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
-    document.location.href = urlOrgs;
-  });
-}
-
-let directoryArr = new Array();
-for(let i = 0; i < contactCardsStaff.length; i++){
-    directoryArr.push(contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML);
-}
-for(let i = 0; i < contactCardsSports.length; i++){
-    directoryArr.push(contactCardsSports[i].id);
-}
-for(let i = 0; i < contactCardsOrgs.length; i++){
-    directoryArr.push(contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML);
-}
-
-for(let index = 0; index < directoryArr.length; index++){
-    let node = document.createElement('li');
-    let text = document.createTextNode(directoryArr[index]);
-    node.appendChild(text);
-    document.getElementById("directoryList").appendChild(node);
-}
-
-function myFunction() {
-    let input = document.getElementById('searchBar');
-    let filter = input.value.toUpperCase();
-    let ul = document.getElementById('directoryList');
-    let li = document.getElementsById('ul');
-    for (let i = 0; i < li.length; i++) {
-
-    }
+function search() {
+	console.log('search query');
+	let filter = searchBar.value.toUpperCase();
+	for (let i = 0; i < announcements.length; i++) {
+  	let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
+  	if (annText.toUpperCase().indexOf(filter) != -1) { //match found
+  		announcements[i].style.display = '';
+  		console.log(filter);
+  		announcements[i].parentNode.style.display = '';
+  	} else {
+  		announcements[i].style.display = 'none';
+  		announcements[i].parentNode.style.display = 'none';
+  	}
+	}
 }

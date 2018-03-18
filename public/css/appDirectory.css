@@ -45,11 +45,14 @@ center p{
 		}
 }
 
-#search{
-    position: absolute;
-    top: 3vh;
-    right: 4vh;
-    height:7vh;
+#search {
+  border: none;
+  padding: 8px;
+  font-size: 6vh;
+  width: 75%;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  bottom: 6vh;
 }
 
 body{
