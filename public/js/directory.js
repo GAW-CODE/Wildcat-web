@@ -194,8 +194,9 @@ let isSearchOn = false;
 function toggleSearchBar() {
 	console.log('toggle search bar');
   if (!isSearchOn) { //start search process / search mode
-		//collapse whole page - only display announcements
-		searchBar.removeAttribute('hidden');
+		searchBar.removeAttribute('hidden'); //display search bar
+    //collapse whole page - only display contact cards that match the search query
+    home.className = "hide";
 		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
 		// 	if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
 		// 		announcementsDiv.childNodes[i].style.display = 'none';
@@ -203,7 +204,9 @@ function toggleSearchBar() {
 		// }
 	 //blur whole screen
 	} else {
-    searchBar.setAttribute('hidden', 'true');
+    searchBar.setAttribute('hidden', 'true'); //hide search bar
+    //redisplay whole page
+    home.className = "show";
 		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
     //   if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
     //     announcementsDiv.childNodes[i].style.display = '';
