@@ -130,8 +130,11 @@ spring.addEventListener('click', function(){
     currentDepartment = "spring";
 });
 
+let contactCardsAll = [];
+
 let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
 for (let i = 0; i < contactCardsStaff.length; i++) {
+  contactCardsAll.push(contactCardsStaff[i]);
   contactCardsStaff[i].addEventListener('click', function() {
     let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
     let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
@@ -141,6 +144,7 @@ for (let i = 0; i < contactCardsStaff.length; i++) {
 
 let contactCardsSports = document.getElementsByClassName('contact-Sports');
 for (let i = 0; i < contactCardsSports.length; i++) {
+  contactCardsAll.push(contactCardsSports[i]);
   contactCardsSports[i].addEventListener('click', function() {
     let nameSports = contactCardsSports[i].id;
     let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
@@ -150,6 +154,7 @@ for (let i = 0; i < contactCardsSports.length; i++) {
 
 let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
 for (let i = 0; i < contactCardsOrgs.length; i++) {
+  contactCardsAll.push(contactCardsOrgs[i]);
   contactCardsOrgs[i].addEventListener('click', function() {
     let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
     let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
@@ -157,33 +162,7 @@ for (let i = 0; i < contactCardsOrgs.length; i++) {
   });
 }
 
-// let directoryArr = new Array();
-// for(let i = 0; i < contactCardsStaff.length; i++){
-//     directoryArr.push(contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML);
-// }
-// for(let i = 0; i < contactCardsSports.length; i++){
-//     directoryArr.push(contactCardsSports[i].id);
-// }
-// for(let i = 0; i < contactCardsOrgs.length; i++){
-//     directoryArr.push(contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML);
-// }
-//
-// for(let index = 0; index < directoryArr.length; index++){
-//     let node = document.createElement('li');
-//     let text = document.createTextNode(directoryArr[index]);
-//     node.appendChild(text);
-//     document.getElementById("directoryList").appendChild(node);
-// }
-//
-// function myFunction() {
-//     let input = document.getElementById('searchBar');
-//     let filter = input.value.toUpperCase();
-//     let ul = document.getElementById('directoryList');
-//     let li = document.getElementsById('ul');
-//     for (let i = 0; i < li.length; i++) {
-//
-//     }
-// }
+//insert club stuff here
 
 //search query code
 let searchIcon = document.getElementById('searchIcon');
@@ -194,24 +173,14 @@ let isSearchOn = false;
 function toggleSearchBar() {
 	console.log('toggle search bar');
   if (!isSearchOn) { //start search process / search mode
-		searchBar.removeAttribute('hidden'); //display search bar
+    searchBar.removeAttribute('hidden'); //display search bar
     //collapse whole page - only display contact cards that match the search query
     home.className = "hide";
-		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-		// 	if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-		// 		announcementsDiv.childNodes[i].style.display = 'none';
-		// 	}
-		// }
-	 //blur whole screen
+    //blur whole screen
 	} else {
     searchBar.setAttribute('hidden', 'true'); //hide search bar
     //redisplay whole page
     home.className = "show";
-		// for (let i = 0; i < announcementsDiv.childNodes.length; i++) {
-    //   if (announcementsDiv.childNodes[i].nodeType == Node.ELEMENT_NODE) {
-    //     announcementsDiv.childNodes[i].style.display = '';
-    //   }
-		// }
 	}
 	isSearchOn = !isSearchOn;
 }
@@ -219,15 +188,15 @@ function toggleSearchBar() {
 function search() {
 	console.log('search query');
 	let filter = searchBar.value.toUpperCase();
-	for (let i = 0; i < announcements.length; i++) {
-  	let annText = announcements[i].getElementsByClassName('announcement')[0].innerHTML;
+	for (let i = 0; i < contactCardsAll.length; i++) {
+  	let annText = contactCardsAll[i].getElementsByTagName('p')[0].innerHTML;
   	if (annText.toUpperCase().indexOf(filter) != -1) { //match found
-  		announcements[i].style.display = '';
+  		contactCardsAll[i].style.display = '';
   		console.log(filter);
-  		announcements[i].parentNode.style.display = '';
+      contactCardsAll[i].parentNode.className = 'show';
   	} else {
-  		announcements[i].style.display = 'none';
-  		announcements[i].parentNode.style.display = 'none';
+  		contactCardsAll[i].style.display = 'none';
+      contactCardsAll[i].parentNode.className = 'hide';
   	}
 	}
 }
