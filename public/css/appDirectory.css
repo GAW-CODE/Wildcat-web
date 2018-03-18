@@ -18,6 +18,11 @@
 center p{
 	color: #ba000d;
 }
+
+#directoryListDiv{
+	display:none;  
+}
+
 @media screen and (min-width:1000px){
 	#titleBar{
 	    width: 100%;

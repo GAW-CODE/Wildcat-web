@@ -158,9 +158,30 @@ for (let i = 0; i < contactCardsOrgs.length; i++) {
   });
 }
 
-let directoryArr = new Array((contactCardsStaff.length + contactCardsSports.length + contactCardsOrgs.length) - 3);
-    directoryArr.push(contactCardsStaff);
+let directoryArr = new Array();
+for(let i = 0; i < contactCardsStaff.length; i++){
+    directoryArr.push(contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML);
+}
+for(let i = 0; i < contactCardsSports.length; i++){
+    directoryArr.push(contactCardsSports[i].id);
+}
+for(let i = 0; i < contactCardsOrgs.length; i++){
+    directoryArr.push(contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML);
+}
 
-    directoryArr.push(contactCardsSports);
+for(let index = 0; index < directoryArr.length; index++){
+    let node = document.createElement('li');
+    let text = document.createTextNode(directoryArr[index]);
+    node.appendChild(text);
+    document.getElementById("directoryList").appendChild(node);
+}
 
-    directoryArr.push(contactCardsOrgs);
+function myFunction() {
+    let input = document.getElementById('searchBar');
+    let filter = input.value.toUpperCase();
+    let ul = document.getElementById('directoryList');
+    let li = document.getElementsById('ul');
+    for (let i = 0; i < li.length; i++) {
+
+    }
+}
