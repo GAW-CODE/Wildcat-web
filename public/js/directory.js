@@ -130,35 +130,33 @@ spring.addEventListener('click', function(){
     currentDepartment = "spring";
 });
 
-//note: distinguish between staff and organizations
+let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
+for (let i = 0; i < contactCardsStaff.length; i++) {
+  contactCardsStaff[i].addEventListener('click', function() {
+    let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+    let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
+    document.location.href = urlStaff;
+  });
+}
 
-// let contactCardsStaff = document.getElementsByClassName('contacts-Staff');
-// for (let i = 0; i < contactCardsStaff.length; i++) {
-//   contactCardsStaff[i].addEventListener('click', function() {
-//     let nameStaff = contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-//     let urlStaff = 'card-template-staff.html?name=' + encodeURIComponent(nameStaff) + " ." + encodeURIComponent(currentDepartment);
-//     document.location.href = urlStaff;
-//   });
-// }
-//
-// let contactCardsSports = document.getElementsByClassName('contact-Sports');
-// for (let i = 0; i < contactCardsSports.length; i++) {
-//   contactCardsSports[i].addEventListener('click', function() {
-//     let nameSports = contactCardsSports[i].id;
-//     let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
-//     document.location.href = urlSports;
-//   });
-// }
-//
-// let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
-// for (let i = 0; i < contactCardsOrgs.length; i++) {
-//   contactCardsOrgs[i].addEventListener('click', function() {
-//     let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
-//     let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
-//     document.location.href = urlOrgs;
-//   });
-// }
-//
+let contactCardsSports = document.getElementsByClassName('contact-Sports');
+for (let i = 0; i < contactCardsSports.length; i++) {
+  contactCardsSports[i].addEventListener('click', function() {
+    let nameSports = contactCardsSports[i].id;
+    let urlSports = 'card-template-sports.html?name=' + encodeURIComponent(nameSports) + " ." + encodeURIComponent(currentDepartment);
+    document.location.href = urlSports;
+  });
+}
+
+let contactCardsOrgs = document.getElementsByClassName('contacts-Orgs');
+for (let i = 0; i < contactCardsOrgs.length; i++) {
+  contactCardsOrgs[i].addEventListener('click', function() {
+    let nameOrgs = contactCardsOrgs[i].getElementsByTagName('p')[0].innerHTML; //https://stackoverflow.com/questions/11633951/get-paragraph-text-inside-an-element
+    let urlOrgs = 'card-template-orgs.html?name=' + encodeURIComponent(nameOrgs);
+    document.location.href = urlOrgs;
+  });
+}
+
 // let directoryArr = new Array();
 // for(let i = 0; i < contactCardsStaff.length; i++){
 //     directoryArr.push(contactCardsStaff[i].getElementsByTagName('p')[0].innerHTML);
