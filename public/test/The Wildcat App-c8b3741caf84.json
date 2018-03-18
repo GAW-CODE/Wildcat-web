@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "gaw-wildcat-app",
+  "private_key_id": "c8b3741caf841a0aa7815b7d061844404465c36d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDRMSdR6QMNhicM\nFI/92fH9W3JY44/hTrWK+/RqYdT5NY9D+pnhy2+H8YBhKpKs8aM5XF46qTK5Gphz\ngmhxnWEec7eeNynv3wYf7O54bTuUprBbjexg/LTCacY53Obo7YqDS3qyLRBlJJ8B\n2HQV3P9s1bGcthzXFxSYcTqv4myWLrgmB8abaiLMkE/ARYwWvTR5227HcGNWfiz4\nT9MJaiUFgXV3Wn/bcdVGQXKpGPk192ymBfkBaDYc/K/z4iVcaswdf08N1vYKPuyK\n+l4gfoROe3/Qdi1iXhqaQ2UWod1/U+YEH+AQvu8lKNYTjDw2u50m5dxdHY+t7FkV\nC+h90xj/AgMBAAECggEANRKmaiaWyrCVaYAyA/JubZvsx9Z8I2pnrqo7mV3WvZ80\nCMgkkF+fnTrNGlnFurDXe28OzQ0uPD4eHXghbWnDQQmUtURDlILdt+3RlqYH7q/X\noHLCXNzgM07Iptd/kerqMGNO7rN2LGL9IGe9E+rstr0EgcDGUl+drwtTG1pzuCoO\nc9NQVH9SjDwAb8sNRIL9eo1GR0ZZEzHpUyjbcUd71rWGyUhgdAEiN75b8XKVbD9y\nQnfJ0RearO/XmSPvhEdFZuH3PBLjqqm6cnMLaJZkSZvtTRAdVWh6ZKUmY9yoSOXP\nTvsgDTZTzghHlHPXUJ4yJBGEAqrKr6jzI1JvSMa4SQKBgQD5zYw4KMcpa2LRk6AU\n2XcHfvfcsf17Q8K5ePm+M96vyFfarVZzFDNnjb7wUu5y04/tpfiin1w2JslAyeQX\n7mvIidk0S+pQjZMTdj95jSJR2Y0UplWMEXbsLFm4Kfqhi3ifQuyH1xych1D6XfC4\nzfqBPEnxH9a4dtIf+vbxbwtWiwKBgQDWYbGE74I9fFwWktOMCBMiz1Xsk6kwkU7p\nhuiaGvwZFkfGQbzUQFhGsTAA2pGzKRG2rQB6EwJpTBdACQEq+Pgyu/t+FKYOi5Gz\n6SZk+VHeLO7tlvW+j8U8HXT72PHf9udUKxt+pmPfqOGcO7C7xO0Z2WahQXPHLi2Q\neUFQP0uJ3QKBgQDRJO0fH9UPsp77xNOkYSYtGnq/Ri5qA6OG0eiW/KqXFe+oYLQe\niW04aA7S+zw02ziHygvPbAkyNWsOWXolJzMKpY87H8xAQShAhSJDzIxNZw2dml3J\ndd3RgphjfpIeqr0E6m1KlimYTBraY8hlkd8IUMe/n96Qdrsal24lWcluXQKBgQCU\nqtr4XT/sc7lIzjl1+oOKuE3V6fCChcI7oBreA6ifnRvZGO1iI90T6PxpGym/HNPz\n4rVZ8qTRcLsO5S+yJUW5qTMWlCs0GwXHxf+iNmPXt0FZ8j4pEHqu3Z6qqB/UONzj\nOaGviqPoDq2mMp61GDN0oZbSbRllH1jpv6zTgZFY4QKBgQDf5OTB0pxQi3XVpwpD\nhPSOYlvQeKc2SrL833nhLoG0u0QwH31hr4a57jVpfMANvNJ/fbY88eJ6FjTaVHmm\nQ4RpcVXDjeC/YJkxZH+OLDO8VNtKKp+OVBfRRKRZtayXpnxQHXCbLjPJb3KbBWGf\nEfkuWHnwJSWS9yELC7puxQhPGg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "wildcatemail@gaw-wildcat-app.iam.gserviceaccount.com",
+  "client_id": "116742900064665519842",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wildcatemail%40gaw-wildcat-app.iam.gserviceaccount.com"
+}
