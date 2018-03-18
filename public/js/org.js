@@ -5,6 +5,8 @@ const FIREBASE_DATABASE = firebase.database();
 // create method to compare the current time to the time on firebase
 //return a string that will be displayed (time stamp)
 
+let x;
+
 function displayRequestStatus() {
   let userId = FIREBASE_AUTH.currentUser.uid;
   let organizationName;
@@ -19,48 +21,44 @@ function displayRequestStatus() {
   let time=[];
 
   FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
-    organizationName =snapshot.val().organization;
-    console.log(organizationName);
+    organizationName = snapshot.val().organization;
   })
    // pull all rejections
-  .then(() =>{
-    rejectionsRef=FIREBASE_DATABASE.ref('/requests/rejections/'+organizationName);
+  .then(() => {
+    rejectionsRef = FIREBASE_DATABASE.ref('/requests/rejections/' + organizationName);
     rejectionsRef.on('value', gotData, errData);
   })
-  // pull all requests received by the database
-  .then(()=>{
-    requestRef=FIREBASE_DATABASE.ref('/requests/announcements/');
-    requestRef.orderByChild('org').equalTo(`${organizationName}`).on('child_added',function(snapshot){
-      keyList.push(snapshot.key);
-    })
-    for (let i=0;i<keyList.length;i++){
-    FIREBASE_DATABASE.ref('/requests/announcements/'+keyList[i]).once('value')
-    .then((snapshot)=>{
-      let announcement;
-      announcement=snapshot.val();
-      let message=announcement.message;
-      let timeofAction=announcement.currentTime;
-      messages.push(message); //pushes the message to messages array
-      time.push(timeofAction); //pushes the time to time array
-      //in display method, display the message and timeofAction of the same index
-    })
-    console.log(messages);
-    console.log(time);
-    console.log(val);
+  // pull all requests received by the database (yet to be approved)
+  .then(() => {
+    requestRef = FIREBASE_DATABASE.ref('/requests/announcements/');
+    requestRef.orderByChild('org').equalTo(`${organizationName}`).once('value')
+      .then((snapshot) => {
+        let matches = snapshot.val();
+        for (let key in matches) {
+          let announcement = matches[key];
+          messages.push(announcement.message); //pushes the message to messages array
+          time.push(announcement.currentTime); //pushes the time to time array
+          //in display method, display the message and timeofAction of the same index
+        }
 
-    }
-  }) // .then method ends here
-  .then(()=>{
-    approvedRef=FIREBASE_DATABASE.ref('/announcements/'+organizationName);
-    approvedRef.on('value', approvedRec,errData);
+
+      });
+  })
+  // .then method ends here
+  .then(() => {
+    approvedRef = FIREBASE_DATABASE.ref('/announcements/' + organizationName);
+    approvedRef.once('value')
+      .then((snapshot) => {
+        approvedRec(snapshot);
+      }).catch(errData);
   })
 }
 
 //Function for Approved Requests
 function approvedRec(data){
   let timeStamp;
-  let request=data.val();
-  let keys=Object.keys(request);
+  let request = data.val();
+  let keys = Object.keys(request);
 
   for(let i=0;i<keys.length;i++){
     let k=keys[i];
@@ -99,6 +97,7 @@ function approvedRec(data){
       console.log(timeStamp);
       displayRejectionAnnouncement(message,rejectionReason,timeStamp);
     }
+
     //console.log(keys);
   }
   //catch method for errors
@@ -124,7 +123,6 @@ function approvedRec(data){
     minutes = Math.floor((millSecDiff - (hours * 3600000)) / 60000);
     seconds = Math.floor((millSecDiff - (hours * 3600000) - (minutes * 60000)) / 1000);
     console.log(hours);
-
     if(days!=0){
       if(days>1){
         return keyword+days+" days ago";
