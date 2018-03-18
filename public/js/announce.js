@@ -150,7 +150,7 @@ function search() {
 			announcements[i].parentNode.style.display = '';
 		} else {
 			announcements[i].style.display = 'none';
-			announcements[i].parentNode.style.display = 'none';
+			//announcements[i].parentNode.style.display = 'none';
 		}
 	}
 }

@@ -59,12 +59,13 @@ body {
 }
 
 #search {
-	float: right;
 	border: none;
-	padding: 8px;
-	font-size: 30px;
-	width: 75%;
-    font-family: 'Quicksand', sans-serif;
+  padding: 8px;
+  font-size: 6vh;
+  width: 75%;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  bottom: 8vh;
 }
 
 
