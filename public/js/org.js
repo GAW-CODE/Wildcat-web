@@ -40,10 +40,23 @@ function displayRequestStatus() {
           time.push(announcement.currentTime); //pushes the time to time array
           //in display method, display the message and timeofAction of the same index
         }
+      })
+      //METHOD FOR SENT REQUEST
+      .then(()=>{
+        let timestamp;
+        let message;
+        for(let i=0;i<messages.length;i++){
+          let keyword="Sent ";
+          timeStamp=timeDifference(time[i],keyword);
+          displaySentAnnouncement(messages[i],timeStamp);
+        }
+        console.log(messages); //testing messages array
+        console.log(time); //testing time array
+      })
 
-
-      });
   })
+
+
   // .then method ends here
   .then(() => {
     approvedRef = FIREBASE_DATABASE.ref('/announcements/' + organizationName);
@@ -211,6 +224,23 @@ function displayApprovedAnnouncement(message,timeStamp){
    `;
    div.innerHTML=template;
   approvedList.appendChild(div);
+}
+//Display for Sent Announcements
+function displaySentAnnouncement(message,timeStamp){
+ let sentList=document.getElementById('requests');
+ let div = document.createElement('div');
+   let template=
+  `
+   <div>
+   <h>Original Request</h>
+     <p>${message}</p>
+  </div>
+   <div>
+     <p>${timeStamp}</p>
+  </div>
+   `;
+   div.innerHTML=template;
+  sentList.appendChild(div);
 }
 
 
