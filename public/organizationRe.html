@@ -116,8 +116,21 @@
 
 
             <!--Request-->
-            <div id="req" class="module hide">
-                <iframe src="request.html"></iframe>
+            <div id="req" class="module">
+
+                <div id="reqTabs">
+                    <div class="reqtab">Announcement</div>
+                    <div class="reqtab">Event</div>
+                </div>
+                <div id="reqAnnounce" class="requestSpace">
+                    <div class="formSpace">
+                        <input type="text" id="txtName" placeholder="Announcement Title">
+                        <textarea type="text" name="announcement" id="announcement" rows="5" placeholder="Announcement goes here"></textarea>
+                    </div>
+                </div>
+                <div id="reqEvent" class="requestSpace">
+
+                </div>
             </div>
 
 
@@ -282,6 +295,10 @@
     </div>
 
 </section>
+<!--
+    <script src="/__/firebase/4.1.3/firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
+-->
 <script src="/__/firebase/4.1.3/firebase.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script src="js/org.js"></script>

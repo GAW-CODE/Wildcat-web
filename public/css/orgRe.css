@@ -234,17 +234,7 @@ section{
 }
 
 /*Request Module*/
-#req iframe{
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    border: 0;
-    outline: none;
-    animation-name: modChange;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+
 
 /*Information Module*/
 #org, #orgEdit{
