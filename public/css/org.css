@@ -153,7 +153,7 @@ section{
     height: 100%;
     margin: auto;
 }
-#status.hide, #req.hide, #org.hide, #orgEdit.hide{
+#status.hide, #req.hide, #org.hide, #orgEdit.hide, .requestSpace.hide{
     display: none;
 }
 @keyframes modChange{
@@ -234,16 +234,60 @@ section{
 }
 
 /*Request Module*/
-#req iframe{
-    height: 100%;
+#reqTabs{
     width: 100%;
-    overflow: hidden;
-    border: 0;
-    outline: none;
+    padding: 1.5%;
+    font-size: 1.5vw;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+.reqTab{
+    width: 50%;
+}
+.reqTabOn{
+    border-bottom: 1px solid  rgb(255, 32, 32);
+}
+.requestSpace{
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
     animation-name: modChange;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+input.reqTitle{
+    display: block;
+    width: 80%;
+    padding: 0.5%;
+    margin: auto;
+    font-size: 0.78vw;
+    border: none;
+    outline: none;
+    color: rgb(19, 19, 19);
+    border-bottom: 3px solid rgb(255, 236, 236);
+    transition-duration: 0.2s;
+}
+input.reqTitle:focus{
+    border-bottom: 3px solid rgb(255, 53, 53);
+}
+textarea.message{
+    display: block;
+    width: 80%;
+    padding: 0.5%;
+    box-sizing: border-box;
+    margin: auto;
+    border: 2px solid rgb(255, 236, 236);
+    outline: none;
+    color: rgb(19, 19, 19);
+    font-size: 0.78vw;
+    transition-duration: 0.2s;
+    resize: none;
+}
+textarea.message:focus{
+    border: 2px solid rgb(255, 53, 53);
 }
 
 /*Information Module*/
