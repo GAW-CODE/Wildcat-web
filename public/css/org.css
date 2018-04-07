@@ -306,6 +306,9 @@ textarea.message:focus{
     outline: none;
     height: 50px;
 }
+.reqTools button:active{
+    background-color: rgb(255, 21, 21);
+}
 .reqTool{
     padding: 0.3%;
 }
