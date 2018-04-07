@@ -263,6 +263,7 @@ input.reqTitle{
     width: 80%;
     padding: 0.5%;
     margin: auto;
+    margin-bottom: 1.2%;
     font-size: 0.78vw;
     border: none;
     outline: none;
@@ -288,6 +289,25 @@ textarea.message{
 }
 textarea.message:focus{
     border: 2px solid rgb(255, 53, 53);
+}
+.reqTools{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.reqTools button{
+    margin:0.3% 0.3% 0;
+    padding: 0 0.5%;
+    background-color: rgb(255, 48, 48);
+    color: white;
+    font-size: 1.2vw;
+    border:none;
+    outline: none;
+    height: 50px;
+}
+.reqTool{
+    padding: 0.3%;
 }
 
 /*Information Module*/
