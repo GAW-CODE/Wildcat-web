@@ -92,6 +92,10 @@ function approvedRec(data){
 
   // Function for Rejections
   function gotData(data){
+    //pull rejections only if there are rejections using snapshot.exists()
+    if (!data.exists()) {
+      return;
+    }
     //console.log(data.val());
     let timeStamp;
     let rejection=data.val();
