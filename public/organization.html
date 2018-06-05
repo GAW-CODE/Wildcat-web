@@ -63,7 +63,23 @@
 
             <!--Status-->
             <div id="status" class="module hide">
-            	
+
+                <!--Statistics-->
+                <div id="stats">
+                    <div class="statistic">
+                        <p id="sent" class="statNum" style="color: #f4f44b;">0</p>
+                        <p class="statLabel">Sent</p>
+                    </div>
+                    <div class="statistic">
+                        <p id="approve" class="statNum" style="color: rgb(84, 221, 84);">0</p>
+                        <p class="statLabel">Approved</p>
+                    </div>
+                    <div class="statistic">
+                        <p id="reject" class="statNum" style="color: rgb(133, 22, 22);">0</p>
+                        <p class="statLabel">Rejected</p>
+                    </div>
+                </div>
+
                 <!--Status list-->
                 <div id="sList">
                     <!--sample block-->
@@ -94,16 +110,47 @@
                       <h1>Approved Announcements</h1>
                    </div>
 
-
-
                 </div>
             </div>
 
 
 
             <!--Request-->
-            <div id="req" class="module hide">
-                <iframe src="request.html"></iframe>
+            <div id="req" class="module">
+
+                <div id="reqTabs">
+                    <div class="reqtab reqTabOn">Announcement</div>
+                    <div class="reqtab">Event</div>
+                </div>
+
+                <div id="reqAnnounce" class="requestSpace">
+                    <div class="formSpace">
+                        <input type="text" class="reqTitle" placeholder="Announcement Title">
+                        <textarea class="message" name="announcement" id="announcement" rows="7" placeholder="Message"></textarea>
+                    </div>
+                    <div class="reqTools">
+                        <button>send</button>
+                    </div>
+                </div>
+
+                <div id="reqEvent" class="requestSpace hide">
+                    <div class="formSpace">
+                        <input type="text" class="reqTitle" placeholder="Event Name">
+                        <textarea class="message" name="event" id="event" rows="5" placeholder="Description"></textarea>
+                    </div>
+                    <div class="reqTools">
+                        <!--Tools: Calendar, Time, Attach, Map-->
+                        <img class="reqTool" src="appAssets/reqCalendar.png" width="50" height="50" title="Set a date">
+                        <img class="reqTool" src="appAssets/reqTime.png" width="50" height="50" title="set a timeframe">
+                        <img class="reqTool" src="appAssets/reqAttach.png" width="50" height="50" title="attach an image">
+                        <img class="reqTool" src="appAssets/reqMap.png" width="50" height="50" title="set a location">
+                        <button>send</button>
+                    </div>
+                </div>
+                
+                <div id="reqEvent" class="requestSpace">
+
+                </div>
             </div>
 
 
@@ -268,9 +315,14 @@
     </div>
 
 </section>
+<!--
+    <script src="/__/firebase/4.1.3/firebase.js"></script>
+<script src="/__/firebase/init.js"></script>
+-->
 <script src="/__/firebase/4.1.3/firebase.js"></script>
 <script src="/__/firebase/init.js"></script>
 <script src="js/org.js"></script>
+<script src="js/requestInterface.js"></script>
 
 </body>
 
