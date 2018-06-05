@@ -137,6 +137,7 @@ function approve(event) {
         });
     })
     .then(() => {
+      FIREBASE_DATABASE.ref('/announcements/').push(announcement);
       // insert announcement under “/announcements” in database
       FIREBASE_DATABASE.ref('/announcements/'+orgName).push(announcement);
       // remove announcement from ‘/requests/announcements’ in database
