@@ -26,18 +26,24 @@ sendButton.addEventListener('click', function(e) {
 	const title = announceTitle.value;
 	const announcement = announceMessage.value;
 
+	let condition = true;
 	if(title == ""){
 		alert("You must include a title");
+		condition = false;
 	}
 	if(announcement == ""){
 		alert("You must include a message");
+		condition = false;
 	}
+
+	if (condition == true){
 
 	sendAnnouncement(title, announcement);
 	announceMessage.value = "";
 	announceTitle.value = "";
 
-	//display "Message successfully sent" if this is true
+	alert("Your announcement was sent successfully!");
+}
 });
 
 //announcements logic
