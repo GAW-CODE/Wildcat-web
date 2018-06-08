@@ -8,8 +8,7 @@ const btnSend = document.getElementById('send')
 let forgot = document.getElementById('btnForgot');
 let reset = document.getElementById('reset');
 const back = document.getElementById('back');
-
-
+document.getElementById('wrong').style.display= "none";
 btnSignUp.addEventListener('click', e => {
     window.location.href = "SignUp.html";
 });
@@ -36,9 +35,11 @@ btnLogin.addEventListener('click', e => {
                     } else {
                         window.location.href = 'organization.html'
                     }
+                    document.getElementById("wrong").style.display = "none";
                 });
         }).catch(e => {
             console.log(e.message);
+
             document.getElementById('wrong').style.display = "block";
         });;
 });
