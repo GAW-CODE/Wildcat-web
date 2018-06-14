@@ -378,6 +378,9 @@ body {
 
 .saveable {
 	/* pointer-events: none; */
-	transform: translate(calc(var(--i)*1px));
-	transition: transform .5s ease-out;
+	transform: translate(calc(var(--tx, 0px)));
+}
+
+.smooth {
+	transition: transform calc(var(--f, 1)*.5s) ease-out;
 }

@@ -40,15 +40,39 @@ function displayAnnouncement(announcement) {
 	// 	announceDiv.addEventListener('mousedown', this.handleGestureStart, true);
 	// }
 
+	//source: https://css-tricks.com/simple-swipe-with-vanilla-javascript/
+
 	let x0 = null;
 	let i = 0;
+	let locked = false;
+	let w, f;
 
-	function lock(e) { x0 = unify(e).clientX };
+	size();
+	addEventListener('resize', size, false);
+
+	function size() { w = window.innerWidth };
+	function lock(e) {
+		x0 = unify(e).clientX;
+		announceDiv.classList.toggle('smooth', !(locked = true));
+	};
+	function drag(e) {
+		e.preventDefault();
+
+		if (locked && x0 || x0 === 0) {
+			let dx = unify(e).clientX - x0;
+			f = dx / w;
+			announceDiv.style.setProperty('--tx', `${Math.round(dx)}px`);
+			f = 1 - f;
+		}
+	};
 	function move(e) {
-		console.log('move');
-		if (x0 || x0 === 0) {
-			let dx = unify(e).clientX - x0, s = Math.sign(dx);
-			announceDiv.style.setProperty('--i', dx);
+		if (locked) {
+			console.log('move');
+			// let dx = unify(e).clientX - x0, s = Math.sign(dx);
+			// announceDiv.style.setProperty('--i', dx);
+			announceDiv.style.setProperty('--tx', '0px');
+			announceDiv.style.setProperty('--f', f);
+			announceDiv.classList.toggle('smooth', !(locked = false));
 			x0 = null;
 		}
 	};
@@ -56,7 +80,12 @@ function displayAnnouncement(announcement) {
 
 	announceDiv.addEventListener('mousedown', lock, false);
 	announceDiv.addEventListener('touchstart', lock, false);
-	announceDiv.addEventListener('touchmove', e => {e.preventDefault()}, false);
+
+	//move announceDiv while it is being dragged
+	announceDiv.addEventListener('mousemove', drag, false);
+	announceDiv.addEventListener('touchmove', drag, false);
+
+	//move announceDiv when touch is over
 	announceDiv.addEventListener('mouseup', move, false);
 	announceDiv.addEventListener('touchend', move, false);
 
