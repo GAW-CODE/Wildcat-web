@@ -24,17 +24,118 @@ function displayAnnouncement(announcement) {
 
 	//student archive
 
-	//if announcement is pressed for 3 seconds OR user swipes
-	announceDiv.addEventListener("click", function() {
-		console.log("saving announcement");
-		//display "SAVED" momentarily
+	//if user swipes on the announcement
 
-		//turn bkgd to gold
-		announceDiv.style.background = "#edbe31";
+	//source: https://developers.google.com/web/fundamentals/design-and-ux/input/touch/
+	if (window.PointerEvent) { //check if the browser supports PointerEvent API
+		announceDiv.addEventListener('pointerdown', this.handleGestureStart, true);
+	  announceDiv.addEventListener('pointermove', this.handleGestureMove, true);
+	  announceDiv.addEventListener('pointerup', this.handleGestureEnd, true);
+	  announceDiv.addEventListener('pointercancel', this.handleGestureEnd, true);
+	} else { //if the browser does NOT support PointerEvent API, use TouchEvent or MouseEvent
+		announceDiv.addEventListener('touchstart', this.handleGestureStart, true);
+	  announceDiv.addEventListener('touchmove', this.handleGestureMove, true);
+	  announceDiv.addEventListener('touchend', this.handleGestureEnd, true);
+	  announceDiv.addEventListener('touchcancel', this.handleGestureEnd, true);
+		announceDiv.addEventListener('mousedown', this.handleGestureStart, true);
+	}
 
-		//add announcement to student-archive folder in database under user id
-		FIREBASE_DATABASE.ref('student-archive/' + FIREBASE_AUTH.currentUser.uid).push(announcement);
-	});
+	//deal with the start of gestures
+	this.handleGestureStart = function(event) {
+		event.preventDefault();
+
+		if (event.touches && event.touches.length > 1) { return; }
+
+		if (window.PointerEvent) {
+			event.target.setPointerCapture(event.pointerId);
+		} else {
+			document.addEventListener('mousemove', this.handleGestureMove, true);
+			document.addEventListener('mouseup', this.handleGestureEnd, true);
+		}
+
+		initialTouchPos = getGesturePointFromEvent(event);
+
+		announceDiv.style.transition = 'initial';
+	}.bind(this);
+
+	//deal with the end of gestures
+	this.handleGestureEnd = function(event) {
+		event.preventDefault();
+
+		if (event.touches && event.touches.length > 0) { return; }
+
+		rafPending = false;
+
+		//remove move and end event listeners from document
+		if (window.PointerEvent) {
+			event.target.releasePointerCapture(event.pointerId);
+		} else {
+			document.removeEventListener('mousemove', this.handleGestureMove, true);
+			document.removeEventListener('mouseup', this.handleGestureEnd, true);
+		}
+
+		updateSwipeRestPosition();
+
+		initialTouchPos = null;
+	}.bind(this);
+
+	this.handleGestureMove = function(event) {
+		event.preventDefault();
+
+		if (!initialTouchPos) { return; }
+
+		lastTouchPos = getGesturePointFromEvent(event);
+
+		if (rafPending) { return; }
+		rafPending = true;
+
+		//call requestAnimationFrame before browser updates the page
+		window.requestAnimFrame(onAnimFrame);
+	}.bind(this);
+
+	function getGesturePointFromEvent(event) {
+		var point = {};
+
+		if (event.targetTouches) {
+			point.x = event.targetTouches[0].clientX;
+			point.y = event.targetTouches[0].clientY;
+		} else {
+			point.x = event.clientX;
+			point.y = event.clientY;
+		}
+
+		return point;
+	}
+
+	function onAnimFrame() {
+		if (!rafPending) { return; }
+
+		var differenceInX = initialTouchPos.x - lastTouchPos.x;
+
+		var newXTransform = (currentXPosition - differenceInX) + 'px';
+		var transformStyle = 'translateX(' + newXTransform + ')';
+
+		announceDiv.style.webkitTransform = transformStyle;
+		announceDiv.style.MozTransform = transformStyle;
+		announceDiv.style.msTransform = transformStyle;
+		announceDiv.style.style.transform = transformStyle;
+	}
+
+	// announceDiv.addEventListener("click", function() {
+	// 	console.log("saving announcement");
+	//
+	// 	//turn bkgd to gold
+	// 	announceDiv.style.background = "#edbe31";
+	//
+	// 	//TODO: make sure background stays gold when user refreshes the page or returns later to announce.html
+	//
+	// 	//add announcement to student-archive folder in database under user id
+	// 	FIREBASE_DATABASE.ref('student-archive/' + FIREBASE_AUTH.currentUser.uid).push(announcement);
+	//
+	// 	//TODO: ensure no duplicate announcements in the student-archive folder in the database
+	//
+	// 	//display "SAVED" momentarily - unhide SAVED <p>
+	// });
 
 	//link to organization's contact book page if you click on its logo - use announcement.org
 	//display titles?
