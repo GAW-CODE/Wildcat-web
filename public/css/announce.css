@@ -39,6 +39,7 @@ body {
     background-color: white;
     background-attachment: fixed;
     user-select: none;
+		overflow-x: hidden;
 }
 
 #topBar {
@@ -372,9 +373,11 @@ body {
 #bigOne{
     font-size: 100px;
     font-color:black;
-     font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .saveable {
-	
+	/* pointer-events: none; */
+	transform: translate(calc(var(--i)*1px));
+	transition: transform .5s ease-out;
 }
