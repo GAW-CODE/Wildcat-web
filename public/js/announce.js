@@ -1,5 +1,6 @@
 const FIREBASE_DATABASE = firebase.database();
 const FIREBASE_STORAGE = firebase.storage();
+const FIREBASE_AUTH = firebase.auth();
 let adminDiv = document.getElementById('admin');
 let guidanceDiv = document.getElementById('guidance');
 let asbDiv = document.getElementById('asb');
@@ -19,28 +20,44 @@ function displayAnnouncement(announcement) {
 	</div>`;
   div.innerHTML = domString;
 
+	let announceDiv = div.firstChild;
+
+	//student archive
+
+	//if announcement is pressed for 3 seconds OR user swipes
+	announceDiv.addEventListener("click", function() {
+		console.log("saving announcement");
+		//display "SAVED" momentarily
+
+		//turn bkgd to gold
+		announceDiv.style.background = "#edbe31";
+
+		//add announcement to student-archive folder in database under user id
+		FIREBASE_DATABASE.ref('student-archive/' + FIREBASE_AUTH.currentUser.uid).push(announcement);
+	});
+
 	//link to organization's contact book page if you click on its logo - use announcement.org
 	//display titles?
 
 	// Categorize the message (put it in the correct category)
 	switch (announcement.orgType) {
 		case 'Admin':
-			adminDiv.appendChild(div.firstChild);
+			adminDiv.appendChild(announceDiv);
 			break;
 		case 'Guidance':
-			guidanceDiv.appendChild(div.firstChild);
+			guidanceDiv.appendChild(announceDiv);
 			break;
 		case 'ASB':
-			asbDiv.appendChild(div.firstChild);
+			asbDiv.appendChild(announceDiv);
 			break;
 		case 'Campus Org':
-			campusorgsDiv.appendChild(div.firstChild);
+			campusorgsDiv.appendChild(announceDiv);
 			break;
 		case 'Athletics':
-			athleticsDiv.appendChild(div.firstChild);
+			athleticsDiv.appendChild(announceDiv);
 			break;
 		case 'Fundraiser':
-			fundraisersDiv.appendChild(div.firstChild);
+			fundraisersDiv.appendChild(announceDiv);
 			break;
 	}
 }
@@ -217,16 +234,3 @@ span.onclick = function() {
 // //get key of this announcement
 // let sAnnouncekey = //snapshot?
 // FIREBASE_DATABASE.ref().child('/announcements/keyOfThis').remove();
-//
-//student archive
-//
-// for (let i = 0; i < announcements.length; i++) {
-// 	announcements[i].addEventListener("click", function() {
-// 		//display "SAVED" momentarily
-//
-// 		//turn bkgd to gold
-// 		announcements.style.background = "#edbe31";
-//
-// 		//add announcement to student archive
-// 	});
-// }
