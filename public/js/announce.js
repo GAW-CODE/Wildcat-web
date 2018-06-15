@@ -62,8 +62,10 @@ function displayAnnouncement(announcement) {
 			console.log('drag');
 			let dx = unify(e).clientX - x0;
 			f = dx / w;
-			if (Math.abs(f) > .05) //only drag if swipe is at least 5% width
+			if (Math.abs(f) > .05) {
+				//only drag if swipe is at least 5% width
 				announceDiv.style.setProperty('--tx', `${Math.round(dx)}px`);
+			}
 			f = 1 - f;
 		}
 	};
@@ -75,6 +77,24 @@ function displayAnnouncement(announcement) {
 			announceDiv.style.setProperty('--tx', '0px');
 			announceDiv.style.setProperty('--f', f);
 			announceDiv.classList.toggle('smooth', !(locked = false));
+
+			if (Math.abs(f) > .1) {
+				//save announcement if swipe is at least 5% width
+				console.log("saving announcement");
+
+				//turn bkgd to gold
+				announceDiv.style.background = "#edbe31";
+
+				//TODO: make sure background stays gold when user refreshes the page or returns later to announce.html - check inside displayAnnouncement() ?
+
+				//add announcement to student-archive folder in database under user id
+				FIREBASE_DATABASE.ref('student-archive/' + FIREBASE_AUTH.currentUser.uid).push(announcement);
+
+				//TODO: ensure no duplicate announcements in the student-archive folder in the database
+
+				//display "SAVED" momentarily - unhide SAVED <p>
+			}
+
 			x0 = null;
 		}
 	};
@@ -91,21 +111,6 @@ function displayAnnouncement(announcement) {
 	announceDiv.addEventListener('mouseup', move, false);
 	announceDiv.addEventListener('touchend', move, false);
 
-	// announceDiv.addEventListener("click", function() {
-	// 	console.log("saving announcement");
-	//
-	// 	//turn bkgd to gold
-	// 	announceDiv.style.background = "#edbe31";
-	//
-	// 	//TODO: make sure background stays gold when user refreshes the page or returns later to announce.html
-	//
-	// 	//add announcement to student-archive folder in database under user id
-	// 	FIREBASE_DATABASE.ref('student-archive/' + FIREBASE_AUTH.currentUser.uid).push(announcement);
-	//
-	// 	//TODO: ensure no duplicate announcements in the student-archive folder in the database
-	//
-	// 	//display "SAVED" momentarily - unhide SAVED <p>
-	// });
 
 	//link to organization's contact book page if you click on its logo - use announcement.org
 	//display titles?
