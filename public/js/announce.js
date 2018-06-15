@@ -59,9 +59,11 @@ function displayAnnouncement(announcement) {
 		e.preventDefault();
 
 		if (locked && x0 || x0 === 0) {
+			console.log('drag');
 			let dx = unify(e).clientX - x0;
 			f = dx / w;
-			announceDiv.style.setProperty('--tx', `${Math.round(dx)}px`);
+			if (Math.abs(f) > .05) //only drag if swipe is at least 5% width
+				announceDiv.style.setProperty('--tx', `${Math.round(dx)}px`);
 			f = 1 - f;
 		}
 	};
