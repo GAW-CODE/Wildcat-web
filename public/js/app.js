@@ -137,9 +137,9 @@ function approve(event) {
         });
     })
     .then(() => {
-      FIREBASE_DATABASE.ref('/announcements/').push(announcement);
+      FIREBASE_DATABASE.ref('/announcements/').push(announcement); //insert announcement under the "announcement" node 
       // insert announcement under “/announcements” in database
-      FIREBASE_DATABASE.ref('/announcements/'+orgName).push(announcement);
+      FIREBASE_DATABASE.ref('/announcementsOrg/'+orgName).push(announcement); //insert announcement under the "announcementOrg" node. Used to interfere with announcements
       // remove announcement from ‘/requests/announcements’ in database
       FIREBASE_DATABASE.ref('/requests/announcements').child(keyList[index]).remove()
     })
