@@ -43,9 +43,33 @@ function displayAnnouncement(announcement) {
 	//source: https://css-tricks.com/simple-swipe-with-vanilla-javascript/
 
 	let x0 = null;
-	let i = 0;
 	let locked = false;
-	let w, f;
+	let w, f, dx;
+	let ini, fin, anf;
+
+	const NF = 30; //# frames
+	let rID = null;
+	const TFN = {
+		'bounce-out': function(k, n = 3, a = 2.75, b = 1.5) {
+			return 1 - Math.pow(1 - k, a) * Math.abs(Math.cos(Math.pow(k, b) * (n + 0.5) * Math.PI))
+		}
+	};
+	var n;
+
+	function stopAni() {
+		cancelAnimationFrame(rID);
+		rID = null;
+	};
+	function ani(cf = 0) {
+		announceDiv.style.setProperty('--i', ini + (fin - ini) * TFN['bounce-out'](cf / anf));
+
+		if (cf === anf) {
+			stopAni();
+			return;
+		}
+
+		rID = requestAnimationFrame(ani.bind(this, ++cf));
+	};
 
 	size();
 	addEventListener('resize', size, false);
@@ -53,33 +77,41 @@ function displayAnnouncement(announcement) {
 	function size() { w = window.innerWidth };
 	function lock(e) {
 		x0 = unify(e).clientX;
-		announceDiv.classList.toggle('smooth', !(locked = true));
+		locked = true;
+		//announceDiv.classList.toggle('smooth', !(locked = true));
 	};
 	function drag(e) {
 		e.preventDefault();
 
-		if (locked && x0 || x0 === 0) {
+		if (locked && (x0 || x0 === 0)) {
 			console.log('drag');
-			let dx = unify(e).clientX - x0;
+			dx = unify(e).clientX - x0;
 			f = dx / w;
-			if (Math.abs(f) > .05) {
-				//only drag if swipe is at least 5% width
-				announceDiv.style.setProperty('--tx', `${Math.round(dx)}px`);
+			if (f < -.05) {
+				console.log(`${dx}px`);
+				//only drag if swipe is at least 5% width and is left
+				announceDiv.style.setProperty('--i', `${dx}px`);
 			}
-			f = 1 - f;
 		}
 	};
-	function move(e) {
+	function stop(e) {
 		if (locked) {
-			console.log('move');
-			// let dx = unify(e).clientX - x0, s = Math.sign(dx);
-			// announceDiv.style.setProperty('--i', dx);
-			announceDiv.style.setProperty('--tx', '0px');
-			announceDiv.style.setProperty('--f', f);
-			announceDiv.classList.toggle('smooth', !(locked = false));
+			console.log('stop');
 
-			if (Math.abs(f) > .1) {
-				//save announcement if swipe is at least 5% width
+			ini = dx - Math.sign(dx) * f;
+			fin = dx;
+			anf = Math.round(f * NF);
+			n = 2 + Math.round(f);
+			ani();
+
+			//announceDiv.style.setProperty('--i', '0px');
+			//announceDiv.style.setProperty('--f', f);
+			//announceDiv.classList.toggle('smooth', !(locked = false));
+			x0 = null;
+			locked = false;
+
+			if (f < -.20) {
+				//save announcement if swipe is at least 20% width and is left
 				console.log("saving announcement");
 
 				//turn bkgd to gold
@@ -94,8 +126,6 @@ function displayAnnouncement(announcement) {
 
 				//display "SAVED" momentarily - unhide SAVED <p>
 			}
-
-			x0 = null;
 		}
 	};
 	function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
@@ -107,9 +137,9 @@ function displayAnnouncement(announcement) {
 	announceDiv.addEventListener('mousemove', drag, false);
 	announceDiv.addEventListener('touchmove', drag, false);
 
-	//move announceDiv when touch is over
-	announceDiv.addEventListener('mouseup', move, false);
-	announceDiv.addEventListener('touchend', move, false);
+	//stop announceDiv when touch is over
+	announceDiv.addEventListener('mouseup', stop, false);
+	announceDiv.addEventListener('touchend', stop, false);
 
 
 	//link to organization's contact book page if you click on its logo - use announcement.org
@@ -281,25 +311,6 @@ let span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
 	modal.style.display = "none";
 }
-
-// //if announcement is pressed down
-// let timeoutId = 0;
-// for (let i = 0; i < announcements.length; i++) {
-// 	announcements[i].addEventListener('mousedown', function() {
-// 	    timeoutId = setTimeout(save(), 3000);
-// 	}).addEventListener('mouseup mouseleave', function() {
-// 	    clearTimeout(timeoutId);
-// 	});
-// }
-
-//send announcement
-//function saveTo(){
-//clone
-
-//send to student archive
-
-
-//}
 
 // //be able to delete saved msgs
 // //if held down for 2 seconds, prompt for deletion? yes and no button

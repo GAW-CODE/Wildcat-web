@@ -377,9 +377,9 @@ body {
 }
 
 .saveable {
-	transform: translate(calc(var(--tx, 0px)));
+	transform: translate(calc(var(--i, 0px)));
 }
 
-.smooth {
-	transition: transform calc(var(--f, 1)*.5s) cubic-bezier(1,1.58,.01,.46);
-}
+/* .smooth {
+	transition: transform calc(calc(1 - var(--f, 1))*.5s) cubic-bezier(1,1.58,.01,.46);
+} */
