@@ -59,7 +59,7 @@ function displayRequestStatus() {
 
   // .then method ends here
   .then(() => {
-    approvedRef = FIREBASE_DATABASE.ref('/announcements/' + organizationName);
+    approvedRef = FIREBASE_DATABASE.ref('/announcementsOrg/' + organizationName);
     approvedRef.once('value')
       .then((snapshot) => {
         approvedRec(snapshot);
