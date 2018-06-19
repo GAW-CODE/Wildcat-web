@@ -510,3 +510,7 @@ img.personRemove:hover{
     padding: 0.8vw;
     width:65%;
 }
+.messageSpecific{
+    font-weight:bold;
+    font-size:20px;
+}

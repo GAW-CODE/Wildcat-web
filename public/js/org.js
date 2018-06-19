@@ -181,11 +181,10 @@ function displayRejectionAnnouncement(message,rejectionReason,timeStamp){
   `
    <div class="message">
     <div>
-        <h>Original Request:</h>
-     <p>${message}</p>
+     <p class="messageSpecific">${message}</p>
   </div>
   <div>
-   <h>Rejection Reason:</h>
+   <h>Reason:</h>
      <p>${rejectionReason}</p>
    </div>
    <div>
@@ -205,8 +204,7 @@ function displayRequestAnnouncement(message,timeStamp){
   `
     <div class="message">
    <div>
-   <h>Original Request:</h>
-     <p>${message}</p>
+     <p class="messageSpecific">${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
@@ -224,8 +222,7 @@ function displayApprovedAnnouncement(message,timeStamp){
   `
     <div class="message">
    <div>
-   <h>Original Request:</h>
-     <p>${message}</p>
+     <p class="messageSpecific">${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
@@ -243,8 +240,7 @@ function displaySentAnnouncement(message,timeStamp){
   `
     <div class="message">
    <div>
-   <h>Original Request:</h>
-     <p>${message}</p>
+     <p class="messageSpecific">${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
