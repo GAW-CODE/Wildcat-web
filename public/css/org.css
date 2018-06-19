@@ -504,3 +504,9 @@ img.personRemove:hover{
 .wc-date-popover{
     font-family: 'Quicksand', sans-serif;
 }
+
+.message {
+    border-bottom: 1px solid #e1e3e5;
+    padding: 0.8vw;
+    width:65%;
+}

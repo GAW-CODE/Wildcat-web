@@ -179,17 +179,19 @@ function displayRejectionAnnouncement(message,rejectionReason,timeStamp){
  let div = document.createElement('div');
    let template=
   `
-   <div>
-   <h>Original Request</h>
+   <div class="message">
+    <div>
+        <h>Original Request:</h>
      <p>${message}</p>
   </div>
-  <div class="descHide">
-   <h>Rejection Reason</h>
+  <div>
+   <h>Rejection Reason:</h>
      <p>${rejectionReason}</p>
    </div>
    <div>
      <p>${timeStamp}</p>
   </div>
+</div>
    `;
    div.innerHTML=template;
    rejectionList.appendChild(div);
@@ -201,13 +203,15 @@ function displayRequestAnnouncement(message,timeStamp){
  let div = document.createElement('div');
    let template=
   `
+    <div class="message">
    <div>
-   <h>Original Request</h>
+   <h>Original Request:</h>
      <p>${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
   </div>
+    </div>
    `;
    div.innerHTML=template;
   requestList.appendChild(div);
@@ -218,13 +222,15 @@ function displayApprovedAnnouncement(message,timeStamp){
  let div = document.createElement('div');
    let template=
   `
+    <div class="message">
    <div>
-   <h>Original Request</h>
+   <h>Original Request:</h>
      <p>${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
   </div>
+</div>
    `;
    div.innerHTML=template;
   approvedList.appendChild(div);
@@ -235,13 +241,15 @@ function displaySentAnnouncement(message,timeStamp){
  let div = document.createElement('div');
    let template=
   `
+    <div class="message">
    <div>
-   <h>Original Request</h>
+   <h>Original Request:</h>
      <p>${message}</p>
   </div>
    <div>
      <p>${timeStamp}</p>
   </div>
+</div>
    `;
    div.innerHTML=template;
   sentList.appendChild(div);
