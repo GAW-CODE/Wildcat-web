@@ -27,31 +27,17 @@
 
 	<!--browser-->
 	<link rel="icon" href="sharedAssets/favicon.png">
-	<title>Sign Up!</title>
+	<title>Student Sign Up!</title>
 </head>
 <body>
-	<h1>Sign up</h1>
+	<h1>Student Sign up</h1>
 	<h6>*Fill in the Required Fields*</h6>
     <div id="Loginspace">
-        <p>
-            <label>Are you a student or an organization?</label><br>
-            <select id="Organization" onchange="return info(this);">
-                <option value="" disabled selected style="display:none;">Choose</option>
-                <option value="Admin">Admin</option>
-								<option value="Campus Org">Campus Org.</option>
-                <option value="Guidance">Guidance</option>
-                <option value="ASB">ASB</option>
-                <option value="Athletics">Athletics</option>
-                <option value="Fundraiser">Fundraiser</option> <!-- TODO: make fundraiser a type of announcement, NOT user -->
-                <option value="Student">Student</option>
-            </select>
-        </p>
-        <div id="ainfo" style="display: none;">
+        <div id="ainfo">
             <input type="text" id="txtName" placeholder="Name"><br>
             <input type="email" id="txtEmail" placeholder="Email"> <br>
             <input type="password" id="txtPassword" placeholder="Password"><br>
             <input type="password" id="txtReenterPassword" placeholder="Re-enter Password"><br>
-            <input type="text" id="txtOrganization" placeholder="Organization"> <br>
         </div>
 
         </div>
@@ -69,7 +55,7 @@
         </script>
             <a href="login.html"><button id="Login">Login</button></a>
             <button id="SignUp">Sign Up</button>
-        
+
     </div>
 	<script src="/__/firebase/4.1.3/firebase.js"></script>
 	<script src="/__/firebase/init.js"></script>

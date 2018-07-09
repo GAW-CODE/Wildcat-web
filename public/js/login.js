@@ -39,7 +39,6 @@ btnLogin.addEventListener('click', e => {
                 });
         }).catch(e => {
             console.log(e.message);
-
             document.getElementById('wrong').style.display = "block";
         });;
 });
