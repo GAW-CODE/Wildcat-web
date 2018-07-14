@@ -1,8 +1,12 @@
-﻿#sb {
+﻿*{
+    user-select: none;
+    overflow: hidden;
+}
+#sb {
     width: 14vw;
     background-color: #F5F5F5;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     color: black;
@@ -28,12 +32,18 @@
         border-top: 0.1vh solid darkgrey;
     }
 
-#info {
+    #sb a:hover{
+        background-color: rgb(233, 233, 233);
+    }
+
+#Inf {
     border-bottom: 0.1vh solid darkgrey;
 }
 
-#status {
-    margin-left: 18vw;
+.module {
+    position: absolute;
+    width: 86vw;
+    right: 0;
 }
 
 #btn {
@@ -49,5 +59,9 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1vw;
+    outline: none;
     cursor: pointer;
+}
+#btn focus{
+    outline: none;
 }
