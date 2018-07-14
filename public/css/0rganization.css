@@ -2,6 +2,11 @@
     user-select: none;
     overflow: hidden;
 }
+
+.off{
+    display: none;
+}
+
 #sb {
     width: 14vw;
     background-color: #F5F5F5;
