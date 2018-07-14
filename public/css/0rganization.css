@@ -45,7 +45,7 @@
     border-bottom: 0.1vh solid darkgrey;
 }
 
-.module {
+#workplace {
     position: absolute;
     width: 86vw;
     right: 0;
@@ -71,3 +71,4 @@
     outline: none;
     background-color: rgb(230, 58, 58);
 }
+
