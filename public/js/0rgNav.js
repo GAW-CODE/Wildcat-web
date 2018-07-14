@@ -10,30 +10,30 @@ let profile = document.getElementById('profile');
 
 //Switching page
 Sta.addEventListener('click', function () {
-    status.style.display = 'block';
-    request.style.display = 'none';
-    profile.style.display = 'none';
-    Sta.style.backgroundColor = '#E9E9E9';
-    Req.style.backgroundColor = 'initial';
-    Inf.style.backgroundColor = 'initial';
+    status.className = 'module';
+    request.classname = 'module off';
+    profile.style.display = 'module off';
+    Sta.className = 'sbTab on';
+    Req.className = 'sbTab';
+    Inf.classname = 'sbTab';
 })
 
 Req.addEventListener('click', function () {
-    status.style.display = 'none';
-    request.style.display = 'block';
-    profile.style.display = 'none';
-    Sta.style.backgroundColor = 'initial';
-    Req.style.backgroundColor = '#E9E9E9';
-    Inf.style.backgroundColor = 'initial';
+    status.className = 'module off';
+    request.classname = 'module';
+    profile.style.display = 'module off';
+    Sta.className = 'sbTab';
+    Req.className = 'sbTab on';
+    Inf.classname = 'sbTab';
 })
 
 Inf.addEventListener('click', function () {
-    status.style.display = 'none';
-    request.style.display = 'none';
-    profile.style.display = 'block';
-    Sta.style.backgroundColor = 'initial';
-    Req.style.backgroundColor = 'initial';
-    Inf.style.backgroundColor = '#E9E9E9';
+    status.className = 'module off';
+    request.classname = 'module off';
+    profile.style.display = 'module';
+    Sta.className = 'sbTab';
+    Req.className = 'sbTab';
+    Inf.classname = 'sbTab on';
 })
 
 

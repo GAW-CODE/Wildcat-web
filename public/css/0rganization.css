@@ -44,7 +44,7 @@
         font-weight: 600;
     }
 
-    #sb div {
+    .sbTab {
         font-weight: 600;
         font-size: 1vw;
         display: block;
@@ -55,6 +55,9 @@
         padding-left: 1.5vw;
         padding-right: 1vw;
         border-top: 0.1vh solid darkgrey;
+    }
+    #sb .sbTab.on{
+        background-color:#E9E9E9;
     }
 
     #sb div:hover{
