@@ -2,6 +2,8 @@
     user-select: none;
     overflow: hidden;
     font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 .off{
@@ -20,6 +22,7 @@
 }
 
     #sb h3 {
+        padding: 7% 0;
         padding-left: 1.5vw;
         font-size: 1.5vw;
         font-weight: 600;
@@ -71,5 +74,56 @@
 #workplace {
     position: absolute;
     width: 86vw;
+    height: 100%;
     right: 0;
+}
+#statusTabs{
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    flex-wrap: nowrap;
+}
+#status .tab{
+    font-size: 1.5vw;
+    padding: 0.5% 2.7%;
+    border-bottom: 3px solid rgb(231, 231, 231);
+    color: rgb(20, 20, 20);
+}
+#status .tab:hover{
+    background-color:rgb(221, 221, 221);
+    border-bottom: 3px solid rgb(221, 221, 221);
+}
+#status .active{
+    border-bottom: 3px solid rgb(255, 107, 107);
+}
+
+#statusMods{
+    width: 100%;
+    height: 95vh;
+}
+#statusList{
+    position: absolute;
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 1.5%;
+    padding: 1% 0;
+    height: 88%;
+    background-color: rgb(235, 235, 235);
+}
+#statusDetail{
+    position: absolute;
+    width: 30%;
+    height: 95vh;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(192, 192, 192);
+}
+.announce{
+    width: 95%;
+    margin: auto;
+    padding: 1%;
+    height: 5%;
+    background-color: rgb(219, 219, 219);
+    cursor: pointer;
 }
