@@ -39,44 +39,60 @@ Inf.addEventListener('click', function () {
 
 
 //status navigation code
-let approve = document.getElementById('approve');
-let send = document.getElementById('sent');
-let reject = document.getElementById('reject');
+let statusNav = document.getElementById('statusTabs');
+let statusTabs = document.getElementsByClassName('tab');
 let approveL = document.getElementById('approveList');
 let sendL = document.getElementById('sendList');
 let rejectL = document.getElementById('rejectList');
-
-approve.addEventListener('click',
+let currentTab = 0;
+statusTabs[0].addEventListener('click',
 function(){
-    approve.className = "tab active";
-    send.className = "tab";
-    reject.className = "tab";
+    statusTabs[0].className = "tab active";
+    statusTabs[1].className = "tab";
+    statusTabs[2].className = "tab";
     sendL.className = "announceList off";
     rejectL.className = "announceList off";
     approveL.classname = " ";
     approveL.classname = "announceList";
+    currentTab = 0;
 }
 );
 
-send.addEventListener('click',
+statusTabs[1].addEventListener('click',
 function(){
-    approve.className = "tab";
-    send.className = "tab active";
-    reject.className = "tab";
+    statusTabs[0].className = "tab";
+    statusTabs[1].className = "tab active";
+    statusTabs[2].className = "tab";
     approveL.classname = "announceList off";
     sendL.className = "announceList";
     rejectL.className = "announceList off";
+    currentTab = 1;
 }
 );
 
-reject.addEventListener('click',
+statusTabs[2].addEventListener('click',
 function(){
-    approve.className = "tab";
-    send.className = "tab";
-    reject.className = "tab active";
+    statusTabs[0].className = "tab";
+    statusTabs[1].className = "tab";
+    statusTabs[2].className = "tab active";
     approveL.classname = "announceList off";
     sendL.className = "announceList off";
     rejectL.className = "announceList";
+    currentTab = 2;
+}
+);
+
+statusNav.addEventListener('wheel',
+function(e){
+    if(e.wheelDelta < 0){
+        if(currentTab == 0)statusTabs[2].click();
+        else statusTabs[currentTab - 1].click();
+    }
+    else if(e.wheelDelta > 0){
+        if(currentTab == 2)statusTabs[0].click();
+        else statusTabs[currentTab + 1].click();
+
+    }
 }
 );
 
