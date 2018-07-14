@@ -1,0 +1,205 @@
+﻿*{
+    user-select: none;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*scroll bar*/
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffebeb; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 51, 51); 
+}
+
+.off{
+    display: none;
+}
+
+#sb {
+    width: 14vw;
+    background-color: #F5F5F5;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    font-family: Arial;
+}
+
+    #sb h3 {
+        padding: 7% 0;
+        padding-left: 1.5vw;
+        font-size: 1.5vw;
+        font-weight: 600;
+    }
+
+    .sbTab {
+        font-weight: 600;
+        font-size: 1vw;
+        display: block;
+        color: darkred;
+        text-decoration: none;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        padding-left: 1.5vw;
+        padding-right: 1vw;
+        border-top: 0.1vh solid darkgrey;
+        cursor: pointer;
+    }
+    #sb .sbTab.on{
+        background-color:#E9E9E9;
+    }
+
+    #sb div:hover{
+        background-color: rgb(233, 233, 233);
+    }
+
+#Inf {
+    border-bottom: 0.1vh solid darkgrey;
+}
+
+#btn {
+    margin-left: 4vw;
+    margin-top: 55vh;
+    background-color: #F03B3B;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.8vw 1.2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    outline: none;
+    cursor: pointer;
+}
+#btn focus{
+    outline: none;
+    background-color: rgb(230, 58, 58);
+}
+
+/*workplace*/
+#workplace {
+    position: absolute;
+    width: 86vw;
+    height: 100%;
+    right: 0;
+}
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(3vh);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes slide{
+    from{
+        opacity: 0;
+        transform: translateX(5vw);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+#statusTabs, #reqTabs, #proTabs{
+    width: 100%;
+    height: 6.5vh;
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    flex-wrap: nowrap;
+}
+.tab{
+    font-size: 1.5vw;
+    padding: 0.5% 2.7%;
+    border-bottom: 3px solid rgb(231, 231, 231);
+    color: rgb(20, 20, 20);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.tab:hover{
+    background-color:rgb(221, 221, 221);
+    border-bottom: 3px solid rgb(221, 221, 221);
+}
+#status .active{
+    border-bottom: 3px solid rgb(255, 107, 107);
+}
+
+#statusMods{
+    width: 100%;
+    height: 93.5vh;
+}
+.first{
+    position: absolute;
+    width: 70%;
+    height: 93.5%;
+    overflow-y: auto;
+    animation: fadeUp 0.3s forwards ease-out;
+    animation-iteration-count: 1;
+}
+.announceList{
+    position: absolute;
+    width: 70%;
+    height: 93.5%;
+    overflow-y: auto;
+}
+
+#statusDetail{
+    position: absolute;
+    width: 30%;
+    overflow-y: auto;
+    height: 93.5vh;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(192, 192, 192);
+    animation: slide 0.5s forwards ease-out;
+    animation-iteration-count: 1;
+}
+.announce{
+    width: 95%;
+    margin: auto;
+    margin-top: 0.5%;
+    padding: 1%;
+    height: 5%;
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+.subject{
+    font-size: 1.5vw;
+    padding: 1%;
+}
+.status{
+    font-size: 1.5vw;
+    padding: 0.8%;
+}
+.content{
+    font-size: 1.5vw;
+    padding: 0.8%
+}
+
+
+/*request styles*/
+#request .active {
+    border-bottom: 3px solid rgb(255, 107, 107);
+}
+
+
+/*profile styles*/
+#profile .active{
+    border-bottom: 3px solid rgb(255, 107, 107);
+}

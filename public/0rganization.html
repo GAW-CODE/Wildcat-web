@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--meta-->
+    <meta charset="utf-8" />
+    <meta lang="eng-us">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The interface for campus organizations">
+
+    <!--title links-->
+    <title>Organization</title>
+    <link rel="stylesheet" type="text/css" href="css/0rganization.css">
+    
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sb">
+        <h3>Organization Name</h3>
+        <div id="Sta" class="sbTab">Status</div>
+        <div id="Req" class="sbTab">Requests</div>
+        <div id="Inf" class="sbTab">Profile</div>
+        <button id="btn">Logout</button>
+    </div>
+
+    <!-- Page Content -->
+    <div id="workplace">
+        <div id="status" class="module">
+
+        <div id="statusTabs">
+            <div id="approve" class="tab active">
+                Approved
+            </div>
+            <div id="sent" class="tab">
+                Sent
+            </div>
+            <div id="reject" class="tab">
+                Rejected
+            </div>
+        </div>
+        <div id="statusMods">
+            <!--Add announcements into this div-->
+
+            <!--Announce template:
+                <div class="announce"><h1>Subject</h1></div>
+            -->
+            <div id="approveList" class="first">
+                <div class="announce">
+                    <h1>This is a sample a</h1>
+                </div>
+                <div class="announce">
+                    <h1>This is a sample</h1>
+                </div>
+            </div>
+            <div id="sendList" class="announceList off">
+                <div class="announce">
+                    <h1>This is a sample b</h1>
+                </div>
+                <div class="announce">
+                    <h1>This is a sample</h1>
+                </div>
+            </div>
+            <div id="rejectList" class="announceList off">
+                <div class="announce">
+                    <h1>This is a sample c</h1>
+                </div>
+                <div class="announce">
+                    <h1>This is a sample</h1>
+                </div>
+            </div>
+            <!--Someone should restyle statusDetail div-->
+            <div id="statusDetail">
+                <h3 class="subject">Subject:</h3>
+                <p class="status">Status:</p>
+                <p class="content">Content:</p>
+            </div>
+
+        </div>
+
+        </div>
+
+        <div id="request" class="module">
+            <div id="reqTabs">
+                <div id="announcement" class="tab active">
+                    Announcement
+                </div>
+                <div id="event" class="tab">
+                    Event
+                </div>
+            </div>
+        </div>
+
+        <div id="profile" class="module">
+            <div id="proTabs">
+                <div id="View" class="tab active">
+                    View
+                </div>
+                <div id="Edit" class="tab">
+                    Edit
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/0rgNav.js"></script>
+</body>
+</html>
