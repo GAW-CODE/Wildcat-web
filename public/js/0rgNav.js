@@ -30,7 +30,7 @@ Req.addEventListener('click', function () {
 Inf.addEventListener('click', function () {
     status.className = 'module off';
     request.className = 'module off';
-    profile.ClassName = 'module';
+    profile.className = 'module';
     Sta.className = 'sbTab';
     Req.className = 'sbTab';
     Inf.classname = 'sbTab on';
