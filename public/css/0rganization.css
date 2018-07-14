@@ -44,7 +44,7 @@
         font-weight: 600;
     }
 
-    #sb a {
+    #sb div {
         font-weight: 600;
         font-size: 1vw;
         display: block;
@@ -57,7 +57,7 @@
         border-top: 0.1vh solid darkgrey;
     }
 
-    #sb a:hover{
+    #sb div:hover{
         background-color: rgb(233, 233, 233);
     }
 
