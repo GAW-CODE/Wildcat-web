@@ -128,6 +128,7 @@
     padding: 0.5% 2.7%;
     border-bottom: 3px solid rgb(231, 231, 231);
     color: rgb(20, 20, 20);
+    transition-duration: 0.3s;
 }
 .tab:hover{
     background-color:rgb(221, 221, 221);
