@@ -1,0 +1,53 @@
+﻿#sb {
+    width: 14vw;
+    background-color: #F5F5F5;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: black;
+    font-family: Arial;
+}
+
+    #sb h3 {
+        padding-left: 1.5vw;
+        font-size: 1.5vw;
+        font-weight: 600;
+    }
+
+    #sb a {
+        font-weight: 600;
+        font-size: 1vw;
+        display: block;
+        color: darkred;
+        text-decoration: none;
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+        padding-left: 1.5vw;
+        padding-right: 1vw;
+        border-top: 0.1vh solid darkgrey;
+    }
+
+#info {
+    border-bottom: 0.1vh solid darkgrey;
+}
+
+#status {
+    margin-left: 18vw;
+}
+
+#btn {
+    margin-left: 4vw;
+    margin-top: 55vh;
+    background-color: #F03B3B;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.4vw;
+    padding: 0.8vw 1.2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1vw;
+    cursor: pointer;
+}
