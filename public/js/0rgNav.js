@@ -11,8 +11,8 @@ let profile = document.getElementById('profile');
 //Switching page
 Sta.addEventListener('click', function () {
     status.className = 'module';
-    request.classname = 'module off';
-    profile.style.display = 'module off';
+    request.className = 'module off';
+    profile.className = 'module off';
     Sta.className = 'sbTab on';
     Req.className = 'sbTab';
     Inf.classname = 'sbTab';
@@ -20,8 +20,8 @@ Sta.addEventListener('click', function () {
 
 Req.addEventListener('click', function () {
     status.className = 'module off';
-    request.classname = 'module';
-    profile.style.display = 'module off';
+    request.className = 'module';
+    profile.className = 'module off';
     Sta.className = 'sbTab';
     Req.className = 'sbTab on';
     Inf.classname = 'sbTab';
@@ -29,8 +29,8 @@ Req.addEventListener('click', function () {
 
 Inf.addEventListener('click', function () {
     status.className = 'module off';
-    request.classname = 'module off';
-    profile.style.display = 'module';
+    request.className = 'module off';
+    profile.ClassName = 'module';
     Sta.className = 'sbTab';
     Req.className = 'sbTab';
     Inf.classname = 'sbTab on';
