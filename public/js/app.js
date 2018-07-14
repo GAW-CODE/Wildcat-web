@@ -9,39 +9,45 @@ let announce = modules[0];
 let staff = modules[1];
 let calendar = modules [2];
 let map = modules[3];
+let account = modules[4];
 
 //changes the modules per sidebar
-modManage(announce, staff, calendar, map);
+modManage(announce, staff, calendar, map, account);
 for(var i = 0; i < modButtons.length; i++){
     modButtons[i].addEventListener('click', function(e){
         //console.log(e);
         var selection = e.srcElement.innerHTML;
 
         if(selection == modButtons[0].innerHTML){
-            modManage(announce, staff, calendar, map);
+            modManage(announce, staff, calendar, map, account);
             console.log("0 match");
         }
         else if(selection == modButtons[1].innerHTML){
-            modManage(staff, announce, calendar, map);
+            modManage(staff, announce, calendar, map, account);
             console.log("1 match");
         }
         else if(selection == modButtons[2].innerHTML){
-            modManage(calendar, staff, announce, map);
+            modManage(calendar, staff, announce, map, account);
             console.log("2 match");
         }
-        else{
-            modManage(map, staff, calendar, announce);
-            console.log("else");
+        else if(selection == modButtons[3].innerHTML){
+            modManage(map, staff, calendar, announce, account);
+            console.log("3 match");
+        }
+        else if (selection == modButtons[4].innerHTML){
+          modManage(account, staff, calendar, announce, map);
+          console.log("else");
         }
     });
 }
 
 //shows one module, hides the other three
-function modManage(mod0, mod1, mod2, mod3){
+function modManage(mod0, mod1, mod2, mod3, mod4){
     mod0.className = "module";
     mod1.className = "off";
     mod2.className = "off";
     mod3.className = "off";
+    mod4.className = "off";
 }
 
 //Announcements Logic
@@ -137,7 +143,7 @@ function approve(event) {
         });
     })
     .then(() => {
-      FIREBASE_DATABASE.ref('/announcements/').push(announcement); //insert announcement under the "announcement" node 
+      FIREBASE_DATABASE.ref('/announcements/').push(announcement); //insert announcement under the "announcement" node
       // insert announcement under “/announcements” in database
       FIREBASE_DATABASE.ref('/announcementsOrg/'+orgName).push(announcement); //insert announcement under the "announcementOrg" node. Used to interfere with announcements
       // remove announcement from ‘/requests/announcements’ in database
