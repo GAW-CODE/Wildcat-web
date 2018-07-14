@@ -97,5 +97,21 @@ function(e){
 );
 
 //request navagation code
+let announcement = document.getElementById('announcement');
+let event = document.getElementById('event');
+let reqAnnouncement = document.getElementById('reqAnnouncement');
+let reqEvent = document.getElementById('reqEvent');
 
+announcement.addEventListener('click', function () {
+    reqAnnouncement.style.display = 'block';
+    reqEvent.style.display = 'none';
+    announcement.className = 'tab active';
+    event.className = 'tab';
+})
+event.addEventListener('click', function () {
+    reqAnnouncement.style.display = 'none';
+    reqEvent.style.display = 'block';
+    announcement.className = 'tab';
+    event.className = 'tab active';
+})
 //profile navagation code
