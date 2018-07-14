@@ -4,7 +4,7 @@
 let Sta = document.getElementById('Sta');
 let Req = document.getElementById('Req');
 let Inf = document.getElementById('Inf');
-let status = document.getElementById('statusMods');
+let status = document.getElementById('status');
 let request = document.getElementById('request');
 let profile = document.getElementById('profile');
 
