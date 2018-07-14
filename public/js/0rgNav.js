@@ -39,6 +39,46 @@ Inf.addEventListener('click', function () {
 
 
 //status navigation code
+let approve = document.getElementById('approve');
+let send = document.getElementById('sent');
+let reject = document.getElementById('reject');
+let approveL = document.getElementById('approveList');
+let sendL = document.getElementById('sendList');
+let rejectL = document.getElementById('rejectList');
+
+approve.addEventListener('click',
+function(){
+    approve.className = "tab active";
+    send.className = "tab";
+    reject.className = "tab";
+    sendL.className = "announceList off";
+    rejectL.className = "announceList off";
+    approveL.classname = " ";
+    approveL.classname = "announceList";
+}
+);
+
+send.addEventListener('click',
+function(){
+    approve.className = "tab";
+    send.className = "tab active";
+    reject.className = "tab";
+    approveL.classname = "announceList off";
+    sendL.className = "announceList";
+    rejectL.className = "announceList off";
+}
+);
+
+reject.addEventListener('click',
+function(){
+    approve.className = "tab";
+    send.className = "tab";
+    reject.className = "tab active";
+    approveL.classname = "announceList off";
+    sendL.className = "announceList off";
+    rejectL.className = "announceList";
+}
+);
 
 //request navagation code
 
