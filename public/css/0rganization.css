@@ -1,6 +1,7 @@
 ﻿*{
     user-select: none;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .off{
@@ -45,12 +46,6 @@
     border-bottom: 0.1vh solid darkgrey;
 }
 
-#workplace {
-    position: absolute;
-    width: 86vw;
-    right: 0;
-}
-
 #btn {
     margin-left: 4vw;
     margin-top: 55vh;
@@ -72,3 +67,9 @@
     background-color: rgb(230, 58, 58);
 }
 
+/*workplace*/
+#workplace {
+    position: absolute;
+    width: 86vw;
+    right: 0;
+}
