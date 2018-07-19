@@ -67,3 +67,44 @@
 [debug] [2018-07-11T23:48:32.210Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2018-07-14T23:56:16.936Z] ----------------------------------------------------------------------
+[debug] [2018-07-14T23:56:16.939Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kalvin Chang\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
+[debug] [2018-07-14T23:56:16.939Z] CLI Version:   3.19.3
+[debug] [2018-07-14T23:56:16.939Z] Platform:      win32
+[debug] [2018-07-14T23:56:16.939Z] Node Version:  v8.11.2
+[debug] [2018-07-14T23:56:16.940Z] Time:          Sat Jul 14 2018 16:56:16 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:16.940Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-14T23:56:16.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-14T23:56:16.967Z] > authorizing via signed-in user
+[debug] [2018-07-14T23:56:16.970Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-14T23:56:16.970Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/fPtlvjeu4YcpC5c6qaDRiLfeT7RxiyzpzjLPcPir3aXAo_GCq-luJGM-2uALykdZ',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Jul 14 2018 16:56:16 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:17.201Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-14T23:56:17.216Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Jul 14 2018 16:56:17 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:17.916Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-14T23:56:17.916Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/gaw-wildcat-app/tokens  
+  
+ Sat Jul 14 2018 16:56:17 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:18.327Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-14T23:56:18.328Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/gaw-wildcat-app  
+  
+ Sat Jul 14 2018 16:56:18 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:18.741Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Kalvin Chang\Documents\Projects\Wildcat\wildcat-web'...
+[info] 
+[debug] [2018-07-14T23:56:18.745Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/467203906935/clients/_:getWebAppConfig  
+  
+ Sat Jul 14 2018 16:56:18 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-14T23:56:19.244Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
