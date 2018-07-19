@@ -1,0 +1,57 @@
+[debug] [2018-07-19T21:29:17.866Z] ----------------------------------------------------------------------
+[debug] [2018-07-19T21:29:17.874Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\shieuhongl\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-07-19T21:29:17.874Z] CLI Version:   3.18.6
+[debug] [2018-07-19T21:29:17.874Z] Platform:      win32
+[debug] [2018-07-19T21:29:17.875Z] Node Version:  v8.11.3
+[debug] [2018-07-19T21:29:17.875Z] Time:          Thu Jul 19 2018 14:29:17 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:17.875Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-19T21:29:17.897Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-19T21:29:17.898Z] > authorizing via signed-in user
+[debug] [2018-07-19T21:29:17.902Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-19T21:29:17.902Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/uXDyVBqQ8zJk-f8898VX6l1K_v3yYbdsZ_sV026wX4k',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu Jul 19 2018 14:29:17 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:18.280Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T21:29:18.295Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/gaw-wildcat-app  
+  
+ Thu Jul 19 2018 14:29:18 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:18.910Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T21:29:18.911Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/gaw-wildcat-app/tokens  
+  
+ Thu Jul 19 2018 14:29:18 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:19.450Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T21:29:19.452Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/gaw-wildcat-app  
+  
+ Thu Jul 19 2018 14:29:19 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:20.005Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\shieuhongl\Desktop\Wildcat-web'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-19T21:29:21.658Z] Fetching environment
+[debug] [2018-07-19T21:29:21.663Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/467203906935:getServerAppConfig  
+  
+ Thu Jul 19 2018 14:29:21 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:21.664Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/467203906935/clients/_:getWebAppConfig  
+  
+ Thu Jul 19 2018 14:29:21 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-07-19T21:29:22.340Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-19T21:29:22.341Z] Starting @google-cloud/functions-emulator
+[debug] [2018-07-19T21:29:22.365Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+[debug] [2018-07-19T21:29:25.416Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-07-19T21:29:25.822Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-admin'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-admin'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-07-19T21:29:25.823Z] 
