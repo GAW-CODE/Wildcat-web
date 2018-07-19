@@ -91,8 +91,8 @@
                 <input type="text" class="reqTitle" placeholder="Announcement Title" id="announcementTitle">
                 <textarea class="message" name="announcement" id="announcement" rows="7" placeholder="Message"
                  onkeyup="count_up(this);" maxlength="500"></textarea>
-                <span class="tchar">Total Characters:</span>
-                <span class="tchar" id="count1">0</span>
+                <span class="tchar">Characters Left:</span>
+                <span class="tchar" id="count1">500</span>
                 <div class="reqTools" id="sendAnnouncement">
                     <button>send</button>
                 </div>
@@ -100,7 +100,9 @@
             <div id="reqEvent" class="requestSpace hide">
                 <div class="formSpace">
                     <input type="text" class="reqTitle" placeholder="Event Name">
-                    <textarea class="message" name="event" id="event" rows="5" placeholder="Description"></textarea>
+                    <textarea class="message" name="event" id="event" rows="5" placeholder="Description"  onkeyup="count2_up(this);" maxlength="500"></textarea>
+                    <span class="tchar">Characters Left:</span>
+                    <span class="tchar" id="count2">500</span>
                 </div>
                 <div class="reqTools" id="sendEvent">
                     <!--Tools: Calendar, Time, Attach, Map-->
