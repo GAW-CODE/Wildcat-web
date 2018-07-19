@@ -11,7 +11,6 @@
     <!--title links-->
     <title>Organization</title>
     <link rel="stylesheet" type="text/css" href="css/0rganization.css">
-    
 </head>
 <body>
     <!-- Sidebar -->
@@ -90,7 +89,10 @@
             </div>
             <div id="reqAnnouncement">
                 <input type="text" class="reqTitle" placeholder="Announcement Title" id="announcementTitle">
-                <textarea class="message" name="announcement" id="announcement" rows="7" placeholder="Message"></textarea>
+                <textarea class="message" name="announcement" id="announcement" rows="7" placeholder="Message"
+                 onkeyup="count_up(this);" maxlength="500"></textarea>
+                <span class="tchar">Total Characters:</span>
+                <span class="tchar" id="count1">0</span>
                 <div class="reqTools" id="sendAnnouncement">
                     <button>send</button>
                 </div>
@@ -128,5 +130,6 @@
 
     </div>
     <script src="js/0rgNav.js"></script>
+    <script src="js/0rg.js"></script>
 </body>
 </html>
