@@ -14,9 +14,17 @@ h6{
     color: rgb(134, 11, 11);
 }
 #Loginspace {
-    padding-top: 2vh;
+    padding: 2vh;
     width: 50%;
     margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  #Login{
+    width: 40%;
+  }
+  #SignUp{
+    width: 40%;
+  }
 }
 input{
     padding: 1.5%;
@@ -24,7 +32,6 @@ input{
     outline: none;
     border-bottom: 2px solid white;
     transition-duration: 0.3s;
-    width: 40%;
 }
 input:focus{
     border: none;
@@ -45,7 +52,7 @@ button{
     border: none;
     background-color: rgb(226, 28, 28);
     color: white;
-    padding: 0.5% 0;  
+    padding: 0.5% 0;
     border-radius: 7px;
     display: block;
     margin: auto;
