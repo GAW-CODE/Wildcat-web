@@ -75,7 +75,8 @@ function handleAuthStateChanged(user) {
     setTimeout(function() {window.location.href = "404.html";}, 2000);
   }
 }
-
+ 
+//DISPLAY for all announcements on admin page
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
@@ -98,6 +99,7 @@ function displayRequestAnnouncement(announcement) {
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
+//DISPLAY for all events on admin page
 function displayEventAnnouncement(event) {
   let div = document.createElement('div');
   //eventually - display organization's profile pic to the LEFT of the announcement title
