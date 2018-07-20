@@ -19,7 +19,6 @@ input{
     border-bottom: 2px solid lightgrey;
     margin: 0.2%;
     transition-duration: 0.5s;
-    width: 18%;
     text-align: center;
 }
 input:focus{
