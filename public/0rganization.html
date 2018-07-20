@@ -11,6 +11,15 @@
     <!--title links-->
     <title>Organization</title>
     <link rel="stylesheet" type="text/css" href="css/0rganization.css">
+
+    <!--map-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+            integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+            crossorigin=""></script>
+
 </head>
 <body>
     <!-- Sidebar -->
@@ -100,7 +109,7 @@
             <div id="reqEvent" class="requestSpace hide">
                 <div class="formSpace">
                     <input type="text" class="reqTitle" placeholder="Event Name">
-                    <textarea class="message" name="event" id="event" rows="5" placeholder="Description"  onkeyup="count2_up(this);" maxlength="500"></textarea>
+                    <textarea class="message" name="event" id="event" rows="5" placeholder="Description" onkeyup="count2_up(this);" maxlength="500"></textarea>
                     <span class="tchar">Characters Left:</span>
                     <span class="tchar" id="count2">500</span>
                 </div>
@@ -109,11 +118,16 @@
                     <img class="reqTool" src="appAssets/reqCalendar.png" width="50" height="50" title="Set a date">
                     <img class="reqTool" src="appAssets/reqTime.png" width="50" height="50" title="set a timeframe">
                     <img class="reqTool" src="appAssets/reqAttach.png" width="50" height="50" title="attach an image">
-                    <img class="reqTool" src="appAssets/reqMap.png" width="50" height="50" title="set a location">
+                    <img class="reqTool" id="location" src="appAssets/reqMap.png" width="50" height="50" title="set a location">
                     <button>send</button>
                 </div>
-            </div>
+                <div id="mapModal">
+                    <!--map-->
+                    <div id="map" style="width: 50vw; height: 65vh"></div>
+                    <!--location selection-->
 
+                </div>
+            </div>
             <div id="reqEvent" class="requestSpace">
 
             </div>
@@ -129,7 +143,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <script src="js/0rgNav.js"></script>
     <script src="js/0rg.js"></script>
