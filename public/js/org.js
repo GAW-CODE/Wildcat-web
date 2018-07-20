@@ -281,3 +281,36 @@ function handleAuthStateChanged(user) {
     setTimeout(function() {window.location.href = "404.html";}, 2000);
   }
 }
+
+document.getElementById("clearAllRej").addEventListener("click", clear);
+
+function clear(){
+  //gets what organization this is
+  let userId = FIREBASE_AUTH.currentUser.uid;
+  let organizationName;
+  FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function(snapshot) {
+  organizationName = snapshot.val().organization;
+
+  //gets all rejected announcements
+  let rejectedAnn = [];
+  console.log(organizationName)
+  FIREBASE_DATABASE.ref('/requests/rejections/' + organizationName).once('value') //using once b/c we are taking a snapshot once daily
+  	.then((snapshot) => {
+  		let val = snapshot.val();
+  		for (let key in val) {
+  			rejectedAnn.push(key);
+  		}
+  //goes through array and deletes announcements from database
+  for (let i = 0; i < rejectedAnn.length; i++){
+    	FIREBASE_DATABASE.ref('/requests/rejections/' + organizationName + '/' + rejectedAnn[i]).remove();
+      console.log("ann" + i + "deleted");
+  }
+  //removes html for rejected announcements
+  msgs = document.getElementsByClassName("message");
+    let i = 0;
+    while (i < msgs.length){
+    msgs[i].remove();
+    }
+  })
+  })
+}
