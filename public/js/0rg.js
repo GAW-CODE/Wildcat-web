@@ -29,6 +29,12 @@ let map = L.map('map', {
     crs: L.CRS.Simple
 });
 let bounds = [[0, 0], [700, 850]];
-let image = L.imageOverlay('School Map 2.png', bounds).addTo(map);
+let image = L.imageOverlay('sharedAssets/School Map 2.png', bounds).addTo(map);
 
 map.fitBounds(bounds);
+
+//map active
+let btnlocation = document.getElementById('location');
+btnlocation.addEventListener('click', function () {
+    mapModal.style.visibility = 'visible';
+})
