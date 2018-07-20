@@ -92,6 +92,7 @@
 /*workplace*/
 #workplace {
     position: absolute;
+    overflow: hidden;
     width: 86vw;
     height: 100%;
     right: 0;
@@ -266,7 +267,6 @@ textarea.message {
     visibility: hidden;
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 1vw; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
