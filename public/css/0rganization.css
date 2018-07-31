@@ -27,7 +27,6 @@
 
 #sb {
     width: 14vw;
-    background-color: #F5F5F5;
     height: 100%;
     position: absolute;
     top: 0;
@@ -36,41 +35,41 @@
     font-family: Arial;
 }
 
-    #sb h3 {
-        padding: 7% 0;
-        padding-left: 1.5vw;
-        font-size: 1.5vw;
-        font-weight: 600;
-    }
+#sb h3 {
+    padding-top:5vh;
+    font-size: 3.5vw;
+    text-align: center;
+    font-weight: 700;
+}
 
-    .sbTab {
-        font-weight: 600;
-        font-size: 1vw;
-        display: block;
-        color: darkred;
-        text-decoration: none;
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        padding-left: 1.5vw;
-        padding-right: 1vw;
-        border-top: 0.1vh solid darkgrey;
-        cursor: pointer;
-    }
-    #sb .sbTab.on{
-        background-color:#E9E9E9;
-    }
+.sbTab {
+    font-weight: 600;
+    font-size: 1.5vw;
+    display: block;
+    color: darkred;
+    text-decoration: none;
+    margin-top: 10%;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    padding-left: 3vw;
+    cursor: pointer;
+    height:4vh;
+    line-height: 4vh;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
 
-    #sb div:hover{
-        background-color: rgb(233, 233, 233);
-    }
+#sb .sbTab.on{
+    background-color:#E9E9E9;
+}
 
-#Inf {
-    border-bottom: 0.1vh solid darkgrey;
+#sb div:hover{
+    background-color: rgb(233, 233, 233);
 }
 
 #btn {
     margin-left: 4vw;
-    margin-top: 55vh;
+    margin-top: 10vh;
     background-color: #F03B3B;
     color: white;
     font-weight: 600;
@@ -88,7 +87,6 @@
     outline: none;
     background-color: rgb(230, 58, 58);
 }
-
 /*workplace*/
 #workplace {
     position: absolute;
@@ -174,12 +172,12 @@
     animation-iteration-count: 1;
 }
 .announce{
-    width: 100%;
+    width: 91%;
     padding: 3%;
     padding-left: 5%;
-    margin-left: 1%;
     height: 5%;
     border-bottom: rgb(240,59,59) solid;
+    border-left: rgb(240,59,59) solid;
     border-width: 0.1vh;
     cursor: pointer;
 }

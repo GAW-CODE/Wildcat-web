@@ -1,3 +1,4 @@
+//character count
 function count_up(obj){
   var element=document.getElementById('count1');
   element.innerHTML= 500-obj.value.length;
