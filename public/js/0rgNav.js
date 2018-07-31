@@ -15,7 +15,7 @@ Sta.addEventListener('click', function () {
     profile.className = 'module off';
     Sta.className = 'sbTab on';
     Req.className = 'sbTab';
-    Inf.classname = 'sbTab';
+    Inf.className = 'sbTab';
 })
 
 Req.addEventListener('click', function () {
@@ -24,7 +24,7 @@ Req.addEventListener('click', function () {
     profile.className = 'module off';
     Sta.className = 'sbTab';
     Req.className = 'sbTab on';
-    Inf.classname = 'sbTab';
+    Inf.className = 'sbTab';
 })
 
 Inf.addEventListener('click', function () {
@@ -32,8 +32,10 @@ Inf.addEventListener('click', function () {
     request.className = 'module off';
     profile.className = 'module';
     Sta.className = 'sbTab';
+    console.log("yes");
+    Inf.className = 'sbTab on';
+    console.log(Inf);
     Req.className = 'sbTab';
-    Inf.classname = 'sbTab on';
 })
 
 
