@@ -21,7 +21,7 @@
             crossorigin=""></script>
 
 </head>
-<body>
+<body onContextMenu="return false;">
     <div id="mapModal">
         <!--map-->
         <div class="map" id="map" style="width: 70vw; height: 100vh"></div>
@@ -115,7 +115,7 @@
             <ul class="off"id="otherGym">Gym</ul>
             <ul class="off"id="otherMC">Media Center</ul>
             <ul class="off"id="otherBook">Book Room</ul>
-</div>
+          </div>
         <!--location selection-->
         </div>
     </div>
@@ -130,19 +130,18 @@
     <!-- Page Content -->
     <div id="workplace">
         <div id="status" class="module">
-
-            <div id="statusTabs">
-                <div id="approve" class="tab active">
-                    Approved
-                </div>
-                <div id="sent" class="tab">
-                    Sent
-                </div>
-                <div id="reject" class="tab">
-                    Rejected
-                </div>
-            </div>
             <div id="statusMods">
+              <div id="statusTabs">
+                  <div id="approve" class="tab active">
+                      Approved
+                  </div>
+                  <div id="sent" class="tab">
+                      Sent
+                  </div>
+                  <div id="reject" class="tab">
+                      Rejected
+                  </div>
+              </div>
                 <!--Add announcements into this div-->
                 <!--Announce template:
                     <div class="announce"><h1>Subject</h1></div>

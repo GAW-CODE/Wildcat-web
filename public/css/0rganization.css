@@ -119,7 +119,7 @@
 #statusTabs, #reqTabs, #proTabs{
     width: 100%;
     height: 6.5vh;
-    background-color: rgb(231, 231, 231);
+    background-color: #f3f3f3;
     display: flex;
     flex-wrap: nowrap;
 }
@@ -140,7 +140,7 @@
 }
 
 #statusMods{
-    width: 100%;
+    width: 86vw;
     height: 93.5vh;
 }
 .first{
@@ -153,7 +153,6 @@
 }
 .announceList{
     position: absolute;
-    width: 70%;
     height: 93.5%;
     overflow-y: auto;
 }
@@ -166,21 +165,21 @@
     right: 0;
     bottom: 0;
     background-color: white;
-    border-left: rgb(240,59,59) solid;
-    border-width: 0.1vw;
-    padding-left:1vw;
+    padding-left: 3%;
+    box-sizing: border-box;
     animation: slide 0.5s forwards ease-out;
     animation-iteration-count: 1;
 }
 .announce{
-    width: 91%;
-    padding: 3%;
+    width: 92%;
+    padding: 1.1%;
     padding-left: 5%;
-    height: 5%;
-    border-bottom: rgb(240,59,59) solid;
-    border-left: rgb(240,59,59) solid;
+    height: fit-content;
+    border:  rgb(240,59,59) solid;
     border-width: 0.1vh;
     cursor: pointer;
+    margin: auto;
+    margin-top: 3.5%;
 }
 
 .announce:hover{

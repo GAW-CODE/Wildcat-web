@@ -16,7 +16,7 @@ Sta.addEventListener('click', function () {
     Sta.className = 'sbTab on';
     Req.className = 'sbTab';
     Inf.classname = 'sbTab';
-})
+});
 
 Req.addEventListener('click', function () {
     status.className = 'module off';
@@ -25,7 +25,7 @@ Req.addEventListener('click', function () {
     Sta.className = 'sbTab';
     Req.className = 'sbTab on';
     Inf.classname = 'sbTab';
-})
+});
 
 Inf.addEventListener('click', function () {
     status.className = 'module off';
@@ -34,7 +34,7 @@ Inf.addEventListener('click', function () {
     Sta.className = 'sbTab';
     Req.className = 'sbTab';
     Inf.classname = 'sbTab on';
-})
+});
 
 
 
