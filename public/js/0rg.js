@@ -1,3 +1,4 @@
+//character count
 function count_up(obj){
   var element=document.getElementById('count1');
   element.innerHTML= 500-obj.value.length;
@@ -942,6 +943,7 @@ other.addEventListener('click', function () {
         bookRoom.className = 'off';
     }
 });
+<<<<<<< HEAD
 //orginal
 var x = 20;
 var y = 40;
@@ -1362,3 +1364,5 @@ function addMarker(x, y) {
     marker = L.latLng([x, y]);
     L.marker(marker).addTo(map);
 }
+=======
+>>>>>>> 50d99fa7a3421075bf6ccebbf02442a0a3746c91

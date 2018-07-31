@@ -21,11 +21,12 @@
             crossorigin=""></script>
 
 </head>
-<body>
+<body onContextMenu="return false;">
     <div id="mapModal">
         <!--map-->
         <div class="map" id="map" style="width: 70vw; height: 100vh"></div>
         <div class="mapbar" id="mapbar">
+<<<<<<< HEAD
             <div id="close">&times;</div>
             <h3>Select the location:</h3>
             <div class="blockbar" id="blockbar">
@@ -123,29 +124,27 @@
     </div>
     <!-- Sidebar -->
     <div id="sb">
-        <h3>Organization Name</h3>
-        <div id="Sta" class="sbTab">Status</div>
+        <h3>CODE</h3>
+        <div id="Sta" class="sbTab on">Status</div>
         <div id="Req" class="sbTab">Requests</div>
         <div id="Inf" class="sbTab">Profile</div>
         <button id="btn">Logout</button>
     </div>
-
     <!-- Page Content -->
     <div id="workplace">
         <div id="status" class="module">
-
-            <div id="statusTabs">
-                <div id="approve" class="tab active">
-                    Approved
-                </div>
-                <div id="sent" class="tab">
-                    Sent
-                </div>
-                <div id="reject" class="tab">
-                    Rejected
-                </div>
-            </div>
             <div id="statusMods">
+              <div id="statusTabs">
+                  <div id="approve" class="tab active">
+                      Approved
+                  </div>
+                  <div id="sent" class="tab">
+                      Sent
+                  </div>
+                  <div id="reject" class="tab">
+                      Rejected
+                  </div>
+              </div>
                 <!--Add announcements into this div-->
                 <!--Announce template:
                     <div class="announce"><h1>Subject</h1></div>
