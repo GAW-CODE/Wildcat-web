@@ -283,15 +283,20 @@ textarea.message {
     border-left: 0.2vw solid #F03B3B;
     float: right;
     background-color: white;
-    width: 29.36vw;
+    width: 28.5vw;
     height: 100vh;
 }
     .mapbar h3 {
         font-size: 2vw;
-        font-weight: 600;
-        font-family: Cerebri Sans,sans-serif !important;
+        font-weight: 300;
         padding: 1vw;
+        font-family: Cerebri Sans,sans-serif !important;
     }
+#close {
+    font-size: 2vw;
+    float:right;
+    padding-right: 0.5vw;
+}
 .blockbar {
     width: 27vw;
     display: grid;
@@ -319,4 +324,18 @@ textarea.message {
     border-radius: 1vw;
     border-bottom: 0.2vw solid #008DD5;
     font-weight: 600;
+}
+#msub {
+    background-color: #00FF7F;
+    padding-top: 2vh;
+    margin-left: 12vw;
+    width: 5vw;
+    padding-bottom: 1.5vh;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 1vw;
+    border-bottom: 0.2vw solid #00E572;
+    font-weight: 600;
+    position: absolute;
+    bottom: 2vh;
 }
