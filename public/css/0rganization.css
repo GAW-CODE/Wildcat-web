@@ -33,6 +33,8 @@
     left: 0;
     color: black;
     font-family: Arial;
+    padding-right: 0.5%;
+    box-sizing: border-box;
 }
 
 #sb h3 {
@@ -40,18 +42,17 @@
     font-size: 3.5vw;
     text-align: center;
     font-weight: 700;
+    padding-bottom: 10%;
 }
 
 .sbTab {
     font-weight: 600;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     display: block;
     color: darkred;
     text-decoration: none;
-    margin-top: 10%;
-    padding-top: 2.5vh;
-    padding-bottom: 2.5vh;
-    padding-left: 3vw;
+    padding: 2%;
+    margin: 0.5vw 0;
     cursor: pointer;
     height:4vh;
     line-height: 4vh;
