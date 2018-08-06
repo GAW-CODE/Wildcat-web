@@ -153,6 +153,7 @@
 }
 .announceList{
     position: absolute;
+    width: 70%;
     height: 93.5%;
     overflow-y: auto;
 }
@@ -165,7 +166,8 @@
     right: 0;
     bottom: 0;
     background-color: white;
-    padding-left: 3%;
+    padding-left: 2vw;
+    padding-top: 3vh;
     box-sizing: border-box;
     animation: slide 0.5s forwards ease-out;
     animation-iteration-count: 1;
@@ -188,16 +190,25 @@
 }
 
 .subject{
-    font-size: 1.5vw;
+    font-size: 2vw;
     padding: 1%;
+    border-bottom: solid black 0.5vh;
+    width: 40%;
+    white-space: nowrap;
+}
+.subject p{
+  white-space: nowrap;
+
 }
 .status{
     font-size: 1.5vw;
     padding: 0.8%;
+    text-decoration-line: underline;
 }
 .content{
     font-size: 1.5vw;
-    padding: 0.8%
+    padding: 0.8%;
+    text-decoration-line: underline;
 }
 
 
@@ -207,38 +218,50 @@
 }
 input.reqTitle {
     display: block;
+    height: 7vh;
     width: 80%;
     padding: 0.5%;
     margin: auto;
     margin-bottom: 1.2%;
-    font-size: 0.78vw;
+    margin-top: 6.5vh;
+    font-size: 4vh;
     border: none;
     outline: none;
     color: rgb(19, 19, 19);
-    border-bottom: 3px solid rgb(255, 236, 236);
+    border-bottom: 3px solid rgb(231, 173, 173);
     transition-duration: 0.2s;
 }
 
-    input.reqTitle:focus {
-        border-bottom: 3px solid rgb(255, 53, 53);
-    }
+input.reqTitle:focus {
+    border-bottom: 3px solid rgb(255, 107, 107);
+}
+
 textarea.message {
     display: block;
     width: 80%;
+    height: 33vh;
     padding: 0.5%;
     box-sizing: border-box;
     margin: auto;
-    border: 2px solid rgb(255, 236, 236);
+    margin-top: 7vh;
+    border: 2px solid rgb(231, 173, 173);
     outline: none;
     color: rgb(19, 19, 19);
-    font-size: 0.78vw;
+    font-size: 4vh;
     transition-duration: 0.2s;
     resize: none;
 }
 
-    textarea.message:focus {
-        border: 2px solid rgb(255, 53, 53);
-    }
+textarea.message:focus {
+    border: 2px solid rgb(255, 107, 107);
+}
+
+.tchar{
+    margin-top: 3vh;
+    font-size: 3vh;
+    color: rgb(19, 19, 19);
+}
+
 #reqEvent {
     display:none;
 }
