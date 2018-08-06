@@ -79,8 +79,11 @@ function handleAuthStateChanged(user) {
 //DISPLAY for all announcements on admin page
 function displayRequestAnnouncement(announcement) {
   let div = document.createElement('div');
+  let fullDate=announcement.currentTime;
+  let convertDate=new Date(fullDate);
   //eventually - display organization's profile pic to the LEFT of the announcement title
-  let domString = `<div class="req">
+  let domString = 
+  `<div class="req">
       <div class="reqMeta">
         <h3 style="padding: 2%;">${announcement.title}</h3>
         <div style="padding: 2%;"><img src="appAssets/approve.png"
@@ -91,11 +94,13 @@ function displayRequestAnnouncement(announcement) {
         </div>
         </div>
         <div class="descHide">
-        <p style="padding: 2%;">${announcement.message}</p>
+        <p style="padding: 2%;">${"Message : "} "${announcement.message}"</p>
+        <p style="padding: 2%;">${announcement.orgType} : "${announcement.org}"</p>
+        <p style="padding: 2%;">Date : ${convertDate.toLocaleDateString()}</p>
 
       </div>
 
-    </div>`;
+  </div>`;
   div.innerHTML = domString;
   requestList.appendChild(div.firstChild);
 }
