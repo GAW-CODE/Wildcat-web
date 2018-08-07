@@ -1359,7 +1359,21 @@ bookRoom.addEventListener('click', function () {
     loca.push("bookRoom");
 });
 
+
 function addMarker(x, y) {
     marker = L.latLng([x, y]);
     L.marker(marker).addTo(map);
 }
+
+//marker aren't able to remove at the current
+let close = document.getElementById('close');
+close.addEventListener('click', function () {
+    mapModal.style.visibility = 'hidden';
+        loca = [];
+});
+
+let msub = document.getElementById('msub');
+
+msub.addEventListener('click', function () {
+    mapModal.style.visibility = 'hidden';
+})
