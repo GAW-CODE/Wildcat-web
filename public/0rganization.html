@@ -97,7 +97,7 @@
                     <button>send</button>
                 </div>
             </div>
-            <div id="reqEvent" class="requestSpace hide">
+            <div id="reqEvent" class="requestSpace">
                 <div class="formSpace">
                     <input type="text" class="reqTitle" placeholder="Event Name">
                     <textarea class="message" name="event" id="event" rows="5" placeholder="Description"></textarea>
@@ -106,7 +106,10 @@
                     <!--Tools: Calendar, Time, Attach, Map-->
                     <img class="reqTool" src="appAssets/reqCalendar.png" width="50" height="50" title="Set a date">
                     <img class="reqTool" src="appAssets/reqTime.png" width="50" height="50" title="set a timeframe">
-                    <img class="reqTool" src="appAssets/reqAttach.png" width="50" height="50" title="attach an image">
+                    <label for="uploadFile" class="reqTool">
+                        <i class="fa fa-cloud-upload"></i><img class="reqTool" id="fileButton" src="appAssets/reqAttach.png" width="50" height="50" title="attach an image" />
+                    </label>
+                    <input type="file" class="reqTool" name="fileToUpload" id="uploadFile" accept=".png, .jpeg, .pdf"/>
                     <img class="reqTool" src="appAssets/reqMap.png" width="50" height="50" title="set a location">
                     <button>send</button>
                 </div>
@@ -129,6 +132,11 @@
         </div>
 
     </div>
+
+    <script src="/__/firebase/4.1.3/firebase.js"></script>
+    <script src="/__/firebase/init.js">
+
+    </script>
     <script src="js/0rgNav.js"></script>
     <script src="js/0rg.js"></script>
 </body>

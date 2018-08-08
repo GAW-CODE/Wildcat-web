@@ -14,12 +14,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #ffebeb; 
+    background: #ffebeb;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 51, 51); 
+    background: rgb(255, 51, 51);
 }
 
 .off{
@@ -239,6 +239,7 @@ textarea.message {
     margin: auto;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
     .reqTools button {
@@ -250,6 +251,7 @@ textarea.message {
         border: none;
         outline: none;
         height: 50px;
+        cursor:pointer;
     }
 
         .reqTools button:active {
@@ -258,6 +260,12 @@ textarea.message {
 
 .reqTool {
     padding: 0.3%;
+}
+input[type="file"] {
+    display: none;
+}
+label{
+  cursor: pointer;
 }
 /*profile styles*/
 #profile .active{
