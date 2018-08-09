@@ -270,6 +270,7 @@ textarea.message:focus {
     margin: auto;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
     .reqTools button {
@@ -281,6 +282,7 @@ textarea.message:focus {
         border: none;
         outline: none;
         height: 50px;
+        cursor:pointer;
     }
 
         .reqTools button:active {
@@ -289,6 +291,12 @@ textarea.message:focus {
 
 .reqTool {
     padding: 0.3%;
+}
+input[type="file"] {
+    display: none;
+}
+label{
+  cursor: pointer;
 }
 /*profile styles*/
 #profile .active{
