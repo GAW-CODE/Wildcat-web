@@ -18,10 +18,9 @@
   	<meta name="msapplication-starturl" content="/index.html">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<script src="js/stay_standalone.js" type="text/javascript" charset="utf-8"></script>
-  	<script src="scroll.js" type="text/javascript" charset="utf-8"></script>
 
  	 	<!--links-->
- 	 	<link rel="stylesheet" type="text/css" href="css/school-archive.css">
+ 	 	<link rel="stylesheet" type="text/css" href="school-archive.css">
  	 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
  		<!--browser-->
  		<title>School Archive</title>
@@ -35,48 +34,23 @@
  				<input type="text" onkeyup="myFunction()" placeholder="Search for past announcements...">	
  				<button type="submit"><i class="fa fa-search"></i></button>
    			</form>
- 		</div>
-
-		<table width="100%"; border="0"; cellspacing="0"; cellpadding="0">
-				<tr>
-					<th style="background-color:#cc0000ff; height:40px";><font color="white"><font size="5">March</font></font></th>
-				</tr>
-				<tr>
-					<td style="height:100px">This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<td style="height:100px"> This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<th style="background-color:#cc0000ff; height:40px";><font color="white"><font size="5">February</font></font></th>
-				</tr>
-				<tr>
-					<td style="height:100px">This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<td style="height:100px"> This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<th style="background-color:#cc0000ff; height:40px";><font color="white"><font size="5">January</font></font></th>
-				</tr>
-				<tr>
-					<td style="height:100px">This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<td style="height:100px"> This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<th style="background-color:#cc0000ff; height:40px";><font color="white"><font size="5">December</font></font></th>
-				</tr>
-				<tr>
-					<td style="height:100px">This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<td style="height:100px"> This is where the announcement goes.</td>
-				</tr>
-				<tr>
-					<td style="height:100px">This is where the announcement goes.<td>
-				</tr>
-		</table>
+		 </div>
+		 <div id="area">
+			<div class = "month">January</div>
+			<div class = "month">February</div>
+			<div class = "month">March</div>
+			<div class = "month">April</div>
+			<div class = "month">May</div>
+			<div class = "month">June</div>
+			<div class = "month">July</div>
+			<div class = "month">August</div>
+			<div class = "month">September</div>
+			<div class = "month">October</div>
+			<div class = "month">November</div>
+			<div class = "month" id="lastMonth">December</div>
+		</div>
+		<script src="/__/firebase/4.1.3/firebase.js"></script>
+		<script src="/__/firebase/init.js"></script>
+		<script src="school-archive.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
