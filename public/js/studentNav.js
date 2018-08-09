@@ -9,6 +9,7 @@ modules use .off
 nav use .active
 */
 
+let nav = document.getElementById('nav');
 let announce = document.getElementById('nav-a');
 let announces = document.getElementsByClassName('a');
 let announceBody = document.getElementById('announce');
@@ -46,6 +47,15 @@ function(){
     announceBody.classList.add("off");
     directBody.classList.remove("off");
 });
+nav.addEventListener('wheel',
+function(e){
+    if(e.deltaY > 0){
+        direct.click();
+    }
+    else if(e.deltaY < 0){
+        announce.click();
+    }
+});
 
 //between annoucements
 for(let i = 0; i < announces.length; i++){
@@ -61,6 +71,7 @@ for(let i = 0; i < announces.length; i++){
 );
 }
 
+
 //between directories
 for(let i = 0; i < directs.length; i++){
     directs[i].addEventListener('click',
@@ -72,3 +83,12 @@ for(let i = 0; i < directs.length; i++){
     }
 );
 }
+
+//mobile scrolling on local navigation
+let sidescroller = document.getElementById('sections');
+sidescroller.addEventListener('wheel',
+function(e){
+    sidescroller.scrollLeft = e.deltaY;
+});
+
+//computer scrolling on local navigation
