@@ -13,12 +13,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #ffebeb; 
+    background: #ffebeb;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 51, 51); 
+    background: rgb(255, 51, 51);
 }
 
 .off{
@@ -27,50 +27,50 @@
 
 #sb {
     width: 14vw;
-    background-color: #F5F5F5;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     color: black;
     font-family: Arial;
+    padding-right: 0.5%;
+    box-sizing: border-box;
 }
 
-    #sb h3 {
-        padding: 7% 0;
-        padding-left: 1.5vw;
-        font-size: 1.5vw;
-        font-weight: 600;
-    }
+#sb h3 {
+    padding-top:5vh;
+    font-size: 3.5vw;
+    text-align: center;
+    font-weight: 700;
+    padding-bottom: 10%;
+}
 
-    .sbTab {
-        font-weight: 600;
-        font-size: 1vw;
-        display: block;
-        color: darkred;
-        text-decoration: none;
-        padding-top: 2.5vh;
-        padding-bottom: 2.5vh;
-        padding-left: 1.5vw;
-        padding-right: 1vw;
-        border-top: 0.1vh solid darkgrey;
-        cursor: pointer;
-    }
-    #sb .sbTab.on{
-        background-color:#E9E9E9;
-    }
+.sbTab {
+    font-weight: 600;
+    font-size: 1.7vw;
+    display: block;
+    color: darkred;
+    text-decoration: none;
+    padding: 2%;
+    margin: 0.5vw 0;
+    cursor: pointer;
+    height:4vh;
+    line-height: 4vh;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
 
-    #sb div:hover{
-        background-color: rgb(233, 233, 233);
-    }
+#sb .sbTab.on{
+    background-color:rgb(243, 243, 243);
+}
 
-#Inf {
-    border-bottom: 0.1vh solid darkgrey;
+#sb div:hover{
+    background-color: rgb(233, 233, 233);
 }
 
 #btn {
     margin-left: 4vw;
-    margin-top: 55vh;
+    margin-top: 10vh;
     background-color: #F03B3B;
     color: white;
     font-weight: 600;
@@ -88,7 +88,6 @@
     outline: none;
     background-color: rgb(230, 58, 58);
 }
-
 /*workplace*/
 #workplace {
     position: absolute;
@@ -120,7 +119,7 @@
 #statusTabs, #reqTabs, #proTabs{
     width: 100%;
     height: 6.5vh;
-    background-color: rgb(231, 231, 231);
+    background-color: #f3f3f3;
     display: flex;
     flex-wrap: nowrap;
 }
@@ -141,7 +140,7 @@
 }
 
 #statusMods{
-    width: 100%;
+    width: 86vw;
     height: 93.5vh;
 }
 .first{
@@ -166,30 +165,50 @@
     height: 93.5vh;
     right: 0;
     bottom: 0;
-    background-color: rgb(192, 192, 192);
+    background-color: white;
+    padding-left: 2vw;
+    padding-top: 3vh;
+    box-sizing: border-box;
     animation: slide 0.5s forwards ease-out;
     animation-iteration-count: 1;
 }
 .announce{
-    width: 95%;
-    margin: auto;
-    margin-top: 0.5%;
-    padding: 1%;
-    height: 5%;
-    background-color: rgb(238, 238, 238);
+    width: 92%;
+    padding: 1.1%;
+    padding-left: 5%;
+    height: fit-content;
+    border:  rgb(240,59,59) solid;
+    border-width: 0.1vh;
     cursor: pointer;
+    margin: auto;
+    margin-top: 3.5%;
 }
+
+.announce:hover{
+  background-color: #f7f7f7;
+  transition-duration: 0.4s;
+}
+
 .subject{
-    font-size: 1.5vw;
+    font-size: 2vw;
     padding: 1%;
+    border-bottom: solid black 0.5vh;
+    width: 40%;
+    white-space: nowrap;
+}
+.subject p{
+  white-space: nowrap;
+
 }
 .status{
     font-size: 1.5vw;
     padding: 0.8%;
+    text-decoration-line: underline;
 }
 .content{
     font-size: 1.5vw;
-    padding: 0.8%
+    padding: 0.8%;
+    text-decoration-line: underline;
 }
 
 
@@ -199,38 +218,50 @@
 }
 input.reqTitle {
     display: block;
+    height: 7vh;
     width: 80%;
     padding: 0.5%;
     margin: auto;
     margin-bottom: 1.2%;
-    font-size: 0.78vw;
+    margin-top: 6.5vh;
+    font-size: 4vh;
     border: none;
     outline: none;
     color: rgb(19, 19, 19);
-    border-bottom: 3px solid rgb(255, 236, 236);
+    border-bottom: 3px solid rgb(231, 173, 173);
     transition-duration: 0.2s;
 }
 
-    input.reqTitle:focus {
-        border-bottom: 3px solid rgb(255, 53, 53);
-    }
+input.reqTitle:focus {
+    border-bottom: 3px solid rgb(255, 107, 107);
+}
+
 textarea.message {
     display: block;
     width: 80%;
+    height: 33vh;
     padding: 0.5%;
     box-sizing: border-box;
     margin: auto;
-    border: 2px solid rgb(255, 236, 236);
+    margin-top: 7vh;
+    border: 2px solid rgb(231, 173, 173);
     outline: none;
     color: rgb(19, 19, 19);
-    font-size: 0.78vw;
+    font-size: 4vh;
     transition-duration: 0.2s;
     resize: none;
 }
 
-    textarea.message:focus {
-        border: 2px solid rgb(255, 53, 53);
-    }
+textarea.message:focus {
+    border: 2px solid rgb(255, 107, 107);
+}
+
+.tchar{
+    margin-top: 3vh;
+    font-size: 3vh;
+    color: rgb(19, 19, 19);
+}
+
 #reqEvent {
     display:none;
 }
@@ -239,6 +270,7 @@ textarea.message {
     margin: auto;
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
     .reqTools button {
@@ -250,6 +282,7 @@ textarea.message {
         border: none;
         outline: none;
         height: 50px;
+        cursor:pointer;
     }
 
         .reqTools button:active {
@@ -258,6 +291,12 @@ textarea.message {
 
 .reqTool {
     padding: 0.3%;
+}
+input[type="file"] {
+    display: none;
+}
+label{
+  cursor: pointer;
 }
 /*profile styles*/
 #profile .active{
@@ -283,15 +322,20 @@ textarea.message {
     border-left: 0.2vw solid #F03B3B;
     float: right;
     background-color: white;
-    width: 29.36vw;
+    width: 28.5vw;
     height: 100vh;
 }
     .mapbar h3 {
         font-size: 2vw;
-        font-weight: 600;
-        font-family: Cerebri Sans,sans-serif !important;
+        font-weight: 300;
         padding: 1vw;
+        font-family: Cerebri Sans,sans-serif !important;
     }
+#close {
+    font-size: 2vw;
+    float:right;
+    padding-right: 0.5vw;
+}
 .blockbar {
     width: 27vw;
     display: grid;
@@ -319,4 +363,18 @@ textarea.message {
     border-radius: 1vw;
     border-bottom: 0.2vw solid #008DD5;
     font-weight: 600;
+}
+#msub {
+    background-color: #00FF7F;
+    padding-top: 2vh;
+    margin-left: 12vw;
+    width: 5vw;
+    padding-bottom: 1.5vh;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 1vw;
+    border-bottom: 0.2vw solid #00E572;
+    font-weight: 600;
+    position: absolute;
+    bottom: 2vh;
 }

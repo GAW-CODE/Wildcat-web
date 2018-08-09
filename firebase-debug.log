@@ -1,4 +1,4 @@
-[debug] [2018-07-23T04:04:01.186Z] ----------------------------------------------------------------------
+﻿[debug] [2018-07-23T04:04:01.186Z] ----------------------------------------------------------------------
 [debug] [2018-07-23T04:04:01.189Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Kalvin Chang\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve --only hosting
 [debug] [2018-07-23T04:04:01.189Z] CLI Version:   3.19.3
 [debug] [2018-07-23T04:04:01.189Z] Platform:      win32
