@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--meta-->
+    <meta charset="utf-8">
+    <meta lang="eng-US">
+    <meta name="description" content="student announcements and directory">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    
+    <!--links-->
+    <link rel="icon" href="sharedAssets/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/student.css">
+</head>
+
+<body>
+    <!--search bar:
+    appears at the top for mobile and stationary
+    -->
+    <div id="head">
+        <div id="searcher">
+            <!--search icon-->
+            <img id="search-enter"src="#">
+            <input id="keywords" placeholder="Enter Keywords"> 
+            <!--settings or logout button-->    
+        </div>
+        <img src="#" id="logout">
+    </div>
+
+    <!--locale navigation-->
+    <div id="sections">
+        <div id="wrap">
+            <div class="section a on" id="s-admin"><img src="#"><p>Admin</p></div>
+            <div class="section a" id="s-guidance"><img src="#"><p>Guidance</p></div>
+            <div class="section a" id="s-asb"><img src="#"><p>ASB</p></div>
+            <div class="section a" id="s-campus"><img src="#"><p>Campus</p></div>
+            <div class="section a" id="s-athlete"><img src="#"><p>Athletics</p></div>
+            <div class="section a" id="s-funds"><img src="#"><p>Fundraisers</p></div>
+
+            <div class="section d off on" id="s-staff"><img src="#"><p>Academics</p></div>
+            <div class="section d off" id="s-group"><img src="#"><p>Groups</p></div>
+            <div class="section d off" id="s-sport"><img src="#"><p>Sports</p></div>
+            <div class="section d off" id="s-club"><img src="#"><p>Clubs</p></div>
+            <div class="section d off" id="s-map"><img src="#"><p>Map</p></div>
+        </div>
+    </div>
+    <!--body:
+        center for mobile
+        align right & bottom for stationary
+    -->
+    <div id="view">
+        <div id="announce">
+            
+            <!--announcement template:
+            <div class="announcement">
+                <h2>Replace With a Title</h2>
+                <p class="stamp">Month/Day/Year (two spaces) hour:minute+meridiem</p>
+                <p>message goes here</p>
+                <p class="expire">Expires: Month/Day</p>
+            </div>
+            ****Note that the expiration SHOULD NOT be generated if it expires at midnight-->
+            
+            <div class="message-box" id="admin">
+
+                <!--REMOVE WHEN APPENDING WORKS-->
+                <div class="announcement">
+                    <h2>Happy Announcement</h2>
+                    <p class="stamp">8/8/18  3:00pm</p>
+                    <p>This is a sample from the admin side.</p>
+                </div>
+            </div>
+
+            <div class="message-box off" id="guidance"></div>
+            <div class="message-box off" id="asb"></div>
+            <div class="message-box off" id="campus">
+
+                <!--REMOVE WHEN APPENDING WORKS-->
+                <div class="announcement">
+                    <h2>Less Happy Announcement</h2>
+                    <p class="stamp">8/0/18  4:00pm</p>
+                    <p>This is a sample from the campus side. Petition for CAC hike.</p>
+                    <p class="expire">Expires: 9/23</p>
+                </div>
+            </div>
+            <div class="message-box off" id="athlete"></div>
+            <div class="message-box off" id="funds"></div>
+
+        </div>
+        <div id="directory" class="off">
+
+        </div>
+
+        <!--This is for displaying search results-->
+        <div id="result">
+
+        </div>
+    </div>
+
+    <!--navigation:
+        appears at the bottom for mobile
+        align left & bottom for stationary
+    -->
+    <div id="nav">
+        <p id="nav-a" class="nav active">Announcement</p>
+        <p id="nav-d" class="nav">Directory</p>
+    </div>
+
+    <!--scripts, READ DOCS-->
+
+    <!--ALL student navigation-->
+    <script type="text/javascript" src="js/studentNav.js"></script>
+    <!--popup tips TODO-->
+    <!--search query TODO-->
+    <!--firebase files below here TODO-->
+</body>
+
+</html>
