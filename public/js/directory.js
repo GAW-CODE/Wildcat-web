@@ -188,14 +188,26 @@ function toggleSearchBar() {
 function search() {
 	console.log('search query');
 	let filter = searchBar.value.toUpperCase();
+
+  let shown = {}; "QWERTYUIOPASDFGHJKLZXCVBNM".split("").forEach(function(e){shown[e] = 1;});
+
 	for (let i = 0; i < contactCardsAll.length; i++) {
   	let annText = contactCardsAll[i].getElementsByTagName('p')[0].innerHTML;
   	if (annText.toUpperCase().indexOf(filter) != -1) { //match found
   		contactCardsAll[i].style.display = '';
   		console.log(filter);
       contactCardsAll[i].parentNode.className = 'show';
+      contactCardsAll[i].innerHTML.split('').forEach(function(e){delete shown[e];});
   	} else {
   		contactCardsAll[i].style.display = 'none';
   	}
 	}
+
+  // https://stackoverflow.com/questions/222841/most-efficient-way-to-convert-an-htmlcollection-to-an-array
+  const letters = Array.from(document.getElementsByClassName("letters"));
+  // unhide letters
+  letters.forEach(function(e){ e.removeAttribute('hidden'); });
+  letters.forEach(function(e){
+    if(shown[e.innerHTML.split(">")[1][0]]) e.setAttribute('hidden', 'true')
+  });
 }

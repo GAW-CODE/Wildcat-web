@@ -15,8 +15,8 @@ Sta.addEventListener('click', function () {
     profile.className = 'module off';
     Sta.className = 'sbTab on';
     Req.className = 'sbTab';
-    Inf.classname = 'sbTab';
-})
+    Inf.className = 'sbTab';
+});
 
 Req.addEventListener('click', function () {
     status.className = 'module off';
@@ -24,8 +24,8 @@ Req.addEventListener('click', function () {
     profile.className = 'module off';
     Sta.className = 'sbTab';
     Req.className = 'sbTab on';
-    Inf.classname = 'sbTab';
-})
+    Inf.className = 'sbTab';
+});
 
 Inf.addEventListener('click', function () {
     status.className = 'module off';
@@ -33,8 +33,8 @@ Inf.addEventListener('click', function () {
     profile.className = 'module';
     Sta.className = 'sbTab';
     Req.className = 'sbTab';
-    Inf.classname = 'sbTab on';
-})
+    Inf.className = 'sbTab on';
+});
 
 
 
@@ -46,44 +46,43 @@ let sendL = document.getElementById('sendList');
 let rejectL = document.getElementById('rejectList');
 let currentTab = 0;
 statusTabs[0].addEventListener('click',
-function(){
-    statusTabs[0].className = "tab active";
-    statusTabs[1].className = "tab";
-    statusTabs[2].className = "tab";
-    sendL.className = "announceList off";
-    rejectL.className = "announceList off";
-    approveL.classname = " ";
-    approveL.classname = "announceList";
-    currentTab = 0;
-}
-);
+  function(){
+      statusTabs[0].className = "tab active";
+      statusTabs[1].className = "tab";
+      statusTabs[2].className = "tab";
+      approveL.className = "first";
+      sendL.className = "off";
+      rejectL.className = "off";
+      currentTab = 0;
+  }
+)
 
 statusTabs[1].addEventListener('click',
-function(){
-    statusTabs[0].className = "tab";
-    statusTabs[1].className = "tab active";
-    statusTabs[2].className = "tab";
-    approveL.classname = "announceList off";
-    sendL.className = "announceList";
-    rejectL.className = "announceList off";
-    currentTab = 1;
-}
-);
+  function(){
+      statusTabs[0].className = "tab";
+      statusTabs[1].className = "tab active";
+      statusTabs[2].className = "tab";
+      approveL.className = "off";
+      sendL.className = "first";
+      rejectL.className = "off";
+      currentTab = 1;
+  }
+)
 
 statusTabs[2].addEventListener('click',
-function(){
-    statusTabs[0].className = "tab";
-    statusTabs[1].className = "tab";
-    statusTabs[2].className = "tab active";
-    approveL.classname = "announceList off";
-    sendL.className = "announceList off";
-    rejectL.className = "announceList";
-    currentTab = 2;
-}
-);
+  function(){
+      statusTabs[0].className = "tab";
+      statusTabs[1].className = "tab";
+      statusTabs[2].className = "tab active";
+      approveL.className = "off";
+      sendL.className = "off";
+      rejectL.className = "first";
+      currentTab = 2;
+  }
+)
 
 statusNav.addEventListener('wheel',
-function(e){
+  function(e){
     if(e.wheelDelta < 0){
         if(currentTab == 0)statusTabs[2].click();
         else statusTabs[currentTab - 1].click();
@@ -93,7 +92,7 @@ function(e){
         else statusTabs[currentTab + 1].click();
 
     }
-}
+  }
 );
 
 //request navagation code

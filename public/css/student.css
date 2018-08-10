@@ -1,0 +1,201 @@
+/*generics-------------------------------------------*/
+
+:root {
+    --outer-bg: rgb(245, 50, 50);
+    --inner-bg: rgb(250, 250, 250);
+    --info-text: rgb(73, 64, 64);
+    --meta: rgb(177, 163, 163);
+    --outer-text: rgb(245, 245, 245);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    font-family: sans-serif;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+:focus, :active{
+    user-select: none;
+}
+
+/*scrollbar------------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: #ffebeb;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 51, 51);
+}
+::-webkit-scrollbar:horizontal {
+    height: 3px;
+}
+::-webkit-scrollbar-track:horizontal {
+    background: #e2e2e2;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    background: #cccccc;
+}
+
+/*Header---------------------------------------------*/
+#head{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 7vh;
+    box-sizing: border-box;
+    padding: 2%;
+    background: var(--outer-bg);
+    display: flex;
+    flex-wrap: none;
+    justify-content: space-between;
+    z-index: 5;
+}
+/*Search Bar*/
+#searcher{
+    width: fit-content;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: rgb(255, 158, 158);
+    border-radius: 1vh;
+}
+#search-enter{
+    width: 5vh;
+    height: 5vh;
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+#keywords{
+    background-color: rgb(255, 158, 158);
+    color: var(--outer-text);
+    outline: none;
+    border: none;
+}
+
+/*Logout*/
+#search-enter{
+    width: 5vh;
+    height: 5vh;
+    padding: 0 1%;
+    box-sizing: border-box;
+}
+
+/*Local Navigation-----------------------------------*/
+#sections{
+    position: absolute;
+    top: 7vh;
+    height: 16vh;
+    width: 100vw;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 0 2%;
+    background-color: var(--inner-bg);
+    overflow-x: auto;
+    box-shadow: 0 0 10vh 0 rgba(172, 172, 172, 0.342);
+}
+#wrap{
+    width: 130%;
+    height: 100%;
+    display: flex;
+    flex-wrap: none;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+.section{
+    width: 30%;
+    padding: 1%;
+    height: fit-content;
+    text-align: center;
+    color: var(--info-text);
+    white-space: nowrap;
+}
+.section p{
+    text-overflow: ellipsis;
+}
+.section img{
+    margin: auto;
+    background: var(--outer-bg);
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+}
+.off{display:none;}
+.on::after{
+    position: absolute;
+    top: -1vh;
+    content: "";
+    width: 2vh;
+    height: 2vh;
+    transform: translateX(-.55em) rotate(45deg);
+    background-color: var(--outer-bg);
+}
+/*Viewport-------------------------------------------*/
+#view{
+    position: absolute;
+    top: 23vh;
+    width: 100%;
+    height: 70%;
+    background-color: var(--inner-bg);
+
+    box-sizing: border-box;
+    padding: 3%;
+}
+/*Announcements--------------------------------------*/
+#announce{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+.message-box{
+    height: fit-content;
+    color: var(--info-text);
+}
+.announcement{
+    padding: 2.5% 0;
+    border-bottom: 0.1vh solid var(--meta);
+}
+.stamp, .expire{
+    padding: 1%;
+    color: var(--meta);
+    font-size: 0.75em;
+}
+.expire{
+    text-align: right;
+}
+/*Directory------------------------------------------*/
+
+/*Navigation-----------------------------------------*/
+#nav{
+    position: absolute;
+    bottom: 0;
+    background: var(--outer-bg);
+    height: 7vh;
+    width: 100%;
+    color: var(--outer-text);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    box-shadow: 0 0 15vh 0 rgba(172, 172, 172, 0.397);
+}
+.nav{
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    padding-top: 1.8vh;
+    box-sizing: border-box;
+    font-size: 3vh;
+    border-top: 0.5vh solid rgb(216, 216, 216);
+}
+.nav.active{
+    border-top: 0.5vh solid rgb(255, 126, 126);
+}
