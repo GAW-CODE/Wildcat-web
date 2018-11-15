@@ -1,6 +1,38 @@
 {
   "rules": {
+    //only admins can write to admins (aka "creating new admins")
+    "admins": {
+      ".read": "root.child('admins').hasChild(auth.uid)",
+      ".write": "root.child('admins').hasChild(auth.uid)",
+      ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() < root.child('admins').child(auth.uid).val()",
+      //".read": false,
+    },
+    
+    //anyone can read from directory and events
+    "directory": {
+      ".read": true,
+      "$category": {
+        ".write": "root.child('admins').hasChild(auth.uid) && root.child('directory').hasChild($category)"
+      }
+    },
+    "events": {
+      ".read": true,
+      ".write": "root.child('admins').child(auth.uid).val() > 1",
+      ".validate": "newData.hasChildren(['startTime', 'endTime', 'desc', 'location', 'name', 'org']) && newData.child('startTime').val() < newData.child('endTime').val() && newData.child('startTime').val() > now && newData.child('desc').isString() && newData.child('location').isString() && newData.child('name').isString() && newData.child('org').isString()"
+    },
+    
+    // clubMOD+ can read. eventMOD+||owner can write.
+    /*"requests": {
+      ".read": "root.child('admins').hasChild(auth.uid)",
+      "$category": {
+        ".write": "(!data.exists() || (!newData.exists() && (data.child('author').val() == auth.id || root.child('admins').child(auth.uid).val() > 1))) && root.child('admins').hasChild(auth.uid) && root.child('requests').hasChild($category)",
+      	".validate": "newData.child('author').val() == auth.uid"
+      }
+    },*/
+    
+  	//Default: read-only for authenticated users
+  	// write-access requres eventMOD+
     ".read": "auth != null",
-    ".write": "auth != null"
+    ".write": "root.child('admins').child(auth.uid).val() > 1",
   }
 }
